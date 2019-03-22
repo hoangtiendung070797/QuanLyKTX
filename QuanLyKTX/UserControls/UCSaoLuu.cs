@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyKTX
+namespace QuanLyKTX.UserControls
 {
-    public partial class TinhThanh : UserControl
+    public partial class UCSaoLuu : UserControl
     {
-        public TinhThanh()
+        public UCSaoLuu()
         {
             InitializeComponent();
         }

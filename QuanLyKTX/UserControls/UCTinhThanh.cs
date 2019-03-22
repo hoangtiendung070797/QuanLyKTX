@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
-    public partial class NguoiDung : UserControl
+    public partial class UCTinhThanh : UserControl
     {
-        public NguoiDung()
+        public UCTinhThanh()
         {
             InitializeComponent();
         }

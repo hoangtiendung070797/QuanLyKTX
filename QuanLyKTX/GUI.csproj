@@ -34,24 +34,46 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v17.1" />
+    <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v17.1.Win, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v17.1" />
+    <Reference Include="DevExpress.DataAccess.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Diagram.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Images.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>False</Private>
     </Reference>
+    <Reference Include="DevExpress.Map.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1" />
+    <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v17.1" />
     <Reference Include="DevExpress.Sparkline.v17.1.Core" />
+    <Reference Include="DevExpress.XtraCharts.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v17.1.Wizard, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraDiagram.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v17.1" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Presets, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.1.Win, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraMap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -69,65 +91,80 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DanToc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DanToc.Designer.cs">
-      <DependentUpon>DanToc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\FormBackUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\FormBackUp.Designer.cs">
+      <DependentUpon>FormBackUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaLoaiPhong.cs">
+    <Compile Include="UserControls\UCDanToc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GiaLoaiPhong.Designer.cs">
-      <DependentUpon>GiaLoaiPhong.cs</DependentUpon>
+    <Compile Include="UserControls\UCDanToc.Designer.cs">
+      <DependentUpon>UCDanToc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Home.cs">
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCGiaLoaiPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Home.Designer.cs">
+    <Compile Include="UserControls\UCGiaLoaiPhong.Designer.cs">
+      <DependentUpon>UCGiaLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="NguoiDung.cs">
+    <Compile Include="UserControls\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NguoiDung.Designer.cs">
-      <DependentUpon>NguoiDung.cs</DependentUpon>
+    <Compile Include="UserControls\UCNguoiDung.Designer.cs">
+      <DependentUpon>UCNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuocTich.cs">
+    <Compile Include="UserControls\UCQuocTich.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuocTich.Designer.cs">
-      <DependentUpon>QuocTich.cs</DependentUpon>
+    <Compile Include="UserControls\UCQuocTich.Designer.cs">
+      <DependentUpon>UCQuocTich.cs</DependentUpon>
     </Compile>
     <Compile Include="TabPage.cs" />
-    <Compile Include="TinhThanh.cs">
+    <Compile Include="UserControls\UCSaoLuu.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TinhThanh.Designer.cs">
-      <DependentUpon>TinhThanh.cs</DependentUpon>
+    <Compile Include="UserControls\UCSaoLuu.Designer.cs">
+      <DependentUpon>UCSaoLuu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DanToc.resx">
-      <DependentUpon>DanToc.cs</DependentUpon>
+    <Compile Include="UserControls\UCTinhThanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCTinhThanh.Designer.cs">
+      <DependentUpon>UCTinhThanh.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FormBackUp.resx">
+      <DependentUpon>FormBackUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCDanToc.resx">
+      <DependentUpon>UCDanToc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaLoaiPhong.resx">
-      <DependentUpon>GiaLoaiPhong.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Home.resx">
+    <EmbeddedResource Include="UserControls\UCGiaLoaiPhong.resx">
+      <DependentUpon>UCGiaLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NguoiDung.resx">
-      <DependentUpon>NguoiDung.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCNguoiDung.resx">
+      <DependentUpon>UCNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,11 +177,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="QuocTich.resx">
-      <DependentUpon>QuocTich.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCQuocTich.resx">
+      <DependentUpon>UCQuocTich.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TinhThanh.resx">
-      <DependentUpon>TinhThanh.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCSaoLuu.resx">
+      <DependentUpon>UCSaoLuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCTinhThanh.resx">
+      <DependentUpon>UCTinhThanh.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -159,6 +199,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Shutdown_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{c519f913-cd09-497f-a204-e22806869b17}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{76906570-ca3a-46ec-9549-dbc98006f7e8}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

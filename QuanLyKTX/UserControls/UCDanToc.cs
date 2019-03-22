@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
-    public partial class QuocTich : UserControl
+    public partial class UCDanToc : UserControl
     {
-        public QuocTich()
+        public UCDanToc()
         {
             InitializeComponent();
         }

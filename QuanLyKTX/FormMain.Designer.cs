@@ -42,8 +42,8 @@
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnKhoiPhuc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
@@ -123,8 +123,8 @@
             this.barButtonItem2,
             this.barButtonItem4,
             this.barButtonItem7,
-            this.barButtonItem8,
-            this.barButtonItem9,
+            this.btnSaoLuu,
+            this.btnKhoiPhuc,
             this.barButtonItem10,
             this.barButtonItem11,
             this.barButtonItem12,
@@ -258,19 +258,20 @@
             this.barButtonItem7.ImageOptions.ImageIndex = 13;
             this.barButtonItem7.Name = "barButtonItem7";
             // 
-            // barButtonItem8
+            // btnSaoLuu
             // 
-            this.barButtonItem8.Caption = "Sao lưu dữ liệu";
-            this.barButtonItem8.Id = 11;
-            this.barButtonItem8.ImageOptions.ImageIndex = 3;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.btnSaoLuu.Caption = "Sao lưu dữ liệu";
+            this.btnSaoLuu.Id = 11;
+            this.btnSaoLuu.ImageOptions.ImageIndex = 3;
+            this.btnSaoLuu.Name = "btnSaoLuu";
+            this.btnSaoLuu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSaoLuu_ItemClick);
             // 
-            // barButtonItem9
+            // btnKhoiPhuc
             // 
-            this.barButtonItem9.Caption = "Phục hồi dữ liệu";
-            this.barButtonItem9.Id = 12;
-            this.barButtonItem9.ImageOptions.ImageIndex = 6;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.btnKhoiPhuc.Caption = "Phục hồi dữ liệu";
+            this.btnKhoiPhuc.Id = 12;
+            this.btnKhoiPhuc.ImageOptions.ImageIndex = 6;
+            this.btnKhoiPhuc.Name = "btnKhoiPhuc";
             // 
             // barButtonItem10
             // 
@@ -620,8 +621,8 @@
             // 
             // ribbonPageGroup7
             // 
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem8);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem9);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnSaoLuu);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnKhoiPhuc);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Dữ liệu";
             // 
@@ -776,8 +777,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
         private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
@@ -828,6 +827,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem35;
+        public DevExpress.XtraBars.BarButtonItem btnSaoLuu;
+        public DevExpress.XtraBars.BarButtonItem btnKhoiPhuc;
     }
 }
 

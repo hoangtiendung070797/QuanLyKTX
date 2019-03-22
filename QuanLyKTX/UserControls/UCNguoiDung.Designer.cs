@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKTX
 {
-    partial class NguoiDung
+    partial class UCNguoiDung
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NguoiDung));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCNguoiDung));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.txtTenDangNhap = new DevExpress.XtraEditors.TextEdit();

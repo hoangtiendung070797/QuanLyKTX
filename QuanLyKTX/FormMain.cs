@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using QuanLyKTX.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -74,7 +69,7 @@ namespace QuanLyKTX
 
         private void btnCity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            TinhThanh tinhThanh = new TinhThanh();
+            UCTinhThanh tinhThanh = new UCTinhThanh();
             DevExpress.XtraTab.XtraTabPage tabTinhThanh = new DevExpress.XtraTab.XtraTabPage();           
             tabTinhThanh.Name = "tabTinhThanh";
             tabTinhThanh.Text = "Tỉnh Thành";
@@ -103,7 +98,7 @@ namespace QuanLyKTX
 
         private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DanToc danToc = new DanToc();
+            UCDanToc danToc = new UCDanToc();
             DevExpress.XtraTab.XtraTabPage tabDanToc = new DevExpress.XtraTab.XtraTabPage();
             tabDanToc.Name = "tabDanToc";
             tabDanToc.Text = "Dân Tộc";
@@ -132,7 +127,7 @@ namespace QuanLyKTX
 
         private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            QuocTich quocTich = new QuocTich();
+            UCQuocTich quocTich = new UCQuocTich();
             DevExpress.XtraTab.XtraTabPage tabQuocTich = new DevExpress.XtraTab.XtraTabPage();
             tabQuocTich.Name = "tabQuocTich";
             tabQuocTich.Text = "Quốc tịch";
@@ -161,7 +156,7 @@ namespace QuanLyKTX
 
         private void btnGiaPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            GiaLoaiPhong giaLoaiPhong = new GiaLoaiPhong();
+            UCGiaLoaiPhong giaLoaiPhong = new UCGiaLoaiPhong();
             DevExpress.XtraTab.XtraTabPage tabGiaLoai = new DevExpress.XtraTab.XtraTabPage();
             tabGiaLoai.Name = "tabGiaLoaiPhong";
             tabGiaLoai.Text = "Giá loại phòng";
@@ -186,6 +181,12 @@ namespace QuanLyKTX
                 xtabHienThi.TabPages.Add(tabGiaLoai);
                 xtabHienThi.SelectedTabPage = tabGiaLoai;
             }
+        }
+
+        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormBackUp formBackUp = new FormBackUp();
+            formBackUp.Show();
         }
     }
 }
