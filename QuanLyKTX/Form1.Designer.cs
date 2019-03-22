@@ -614,8 +614,6 @@
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem17);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem18);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem35);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Quản lý";

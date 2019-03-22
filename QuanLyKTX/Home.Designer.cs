@@ -97,7 +97,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(721, 26);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Danh mục nhà";
+            this.label1.Text = "DANH MỤC NHÀ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gridControl1

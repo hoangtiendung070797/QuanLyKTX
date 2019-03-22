@@ -168,7 +168,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(748, 27);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Danh mục dân tộc";
+            this.label1.Text = "DANH MỤC DÂN TỘC";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // layoutControlGroup1
