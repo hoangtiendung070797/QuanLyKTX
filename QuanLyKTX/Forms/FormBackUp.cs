@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using DAL;
+using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 
@@ -10,7 +11,10 @@ namespace QuanLyKTX.Forms
         {
             InitializeComponent();
         }
-        string path = @"c:\SQLBackup\KiTucXaDHHHDatabase.bak";
+
+        string path = @"c:\SQLBackup";  //thư mục
+        string file = "DbKiTucXaDHHH.bak";
+
         private void buttonEdit1_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             FolderBrowserDialog  folderBrowserDialog = new FolderBrowserDialog();
@@ -19,53 +23,59 @@ namespace QuanLyKTX.Forms
                 btnPath.Text = folderBrowserDialog.SelectedPath;
                 path = folderBrowserDialog.SelectedPath;
             }
-                
+            MessageBox.Show(path);
         }
 
-        private void btnSaoLuu_Click(object sender, System.EventArgs e)
+        private void btnThucHien_Click(object sender, System.EventArgs e)
         {
-            bool bBackUpStatus = true;
-
-            Cursor.Current = Cursors.WaitCursor;
-
-            if (Directory.Exists(@"c:\SQLBackup"))
+            if (!string.IsNullOrEmpty(btnPath.Text))
             {
-                if (File.Exists(@"c:\SQLBackup\KiTucXaDHHHDatabase.bak"))
+                if (MessageBox.Show("Thực hiện sao lưu", "Bạn có đồng ý sao lưu ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (MessageBox.Show(@"Do you want to replace it?", "Back", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    bool bBackUpStatus = true;
+
+                    Cursor.Current = Cursors.WaitCursor;
+
+                    if (Directory.Exists(path))
                     {
-                        File.Delete(@"c:\SQLBackup\KiTucXaDHHHDatabase.bak");
+                        if (File.Exists(path + "\\" + file))
+                        {
+                            if (MessageBox.Show(@"Bạn có muốn thay thế file đã tồn tại?", "Back", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+                                File.Delete(path + "\\" + file);
+                            }
+                            else
+                                bBackUpStatus = false;
+                        }
                     }
-                    else
-                        bBackUpStatus = false;
+
+                    if (bBackUpStatus)
+                    {
+                        //Connect to DB
+                        using (SqlConnection connection = new SqlConnection())
+                        {
+                            connection.Open();
+                            //----------------------------------------------------------------------------------------------------
+                            MessageBox.Show("Connected!");
+                            //Execute SQL---------------
+                            SqlCommand command;
+                            command = new SqlCommand(@"backup database DBQuanLyKyTucXa to disk ='" + path + "\\" + file + "' with init,stats=10", connection);
+                            command.ExecuteNonQuery();
+                            //-------------------------------------------------------------------------------------------------------------------------------
+
+                            connection.Close();
+
+                            MessageBox.Show("Dữ liệu đã được sao lưu thành công!", "Back", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                    }
                 }
             }
-            else
-                Directory.CreateDirectory(@"c:\SQLBackup");
+        }
 
-            if (bBackUpStatus)
-            {
-                //Connect to DB
-                using (SqlConnection connection = new SqlConnection())
-                {
-                  
-                    string query = "Data Source = localhost; Initial Catalog=dbWiseCodes ;Integrated Security = True;";
-                    
-                    connection.Open();
-                    //----------------------------------------------------------------------------------------------------
-
-                    //Execute SQL---------------
-                    SqlCommand command;
-                    command = new SqlCommand(@"backup database dbWiseCodes to disk ='c:\SQLBackup\KiTucXaDHHHDatabase.bak' with init,stats=10", connection);
-                    command.ExecuteNonQuery();
-                    //-------------------------------------------------------------------------------------------------------------------------------
-
-                    connection.Close();
-
-                    MessageBox.Show("The support of the database was successfully performed", "Back", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                
-            }
+        private void btnDong_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
         }
     }
 }
