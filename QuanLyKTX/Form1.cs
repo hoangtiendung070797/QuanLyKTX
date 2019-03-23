@@ -187,5 +187,54 @@ namespace QuanLyKTX
                 xtabHienThi.SelectedTabPage = tabGiaLoai;
             }
         }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            NhatKyHoatDong nhatky = new NhatKyHoatDong();
+            DevExpress.XtraTab.XtraTabPage tabNhatKy = new DevExpress.XtraTab.XtraTabPage();
+            tabNhatKy.Name = "tabNhatKy";
+            tabNhatKy.Text = "Nhật ký hoạt động";
+            tabNhatKy.Controls.Add(nhatky);
+            nhatky.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Nhật ký hoạt động")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+
+            }
+            if (t == 1)
+            {
+
+            }
+            else
+            {
+                xtabHienThi.TabPages.Add(tabNhatKy);
+                xtabHienThi.SelectedTabPage = tabNhatKy;
+            }
+        }
+
+        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau();
+            doiMatKhau.ShowDialog();
+
+        }
+
+        private void btnBackup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Backup backup = new Backup();
+            backup.ShowDialog();
+           
+        }
+
+        private void btnRestore_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Restore restore = new Restore();
+            restore.ShowDialog();
+        }
     }
 }
