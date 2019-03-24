@@ -165,6 +165,7 @@
             this.barButtonItem32,
             this.barButtonItem35});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 53;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -174,7 +175,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1237, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1443, 179);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // imageCollection1
@@ -356,6 +357,7 @@
             this.btnRoom.Name = "btnRoom";
             this.btnRoom.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRoom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRoom_ItemClick);
             // 
             // barButtonItem21
             // 
@@ -381,12 +383,13 @@
             // 
             // btnOject
             // 
-            this.btnOject.Caption = "Đối tượng";
+            this.btnOject.Caption = "Loại đối tượng";
             this.btnOject.Id = 29;
             this.btnOject.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOject.ImageOptions.Image")));
             this.btnOject.Name = "btnOject";
             this.btnOject.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnOject.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOject_ItemClick);
             // 
             // btnDonVi
             // 
@@ -396,6 +399,7 @@
             this.btnDonVi.Name = "btnDonVi";
             this.btnDonVi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonVi_ItemClick);
             // 
             // btnHome
             // 
@@ -415,6 +419,7 @@
             this.btnClass.Name = "btnClass";
             this.btnClass.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnClass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClass_ItemClick);
             // 
             // btnVatTu
             // 
@@ -424,6 +429,7 @@
             this.btnVatTu.Name = "btnVatTu";
             this.btnVatTu.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVatTu_ItemClick);
             // 
             // btnViPham
             // 
@@ -433,6 +439,7 @@
             this.btnViPham.Name = "btnViPham";
             this.btnViPham.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnViPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViPham_ItemClick);
             // 
             // btnCity
             // 
@@ -462,6 +469,7 @@
             this.btnTonGiao.Name = "btnTonGiao";
             this.btnTonGiao.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTonGiao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonGiao_ItemClick);
             // 
             // barButtonItem33
             // 
@@ -728,20 +736,22 @@
             this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtabHienThi.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Always;
-            this.xtabHienThi.Location = new System.Drawing.Point(0, 143);
+            this.xtabHienThi.Location = new System.Drawing.Point(0, 179);
+            this.xtabHienThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtabHienThi.Name = "xtabHienThi";
-            this.xtabHienThi.Size = new System.Drawing.Size(1237, 493);
+            this.xtabHienThi.Size = new System.Drawing.Size(1443, 604);
             this.xtabHienThi.TabIndex = 3;
             this.xtabHienThi.CloseButtonClick += new System.EventHandler(this.xtabHienThi_CloseButtonClick);
             // 
             // fmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 636);
+            this.ClientSize = new System.Drawing.Size(1443, 783);
             this.Controls.Add(this.xtabHienThi);
             this.Controls.Add(this.ribbonControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
