@@ -47,7 +47,6 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["DonViId"] = donVi.DonViId;
                 row["tenDonVi"] = donVi.TenDonVi;
                 row["diaChi"] = donVi.DiaChi;
                 row["sdt"] = donVi.Sdt;

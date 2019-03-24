@@ -41,19 +41,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhieuBaoHongVatTu.cs" />
+    <Compile Include="ChiTietPhieuCapPhatVatTu.cs" />
     <Compile Include="DayNha.cs" />
     <Compile Include="DoiTuong.cs" />
     <Compile Include="DonVi.cs" />
     <Compile Include="HopDong.cs" />
+    <Compile Include="KhenThuong.cs" />
+    <Compile Include="KyLuat.cs" />
     <Compile Include="LoaiDoiTuong.cs" />
     <Compile Include="LoaiPhong.cs" />
     <Compile Include="LoiViPham.cs" />
     <Compile Include="Lop.cs" />
+    <Compile Include="LuuTruPhong.cs" />
     <Compile Include="NguoiDung.cs" />
     <Compile Include="NhanVien.cs" />
+    <Compile Include="NhatKyHoatDong.cs" />
+    <Compile Include="PhieuBaoHongVatTu.cs" />
+    <Compile Include="PhieuCapPhatVatTu.cs" />
+    <Compile Include="PhieuChi.cs" />
+    <Compile Include="PhieuThuTienPhong.cs" />
+    <Compile Include="PhieuThuTienSH.cs" />
     <Compile Include="Phong.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuocTich.cs" />
+    <Compile Include="ThuocViPham.cs" />
     <Compile Include="TinhThanh.cs" />
     <Compile Include="TonGiao.cs" />
     <Compile Include="VatTu.cs" />
