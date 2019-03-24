@@ -15,6 +15,12 @@ namespace QuanLyKTX
         public NguoiDung()
         {
             InitializeComponent();
+            
+        }
+
+        private void NguoiDung_Load(object sender, EventArgs e)
+        {
+            txtTenDangNhap.Focus();
         }
     }
 }

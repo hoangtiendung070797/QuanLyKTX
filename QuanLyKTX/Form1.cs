@@ -236,5 +236,34 @@ namespace QuanLyKTX
             Restore restore = new Restore();
             restore.ShowDialog();
         }
+
+        private void btnUser_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            NguoiDung nguoiDung = new NguoiDung();
+            DevExpress.XtraTab.XtraTabPage tabUser = new DevExpress.XtraTab.XtraTabPage();
+            tabUser.Name = "tabNhatKy";
+            tabUser.Text = "Nhật ký hoạt động";
+            tabUser.Controls.Add(nguoiDung);
+            nguoiDung.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Quản lý người dùng")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+
+            }
+            if (t == 1)
+            {
+
+            }
+            else
+            {
+                xtabHienThi.TabPages.Add(tabUser);
+                xtabHienThi.SelectedTabPage = tabUser;
+            }
+        }
     }
 }
