@@ -122,6 +122,12 @@
     <Compile Include="NhatKyHoatDong.Designer.cs">
       <DependentUpon>NhatKyHoatDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanQuyenUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhanQuyenUser.Designer.cs">
+      <DependentUpon>PhanQuyenUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuocTich.cs">
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="TinhThanh.Designer.cs">
       <DependentUpon>TinhThanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCHoSo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCHoSo.Designer.cs">
+      <DependentUpon>UCHoSo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
@@ -167,6 +179,9 @@
     <EmbeddedResource Include="NhatKyHoatDong.resx">
       <DependentUpon>NhatKyHoatDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PhanQuyenUser.resx">
+      <DependentUpon>PhanQuyenUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -186,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TinhThanh.resx">
       <DependentUpon>TinhThanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCHoSo.resx">
+      <DependentUpon>UCHoSo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
