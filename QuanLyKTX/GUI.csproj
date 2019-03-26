@@ -138,11 +138,11 @@
     <Compile Include="UserControls\UCGiaLoaiPhong.Designer.cs">
       <DependentUpon>UCGiaLoaiPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Home.cs">
+    <Compile Include="UserControls\UCDayNha.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Home.Designer.cs">
-      <DependentUpon>Home.cs</DependentUpon>
+    <Compile Include="UserControls\UCDayNha.Designer.cs">
+      <DependentUpon>UCDayNha.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCLoaiDoiTuong.cs">
       <SubType>UserControl</SubType>
@@ -219,8 +219,8 @@
     <EmbeddedResource Include="UserControls\UCGiaLoaiPhong.resx">
       <DependentUpon>UCGiaLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Home.resx">
-      <DependentUpon>Home.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCDayNha.resx">
+      <DependentUpon>UCDayNha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCLoaiDoiTuong.resx">
       <DependentUpon>UCLoaiDoiTuong.cs</DependentUpon>
