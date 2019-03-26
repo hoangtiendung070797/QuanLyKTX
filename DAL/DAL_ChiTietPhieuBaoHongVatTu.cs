@@ -1,10 +1,15 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using DTO;
 
 namespace DAL
 {
-    public class DAL_DoiTuong : DbConnect
+    public class DAL_ChiTietPhieuBaoHongVatTu : DbConnect
     {
         #region Properties
         DataTable table = new DataTable();
@@ -13,7 +18,7 @@ namespace DAL
 
         #region Initialize
 
-        public DAL_DoiTuong()
+        public DAL_ChiTietPhieuBaoHongVatTu()
         {
             table = GetData();
             table.PrimaryKey = new DataColumn[] { table.Columns[0] };
@@ -26,7 +31,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM DayNha";
+                string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -39,30 +44,23 @@ namespace DAL
         }
 
 
-        public bool Insert(DoiTuong doiTuong)
+        public bool Insert(ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu)
         {
             try
             {
-                string query = "SELECT * FROM DoiTuong";
+                string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["LoaiDoiTuongId"] = doiTuong.LoaiDoiTuongId;
-                row["QuocTichId"] = doiTuong.QuocTichId;
-                row["TinhThanhId"] = doiTuong.TinhThanhId;
-                row["LopId"] = doiTuong.LopId;
-                row["maSinhVien"] = doiTuong.MaSinhVien;
-                row["hoDem "] = doiTuong.HoDem;
-                row["ten"] = doiTuong.Ten;
-                row["ngaySinh"] = doiTuong.NgaySinh;
-                row["noiSinh"] = doiTuong.NoiSinh;
-                row["gioiTinh"] = doiTuong.GioiTinh;
-                row["hoKhau"] = doiTuong.HoKhau;
-                row["queQuan"] = doiTuong.QueQuan;
-                row["sdt"] = doiTuong.Sdt;
-                row["email"] = doiTuong.Email;
-                row["ghiChu"] = doiTuong.GhiChu;
-
+                row["PhieuBaoHongVatTuId"] = chiTietPhieuBaoHongVatTu.PhieuBaoHongVatTuId;
+                row["VatTuId"] = chiTietPhieuBaoHongVatTu.VatTuId;
+                row["PhongId"] = chiTietPhieuBaoHongVatTu.PhongId;
+                row["soLuong"] = chiTietPhieuBaoHongVatTu.SoLuong;
+                row["donViTinh"] = chiTietPhieuBaoHongVatTu.DonViTinh;
+                row["lyDo"] = chiTietPhieuBaoHongVatTu.LyDo;
+                row["yeuCau"] = chiTietPhieuBaoHongVatTu.YeuCau;
+                row["ghiChu"] = chiTietPhieuBaoHongVatTu.GhiChu;
+ 
                 table.Rows.Add(row);
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -76,13 +74,13 @@ namespace DAL
             }
         }
 
-        public bool Delete(int DoiTuongId)
+        public bool Delete(int ChiTietPhieuBaoHongVatTuId)
         {
             try
             {
-                string query = "SELECT * FROM DoiTuong";
+                string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(DoiTuongId);
+                DataRow row = table.Rows.Find(ChiTietPhieuBaoHongVatTuId);
 
                 if (row != null)
                 {
@@ -100,31 +98,24 @@ namespace DAL
             }
         }
 
-        public bool Update(DoiTuong doiTuong)
+        public bool Update(ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu)
         {
             try
             {
-                string query = "SELECT * FROM DoiTuong";
+                string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(doiTuong.DoiTuongId);
+                DataRow row = table.Rows.Find(chiTietPhieuBaoHongVatTu.ChiTietPhieuBaoHongVatTuId);
 
                 if (row != null)
                 {
-                    row["LoaiDoiTuongId"] = doiTuong.LoaiDoiTuongId;
-                    row["QuocTichId"] = doiTuong.QuocTichId;
-                    row["TinhThanhId"] = doiTuong.TinhThanhId;
-                    row["LopId"] = doiTuong.LopId;
-                    row["maSinhVien"] = doiTuong.MaSinhVien;
-                    row["hoDem "] = doiTuong.HoDem;
-                    row["ten"] = doiTuong.Ten;
-                    row["ngaySinh"] = doiTuong.NgaySinh;
-                    row["noiSinh"] = doiTuong.NoiSinh;
-                    row["gioiTinh"] = doiTuong.GioiTinh;
-                    row["hoKhau"] = doiTuong.HoKhau;
-                    row["queQuan"] = doiTuong.QueQuan;
-                    row["sdt"] = doiTuong.Sdt;
-                    row["email"] = doiTuong.Email;
-                    row["ghiChu"] = doiTuong.GhiChu;
+                    row["PhieuBaoHongVatTuId"] = chiTietPhieuBaoHongVatTu.PhieuBaoHongVatTuId;
+                    row["VatTuId"] = chiTietPhieuBaoHongVatTu.VatTuId;
+                    row["PhongId"] = chiTietPhieuBaoHongVatTu.PhongId;
+                    row["soLuong"] = chiTietPhieuBaoHongVatTu.SoLuong;
+                    row["donViTinh"] = chiTietPhieuBaoHongVatTu.DonViTinh;
+                    row["lyDo"] = chiTietPhieuBaoHongVatTu.LyDo;
+                    row["yeuCau"] = chiTietPhieuBaoHongVatTu.YeuCau;
+                    row["ghiChu"] = chiTietPhieuBaoHongVatTu.GhiChu;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

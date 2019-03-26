@@ -13,6 +13,7 @@ namespace DTO
         private string tenNguoiLap;
         private DateTime ngayThu;
         private DateTime tuNgay;
+        private DateTime denNgay;
         private decimal tienThu;
         private string ghiChu;
         private bool tinhTrang;
@@ -24,6 +25,7 @@ namespace DTO
         public string TenNguoiLap { get => tenNguoiLap; set => tenNguoiLap = value; }
         public DateTime NgayThu { get => ngayThu; set => ngayThu = value; }
         public DateTime TuNgay { get => tuNgay; set => tuNgay = value; }
+        public DateTime DenNgay { get => denNgay; set => denNgay = value; }
         public decimal TienThu { get => tienThu; set => tienThu = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
         public bool TinhTrang { get => tinhTrang; set => tinhTrang = value; }
