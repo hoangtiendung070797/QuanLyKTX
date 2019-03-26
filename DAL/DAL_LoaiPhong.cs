@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
+﻿using DTO;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL
 {
-   public class DAL_LoaiPhong : DbConnect
+    public class DAL_LoaiPhong : DbConnect
     {
         #region Properties
         DataTable table = new DataTable();
@@ -51,6 +46,7 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
+
                 row["tenLoaiPhong"] = loaiPhong.TenLoaiPhong;
                 row["soLuongtoiDa"] = loaiPhong.SoLuongtoiDa;
                 row["giaLoaiPhong"] = loaiPhong.GiaLoaiPhong;
@@ -98,7 +94,7 @@ namespace DAL
             {
                 string query = "SELECT * FROM LoaiPhong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(loaiPhong.loaiPhongId);
+                DataRow row = table.Rows.Find(loaiPhong.LoaiPhongId);
 
                 if (row != null)
                 {

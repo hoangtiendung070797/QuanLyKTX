@@ -13,7 +13,7 @@ namespace QuanLyKTX.Forms
         }
 
         string path = @"c:\SQLBackup";  //thư mục
-        string file = "";
+       
 
         private void btnPath_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {

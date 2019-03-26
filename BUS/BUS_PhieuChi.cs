@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using DTO;
 namespace BUS
 {
-   public class BUS_PhieuChi
+    public class BUS_PhieuChi
     {
         DAL_PhieuChi phieuChi = new DAL_PhieuChi();
         public bool Insert(PhieuChi phieuChi)
