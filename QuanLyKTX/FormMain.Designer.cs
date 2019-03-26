@@ -165,7 +165,6 @@
             this.barButtonItem32,
             this.barButtonItem35});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl1.MaxItemId = 53;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -175,7 +174,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.ribbonControl1.Size = new System.Drawing.Size(1443, 179);
+            this.ribbonControl1.Size = new System.Drawing.Size(1237, 143);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // imageCollection1
@@ -273,6 +272,7 @@
             this.btnKhoiPhuc.Id = 12;
             this.btnKhoiPhuc.ImageOptions.ImageIndex = 6;
             this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.btnKhoiPhuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoiPhuc_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -736,22 +736,20 @@
             this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtabHienThi.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Always;
-            this.xtabHienThi.Location = new System.Drawing.Point(0, 179);
-            this.xtabHienThi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.xtabHienThi.Location = new System.Drawing.Point(0, 143);
             this.xtabHienThi.Name = "xtabHienThi";
-            this.xtabHienThi.Size = new System.Drawing.Size(1443, 604);
+            this.xtabHienThi.Size = new System.Drawing.Size(1237, 493);
             this.xtabHienThi.TabIndex = 3;
             this.xtabHienThi.CloseButtonClick += new System.EventHandler(this.xtabHienThi_CloseButtonClick);
             // 
             // fmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 783);
+            this.ClientSize = new System.Drawing.Size(1237, 636);
             this.Controls.Add(this.xtabHienThi);
             this.Controls.Add(this.ribbonControl1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

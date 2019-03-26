@@ -393,5 +393,10 @@ namespace QuanLyKTX
                 xtabHienThi.SelectedTabPage = tabLoaiDoiTuong;
             }
         }
+
+        private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
