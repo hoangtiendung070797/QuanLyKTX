@@ -182,7 +182,6 @@
     <Compile Include="UserControls\UCQuocTich.Designer.cs">
       <DependentUpon>UCQuocTich.cs</DependentUpon>
     </Compile>
-    <Compile Include="TabPage.cs" />
     <Compile Include="UserControls\UCTinhThanh.cs">
       <SubType>UserControl</SubType>
     </Compile>
