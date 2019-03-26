@@ -18,7 +18,7 @@ namespace QuanLyKTX
         public void skins()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            themes.LookAndFeel.SkinName = "Office 2013 Dark Gray";
+            themes.LookAndFeel.SkinName = "DevExpress Style";
         }
         
         private void fmMain_Load(object sender, EventArgs e)
@@ -36,10 +36,10 @@ namespace QuanLyKTX
 
         private void xtabHienThi_CloseButtonClick(object sender, EventArgs e)
         {
-            xtabHienThi.TabPages.RemoveAt(xtabHienThi.SelectedTabPageIndex);
-            //DevExpress.XtraTab.XtraTabControl TabControl = (DevExpress.XtraTab.XtraTabControl)sender;
-            // int i = TabControl.SelectedTabPageIndex;
-            //TabControl.TabPages.RemoveAt(TabControl.SelectedTabPageIndex);
+            xtabHienThi.TabPages.Remove(xtabHienThi.SelectedTabPage);
+           // DevExpress.XtraTab.XtraTabControl TabControl = (DevExpress.XtraTab.XtraTabControl)sender;
+           //  int i = TabControl.SelectedTabPageIndex;
+          //  TabControl.TabPages.RemoveAt(TabControl.SelectedTabPageIndex);
             // TabControl.SelectedTabPageIndex = i - 1;
         }
 
@@ -263,6 +263,36 @@ namespace QuanLyKTX
             {
                 xtabHienThi.TabPages.Add(tabUser);
                 xtabHienThi.SelectedTabPage = tabUser;
+            }
+        }
+
+        private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UCHoSo uCHoSo = new UCHoSo();
+            DevExpress.XtraTab.XtraTabPage tabHoSo = new DevExpress.XtraTab.XtraTabPage();
+            tabHoSo.Name = "tabHoSo";
+            
+            tabHoSo.Text = "Hồ sơ";
+            tabHoSo.Controls.Add(uCHoSo);
+            uCHoSo.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
+            {
+                if (tab.Text == "Hồ sơ")
+                {
+                    xtabHienThi.SelectedTabPage = tab;
+                    t = 1;
+                }
+
+            }
+            if (t == 1)
+            {
+
+            }
+            else
+            {
+                xtabHienThi.TabPages.Add(tabHoSo);
+                xtabHienThi.SelectedTabPage = tabHoSo;
             }
         }
     }

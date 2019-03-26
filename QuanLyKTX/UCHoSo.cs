@@ -16,5 +16,15 @@ namespace QuanLyKTX
         {
             InitializeComponent();
         }
+
+        private void UCHoSo_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
