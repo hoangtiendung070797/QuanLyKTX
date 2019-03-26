@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_DayNha.cs" />
+    <Compile Include="DAL_DoiTuong.cs" />
     <Compile Include="DAL_DonVi.cs" />
+    <Compile Include="DAL_HopDong.cs" />
     <Compile Include="DAL_QuocTich.cs" />
     <Compile Include="DbConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
