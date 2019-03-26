@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 using DTO;
 using System.Data;
 using System.Data.SqlClient;
-
 namespace DAL
 {
-    public class DAL_NhatKyHoatDong : DbConnect
+    public class DAL_PhieuCapPhatVatTu : DbConnect
     {
         #region Properties
         DataTable table = new DataTable();
@@ -18,7 +17,7 @@ namespace DAL
 
         #region Initialize
 
-        public DAL_NhatKyHoatDong()
+        public DAL_PhieuCapPhatVatTu()
         {
             table = GetData();
             table.PrimaryKey = new DataColumn[] { table.Columns[0] };
@@ -31,7 +30,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM PhieuCapPhatVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -44,19 +43,21 @@ namespace DAL
         }
 
 
-        public bool Insert(NhatKyHoatDong nhatKyHoatDong)
+        public bool Insert(PhieuCapPhatVatTu phieuCapPhatVatTu)
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM PhieuCapPhatVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["NguoiDungId"] = nhatKyHoatDong.NguoiDungId;
-                row["chucNang"] = nhatKyHoatDong.ChucNang;                 
-                row["thaoTac"] = nhatKyHoatDong.ThaoTac;
-                row["noiDung"] = nhatKyHoatDong.NoiDung;
-                row["thoiGian"] = nhatKyHoatDong.ThoiGian;
+                row["PhongId"] = phieuCapPhatVatTu.PhongId1;
+                row["NhanVienId"] = phieuCapPhatVatTu.NhanVienId;
+                row["NguoiDungId"] = phieuCapPhatVatTu.NguoiDungId;
+                row["ngayCapPhat"] = phieuCapPhatVatTu.NgayCapPhat;
+                row["tenNguoiLap"] = phieuCapPhatVatTu.TenNguoiLap;
+                row["ghiChu"] = phieuCapPhatVatTu.GhiChu;
+
                 table.Rows.Add(row);
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -70,13 +71,13 @@ namespace DAL
             }
         }
 
-        public bool Delete(int nhatKyHoatDongId)
+        public bool Delete(int phieuCapPhatVatTuId)
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM PhieuCapPhatVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(nhatKyHoatDongId);
+                DataRow row = table.Rows.Find(phieuCapPhatVatTuId);
 
                 if (row != null)
                 {
@@ -94,21 +95,22 @@ namespace DAL
             }
         }
 
-        public bool Update(NhatKyHoatDong nhatKyHoatDong)
+        public bool Update(PhieuCapPhatVatTu phieuCapPhatVatTu)
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM PhieuCapPhatVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(nhatKyHoatDong.NhatKyHoatDongId);
+                DataRow row = table.Rows.Find(phieuCapPhatVatTu.PhieuCapPhatVatTuId);
 
                 if (row != null)
                 {
-                    row["NguoiDungId"] = nhatKyHoatDong.NguoiDungId;
-                    row["chucNang"] = nhatKyHoatDong.ChucNang;                  
-                    row["thaoTac"] = nhatKyHoatDong.ThaoTac;
-                    row["noiDung"] = nhatKyHoatDong.NoiDung;
-                    row["thoiGian"] = nhatKyHoatDong.ThoiGian;
+                    row["PhongId"] = phieuCapPhatVatTu.PhongId1;
+                    row["NhanVienId"] = phieuCapPhatVatTu.NhanVienId;
+                    row["NguoiDungId"] = phieuCapPhatVatTu.NguoiDungId;
+                    row["ngayCapPhat"] = phieuCapPhatVatTu.NgayCapPhat;
+                    row["tenNguoiLap"] = phieuCapPhatVatTu.TenNguoiLap;
+                    row["ghiChu"] = phieuCapPhatVatTu.GhiChu;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

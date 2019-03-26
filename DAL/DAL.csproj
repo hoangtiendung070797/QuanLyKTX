@@ -57,7 +57,17 @@
     <Compile Include="DAL_NguoiDung.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_NhatKyHoatDong.cs" />
+    <Compile Include="DAL_PhieuBaoHongVatTu.cs" />
+    <Compile Include="DAL_PhieuCapPhatVatTu.cs" />
+    <Compile Include="DAL_PhieuChi.cs" />
+    <Compile Include="DAL_PhieuThuTienPhong.cs" />
+    <Compile Include="DAL_PhieuThuTienSH.cs" />
+    <Compile Include="DAL_Phong.cs" />
     <Compile Include="DAL_QuocTich.cs" />
+    <Compile Include="DAL_ThuocViPham.cs" />
+    <Compile Include="DAL_TinhThanh.cs" />
+    <Compile Include="DAL_TonGiao.cs" />
+    <Compile Include="DAL_VatTu.cs" />
     <Compile Include="DbConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

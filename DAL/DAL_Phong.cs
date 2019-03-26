@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class DAL_NhatKyHoatDong : DbConnect
+    public class DAL_Phong : DbConnect
     {
         #region Properties
         DataTable table = new DataTable();
@@ -18,7 +18,7 @@ namespace DAL
 
         #region Initialize
 
-        public DAL_NhatKyHoatDong()
+        public DAL_Phong()
         {
             table = GetData();
             table.PrimaryKey = new DataColumn[] { table.Columns[0] };
@@ -31,7 +31,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM Phong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -44,19 +44,21 @@ namespace DAL
         }
 
 
-        public bool Insert(NhatKyHoatDong nhatKyHoatDong)
+        public bool Insert(Phong phong)
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM Phong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["NguoiDungId"] = nhatKyHoatDong.NguoiDungId;
-                row["chucNang"] = nhatKyHoatDong.ChucNang;                 
-                row["thaoTac"] = nhatKyHoatDong.ThaoTac;
-                row["noiDung"] = nhatKyHoatDong.NoiDung;
-                row["thoiGian"] = nhatKyHoatDong.ThoiGian;
+                row["PhongId"] = phong.PhongId;
+                row["DayNhaId"] = phong.DayNhaId;
+                row["LoaiPhongId"] = phong.LoaiPhongId;
+                row["tenPhong"] = phong.TenPhong;
+                row["tang"] = phong.Tang;
+                row["giaPhong"] = phong.GiaPhong;
+
                 table.Rows.Add(row);
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -70,13 +72,13 @@ namespace DAL
             }
         }
 
-        public bool Delete(int nhatKyHoatDongId)
+        public bool Delete(string phongId)
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM Phong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(nhatKyHoatDongId);
+                DataRow row = table.Rows.Find(phongId);
 
                 if (row != null)
                 {
@@ -94,21 +96,22 @@ namespace DAL
             }
         }
 
-        public bool Update(NhatKyHoatDong nhatKyHoatDong)
+        public bool Update(Phong phong)
         {
             try
             {
-                string query = "SELECT * FROM NhatKyHoatDong";
+                string query = "SELECT * FROM Phong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(nhatKyHoatDong.NhatKyHoatDongId);
+                DataRow row = table.Rows.Find(phong.PhongId);
 
                 if (row != null)
                 {
-                    row["NguoiDungId"] = nhatKyHoatDong.NguoiDungId;
-                    row["chucNang"] = nhatKyHoatDong.ChucNang;                  
-                    row["thaoTac"] = nhatKyHoatDong.ThaoTac;
-                    row["noiDung"] = nhatKyHoatDong.NoiDung;
-                    row["thoiGian"] = nhatKyHoatDong.ThoiGian;
+                    row["PhongId"] = phong.PhongId;
+                    row["DayNhaId"] = phong.DayNhaId;
+                    row["LoaiPhongId"] = phong.LoaiPhongId;
+                    row["tenPhong"] = phong.TenPhong;
+                    row["tang"] = phong.Tang;
+                    row["giaPhong"] = phong.GiaPhong;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

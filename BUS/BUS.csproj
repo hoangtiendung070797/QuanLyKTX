@@ -57,7 +57,17 @@
     <Compile Include="BUS_NguoiDung.cs" />
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_NhatKyHoatDong.cs" />
+    <Compile Include="BUS_PhieuBaoHongVatTu.cs" />
+    <Compile Include="BUS_PhieuCapPhatVatTu.cs" />
+    <Compile Include="BUS_PhieuChi.cs" />
+    <Compile Include="BUS_PhieuThuTienPhong.cs" />
+    <Compile Include="BUS_PhieuThuTienSH.cs" />
+    <Compile Include="BUS_Phong.cs" />
     <Compile Include="BUS_QuocTich.cs" />
+    <Compile Include="BUS_ThuocViPham.cs" />
+    <Compile Include="BUS_TinhThanh.cs" />
+    <Compile Include="BUS_TonGiao.cs" />
+    <Compile Include="BUS_VatTu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
