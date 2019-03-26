@@ -23,12 +23,12 @@ namespace QuanLyKTX.Forms
                 btnPath.Text = folderBrowserDialog.SelectedPath;
                 path = folderBrowserDialog.SelectedPath;
             }
-            MessageBox.Show(path);
+            
         }
 
         private void btnThucHien_Click(object sender, System.EventArgs e)
         {
-            if (!string.IsNullOrEmpty(btnPath.Text))
+            if (!string.IsNullOrEmpty(btnPath.Text) &&!string.IsNullOrEmpty(txtTenTapTin.Text))
             {
                 if (MessageBox.Show("Thực hiện sao lưu", "Bạn có đồng ý sao lưu ?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -52,11 +52,11 @@ namespace QuanLyKTX.Forms
                     if (bBackUpStatus)
                     {
                         //Connect to DB
-                        using (SqlConnection connection = new SqlConnection())
+                        using (SqlConnection connection = new SqlConnection(Const.ConnectionString))
                         {
                             connection.Open();
                             //----------------------------------------------------------------------------------------------------
-                            MessageBox.Show("Connected!");
+ 
                             //Execute SQL---------------
                             SqlCommand command;
                             command = new SqlCommand(@"backup database DBQuanLyKyTucXa to disk ='" + path + "\\" + file + "' with init,stats=10", connection);
@@ -70,6 +70,10 @@ namespace QuanLyKTX.Forms
 
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Yêu cầu nhập đầy đủ!(Tên tệp tin,...)");
             }
         }
 

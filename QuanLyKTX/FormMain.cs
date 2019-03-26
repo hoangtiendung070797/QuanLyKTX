@@ -32,7 +32,7 @@ namespace QuanLyKTX
 
         private void xtabHienThi_CloseButtonClick(object sender, EventArgs e)
         {
-            xtabHienThi.TabPages.RemoveAt(xtabHienThi.SelectedTabPageIndex);
+            xtabHienThi.TabPages.Remove(xtabHienThi.SelectedTabPage);
             //DevExpress.XtraTab.XtraTabControl TabControl = (DevExpress.XtraTab.XtraTabControl)sender;
             // int i = TabControl.SelectedTabPageIndex;
             //TabControl.TabPages.RemoveAt(TabControl.SelectedTabPageIndex);
@@ -396,7 +396,10 @@ namespace QuanLyKTX
 
         private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            FormRestore formRestore = new FormRestore();
+            formRestore.StartPosition = FormStartPosition.CenterParent;
+            formRestore.ShowDialog();
+            
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKTX.Forms
 {
-    partial class FormBackUp
+    partial class FormRestore
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBackUp));
-            this.btnPath = new DevExpress.XtraEditors.ButtonEdit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRestore));
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPath = new DevExpress.XtraEditors.ButtonEdit();
             this.groupControlBackUp = new DevExpress.XtraEditors.GroupControl();
-            this.checkEditGhiDe = new DevExpress.XtraEditors.CheckEdit();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnThucHien = new DevExpress.XtraEditors.SimpleButton();
             this.btnTroGiup = new DevExpress.XtraEditors.SimpleButton();
@@ -43,21 +42,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlBackUp)).BeginInit();
             this.groupControlBackUp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditGhiDe.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPath
-            // 
-            this.btnPath.EditValue = "C:\\SQLBackup\\DBQuanLyKyTucXa.bak";
-            this.btnPath.Location = new System.Drawing.Point(281, 109);
-            this.btnPath.Name = "btnPath";
-            this.btnPath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPath.Properties.Appearance.Options.UseFont = true;
-            this.btnPath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.btnPath.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_Properties_ButtonClick);
-            this.btnPath.Size = new System.Drawing.Size(388, 26);
-            this.btnPath.TabIndex = 2;
             // 
             // label1
             // 
@@ -69,10 +54,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Đường dẫn thư mục";
             // 
+            // btnPath
+            // 
+            this.btnPath.EditValue = "C:\\SQLBackup\\DBQuanLyKyTucXa.bak";
+            this.btnPath.Location = new System.Drawing.Point(281, 109);
+            this.btnPath.Name = "btnPath";
+            this.btnPath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPath.Properties.Appearance.Options.UseFont = true;
+            this.btnPath.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.btnPath.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnPath_Properties_ButtonClick);
+            this.btnPath.Size = new System.Drawing.Size(388, 26);
+            this.btnPath.TabIndex = 2;
+            // 
             // groupControlBackUp
             // 
             this.groupControlBackUp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupControlBackUp.Controls.Add(this.checkEditGhiDe);
             this.groupControlBackUp.Controls.Add(this.btnDong);
             this.groupControlBackUp.Controls.Add(this.btnThucHien);
             this.groupControlBackUp.Controls.Add(this.btnTroGiup);
@@ -85,19 +82,9 @@
             this.groupControlBackUp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControlBackUp.Location = new System.Drawing.Point(0, 0);
             this.groupControlBackUp.Name = "groupControlBackUp";
-            this.groupControlBackUp.Size = new System.Drawing.Size(681, 235);
-            this.groupControlBackUp.TabIndex = 6;
+            this.groupControlBackUp.Size = new System.Drawing.Size(683, 249);
+            this.groupControlBackUp.TabIndex = 7;
             this.groupControlBackUp.Text = "Thao tác chức năng";
-            // 
-            // checkEditGhiDe
-            // 
-            this.checkEditGhiDe.Location = new System.Drawing.Point(169, 194);
-            this.checkEditGhiDe.Name = "checkEditGhiDe";
-            this.checkEditGhiDe.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEditGhiDe.Properties.Appearance.Options.UseFont = true;
-            this.checkEditGhiDe.Properties.Caption = "Ghi đè tập tin cũ";
-            this.checkEditGhiDe.Size = new System.Drawing.Size(159, 20);
-            this.checkEditGhiDe.TabIndex = 8;
             // 
             // btnDong
             // 
@@ -148,6 +135,7 @@
             // 
             // txtTenTapTin
             // 
+            this.txtTenTapTin.Enabled = false;
             this.txtTenTapTin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTapTin.Location = new System.Drawing.Point(281, 72);
             this.txtTenTapTin.Name = "txtTenTapTin";
@@ -181,38 +169,33 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên tập tin";
             // 
-            // FormBackUp
+            // FormRestore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(681, 235);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(683, 249);
             this.Controls.Add(this.groupControlBackUp);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormBackUp";
-            this.Text = "Sao lưu dữ liệu";
+            this.Name = "FormRestore";
+            this.Text = "Khôi phục dữ liệu";
             ((System.ComponentModel.ISupportInitialize)(this.btnPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControlBackUp)).EndInit();
             this.groupControlBackUp.ResumeLayout(false);
             this.groupControlBackUp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditGhiDe.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private DevExpress.XtraEditors.GroupControl groupControlBackUp;
-        public DevExpress.XtraEditors.ButtonEdit btnPath;
+
         public System.Windows.Forms.Label label1;
+        public DevExpress.XtraEditors.ButtonEdit btnPath;
+        private DevExpress.XtraEditors.GroupControl groupControlBackUp;
+        private DevExpress.XtraEditors.SimpleButton btnDong;
+        private DevExpress.XtraEditors.SimpleButton btnThucHien;
         private DevExpress.XtraEditors.SimpleButton btnTroGiup;
         private System.Windows.Forms.TextBox txtTenTapTin;
         private System.Windows.Forms.ProgressBar progressBarCoolDown;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.CheckEdit checkEditGhiDe;
-        private DevExpress.XtraEditors.SimpleButton btnThucHien;
-        private DevExpress.XtraEditors.SimpleButton btnDong;
     }
 }

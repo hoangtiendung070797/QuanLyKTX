@@ -101,11 +101,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Const.cs" />
     <Compile Include="Forms\FormBackUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormBackUp.Designer.cs">
       <DependentUpon>FormBackUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormRestore.Designer.cs">
+      <DependentUpon>FormRestore.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCDanToc.cs">
       <SubType>UserControl</SubType>
@@ -196,6 +203,9 @@
     </Compile>
     <EmbeddedResource Include="Forms\FormBackUp.resx">
       <DependentUpon>FormBackUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormRestore.resx">
+      <DependentUpon>FormRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanToc.resx">
       <DependentUpon>UCDanToc.cs</DependentUpon>
