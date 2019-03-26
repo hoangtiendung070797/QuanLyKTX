@@ -165,7 +165,7 @@
             this.barButtonItem32,
             this.barButtonItem35});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 53;
+            this.ribbonControl1.MaxItemId = 58;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -272,6 +272,7 @@
             this.btnKhoiPhuc.Id = 12;
             this.btnKhoiPhuc.ImageOptions.ImageIndex = 6;
             this.btnKhoiPhuc.Name = "btnKhoiPhuc";
+            this.btnKhoiPhuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKhoiPhuc_ItemClick);
             // 
             // barButtonItem10
             // 
@@ -356,6 +357,7 @@
             this.btnRoom.Name = "btnRoom";
             this.btnRoom.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnRoom.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnRoom_ItemClick);
             // 
             // barButtonItem21
             // 
@@ -381,12 +383,13 @@
             // 
             // btnOject
             // 
-            this.btnOject.Caption = "Đối tượng";
+            this.btnOject.Caption = "Loại đối tượng";
             this.btnOject.Id = 29;
             this.btnOject.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOject.ImageOptions.Image")));
             this.btnOject.Name = "btnOject";
             this.btnOject.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnOject.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnOject_ItemClick);
             // 
             // btnDonVi
             // 
@@ -396,6 +399,7 @@
             this.btnDonVi.Name = "btnDonVi";
             this.btnDonVi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonVi_ItemClick);
             // 
             // btnHome
             // 
@@ -415,6 +419,7 @@
             this.btnClass.Name = "btnClass";
             this.btnClass.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnClass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnClass_ItemClick);
             // 
             // btnVatTu
             // 
@@ -424,6 +429,7 @@
             this.btnVatTu.Name = "btnVatTu";
             this.btnVatTu.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVatTu_ItemClick);
             // 
             // btnViPham
             // 
@@ -433,6 +439,7 @@
             this.btnViPham.Name = "btnViPham";
             this.btnViPham.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnViPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViPham_ItemClick);
             // 
             // btnCity
             // 
@@ -462,6 +469,7 @@
             this.btnTonGiao.Name = "btnTonGiao";
             this.btnTonGiao.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTonGiao.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTonGiao_ItemClick);
             // 
             // barButtonItem33
             // 

@@ -48,7 +48,7 @@
             // 
             // btnPath
             // 
-            this.btnPath.EditValue = "C:\\SQLBackup\\MinhHieuDatabase.bak";
+            this.btnPath.EditValue = "C:\\SQLBackup\\DBQuanLyKyTucXa.bak";
             this.btnPath.Location = new System.Drawing.Point(281, 109);
             this.btnPath.Name = "btnPath";
             this.btnPath.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

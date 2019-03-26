@@ -41,8 +41,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_ChiTietPhieuBaoHongVatTu.cs" />
+    <Compile Include="DAL_ChiTietPhieuCapPhatVatTu.cs" />
+    <Compile Include="DAL_DayNha.cs" />
+    <Compile Include="DAL_DoiTuong.cs" />
     <Compile Include="DAL_DonVi.cs" />
+    <Compile Include="DAL_HopDong.cs" />
+    <Compile Include="DAL_KhenThuong.cs" />
+    <Compile Include="DAL_KyLuat.cs" />
+    <Compile Include="DAL_LoaiDoiTuong.cs" />
+    <Compile Include="DAL_LoaiPhong.cs" />
+    <Compile Include="DAL_LoiViPham.cs" />
+    <Compile Include="DAL_Lop.cs" />
+    <Compile Include="DAL_LuuTruPhong.cs" />
+    <Compile Include="DAL_NguoiDung.cs" />
+    <Compile Include="DAL_NhanVien.cs" />
+    <Compile Include="DAL_NhatKyHoatDong.cs" />
+    <Compile Include="DAL_PhieuBaoHongVatTu.cs" />
+    <Compile Include="DAL_PhieuCapPhatVatTu.cs" />
+    <Compile Include="DAL_PhieuChi.cs" />
+    <Compile Include="DAL_PhieuThuTienPhong.cs" />
+    <Compile Include="DAL_PhieuThuTienSH.cs" />
+    <Compile Include="DAL_Phong.cs" />
     <Compile Include="DAL_QuocTich.cs" />
+    <Compile Include="DAL_ThuocViPham.cs" />
+    <Compile Include="DAL_TinhThanh.cs" />
+    <Compile Include="DAL_TonGiao.cs" />
+    <Compile Include="DAL_VatTu.cs" />
     <Compile Include="DbConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
