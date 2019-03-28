@@ -9,9 +9,9 @@
         public string TenQuocTich { get => tenQuocTich; set => tenQuocTich = value; }
         #endregion
         #region Initialize
-        public QuocTich(int QuocTichId, string tenQuocTich)
+        public QuocTich( string tenQuocTich="")
         {
-            this.QuocTichId = QuocTichId;
+ 
             this.TenQuocTich = tenQuocTich;
         }
 

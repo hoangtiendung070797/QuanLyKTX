@@ -14,9 +14,8 @@
 
 
         #region Initialize
-        public DayNha(int id, string ten,string ghichu)
+        public DayNha(string ten,string ghichu="")
         {
-            this.DayNhaId = id;
             this.TenDayNha = ten;
             this.GhiChu = ghichu;
         }

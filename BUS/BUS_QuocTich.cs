@@ -6,24 +6,28 @@ namespace BUS
 {
     public class BUS_QuocTich
     {
-        DAL_QuocTich quocTich = new DAL_QuocTich();
+
+        private DAL_QuocTich quocTich = new DAL_QuocTich();
+
+        public DAL_QuocTich QuocTich { get => quocTich; set => quocTich = value; }
+
         public DataTable GetData()
         {
-            return this.quocTich.GetData();
+            return this.QuocTich.GetData();
         }
         public bool Insert(QuocTich quocTich)
         {
-            return this.quocTich.Insert(quocTich);
+            return this.QuocTich.Insert(quocTich);
         }
 
         public bool Delete(int quocTichId)
         {
-            return this.quocTich.Delete(quocTichId);
+            return this.QuocTich.Delete(quocTichId);
         }
 
         public bool Update(QuocTich quocTich)
         {
-            return this.quocTich.Update(quocTich);
+            return this.QuocTich.Update(quocTich);
         }
     }
 }

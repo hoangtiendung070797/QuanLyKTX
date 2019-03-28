@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT QuocTichId as N'ID', tenQuocTich as N'Quốc Tịch' FROM QuocTich";
+                string query = "SELECT * FROM QuocTich";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -38,6 +38,14 @@ namespace DAL
             }
         }
 
+        public int GetIdentityId()
+        {
+            string query = "SELECT IDENT_CURRENT('QuocTich') as LastID";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            dataAdapter.Fill(table);
+            return int.Parse(table.Rows[0][0].ToString());
+        }
 
         public bool Insert(QuocTich quocTich)
         {
@@ -47,9 +55,10 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["QuocTichId"] = quocTich.QuocTichId;
+
+
                 row["tenQuocTich"] = quocTich.TenQuocTich;
-              
+
 
                 table.Rows.Add(row);
 
