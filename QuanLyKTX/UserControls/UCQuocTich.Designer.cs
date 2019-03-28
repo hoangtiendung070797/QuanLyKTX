@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCQuocTich));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControlQuocTich = new DevExpress.XtraGrid.GridControl();
@@ -97,11 +97,11 @@
             // 
             // gridControlQuocTich
             // 
-            gridLevelNode1.RelationName = "Level1";
-            gridLevelNode2.RelationName = "Level2";
+            gridLevelNode3.RelationName = "Level1";
+            gridLevelNode4.RelationName = "Level2";
             this.gridControlQuocTich.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1,
-            gridLevelNode2});
+            gridLevelNode3,
+            gridLevelNode4});
             this.gridControlQuocTich.Location = new System.Drawing.Point(12, 120);
             this.gridControlQuocTich.MainView = this.gridView1;
             this.gridControlQuocTich.Name = "gridControlQuocTich";
@@ -138,6 +138,7 @@
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 9;
             this.btnEdit.Text = "Sửa";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnSave
             // 
@@ -148,6 +149,7 @@
             this.btnSave.StyleController = this.layoutControl1;
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Lưu";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnAdd
             // 
@@ -162,6 +164,7 @@
             // 
             // txtTenQuocTich
             // 
+            this.txtTenQuocTich.Enabled = false;
             this.txtTenQuocTich.Location = new System.Drawing.Point(86, 70);
             this.txtTenQuocTich.Name = "txtTenQuocTich";
             this.txtTenQuocTich.Size = new System.Drawing.Size(336, 20);

@@ -34,10 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewDayNha = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.btnXoaDayNha = new DevExpress.XtraEditors.SimpleButton();
+            this.z = new DevExpress.XtraEditors.SimpleButton();
             this.btnSuaDayNha = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuuDayNha = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemDayNha = new DevExpress.XtraEditors.SimpleButton();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.txtTenDayNha = new DevExpress.XtraEditors.TextEdit();
             this.txtDayNhaId = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -51,13 +52,13 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDayNha)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDayNha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDayNhaId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -71,7 +72,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             // 
             this.layoutControl1.Controls.Add(this.label1);
             this.layoutControl1.Controls.Add(this.gridControl1);
-            this.layoutControl1.Controls.Add(this.btnXoaDayNha);
+            this.layoutControl1.Controls.Add(this.z);
             this.layoutControl1.Controls.Add(this.btnSuaDayNha);
             this.layoutControl1.Controls.Add(this.btnLuuDayNha);
             this.layoutControl1.Controls.Add(this.btnThemDayNha);
@@ -121,19 +121,19 @@
             this.gridViewDayNha.GridControl = this.gridControl1;
             this.gridViewDayNha.Name = "gridViewDayNha";
             // 
-            // btnXoaDayNha
+            // z
             // 
-            this.btnXoaDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.btnXoaDayNha.Location = new System.Drawing.Point(280, 90);
-            this.btnXoaDayNha.Name = "btnXoaDayNha";
-            this.btnXoaDayNha.Size = new System.Drawing.Size(90, 22);
-            this.btnXoaDayNha.StyleController = this.layoutControl1;
-            this.btnXoaDayNha.TabIndex = 9;
-            this.btnXoaDayNha.Text = "Xóa";
+            this.z.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDayNha.ImageOptions.Image")));
+            this.z.Location = new System.Drawing.Point(280, 90);
+            this.z.Name = "z";
+            this.z.Size = new System.Drawing.Size(90, 22);
+            this.z.StyleController = this.layoutControl1;
+            this.z.TabIndex = 9;
+            this.z.Text = "Xóa";
             // 
             // btnSuaDayNha
             // 
-            this.btnSuaDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.btnSuaDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaDayNha.ImageOptions.Image")));
             this.btnSuaDayNha.Location = new System.Drawing.Point(192, 90);
             this.btnSuaDayNha.Name = "btnSuaDayNha";
             this.btnSuaDayNha.Size = new System.Drawing.Size(84, 22);
@@ -143,7 +143,7 @@
             // 
             // btnLuuDayNha
             // 
-            this.btnLuuDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.btnLuuDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuDayNha.ImageOptions.Image")));
             this.btnLuuDayNha.Location = new System.Drawing.Point(102, 90);
             this.btnLuuDayNha.Name = "btnLuuDayNha";
             this.btnLuuDayNha.Size = new System.Drawing.Size(86, 22);
@@ -153,7 +153,7 @@
             // 
             // btnThemDayNha
             // 
-            this.btnThemDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnThemDayNha.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThemDayNha.ImageOptions.Image")));
             this.btnThemDayNha.Location = new System.Drawing.Point(12, 90);
             this.btnThemDayNha.Name = "btnThemDayNha";
             this.btnThemDayNha.Size = new System.Drawing.Size(86, 22);
@@ -161,6 +161,15 @@
             this.btnThemDayNha.TabIndex = 6;
             this.btnThemDayNha.Text = "Thêm mới";
             this.btnThemDayNha.Click += new System.EventHandler(this.btnThemDayNha_Click);
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "";
+            this.textEdit1.Location = new System.Drawing.Point(444, 42);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(289, 20);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 5;
             // 
             // txtTenDayNha
             // 
@@ -263,7 +272,7 @@
             // 
             // layoutControlItem6
             // 
-            this.layoutControlItem6.Control = this.btnXoaDayNha;
+            this.layoutControlItem6.Control = this.z;
             this.layoutControlItem6.Location = new System.Drawing.Point(268, 78);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(94, 26);
@@ -287,15 +296,6 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(725, 30);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.EditValue = "";
-            this.textEdit1.Location = new System.Drawing.Point(444, 42);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(289, 20);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 5;
             // 
             // layoutControlItem9
             // 
@@ -322,6 +322,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDayNha)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDayNha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDayNhaId.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -335,7 +336,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -346,7 +346,7 @@
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.SimpleButton btnXoaDayNha;
+        private DevExpress.XtraEditors.SimpleButton z;
         private DevExpress.XtraEditors.SimpleButton btnSuaDayNha;
         private DevExpress.XtraEditors.SimpleButton btnLuuDayNha;
         private DevExpress.XtraEditors.SimpleButton btnThemDayNha;

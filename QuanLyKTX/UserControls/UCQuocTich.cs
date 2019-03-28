@@ -21,8 +21,8 @@ namespace QuanLyKTX
      
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
 
+            txtTenQuocTich.Enabled = true;
 
             if (!string.IsNullOrEmpty(txtTenQuocTich.Text))
             {
@@ -33,6 +33,7 @@ namespace QuanLyKTX
                     //MessageBox.Show(dAL_QuocTich.GetIdentityId().ToString());
                     bUS_QuocTich.Insert(quocTich);
                     MessageBox.Show("Thêm thành công!");
+                    txtTenQuocTich.Enabled = false;
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -78,6 +79,47 @@ namespace QuanLyKTX
                     txtTenQuocTich.ResetText();
                     txtTenQuocTich.Focus();
                 }
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            txtTenQuocTich.Enabled = true;
+            
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtTenQuocTich.Text))
+            {
+                try
+                {
+
+                    QuocTich quocTich = new QuocTich(txtTenQuocTich.Text);
+                    quocTich.QuocTichId = int.Parse(txtMaQuocTich.Text);
+
+                    if(bUS_QuocTich.Update(quocTich)==true)
+                    {
+                        MessageBox.Show("Đã cập nhập thành công!");
+                        txtTenQuocTich.Enabled = false;
+                        // lưu vào log ... viết sau
+                    }
+
+
+                }
+                catch
+                {
+
+                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được quốc tịch\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
+                    txtTenQuocTich.ResetText();
+                    txtTenQuocTich.Focus();
+                }
+            }
+            else
+            {
+                errorProvider.SetError(txtTenQuocTich, "Chưa điền tên quốc tịch!");
+                txtTenQuocTich.ResetText();
+                txtTenQuocTich.Focus();
             }
         }
     }
