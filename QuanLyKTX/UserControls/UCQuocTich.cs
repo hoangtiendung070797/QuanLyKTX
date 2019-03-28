@@ -61,7 +61,7 @@ namespace QuanLyKTX
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Yes-No",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
