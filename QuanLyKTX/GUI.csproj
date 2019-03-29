@@ -121,6 +121,7 @@
       <DependentUpon>FormRestore.cs</DependentUpon>
     </Compile>
     <Compile Include="Support\ImportExcel.cs" />
+    <Compile Include="Support\SupportImageToDb.cs" />
     <Compile Include="UserControls\UCDanhMuc\UCDanToc.cs">
       <SubType>UserControl</SubType>
     </Compile>
