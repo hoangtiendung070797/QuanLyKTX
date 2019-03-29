@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using System.Data;
 
 namespace BUS
 {
@@ -21,5 +22,9 @@ namespace BUS
             return this.loaiDoiTuong.Update(loaiDoiTuong);
         }
 
+        public DataTable GetData()
+        {
+            return this.loaiDoiTuong.GetData();
+        }
     }
 }

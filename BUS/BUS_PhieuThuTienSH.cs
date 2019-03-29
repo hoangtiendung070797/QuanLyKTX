@@ -1,5 +1,7 @@
 ﻿using DAL;
 using DTO;
+using System.Data;
+
 namespace BUS
 {
     public class BUS_PhieuThuTienSH
@@ -10,6 +12,10 @@ namespace BUS
             return this.phieuThuTienSH.Insert(phieuThuTienSH);
         }
 
+        public DataTable GetData()
+        {
+            return this.phieuThuTienSH.GetData();
+        }
         public bool Delete(int phieuThuTienSHId)
         {
             return this.phieuThuTienSH.Delete(phieuThuTienSHId);

@@ -68,6 +68,7 @@
     <Compile Include="BUS_TinhThanh.cs" />
     <Compile Include="BUS_TonGiao.cs" />
     <Compile Include="BUS_VatTu.cs" />
+    <Compile Include="DAL_DanToc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

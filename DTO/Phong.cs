@@ -18,15 +18,8 @@
         public decimal GiaPhong { get => giaPhong; set => giaPhong = value; }
 
 
-        public Phong(string id,int dayNhaId,int loaiPhongId,string tenPhong, int tang, decimal giaPhong)
-        {
-            this.PhongId = id;
-            this.DayNhaId = dayNhaId;
-            this.LoaiPhongId = loaiPhongId;
-            this.TenPhong = tenPhong;
-            this.Tang = tang;
-            this.GiaPhong = giaPhong;
-        }
+
+        // Phong
 
     }
 }

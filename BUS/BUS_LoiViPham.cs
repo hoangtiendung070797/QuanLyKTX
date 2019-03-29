@@ -1,6 +1,6 @@
 ﻿using DAL;
 using DTO;
-
+using System.Data;
 namespace BUS
 {
     public class BUS_LoiViPham
@@ -20,6 +20,9 @@ namespace BUS
         {
             return this.loiViPham.Update(loiViPham);
         }
-
+        public DataTable GetData()
+        {
+            return this.loiViPham.GetData();
+        }
     }
 }

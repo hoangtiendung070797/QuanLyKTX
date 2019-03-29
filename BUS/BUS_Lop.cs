@@ -1,6 +1,6 @@
 ﻿using DAL;
 using DTO;
-
+using System.Data;
 namespace BUS
 {
     public class BUS_Lop
@@ -20,6 +20,9 @@ namespace BUS
         {
             return this.lop.Update(lop);
         }
-
+        public DataTable GetData()
+        {
+            return this.lop.GetData();
+        }
     }
 }

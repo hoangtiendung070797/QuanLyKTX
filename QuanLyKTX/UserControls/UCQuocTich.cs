@@ -16,7 +16,6 @@ namespace QuanLyKTX
         private void UCQuocTich_Load(object sender, EventArgs e)
         {
             gridControlQuocTich.DataSource = bUS_QuocTich.GetData();
-
         }
      
         private void btnAdd_Click(object sender, EventArgs e)

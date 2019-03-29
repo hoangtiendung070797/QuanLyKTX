@@ -123,13 +123,14 @@
             // 
             // z
             // 
-            this.z.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaDayNha.ImageOptions.Image")));
+            this.z.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("z.ImageOptions.Image")));
             this.z.Location = new System.Drawing.Point(280, 90);
             this.z.Name = "z";
             this.z.Size = new System.Drawing.Size(90, 22);
             this.z.StyleController = this.layoutControl1;
             this.z.TabIndex = 9;
             this.z.Text = "Xóa";
+            this.z.Click += new System.EventHandler(this.z_Click);
             // 
             // btnSuaDayNha
             // 
@@ -140,6 +141,7 @@
             this.btnSuaDayNha.StyleController = this.layoutControl1;
             this.btnSuaDayNha.TabIndex = 8;
             this.btnSuaDayNha.Text = "Sửa";
+            this.btnSuaDayNha.Click += new System.EventHandler(this.btnSuaDayNha_Click);
             // 
             // btnLuuDayNha
             // 
@@ -150,6 +152,7 @@
             this.btnLuuDayNha.StyleController = this.layoutControl1;
             this.btnLuuDayNha.TabIndex = 7;
             this.btnLuuDayNha.Text = "Lưu";
+            this.btnLuuDayNha.Click += new System.EventHandler(this.btnLuuDayNha_Click);
             // 
             // btnThemDayNha
             // 
@@ -317,7 +320,7 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "Home";
             this.Size = new System.Drawing.Size(745, 393);
-            this.Load += new System.EventHandler(this.Home_Load);
+       //     this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

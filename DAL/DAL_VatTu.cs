@@ -47,6 +47,7 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
+
                 row["VatTuId"] = vatTu.VatTuId;
                 row["tenVatTu"] = vatTu.TenVatTu;
                 row["soLuong"] = vatTu.SoLuong;
@@ -100,7 +101,6 @@ namespace DAL
 
                 if (row != null)
                 {
-                    row["VatTuId"] = vatTu.VatTuId;
                     row["tenVatTu"] = vatTu.TenVatTu;
                     row["soLuong"] = vatTu.SoLuong;
                     row["ghiChu"] = vatTu.GhiChu;

@@ -1,6 +1,6 @@
 ﻿using DAL;
 using DTO;
-
+using System.Data;
 namespace BUS
 {
     public class BUS_LoaiPhong
@@ -19,6 +19,10 @@ namespace BUS
         public bool Update(LoaiPhong loaiPhong)
         {
             return this.LoaiPhong.Update(loaiPhong);
+        }
+        public DataTable GetData()
+        {
+            return this.LoaiPhong.GetData();
         }
     }
 }

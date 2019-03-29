@@ -97,34 +97,7 @@ namespace QuanLyKTX
             }
         }
 
-        private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCDanToc danToc = new UCDanToc();
-            DevExpress.XtraTab.XtraTabPage tabDanToc = new DevExpress.XtraTab.XtraTabPage();
-            tabDanToc.Name = "tabDanToc";
-            tabDanToc.Text = "Dân Tộc";
-            tabDanToc.Controls.Add(danToc);
-            danToc.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Dân Tộc")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabDanToc);
-                xtabHienThi.SelectedTabPage = tabDanToc;
-            }
-        }
+     
 
         private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

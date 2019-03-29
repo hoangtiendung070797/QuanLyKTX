@@ -1,6 +1,6 @@
 ﻿using DAL;
 using DTO;
-
+using System.Data;
 namespace BUS
 {
     public class BUS_DayNha
@@ -20,6 +20,9 @@ namespace BUS
         {
             return this.dayNha.Update(dayNha);
         }
-
+        public DataTable GetData()
+        {
+            return this.dayNha.GetData();
+        }
     }
 }

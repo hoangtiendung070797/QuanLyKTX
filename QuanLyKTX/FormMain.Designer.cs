@@ -459,7 +459,7 @@
             this.btnDanToc.Name = "btnDanToc";
             this.btnDanToc.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnDanToc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanToc_ItemClick);
+         //   this.btnDanToc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanToc_ItemClick);
             // 
             // btnTonGiao
             // 
@@ -708,7 +708,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnClass);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnViPham);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnCity);
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnDanToc);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnTonGiao);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnQuocTich);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
