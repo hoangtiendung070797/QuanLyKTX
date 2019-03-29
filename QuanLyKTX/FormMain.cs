@@ -7,15 +7,17 @@ namespace QuanLyKTX
 {
     public partial class fmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        #region Properties
+        #endregion
+
+        #region Initialize
+        
+
         public fmMain()
         {
             InitializeComponent();
         }
-        public void skins()
-        {
-            DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            themes.LookAndFeel.SkinName = "Office 2013 Dark Gray";
-        }
+       
         
         private void fmMain_Load(object sender, EventArgs e)
         {
@@ -24,7 +26,8 @@ namespace QuanLyKTX
   
 
         }
-
+        #endregion
+        #region Methods
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
@@ -401,5 +404,29 @@ namespace QuanLyKTX
             formRestore.ShowDialog();
             
         }
+
+        public void skins()
+        {
+            DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            themes.LookAndFeel.SkinName = "Office 2013 Dark Gray";
+        }
+
+        public void Disable()
+        {
+            foreach (Control item in this.Controls)
+            {
+                item.Enabled = false;
+            }
+
+        }
+        public void Enable()
+        {
+            foreach (Control item in this.Controls)
+            {
+                item.Enabled = true;
+            }
+
+        }
+        #endregion
     }
 }
