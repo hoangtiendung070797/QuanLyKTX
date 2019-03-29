@@ -21,10 +21,29 @@ namespace QuanLyKTX
             themes.LookAndFeel.SkinName = "DevExpress Style";
         }
         
+        public void Disable()
+        {
+            foreach (Control item in this.Controls)
+            {
+                item.Enabled = false;
+            }
+            
+        }
+        public void Enable()
+        {
+            foreach (Control item in this.Controls)
+            {
+                item.Enabled = true;
+            }
+
+        }
         private void fmMain_Load(object sender, EventArgs e)
         {
            
             skins();
+          //  Disable();
+            FrmDangNhap frmDangNhap = new FrmDangNhap();
+            frmDangNhap.ShowDialog();
   
 
         }
@@ -268,13 +287,15 @@ namespace QuanLyKTX
 
         private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            UCHoSo uCHoSo = new UCHoSo();
+            
+         
+            UCHoSo hoSo = new UCHoSo();
             DevExpress.XtraTab.XtraTabPage tabHoSo = new DevExpress.XtraTab.XtraTabPage();
             tabHoSo.Name = "tabHoSo";
             
             tabHoSo.Text = "Hồ sơ";
-            tabHoSo.Controls.Add(uCHoSo);
-            uCHoSo.Dock = DockStyle.Fill;
+            tabHoSo.Controls.Add(hoSo);
+            hoSo.Dock = DockStyle.Fill;
             int t = 0;
             foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
             {
@@ -294,6 +315,12 @@ namespace QuanLyKTX
                 xtabHienThi.TabPages.Add(tabHoSo);
                 xtabHienThi.SelectedTabPage = tabHoSo;
             }
+        }
+
+        private void fmMain_Click(object sender, EventArgs e)
+        {
+            //FrmDangNhap frmDangNhap = new FrmDangNhap();
+            //frmDangNhap.ShowDialog();
         }
     }
 }

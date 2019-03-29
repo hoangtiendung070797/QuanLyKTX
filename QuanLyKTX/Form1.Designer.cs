@@ -796,6 +796,7 @@
             this.Text = "QUẢN LÝ KÝ TÚC XÁ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fmMain_Load);
+            this.Click += new System.EventHandler(this.fmMain_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtabHienThi)).EndInit();

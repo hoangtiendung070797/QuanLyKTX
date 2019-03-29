@@ -26,5 +26,17 @@ namespace QuanLyKTX
         {
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmHoSo frmHoSo = new FrmHoSo();
+            frmHoSo.ShowDialog();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            FrmThongTinHoSo frmThongTinHoSo = new FrmThongTinHoSo();
+            frmThongTinHoSo.ShowDialog();
+        }
     }
 }
