@@ -1,25 +1,31 @@
 ﻿using DAL;
 using DTO;
-
+using System.Data;
 namespace BUS
 {
     public class BUS_Lop
     {
         DAL_Lop lop = new DAL_Lop();
+
+        public DAL_Lop Lop { get => lop; set => lop = value; }
+
         public bool Insert(Lop lop)
         {
-            return this.lop.Insert(lop);
+            return this.Lop.Insert(lop);
         }
 
         public bool Delete(int lopId)
         {
-            return this.lop.Delete(lopId);
+            return this.Lop.Delete(lopId);
         }
 
         public bool Update(Lop lop)
         {
-            return this.lop.Update(lop);
+            return this.Lop.Update(lop);
         }
-
+        public DataTable GetData()
+        {
+            return this.Lop.GetData();
+        }
     }
 }

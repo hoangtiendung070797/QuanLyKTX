@@ -6,7 +6,6 @@ namespace BUS
 {
     public class BUS_QuocTich
     {
-
         private DAL_QuocTich quocTich = new DAL_QuocTich();
 
         public DAL_QuocTich QuocTich { get => quocTich; set => quocTich = value; }

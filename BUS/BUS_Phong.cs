@@ -1,25 +1,32 @@
 ﻿using DAL;
 using DTO;
+using System.Data;
 
 namespace BUS
 {
     public class BUS_Phong
     {
-        DAL_DonVi phong = new DAL_DonVi();
-        public bool Insert(DonVi phong)
+        DAL_Phong phong = new DAL_Phong();
+
+        public DAL_Phong Phong { get => phong; set => phong = value; }
+
+        public bool Insert(Phong phong)
         {
-            return this.phong.Insert(phong);
+            return this.Phong.Insert(phong);
         }
 
-        public bool Delete(int PhongId)
+        public bool Delete(string PhongId)
         {
-            return this.phong.Delete(PhongId);
+            return this.Phong.Delete(PhongId);
         }
 
-        public bool Update(DonVi phong)
+        public bool Update(Phong phong)
         {
-            return this.phong.Update(phong);
+            return this.Phong.Update(phong);
         }
-
+        public DataTable GetData()
+        {
+            return this.Phong.GetData();
+        }
     }
 }
