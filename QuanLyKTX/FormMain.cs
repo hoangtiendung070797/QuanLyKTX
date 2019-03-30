@@ -2,6 +2,7 @@
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using QuanLyKTX.Forms;
+using QuanLyKTX.UserControls.UCGiaoDich;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -280,6 +281,41 @@ namespace QuanLyKTX
             FormDangNhap formDangNhap = new FormDangNhap();
             Disable();
             formDangNhap.ShowDialog();
+        }
+
+        private void xtraTabPageStart_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnXepPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UCXepPhong uCXepPhong = new UCXepPhong();
+            DevExpress.XtraTab.XtraTabPage xtraTabXepPhong = new DevExpress.XtraTab.XtraTabPage();
+          
+            xtraTabXepPhong.Text = "Xếp phòng";
+            xtraTabXepPhong.Controls.Add(uCXepPhong);
+            uCXepPhong.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtraTabControlMain.TabPages)
+            {
+                if (tab.Text == "Nhà")
+                {
+                    xtraTabControlMain.SelectedTabPage = tab;
+                    t = 1;
+                }
+
+            }
+            if (t == 1)
+            {
+
+            }
+            else
+            {
+                xtraTabControlMain.TabPages.Add(xtraTabXepPhong);
+                xtraTabControlMain.SelectedTabPage = xtraTabXepPhong;
+            }
+
         }
     }
 }

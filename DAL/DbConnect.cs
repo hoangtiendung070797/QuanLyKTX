@@ -4,6 +4,6 @@ namespace DAL
 {
     public class DbConnect
     {
-        protected SqlConnection connection = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True");
+        protected SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-APH6IS0;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True");
     }
 }
