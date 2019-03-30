@@ -1,6 +1,9 @@
-﻿using QuanLyKTX.Forms;
-using QuanLyKTX.UserControls;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraTab;
+using DevExpress.XtraTab.ViewInfo;
+using QuanLyKTX.Forms;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -8,14 +11,20 @@ namespace QuanLyKTX
     public partial class fmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         #region Properties
+        public static XtraTabControl tabstatic;
+        public enum EnumUCDanhMuc
+        {
+            UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu
+        }
         #endregion
 
         #region Initialize
-        
+
 
         public fmMain()
         {
             InitializeComponent();
+            tabstatic = xtraTabControlMain;
         }
        
         
@@ -23,388 +32,14 @@ namespace QuanLyKTX
         {
            
             skins();
+            Login();
   
 
         }
         #endregion
         #region Methods
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void xtabHienThi_CloseButtonClick(object sender, EventArgs e)
-        {
-            xtabHienThi.TabPages.Remove(xtabHienThi.SelectedTabPage);
-            //DevExpress.XtraTab.XtraTabControl TabControl = (DevExpress.XtraTab.XtraTabControl)sender;
-            // int i = TabControl.SelectedTabPageIndex;
-            //TabControl.TabPages.RemoveAt(TabControl.SelectedTabPageIndex);
-            // TabControl.SelectedTabPageIndex = i - 1;
-        }
-
-        private void btnHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Home home = new Home();
-            DevExpress.XtraTab.XtraTabPage xtraTabHome = new DevExpress.XtraTab.XtraTabPage();
-            xtraTabHome.Name = "tabHome";
-            xtraTabHome.Text = "Nhà";
-            xtraTabHome.Controls.Add(home);
-            home.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage  tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Nhà")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-                
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(xtraTabHome);
-                xtabHienThi.SelectedTabPage = xtraTabHome;
-            }
-        }
-
-        private void btnCity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCTinhThanh tinhThanh = new UCTinhThanh();
-            DevExpress.XtraTab.XtraTabPage tabTinhThanh = new DevExpress.XtraTab.XtraTabPage();           
-            tabTinhThanh.Name = "tabTinhThanh";
-            tabTinhThanh.Text = "Tỉnh Thành";
-            tabTinhThanh.Controls.Add(tinhThanh);
-            tinhThanh.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Tỉnh Thành")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabTinhThanh);
-                xtabHienThi.SelectedTabPage = tabTinhThanh;
-            }
-        }
-
-        private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCDanToc danToc = new UCDanToc();
-            DevExpress.XtraTab.XtraTabPage tabDanToc = new DevExpress.XtraTab.XtraTabPage();
-            tabDanToc.Name = "tabDanToc";
-            tabDanToc.Text = "Dân Tộc";
-            tabDanToc.Controls.Add(danToc);
-            danToc.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Dân Tộc")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabDanToc);
-                xtabHienThi.SelectedTabPage = tabDanToc;
-            }
-        }
-
-        private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCQuocTich quocTich = new UCQuocTich();
-            DevExpress.XtraTab.XtraTabPage tabQuocTich = new DevExpress.XtraTab.XtraTabPage();
-            tabQuocTich.Name = "tabQuocTich";
-            tabQuocTich.Text = "Quốc tịch";
-            tabQuocTich.Controls.Add(quocTich);
-            quocTich.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Quốc tịch")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabQuocTich);
-                xtabHienThi.SelectedTabPage = tabQuocTich;
-            }
-        }
-
-        private void btnGiaPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCGiaLoaiPhong giaLoaiPhong = new UCGiaLoaiPhong();
-            DevExpress.XtraTab.XtraTabPage tabGiaLoai = new DevExpress.XtraTab.XtraTabPage();
-            tabGiaLoai.Name = "tabGiaLoaiPhong";
-            tabGiaLoai.Text = "Giá loại phòng";
-            tabGiaLoai.Controls.Add(giaLoaiPhong);
-            giaLoaiPhong.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Giá loại phòng")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabGiaLoai);
-                xtabHienThi.SelectedTabPage = tabGiaLoai;
-            }
-        }
-
-        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormBackUp formBackUp = new FormBackUp();
-            formBackUp.Show();
-        }
-
-        private void btnTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-            UCTonGiao TonGiao = new UCTonGiao();
-            DevExpress.XtraTab.XtraTabPage tabTonGiao = new DevExpress.XtraTab.XtraTabPage();
-            tabTonGiao.Name = "tabTonGiao";
-            tabTonGiao.Text = "Tôn Giáo";
-            tabTonGiao.Controls.Add(TonGiao);
-            TonGiao.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Tôn Giáo")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabTonGiao);
-                xtabHienThi.SelectedTabPage = tabTonGiao;
-            }
-        }
-
-        private void btnRoom_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCPhong Phong = new UCPhong();
-            DevExpress.XtraTab.XtraTabPage tabPhong = new DevExpress.XtraTab.XtraTabPage();
-            tabPhong.Name = "tabPhong";
-            tabPhong.Text = "Phòng";
-            tabPhong.Controls.Add(Phong);
-            Phong.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Phòng")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabPhong);
-                xtabHienThi.SelectedTabPage = tabPhong;
-            }
-        }
-
-        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCVatTu VatTu = new UCVatTu();
-            DevExpress.XtraTab.XtraTabPage tabvatTu = new DevExpress.XtraTab.XtraTabPage();
-            tabvatTu.Name = "tabVatTu";
-            tabvatTu.Text = "Vật Tư";
-            tabvatTu.Controls.Add(VatTu);
-            VatTu.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Vật Tư")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabvatTu);
-                xtabHienThi.SelectedTabPage = tabvatTu;
-            }
-        }
-
-        private void btnDonVi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCDonVi DonVi = new UCDonVi();
-            DevExpress.XtraTab.XtraTabPage tabdonVi = new DevExpress.XtraTab.XtraTabPage();
-            tabdonVi.Name = "tabDonvi";
-            tabdonVi.Text = "Đơn Vị";
-            tabdonVi.Controls.Add(DonVi);
-            DonVi.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Đơn Vị")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabdonVi);
-                xtabHienThi.SelectedTabPage = tabdonVi;
-            }
-        }
-
-        private void btnClass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCLop Lop = new UCLop();
-            DevExpress.XtraTab.XtraTabPage tabLop = new DevExpress.XtraTab.XtraTabPage();
-            tabLop.Name = "tabLop";
-            tabLop.Text = "Lớp";
-            tabLop.Controls.Add(Lop);
-            Lop.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Lớp")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabLop);
-                xtabHienThi.SelectedTabPage = tabLop;
-            }
-        }
-
-        private void btnViPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCLoiViPham LoiViPham = new UCLoiViPham();
-            DevExpress.XtraTab.XtraTabPage tabLoiViPham = new DevExpress.XtraTab.XtraTabPage();
-            tabLoiViPham.Name = "tabLoiViPham";
-            tabLoiViPham.Text = "Lỗi vi Phạm";
-            tabLoiViPham.Controls.Add(LoiViPham);
-            LoiViPham.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Lỗi vi Phạm")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabLoiViPham);
-                xtabHienThi.SelectedTabPage = tabLoiViPham;
-            }
-        }
-
-        private void btnOject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            UCLoaiDoiTuong LoaiDoiTuong = new UCLoaiDoiTuong();
-            DevExpress.XtraTab.XtraTabPage tabLoaiDoiTuong = new DevExpress.XtraTab.XtraTabPage();
-            tabLoaiDoiTuong.Name = "tabLoaiDoiTuong";
-            tabLoaiDoiTuong.Text = "Loại Đối Tượng";
-            tabLoaiDoiTuong.Controls.Add(LoaiDoiTuong);
-            LoaiDoiTuong.Dock = DockStyle.Fill;
-            int t = 0;
-            foreach (DevExpress.XtraTab.XtraTabPage tab in xtabHienThi.TabPages)
-            {
-                if (tab.Text == "Loại Đối Tượng")
-                {
-                    xtabHienThi.SelectedTabPage = tab;
-                    t = 1;
-                }
-
-            }
-            if (t == 1)
-            {
-
-            }
-            else
-            {
-                xtabHienThi.TabPages.Add(tabLoaiDoiTuong);
-                xtabHienThi.SelectedTabPage = tabLoaiDoiTuong;
-            }
-        }
-
-        private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormRestore formRestore = new FormRestore();
-            formRestore.StartPosition = FormStartPosition.CenterParent;
-            formRestore.ShowDialog();
-            
-        }
-
+        #region Skin
         public void skins()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
@@ -428,5 +63,223 @@ namespace QuanLyKTX
 
         }
         #endregion
+
+        #region Support for TabPages
+
+        private void SelectTabByTitle(String tabTitle, XtraTabControl tabControl)
+        {
+            if (tabControl != null)
+            {
+                XtraTabPage pageToSelect = (from curPage in tabControl.TabPages
+                                            where curPage.Text == tabTitle
+                                            select curPage).FirstOrDefault();
+                if (pageToSelect != null)
+                {
+                    tabControl.SelectedTabPage = pageToSelect;
+                }
+            }
+        }
+
+        #region Close TabPage
+        private void xtraTabControlMain_CloseButtonClick(object sender, EventArgs e)
+        {
+            int h = 0;
+            ClosePageButtonEventArgs arg = e as ClosePageButtonEventArgs;
+            if (xtraTabControlMain.SelectedTabPage.Equals((arg.Page as XtraTabPage)))
+                h = xtraTabControlMain.SelectedTabPageIndex;
+            if ((arg.Page as XtraTabPage).Text != "Start Page")
+            {
+                xtraTabControlMain.TabPages.Remove((arg.Page as XtraTabPage));
+
+                xtraTabControlMain.SelectedTabPageIndex = h - 1;
+            }
+            else
+                XtraMessageBox.Show("Bạn không thể tắt\nTab bắt đầu này !", "Thông báo");
+
+
+        }
+        #endregion
+
+        #region Kiểm tra TabPabPage có tồn tại không
+        public static bool ExitsTabpages(string name)
+        {
+            foreach (XtraTabPage tabpage in tabstatic.TabPages)
+            {
+                if (tabpage.Text == name)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        #endregion
+
+        #region Tìm vị trí TabPage
+        public static int IndexOfTabPage(string name)
+        {
+            int position = 0;
+            for (int i = 0; i < tabstatic.TabPages.Count; i++)
+            {
+                if (tabstatic.TabPages[i].Text == name)
+                    position = i;
+            }
+            return position;
+        }
+        #endregion
+
+        #region Thêm tabpage
+        public void AddTabPages()
+        { 
+            XtraTabPage tabCapNhatSach = new XtraTabPage();
+            tabCapNhatSach.Text = "Cập nhật sách";
+            if (ExitsTabpages(tabCapNhatSach.Text) == false)
+                tabstatic.TabPages.Add(tabCapNhatSach);
+            else
+            {
+                tabCapNhatSach.PageVisible = true;
+            }
+            //ví dụ muốn add 1 UC
+            UCDanToc frm = new UCDanToc();
+
+            // tabCapNhatSach.Controls.Add(frm);
+            tabstatic.TabPages[IndexOfTabPage(tabCapNhatSach.Text)].Controls.Add(frm);
+            frm.Dock = DockStyle.Fill;
+
+            tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabCapNhatSach.Text)];
+        }
+        #endregion
+
+
+        #region Thoát tab
+        public static void thoattab()
+        {
+            int i = tabstatic.SelectedTabPageIndex;
+            tabstatic.TabPages.RemoveAt(i);
+            tabstatic.SelectedTabPageIndex = i - 1;
+        }
+        #endregion
+
+        #endregion
+
+
+        
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+      
+
+        private void btnHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnCity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnGiaPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormBackUp formBackUp = new FormBackUp();
+            formBackUp.ShowDialog();
+        }
+
+        private void btnTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnRoom_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void btnDonVi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnClass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnViPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void btnOject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormRestore formRestore = new FormRestore();
+            formRestore.StartPosition = FormStartPosition.CenterParent;
+            formRestore.ShowDialog();
+            
+        }
+
+
+
+        #endregion
+        #region Phần Hệ Thống
+        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau();
+            formDoiMatKhau.ShowDialog();
+        }
+
+        private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+        #endregion
+
+
+        public void Login()
+        {
+            Disable();
+            FormDangNhap formDangNhap = new FormDangNhap();
+            formDangNhap.ShowDialog();
+            Enable();
+        }
+
+        public void Logout()
+        {
+            FormDangNhap formDangNhap = new FormDangNhap();
+            Disable();
+            formDangNhap.ShowDialog();
+        }
     }
 }

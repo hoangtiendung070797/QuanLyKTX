@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKTX
 {
-    partial class FrmDangNhap
+    partial class FormDangNhap
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.txtUserName = new DevExpress.XtraEditors.TextEdit();
-            this.txtPassWord = new DevExpress.XtraEditors.TextEdit();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPassWord = new DevExpress.XtraEditors.TextEdit();
+            this.txtUserName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassWord.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -55,27 +55,16 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin đăng nhập";
             // 
-            // labelControl1
+            // checkBox1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(28, 46);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(79, 13);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Tên đăng nhập :";
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(130, 43);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(255, 20);
-            this.txtUserName.TabIndex = 1;
-            // 
-            // txtPassWord
-            // 
-            this.txtPassWord.Location = new System.Drawing.Point(130, 89);
-            this.txtPassWord.Name = "txtPassWord";
-            this.txtPassWord.Size = new System.Drawing.Size(255, 20);
-            this.txtPassWord.TabIndex = 2;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(314, 126);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(70, 20);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Ghi nhớ";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // labelControl2
             // 
@@ -84,6 +73,28 @@
             this.labelControl2.Size = new System.Drawing.Size(78, 13);
             this.labelControl2.TabIndex = 3;
             this.labelControl2.Text = "Mật khẩu          :";
+            // 
+            // txtPassWord
+            // 
+            this.txtPassWord.Location = new System.Drawing.Point(130, 89);
+            this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.Size = new System.Drawing.Size(255, 20);
+            this.txtPassWord.TabIndex = 2;
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(130, 43);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(255, 20);
+            this.txtUserName.TabIndex = 1;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(28, 46);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(79, 13);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Tên đăng nhập :";
             // 
             // btnDangNhap
             // 
@@ -102,18 +113,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(314, 126);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 20);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Ghi nhớ";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // FrmDangNhap
+            // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,14 +121,14 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.groupControl1);
-            this.Name = "FrmDangNhap";
+            this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassWord.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserName.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

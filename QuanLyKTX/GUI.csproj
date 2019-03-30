@@ -114,11 +114,11 @@
     <Compile Include="Forms\FormGiaoDich\FrmThongTinHoSo.designer.cs">
       <DependentUpon>FrmThongTinHoSo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormHeThong\DoiMatKhau.cs">
+    <Compile Include="Forms\FormHeThong\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormHeThong\DoiMatKhau.designer.cs">
-      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    <Compile Include="Forms\FormHeThong\FormDoiMatKhau.designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHeThong\FormBackUp.cs">
       <SubType>Form</SubType>
@@ -138,12 +138,13 @@
     <Compile Include="Forms\FormHeThong\FormRestore.Designer.cs">
       <DependentUpon>FormRestore.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormHeThong\FrmDangNhap.cs">
+    <Compile Include="Forms\FormHeThong\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormHeThong\FrmDangNhap.designer.cs">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    <Compile Include="Forms\FormHeThong\FormDangNhap.designer.cs">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Support\SupportCatchError.cs" />
     <Compile Include="UserControls\UCDanhMuc\UCDayNha.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,11 +157,11 @@
     <Compile Include="UserControls\UCDanhMuc\UCDonVi.designer.cs">
       <DependentUpon>UCDonVi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCDanhMuc\UCGiaLoaiPhong.cs">
+    <Compile Include="UserControls\UCDanhMuc\UCLoaiPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UCDanhMuc\UCGiaLoaiPhong.designer.cs">
-      <DependentUpon>UCGiaLoaiPhong.cs</DependentUpon>
+    <Compile Include="UserControls\UCDanhMuc\UCLoaiPhong.designer.cs">
+      <DependentUpon>UCLoaiPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCLoaiDoiTuong.cs">
       <SubType>UserControl</SubType>
@@ -250,8 +251,8 @@
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmThongTinHoSo.resx">
       <DependentUpon>FrmThongTinHoSo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormHeThong\DoiMatKhau.resx">
-      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormHeThong\FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHeThong\FormBackUp.resx">
       <DependentUpon>FormBackUp.cs</DependentUpon>
@@ -262,8 +263,8 @@
     <EmbeddedResource Include="Forms\FormHeThong\FormRestore.resx">
       <DependentUpon>FormRestore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormHeThong\FrmDangNhap.resx">
-      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormHeThong\FormDangNhap.resx">
+      <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDayNha.resx">
       <DependentUpon>UCDayNha.cs</DependentUpon>
@@ -271,8 +272,8 @@
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDonVi.resx">
       <DependentUpon>UCDonVi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCDanhMuc\UCGiaLoaiPhong.resx">
-      <DependentUpon>UCGiaLoaiPhong.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCDanhMuc\UCLoaiPhong.resx">
+      <DependentUpon>UCLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCLoaiDoiTuong.resx">
       <DependentUpon>UCLoaiDoiTuong.cs</DependentUpon>

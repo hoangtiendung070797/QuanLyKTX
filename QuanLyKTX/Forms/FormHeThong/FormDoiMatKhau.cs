@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace QuanLyKTX
 {
-    public partial class DoiMatKhau : DevExpress.XtraEditors.XtraForm
+    public partial class FormDoiMatKhau : DevExpress.XtraEditors.XtraForm
     {
-        public DoiMatKhau()
+        public FormDoiMatKhau()
         {
             InitializeComponent();
             txtMatKhauOdd.Focus();

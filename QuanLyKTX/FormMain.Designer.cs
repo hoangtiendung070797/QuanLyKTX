@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMK = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -39,18 +37,18 @@
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhatKyHoatDong = new DevExpress.XtraBars.BarButtonItem();
             this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnKhoiPhuc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongTinNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhanQuyenNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
@@ -82,7 +80,7 @@
             this.barButtonItem30 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem35 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -101,22 +99,17 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.xtabHienThi = new DevExpress.XtraTab.XtraTabControl();
-            this.backstageViewControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
-            this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
-            this.backstageViewTabItem1 = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
+            this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtabHienThi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).BeginInit();
-            this.backstageViewControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
+            this.xtraTabControlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ribbonControl1.Images = this.imageCollection1;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.btnNhanVien,
@@ -126,18 +119,18 @@
             this.barButtonItem5,
             this.barButtonItem6,
             this.barButtonItem1,
-            this.barButtonItem2,
+            this.btnDoiMatKhau,
             this.barButtonItem4,
-            this.barButtonItem7,
+            this.btnNhatKyHoatDong,
             this.btnSaoLuu,
             this.btnKhoiPhuc,
             this.barButtonItem10,
-            this.barButtonItem11,
+            this.btnDangXuat,
             this.barButtonItem12,
             this.skinRibbonGalleryBarItem1,
-            this.barButtonItem13,
+            this.btnThongTinNguoiDung,
             this.barButtonItem14,
-            this.barButtonItem16,
+            this.btnPhanQuyenNguoiDung,
             this.barButtonItem17,
             this.barButtonItem18,
             this.barButtonItem19,
@@ -169,7 +162,7 @@
             this.barButtonItem30,
             this.barButtonItem31,
             this.barButtonItem32,
-            this.barButtonItem35});
+            this.btnNguoiDung});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 1;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -182,25 +175,6 @@
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.Size = new System.Drawing.Size(1237, 143);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
-            // 
-            // imageCollection1
-            // 
-            this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
-            this.imageCollection1.Images.SetKeyName(0, "Access_50px.png");
-            this.imageCollection1.Images.SetKeyName(1, "Add User Male_48px.png");
-            this.imageCollection1.Images.SetKeyName(2, "Add_48px.png");
-            this.imageCollection1.Images.SetKeyName(3, "Data Backup_40px.png");
-            this.imageCollection1.Images.SetKeyName(4, "Data Backup_48px.png");
-            this.imageCollection1.Images.SetKeyName(5, "Data Backup_50px.png");
-            this.imageCollection1.Images.SetKeyName(6, "Data Recovery_48px.png");
-            this.imageCollection1.Images.SetKeyName(7, "Data Recovery_50px.png");
-            this.imageCollection1.Images.SetKeyName(8, "Denied_48px.png");
-            this.imageCollection1.Images.SetKeyName(9, "Find User Male_48px.png");
-            this.imageCollection1.Images.SetKeyName(10, "Key_48px.png");
-            this.imageCollection1.Images.SetKeyName(11, "Shutdown_48px.png");
-            this.imageCollection1.Images.SetKeyName(12, "User_48px.png");
-            this.imageCollection1.Images.SetKeyName(13, "Activity History_48px.png");
-            this.imageCollection1.Images.SetKeyName(14, "Team_48px.png");
             // 
             // btnNhanVien
             // 
@@ -244,12 +218,13 @@
             this.barButtonItem1.Id = 7;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem2
+            // btnDoiMatKhau
             // 
-            this.barButtonItem2.Caption = "Đổi mật khẩu";
-            this.barButtonItem2.Id = 8;
-            this.barButtonItem2.ImageOptions.ImageIndex = 10;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnDoiMatKhau.Caption = "Đổi mật khẩu";
+            this.btnDoiMatKhau.Id = 8;
+            this.btnDoiMatKhau.ImageOptions.ImageIndex = 10;
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -257,12 +232,12 @@
             this.barButtonItem4.Id = 9;
             this.barButtonItem4.Name = "barButtonItem4";
             // 
-            // barButtonItem7
+            // btnNhatKyHoatDong
             // 
-            this.barButtonItem7.Caption = "Nhật kí hoạt động";
-            this.barButtonItem7.Id = 10;
-            this.barButtonItem7.ImageOptions.ImageIndex = 13;
-            this.barButtonItem7.Name = "barButtonItem7";
+            this.btnNhatKyHoatDong.Caption = "Nhật kí hoạt động";
+            this.btnNhatKyHoatDong.Id = 10;
+            this.btnNhatKyHoatDong.ImageOptions.ImageIndex = 13;
+            this.btnNhatKyHoatDong.Name = "btnNhatKyHoatDong";
             // 
             // btnSaoLuu
             // 
@@ -285,14 +260,15 @@
             this.barButtonItem10.Id = 13;
             this.barButtonItem10.Name = "barButtonItem10";
             // 
-            // barButtonItem11
+            // btnDangXuat
             // 
-            this.barButtonItem11.Caption = "Đăng xuất";
-            this.barButtonItem11.Id = 14;
-            this.barButtonItem11.ImageOptions.Image = global::QuanLyKTX.Properties.Resources.Shutdown_48px;
-            this.barButtonItem11.Name = "barButtonItem11";
-            this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnDangXuat.Caption = "Đăng xuất";
+            this.btnDangXuat.Id = 14;
+            this.btnDangXuat.ImageOptions.Image = global::QuanLyKTX.Properties.Resources.Shutdown_48px;
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -306,12 +282,12 @@
             this.skinRibbonGalleryBarItem1.Id = 16;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
-            // barButtonItem13
+            // btnThongTinNguoiDung
             // 
-            this.barButtonItem13.Caption = "Thông tin người dùng";
-            this.barButtonItem13.Id = 17;
-            this.barButtonItem13.ImageOptions.ImageIndex = 12;
-            this.barButtonItem13.Name = "barButtonItem13";
+            this.btnThongTinNguoiDung.Caption = "Thông tin người dùng";
+            this.btnThongTinNguoiDung.Id = 17;
+            this.btnThongTinNguoiDung.ImageOptions.ImageIndex = 12;
+            this.btnThongTinNguoiDung.Name = "btnThongTinNguoiDung";
             // 
             // barButtonItem14
             // 
@@ -319,14 +295,14 @@
             this.barButtonItem14.Id = 18;
             this.barButtonItem14.Name = "barButtonItem14";
             // 
-            // barButtonItem16
+            // btnPhanQuyenNguoiDung
             // 
-            this.barButtonItem16.Caption = "Phân quyền người dùng";
-            this.barButtonItem16.Id = 20;
-            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.barButtonItem16.ImageOptions.ImageIndex = 14;
-            this.barButtonItem16.Name = "barButtonItem16";
-            this.barButtonItem16.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnPhanQuyenNguoiDung.Caption = "Phân quyền người dùng";
+            this.btnPhanQuyenNguoiDung.Id = 20;
+            this.btnPhanQuyenNguoiDung.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhanQuyenNguoiDung.ImageOptions.Image")));
+            this.btnPhanQuyenNguoiDung.ImageOptions.ImageIndex = 14;
+            this.btnPhanQuyenNguoiDung.Name = "btnPhanQuyenNguoiDung";
+            this.btnPhanQuyenNguoiDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // barButtonItem17
@@ -598,14 +574,15 @@
             this.barButtonItem32.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
-            // barButtonItem35
+            // btnNguoiDung
             // 
-            this.barButtonItem35.Caption = "Người dùng";
-            this.barButtonItem35.Id = 52;
-            this.barButtonItem35.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem35.ImageOptions.Image")));
-            this.barButtonItem35.Name = "barButtonItem35";
-            this.barButtonItem35.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnNguoiDung.Caption = "Người dùng";
+            this.btnNguoiDung.Id = 52;
+            this.btnNguoiDung.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.ImageOptions.Image")));
+            this.btnNguoiDung.Name = "btnNguoiDung";
+            this.btnNguoiDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNguoiDung_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -620,16 +597,16 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem13);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem16);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnDoiMatKhau);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnNhatKyHoatDong);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnThongTinNguoiDung);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnPhanQuyenNguoiDung);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Bảo mật";
             // 
             // ribbonPageGroup8
             // 
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem35);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnNguoiDung);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Quản lý";
             // 
@@ -648,7 +625,7 @@
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnDangXuat);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPage2
@@ -743,38 +720,27 @@
             this.barButtonItem15.Id = -1;
             this.barButtonItem15.Name = "barButtonItem15";
             // 
-            // xtabHienThi
+            // xtraTabControlMain
             // 
-            this.xtabHienThi.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
-            this.xtabHienThi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtabHienThi.HeaderButtonsShowMode = DevExpress.XtraTab.TabButtonShowMode.Always;
-            this.xtabHienThi.Location = new System.Drawing.Point(0, 143);
-            this.xtabHienThi.Name = "xtabHienThi";
-            this.xtabHienThi.Size = new System.Drawing.Size(1237, 493);
-            this.xtabHienThi.TabIndex = 3;
-            this.xtabHienThi.CloseButtonClick += new System.EventHandler(this.xtabHienThi_CloseButtonClick);
+            this.xtraTabControlMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
+            this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 143);
+            this.xtraTabControlMain.MultiLine = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabControlMain.Name = "xtraTabControlMain";
+            this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageStart;
+            this.xtraTabControlMain.Size = new System.Drawing.Size(1237, 493);
+            this.xtraTabControlMain.TabIndex = 7;
+            this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPageStart});
+            this.xtraTabControlMain.CloseButtonClick += new System.EventHandler(this.xtraTabControlMain_CloseButtonClick);
             // 
-            // backstageViewControl1
+            // xtraTabPageStart
             // 
-            this.backstageViewControl1.Controls.Add(this.backstageViewClientControl1);
-            this.backstageViewControl1.Items.Add(this.backstageViewTabItem1);
-            this.backstageViewControl1.Location = new System.Drawing.Point(71, 214);
-            this.backstageViewControl1.Name = "backstageViewControl1";
-            this.backstageViewControl1.Size = new System.Drawing.Size(480, 150);
-            this.backstageViewControl1.TabIndex = 5;
-            // 
-            // backstageViewClientControl1
-            // 
-            this.backstageViewClientControl1.Location = new System.Drawing.Point(0, 0);
-            this.backstageViewClientControl1.Name = "backstageViewClientControl1";
-            this.backstageViewClientControl1.Size = new System.Drawing.Size(150, 150);
-            this.backstageViewClientControl1.TabIndex = 1;
-            // 
-            // backstageViewTabItem1
-            // 
-            this.backstageViewTabItem1.Caption = "backstageViewTabItem1";
-            this.backstageViewTabItem1.ContentControl = this.backstageViewClientControl1;
-            this.backstageViewTabItem1.Name = "backstageViewTabItem1";
+            this.xtraTabPageStart.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.xtraTabPageStart.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageStart.Image")));
+            this.xtraTabPageStart.Name = "xtraTabPageStart";
+            this.xtraTabPageStart.Size = new System.Drawing.Size(1231, 446);
+            this.xtraTabPageStart.Text = "Start Page";
             // 
             // fmMain
             // 
@@ -782,8 +748,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1237, 636);
-            this.Controls.Add(this.xtabHienThi);
-            this.Controls.Add(this.backstageViewControl1);
+            this.Controls.Add(this.xtraTabControlMain);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "fmMain";
             this.Ribbon = this.ribbonControl1;
@@ -792,10 +757,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtabHienThi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.backstageViewControl1)).EndInit();
-            this.backstageViewControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
+            this.xtraTabControlMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -819,21 +782,15 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
         private DevExpress.XtraBars.BarButtonItem barButtonItem12;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
-        private DevExpress.Utils.ImageCollection imageCollection1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
         private DevExpress.XtraBars.BarButtonItem barButtonItem17;
         private DevExpress.XtraBars.BarButtonItem barButtonItem18;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
@@ -844,7 +801,6 @@
         private DevExpress.XtraBars.BarButtonItem btnRoom;
         private DevExpress.XtraBars.BarButtonItem barButtonItem21;
         private DevExpress.XtraBars.BarButtonItem barButtonItem22;
-        private DevExpress.XtraTab.XtraTabControl xtabHienThi;
         private DevExpress.XtraBars.BarButtonItem btnGiaPhong;
         private DevExpress.XtraBars.BarButtonItem btnOject;
         private DevExpress.XtraBars.BarButtonItem btnDonVi;
@@ -871,13 +827,17 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem32;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem35;
         public DevExpress.XtraBars.BarButtonItem btnSaoLuu;
         public DevExpress.XtraBars.BarButtonItem btnKhoiPhuc;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
-        private DevExpress.XtraBars.Ribbon.BackstageViewControl backstageViewControl1;
-        private DevExpress.XtraBars.Ribbon.BackstageViewClientControl backstageViewClientControl1;
-        private DevExpress.XtraBars.Ribbon.BackstageViewTabItem backstageViewTabItem1;
+        public DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
+        public DevExpress.XtraBars.BarButtonItem btnNhatKyHoatDong;
+        public DevExpress.XtraBars.BarButtonItem btnThongTinNguoiDung;
+        public DevExpress.XtraBars.BarButtonItem btnPhanQuyenNguoiDung;
+        public DevExpress.XtraBars.BarButtonItem btnDangXuat;
+        public DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageStart;
+        public DevExpress.XtraBars.BarButtonItem btnNguoiDung;
     }
 }
 
