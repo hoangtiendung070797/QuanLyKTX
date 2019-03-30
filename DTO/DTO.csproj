@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieuBaoHongVatTu.cs" />
     <Compile Include="ChiTietPhieuCapPhatVatTu.cs" />
+    <Compile Include="DanToc.cs" />
     <Compile Include="DayNha.cs" />
     <Compile Include="DoiTuong.cs" />
     <Compile Include="DonVi.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="NguoiDung.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="NhatKyHoatDong.cs" />
+    <Compile Include="PhanQuyen.cs" />
     <Compile Include="PhieuBaoHongVatTu.cs" />
     <Compile Include="PhieuCapPhatVatTu.cs" />
     <Compile Include="PhieuChi.cs" />
