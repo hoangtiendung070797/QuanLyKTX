@@ -47,8 +47,13 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["tenPhanQuyen"] = phanQuyen.TenPhanQuyen;
-               
+                row["tenNhomChucNang"] = phanQuyen.TenNhomChucNang;
+                row["tenChucNang"] = phanQuyen.TenChucNang;
+                row["chucNangThem"] = phanQuyen.ChucNangThem;
+                row["chucNangSua"] = phanQuyen.ChucNangSua;
+                row["chucNangXoa"] = phanQuyen.ChucNangXoa;
+                row["chucNangDoc"] = phanQuyen.ChucNangDoc;
+
                 row["NguoiDungId"] = phanQuyen.NguoiDungId;
 
                 table.Rows.Add(row);
@@ -98,7 +103,12 @@ namespace DAL
 
                 if (row != null)
                 {
-                    row["tenPhanQuyen"] = phanQuyen.TenPhanQuyen;
+                    row["tenNhomChucNang"] = phanQuyen.TenNhomChucNang;
+                    row["tenChucNang"] = phanQuyen.TenChucNang;
+                    row["chucNangThem"] = phanQuyen.ChucNangThem;
+                    row["chucNangSua"] = phanQuyen.ChucNangSua;
+                    row["chucNangXoa"] = phanQuyen.ChucNangXoa;
+                    row["chucNangDoc"] = phanQuyen.ChucNangDoc;
 
                     row["NguoiDungId"] = phanQuyen.NguoiDungId;
 
@@ -112,6 +122,23 @@ namespace DAL
             {
 
                 return false;
+            }
+        }
+
+
+        public DataTable GetDetailPhanQuyen()
+        {
+            try
+            {
+                string query = "SELECT * FROM PhanQuyen WHERE ";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
             }
         }
         #endregion

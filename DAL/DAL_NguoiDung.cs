@@ -51,8 +51,7 @@ namespace DAL
                 row["tenDayDu"] = nguoiDung.TenDayDu;
                 row["sdt"] = nguoiDung.Sdt;
                 row["diachi"] = nguoiDung.DiaChi;
-                row["ChucVu"] = nguoiDung.ChucVu;
-                row["quyen"] = nguoiDung.Quyen;
+              
 
                 table.Rows.Add(row);
 
@@ -106,8 +105,7 @@ namespace DAL
                     row["tenDayDu"] = nguoiDung.TenDayDu;
                     row["sdt"] = nguoiDung.Sdt;
                     row["diachi"] = nguoiDung.DiaChi;
-                    row["ChucVu"] = nguoiDung.ChucVu;
-                    row["quyen"] = nguoiDung.Quyen;
+                 
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -120,6 +118,11 @@ namespace DAL
                 return false;
             }
         }
+
+
+
+
+      
         #endregion
     }
 }

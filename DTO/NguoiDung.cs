@@ -11,8 +11,7 @@ namespace DTO
         private string tenDayDu;
         private string sdt;
         private string diaChi;
-        private string chucVu;
-        private int quyen;
+
 
         public int NguoiDungId { get => nguoiDungId; set => nguoiDungId = value; }
         public string TenDangNhap { get => tenDangNhap; set => tenDangNhap = value; }
@@ -20,14 +19,13 @@ namespace DTO
         public string TenDayDu { get => tenDayDu; set => tenDayDu = value; }
         public string Sdt { get => sdt; set => sdt = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
-        public string ChucVu { get => chucVu; set => chucVu = value; }
-        public int Quyen { get => quyen; set => quyen = value; }
+
 
         #endregion
 
 
         #region Initialize
-        public NguoiDung(int id, string acc, string mk, string ten, string sdt, string diachi, string chucvu, int quyen=3)
+        public NguoiDung(int id, string acc, string mk, string ten, string sdt, string diachi)
         {
             this.NguoiDungId = id;
             this.TenDangNhap = acc;
@@ -35,12 +33,14 @@ namespace DTO
             this.TenDayDu = ten;
             this.Sdt = sdt;
             this.DiaChi = diachi;
-            this.ChucVu = chucvu;
-            this.Quyen = quyen;
+  
         }
 
       
+        public NguoiDung()
+        {
 
+        }
 
 
         #endregion
