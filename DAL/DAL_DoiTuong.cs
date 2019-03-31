@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM DayNha";
+                string query = "SELECT * FROM DoiTuong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);

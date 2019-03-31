@@ -48,6 +48,7 @@
             this.btnLoiViPham = new DevExpress.XtraNavBar.NavBarItem();
             this.btnLoaiDoiTuong = new DevExpress.XtraNavBar.NavBarItem();
             this.btnLoaiPhong = new DevExpress.XtraNavBar.NavBarItem();
+            this.btnDanToc = new DevExpress.XtraNavBar.NavBarItem();
             this.btnDuongDanFile = new DevExpress.XtraEditors.SimpleButton();
             this.btnThucHien = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -138,10 +139,12 @@
             this.btnDayNha,
             this.btnLoiViPham,
             this.btnLoaiDoiTuong,
-            this.btnLoaiPhong});
+            this.btnLoaiPhong,
+            this.btnDanToc});
             this.navBarControlImport.Location = new System.Drawing.Point(12, 12);
             this.navBarControlImport.Name = "navBarControlImport";
             this.navBarControlImport.OptionsNavPane.ExpandedWidth = 181;
+            this.navBarControlImport.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.SideBar;
             this.navBarControlImport.Size = new System.Drawing.Size(181, 520);
             this.navBarControlImport.TabIndex = 4;
             this.navBarControlImport.Text = "navBarControl1";
@@ -163,7 +166,8 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnDayNha),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnLoiViPham),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnLoaiDoiTuong),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.btnLoaiPhong)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btnLoaiPhong),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btnDanToc)});
             this.navBarGroup1.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.LargeImage")));
             this.navBarGroup1.Name = "navBarGroup1";
             // 
@@ -240,6 +244,12 @@
             this.btnLoaiPhong.Caption = "Loại Phòng";
             this.btnLoaiPhong.Name = "btnLoaiPhong";
             this.btnLoaiPhong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLoaiPhong_LinkClicked);
+            // 
+            // btnDanToc
+            // 
+            this.btnDanToc.Caption = "Dân Tộc";
+            this.btnDanToc.Name = "btnDanToc";
+            this.btnDanToc.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnDanToc_LinkClicked);
             // 
             // btnDuongDanFile
             // 
@@ -398,5 +408,6 @@
         private DevExpress.XtraNavBar.NavBarItem btnLoiViPham;
         private DevExpress.XtraNavBar.NavBarItem btnLoaiDoiTuong;
         private DevExpress.XtraNavBar.NavBarItem btnLoaiPhong;
+        private DevExpress.XtraNavBar.NavBarItem btnDanToc;
     }
 }

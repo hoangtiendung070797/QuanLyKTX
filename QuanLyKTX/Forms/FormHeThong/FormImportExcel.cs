@@ -9,7 +9,7 @@ namespace QuanLyKTX.Forms.FormHeThong
 {
     public enum LuaChon
     {
-        QuocTich, TonGiao, VatTu, TinhThanh, Phong, Lop, NguoiDung, DonVi, DayNha, LoiViPham, LoaiDoiTuong, LoaiPhong,
+        QuocTich, TonGiao, VatTu, TinhThanh, Phong, Lop, NguoiDung, DonVi, DayNha, LoiViPham, LoaiDoiTuong, LoaiPhong,DanToc
     }
     public partial class FormImportExcel : Form
     {
@@ -28,6 +28,7 @@ namespace QuanLyKTX.Forms.FormHeThong
         BUS_LoaiPhong bUS_LoaiPhong = new BUS_LoaiPhong();
         BUS_LoaiDoiTuong bUS_LoaiDoiTuong = new BUS_LoaiDoiTuong();
         BUS_LoiViPham bUS_LoiViPham = new BUS_LoiViPham();
+        BUS_DanToc bUS_DanToc = new BUS_DanToc();
 
         string path = "";
         DataTable table = new DataTable();
@@ -141,10 +142,15 @@ namespace QuanLyKTX.Forms.FormHeThong
         #region Đường dẫn file -không cần chỉnh
         private void btnDuongDanFile_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+          
+            OpenFileDialog browseFile = new OpenFileDialog();
+            browseFile.DereferenceLinks = true;
+            browseFile.Filter = "Excel 2010|*.xlsx|Excel|*.xls";
+           
+            browseFile.Title = "Browse Excel file";
+            if (browseFile.ShowDialog() == DialogResult.OK)
             {
-                path = openFileDialog.FileName;
+                path = browseFile.FileName;
                 lblDuongDan.Text = path;
 
                 table = import.ReadDataFromExcelFile(path);
@@ -384,6 +390,22 @@ namespace QuanLyKTX.Forms.FormHeThong
                     dgvImport.DataSource = bUS_NguoiDung.GetData();
                     dgvImport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     break;
+
+                case (int)LuaChon.DanToc:
+
+                    if (table != null)
+                    {
+
+                        for (int i = 0; i < table.Rows.Count; i++)
+                        {
+                            DanToc danToc = new DanToc();
+                            danToc.TenDanToc = table.Rows[i][1].ToString();
+                            bUS_DanToc.Insert(danToc);
+                        }
+                    }
+                    dgvImport.DataSource = bUS_DanToc.GetData();
+                    dgvImport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    break;
                 default:
                     break;
 
@@ -391,8 +413,15 @@ namespace QuanLyKTX.Forms.FormHeThong
             }
         }
 
+
         #endregion
 
-        
+        private void btnDanToc_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            temp = 12;
+            lbllTitle.Text = "Dân Tộc";
+            dgvImport.DataSource = bUS_DanToc.GetData();
+            dgvImport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
     }
 }

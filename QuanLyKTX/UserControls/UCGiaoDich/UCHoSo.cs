@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BUS;
+using System;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -16,16 +10,13 @@ namespace QuanLyKTX
         {
             InitializeComponent();
         }
-
+        BUS_DoiTuong BUS_DoiTuong = new BUS_DoiTuong();
         private void UCHoSo_Load(object sender, EventArgs e)
         {
-           
+            gridControl1.DataSource = BUS_DoiTuong.GetData();
         }
 
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

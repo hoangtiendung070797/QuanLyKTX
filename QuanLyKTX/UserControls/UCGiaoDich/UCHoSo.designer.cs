@@ -36,7 +36,7 @@
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgvHoSo = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -51,7 +51,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoSo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
@@ -96,7 +96,7 @@
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
             this.btnDelete.Location = new System.Drawing.Point(230, 59);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(104, 38);
+            this.btnDelete.Size = new System.Drawing.Size(104, 36);
             this.btnDelete.StyleController = this.layoutControl1;
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Xóa hồ sơ";
@@ -106,7 +106,7 @@
             this.btnEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.ImageOptions.Image")));
             this.btnEdit.Location = new System.Drawing.Point(121, 59);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(105, 38);
+            this.btnEdit.Size = new System.Drawing.Size(105, 36);
             this.btnEdit.StyleController = this.layoutControl1;
             this.btnEdit.TabIndex = 8;
             this.btnEdit.Text = "Sửa hồ sơ";
@@ -124,18 +124,18 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 101);
-            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Location = new System.Drawing.Point(12, 99);
+            this.gridControl1.MainView = this.dgvHoSo;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(993, 481);
+            this.gridControl1.Size = new System.Drawing.Size(993, 483);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.dgvHoSo});
             // 
-            // gridView1
+            // dgvHoSo
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.dgvHoSo.GridControl = this.gridControl1;
+            this.dgvHoSo.Name = "dgvHoSo";
             // 
             // searchControl1
             // 
@@ -153,7 +153,7 @@
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
             this.btnAdd.Location = new System.Drawing.Point(12, 59);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(105, 38);
+            this.btnAdd.Size = new System.Drawing.Size(105, 36);
             this.btnAdd.StyleController = this.layoutControl1;
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "Tạo hồ sơ";
@@ -181,7 +181,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(326, 47);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(385, 42);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(385, 40);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -189,7 +189,7 @@
             this.layoutControlItem1.Control = this.btnAdd;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 47);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(109, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(109, 40);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -198,16 +198,16 @@
             this.layoutControlItem2.Control = this.searchControl1;
             this.layoutControlItem2.Location = new System.Drawing.Point(711, 47);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(286, 42);
+            this.layoutControlItem2.Size = new System.Drawing.Size(286, 40);
             this.layoutControlItem2.Text = "Tìm kiếm :";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(47, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.gridControl1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 89);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 87);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(997, 485);
+            this.layoutControlItem3.Size = new System.Drawing.Size(997, 487);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -225,7 +225,7 @@
             this.layoutControlItem5.Control = this.btnEdit;
             this.layoutControlItem5.Location = new System.Drawing.Point(109, 47);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(109, 42);
+            this.layoutControlItem5.Size = new System.Drawing.Size(109, 40);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -234,7 +234,7 @@
             this.layoutControlItem6.Control = this.btnDelete;
             this.layoutControlItem6.Location = new System.Drawing.Point(218, 47);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(108, 42);
+            this.layoutControlItem6.Size = new System.Drawing.Size(108, 40);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -250,7 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoSo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
@@ -269,7 +269,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgvHoSo;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;

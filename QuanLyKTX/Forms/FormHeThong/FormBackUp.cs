@@ -22,6 +22,7 @@ namespace QuanLyKTX.Forms
             {
                 btnPath.Text = folderBrowserDialog.SelectedPath;
                 path = folderBrowserDialog.SelectedPath;
+                file = txtTenTapTin.Text;
             }
             
         }

@@ -17,7 +17,7 @@ namespace QuanLyKTX
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong
+            UCNhatKyHoatDong,UCHoSo
         }
         #endregion
 
@@ -256,7 +256,15 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
-              
+
+                case (int)EnumUCDanhMuc.UCHoSo:
+
+                    UCHoSo uCHoSo  = new UCHoSo();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCHoSo);
+                    uCHoSo.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
             }        
@@ -425,5 +433,10 @@ namespace QuanLyKTX
 
 
         #endregion
+
+        private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Hồ Sơ", (int)EnumUCDanhMuc.UCHoSo);
+        }
     }
 }

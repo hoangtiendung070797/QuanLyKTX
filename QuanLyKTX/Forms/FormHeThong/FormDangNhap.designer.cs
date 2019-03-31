@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxGhiNho = new System.Windows.Forms.CheckBox();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtPassWord = new DevExpress.XtraEditors.TextEdit();
             this.txtUserName = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnDangNhap = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassWord.Properties)).BeginInit();
@@ -47,7 +46,7 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.checkBox1);
+            this.groupControl1.Controls.Add(this.checkBoxGhiNho);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtPassWord);
             this.groupControl1.Controls.Add(this.txtUserName);
@@ -58,16 +57,16 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin đăng nhập";
             // 
-            // checkBox1
+            // checkBoxGhiNho
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(314, 126);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(70, 20);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Ghi nhớ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxGhiNho.AutoSize = true;
+            this.checkBoxGhiNho.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxGhiNho.Location = new System.Drawing.Point(314, 126);
+            this.checkBoxGhiNho.Name = "checkBoxGhiNho";
+            this.checkBoxGhiNho.Size = new System.Drawing.Size(70, 20);
+            this.checkBoxGhiNho.TabIndex = 4;
+            this.checkBoxGhiNho.Text = "Ghi nhớ";
+            this.checkBoxGhiNho.UseVisualStyleBackColor = true;
             // 
             // labelControl2
             // 
@@ -146,7 +145,7 @@
         #endregion
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxGhiNho;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtPassWord;
         private DevExpress.XtraEditors.TextEdit txtUserName;

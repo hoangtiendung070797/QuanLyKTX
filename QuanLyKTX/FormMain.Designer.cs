@@ -68,7 +68,7 @@
             this.barButtonItem33 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem34 = new DevExpress.XtraBars.BarButtonItem();
             this.btnQuocTich = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHoSo = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem23 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem24 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem25 = new DevExpress.XtraBars.BarButtonItem();
@@ -80,6 +80,9 @@
             this.barButtonItem31 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
             this.btnNguoiDung = new DevExpress.XtraBars.BarButtonItem();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.btnImportExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -94,16 +97,12 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup12 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup11 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
-            this.btnImportExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -153,7 +152,7 @@
             this.barButtonItem33,
             this.barButtonItem34,
             this.btnQuocTich,
-            this.barButtonItem20,
+            this.btnHoSo,
             this.barButtonItem23,
             this.barButtonItem24,
             this.barButtonItem25,
@@ -473,14 +472,15 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnQuocTich.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQuocTich_ItemClick);
             // 
-            // barButtonItem20
+            // btnHoSo
             // 
-            this.barButtonItem20.Caption = "Hồ sơ";
-            this.barButtonItem20.Id = 41;
-            this.barButtonItem20.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.Image")));
-            this.barButtonItem20.Name = "barButtonItem20";
-            this.barButtonItem20.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnHoSo.Caption = "Hồ sơ";
+            this.btnHoSo.Id = 41;
+            this.btnHoSo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.Image")));
+            this.btnHoSo.Name = "btnHoSo";
+            this.btnHoSo.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnHoSo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoSo_ItemClick);
             // 
             // barButtonItem23
             // 
@@ -580,6 +580,27 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNguoiDung_ItemClick);
             // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "barCheckItem1";
+            this.barCheckItem1.Id = 1;
+            this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.Caption = "Nhập dữ liệu Excel";
+            this.btnImportExcel.Id = 2;
+            this.btnImportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnImportExcel.ImageOptions.Image")));
+            this.btnImportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnImportExcel.ImageOptions.LargeImage")));
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnImportExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcel_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -635,7 +656,7 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem20);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnHoSo);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem23);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem24);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem25);
@@ -672,8 +693,7 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4,
-            this.ribbonPageGroup12});
+            this.ribbonPageGroup4});
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Danh mục";
             // 
@@ -693,11 +713,6 @@
             this.ribbonPageGroup4.ItemLinks.Add(this.btnQuocTich);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Danh mục";
-            // 
-            // ribbonPageGroup12
-            // 
-            this.ribbonPageGroup12.Name = "ribbonPageGroup12";
-            this.ribbonPageGroup12.Text = "ribbonPageGroup12";
             // 
             // ribbonPage5
             // 
@@ -741,27 +756,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
-            // 
-            // barCheckItem1
-            // 
-            this.barCheckItem1.Caption = "barCheckItem1";
-            this.barCheckItem1.Id = 1;
-            this.barCheckItem1.Name = "barCheckItem1";
-            // 
-            // btnImportExcel
-            // 
-            this.btnImportExcel.Caption = "Nhập dữ liệu Excel";
-            this.btnImportExcel.Id = 2;
-            this.btnImportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnImportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.btnImportExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcel_ItemClick);
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // fmMain
             // 
@@ -836,7 +830,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem33;
         private DevExpress.XtraBars.BarButtonItem barButtonItem34;
         private DevExpress.XtraBars.BarButtonItem btnQuocTich;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
         private DevExpress.XtraBars.BarButtonItem barButtonItem23;
         private DevExpress.XtraBars.BarButtonItem barButtonItem24;
         private DevExpress.XtraBars.BarButtonItem barButtonItem25;
@@ -851,7 +844,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         public DevExpress.XtraBars.BarButtonItem btnSaoLuu;
         public DevExpress.XtraBars.BarButtonItem btnKhoiPhuc;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup12;
         public DevExpress.XtraBars.BarButtonItem btnDoiMatKhau;
         public DevExpress.XtraBars.BarButtonItem btnNhatKyHoatDong;
         public DevExpress.XtraBars.BarButtonItem btnThongTinNguoiDung;
@@ -863,6 +855,7 @@
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         public DevExpress.XtraBars.BarButtonItem btnImportExcel;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        public DevExpress.XtraBars.BarButtonItem btnHoSo;
     }
 }
 

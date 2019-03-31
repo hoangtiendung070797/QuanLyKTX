@@ -55,6 +55,7 @@ namespace QuanLyKTX
 
 
                             Const.isLogin = true;
+                            
 
                         }
                         else
@@ -119,7 +120,22 @@ namespace QuanLyKTX
         {
             Login();
             if (Const.isLogin)
+            {
+                if(checkBoxGhiNho.Checked)
+                {
+                    Properties.Settings.Default.users = txtUserName.Text;
+                    Properties.Settings.Default.pass = txtPassWord.Text;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.users = "";
+                    Properties.Settings.Default.pass = "";
+                    Properties.Settings.Default.Save();
+                }
                 this.Close();
+            }
+               
 
             Reset();
         }
@@ -131,7 +147,8 @@ namespace QuanLyKTX
         }
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-
+            txtUserName.Text = Properties.Settings.Default.users;
+            txtPassWord.Text = Properties.Settings.Default.pass;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
