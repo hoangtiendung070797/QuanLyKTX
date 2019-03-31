@@ -1,6 +1,6 @@
 ﻿namespace QuanLyKTX
 {
-    partial class UCGiaLoaiPhong
+    partial class UCLoaiPhong
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCGiaLoaiPhong));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLoaiPhong));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtGia = new DevExpress.XtraEditors.TextEdit();
+            this.txtSoNguoi = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
@@ -52,14 +53,14 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.txtSoNguoi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtGia = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoNguoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLoaiPhong.Properties)).BeginInit();
@@ -75,11 +76,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoNguoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +102,22 @@
             this.layoutControl1.Size = new System.Drawing.Size(867, 468);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(527, 71);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(122, 20);
+            this.txtGia.StyleController = this.layoutControl1;
+            this.txtGia.TabIndex = 14;
+            // 
+            // txtSoNguoi
+            // 
+            this.txtSoNguoi.Location = new System.Drawing.Point(527, 47);
+            this.txtSoNguoi.Name = "txtSoNguoi";
+            this.txtSoNguoi.Size = new System.Drawing.Size(122, 20);
+            this.txtSoNguoi.StyleController = this.layoutControl1;
+            this.txtSoNguoi.TabIndex = 13;
             // 
             // gridControl1
             // 
@@ -307,14 +322,6 @@
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
             // 
-            // txtSoNguoi
-            // 
-            this.txtSoNguoi.Location = new System.Drawing.Point(527, 47);
-            this.txtSoNguoi.Name = "txtSoNguoi";
-            this.txtSoNguoi.Size = new System.Drawing.Size(122, 20);
-            this.txtSoNguoi.StyleController = this.layoutControl1;
-            this.txtSoNguoi.TabIndex = 13;
-            // 
             // layoutControlItem10
             // 
             this.layoutControlItem10.Control = this.txtSoNguoi;
@@ -324,14 +331,6 @@
             this.layoutControlItem10.Size = new System.Drawing.Size(206, 24);
             this.layoutControlItem10.Text = "Số người :";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(77, 13);
-            // 
-            // txtGia
-            // 
-            this.txtGia.Location = new System.Drawing.Point(527, 71);
-            this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(122, 20);
-            this.txtGia.StyleController = this.layoutControl1;
-            this.txtGia.TabIndex = 14;
             // 
             // layoutControlItem11
             // 
@@ -346,15 +345,17 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // UCGiaLoaiPhong
+            // UCLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
-            this.Name = "UCGiaLoaiPhong";
+            this.Name = "UCLoaiPhong";
             this.Size = new System.Drawing.Size(867, 468);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoNguoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLoaiPhong.Properties)).EndInit();
@@ -370,11 +371,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoNguoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 

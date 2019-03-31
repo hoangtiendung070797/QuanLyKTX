@@ -69,6 +69,7 @@
     <Reference Include="DevExpress.XtraGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraMap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPivotGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -129,7 +130,7 @@
     <Compile Include="Forms\FormHeThong\FormImportExcel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormHeThong\FormImportExcel.Designer.cs">
+    <Compile Include="Forms\FormHeThong\FormImportExcel.designer.cs">
       <DependentUpon>FormImportExcel.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHeThong\FormRestore.cs">
@@ -217,11 +218,11 @@
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.designer.cs">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCHeThong\NhatKyHoatDong.cs">
+    <Compile Include="UserControls\UCHeThong\UCNhatKyHoatDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UCHeThong\NhatKyHoatDong.designer.cs">
-      <DependentUpon>NhatKyHoatDong.cs</DependentUpon>
+    <Compile Include="UserControls\UCHeThong\UCNhatKyHoatDong.designer.cs">
+      <DependentUpon>UCNhatKyHoatDong.cs</DependentUpon>
     </Compile>
     <Compile Include="Support\ImportExcel.cs" />
     <Compile Include="Support\SupportImageToDb.cs" />
@@ -302,8 +303,8 @@
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCHoSo.resx">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCHeThong\NhatKyHoatDong.resx">
-      <DependentUpon>NhatKyHoatDong.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UCHeThong\UCNhatKyHoatDong.resx">
+      <DependentUpon>UCNhatKyHoatDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDanToc.resx">
       <DependentUpon>UCDanToc.cs</DependentUpon>

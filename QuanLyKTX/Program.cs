@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
+using QuanLyKTX.Forms.FormHeThong;
 
 namespace QuanLyKTX
 {

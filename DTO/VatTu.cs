@@ -3,12 +3,12 @@
     public class VatTu
     {
         #region Properties
-        private int vatTuId;
+        private string vatTuId;
         private string tenVatTu;
         private string moTa;
         private int soLuong;
         private string ghiChu;
-        public int VatTuId { get => vatTuId; set => vatTuId = value; }
+        public string VatTuId { get => vatTuId; set => vatTuId = value; }
         public string TenVatTu { get => tenVatTu; set => tenVatTu = value; }
         public string MoTa { get => moTa; set => moTa = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
@@ -19,7 +19,7 @@
 
 
         #region Initialize
-        public VatTu(int id, string ten, string mota, int soluong, string ghichu)
+        public VatTu(string id, string ten, string mota, int soluong, string ghichu)
         {
             this.VatTuId = id;
             this.TenVatTu = ten;
@@ -28,6 +28,10 @@
             this.GhiChu = ghichu;
         }
 
+        public VatTu()
+        {
+
+        }
         #endregion
     }
 }

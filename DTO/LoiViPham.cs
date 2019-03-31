@@ -27,7 +27,10 @@
             this.GhiChu = ghichu;
         }
 
-      
+        public LoiViPham()
+        {
+
+        }
 
         #endregion
     }

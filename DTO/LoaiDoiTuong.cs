@@ -17,6 +17,7 @@
             this.TenLoaiDoiTuong = tenLoaiDoiTuong;
             
         }
+        public LoaiDoiTuong() { }
         #endregion
     }
 }

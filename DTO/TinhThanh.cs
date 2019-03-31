@@ -16,7 +16,7 @@
             this.TenTinhThanh = tenTinhThanh;
         }
 
-       
+       public TinhThanh() { }
 
         #endregion
     }
