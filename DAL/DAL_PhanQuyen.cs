@@ -126,11 +126,11 @@ namespace DAL
         }
 
 
-        public DataTable GetDetailPhanQuyen()
+        public DataTable GetDetailPhanQuyen(int nguoiDungId)
         {
             try
             {
-                string query = "SELECT * FROM PhanQuyen WHERE ";
+                string query = "SELECT * FROM PhanQuyen WHERE NguoiDungId = " + nguoiDungId;
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);

@@ -115,6 +115,7 @@
             this.btnCancel.Size = new System.Drawing.Size(104, 27);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // errorProvider1
             // 

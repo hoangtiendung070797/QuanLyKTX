@@ -8,5 +8,6 @@ namespace QuanLyKTX
         public static string ConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True";
         public static NguoiDung CurrentUser = new NguoiDung();
         public static List<PhanQuyen> PhanQuyens = new List<PhanQuyen>();
+        public static bool isFullOp = false; 
     }
 }

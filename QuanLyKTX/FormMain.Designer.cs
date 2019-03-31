@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
@@ -101,6 +102,7 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -173,7 +175,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1237, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1245, 147);
             this.ribbonControl1.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
             // btnNhanVien
@@ -724,11 +726,11 @@
             // 
             this.xtraTabControlMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 143);
+            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 147);
             this.xtraTabControlMain.MultiLine = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageStart;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(1237, 493);
+            this.xtraTabControlMain.Size = new System.Drawing.Size(1245, 493);
             this.xtraTabControlMain.TabIndex = 7;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageStart});
@@ -739,17 +741,22 @@
             this.xtraTabPageStart.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.xtraTabPageStart.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageStart.Image")));
             this.xtraTabPageStart.Name = "xtraTabPageStart";
-            this.xtraTabPageStart.Size = new System.Drawing.Size(1231, 446);
+            this.xtraTabPageStart.Size = new System.Drawing.Size(1243, 449);
             this.xtraTabPageStart.Text = "Start Page";
+            // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
             // fmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1237, 636);
+            this.ClientSize = new System.Drawing.Size(1245, 640);
             this.Controls.Add(this.xtraTabControlMain);
             this.Controls.Add(this.ribbonControl1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
             this.Name = "fmMain";
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -838,6 +845,7 @@
         public DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageStart;
         public DevExpress.XtraBars.BarButtonItem btnNguoiDung;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
 

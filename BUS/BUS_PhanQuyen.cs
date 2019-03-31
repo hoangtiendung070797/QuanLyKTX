@@ -29,5 +29,9 @@ namespace BUS
         {
             return this.phanQuyen.GetData();
         }
+        public DataTable GetDetailPhanQuyen(int nguoiDungId)
+        {
+            return this.phanQuyen.GetDetailPhanQuyen(nguoiDungId);
+        }
     }
 }
