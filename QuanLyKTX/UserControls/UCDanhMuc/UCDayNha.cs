@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
-    public partial class Home : UserControl
+    public partial class UCDayNha : UserControl
     {
-        public Home()
+        public UCDayNha()
         {
             InitializeComponent();
         }

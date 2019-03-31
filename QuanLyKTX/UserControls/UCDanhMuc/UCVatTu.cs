@@ -28,7 +28,7 @@ namespace QuanLyKTX.UserControls
                 try
                 {
 
-                    VatTu VatTu = new VatTu(int.Parse(txtMaVatTu.Text),txtTenVatTu.Text,txtMoTa.Text,int.Parse(txtSoLuong.Text),txtGhiChu.Text);
+                    VatTu VatTu = new VatTu(txtMaVatTu.Text,txtTenVatTu.Text,txtMoTa.Text,int.Parse(txtSoLuong.Text),txtGhiChu.Text);
                     //MessageBox.Show(dAL_VatTu.GetIdentityId().ToString());
                     bUS_vattu.Insert(VatTu);
                     MessageBox.Show("Thêm thành công!");
@@ -69,8 +69,8 @@ namespace QuanLyKTX.UserControls
                 try
                 {
 
-                    VatTu VatTu = new VatTu(int.Parse(txtMaVatTu.Text), txtTenVatTu.Text, txtMoTa.Text, int.Parse(txtSoLuong.Text), txtGhiChu.Text);
-                    VatTu.VatTuId = int.Parse(txtMaVatTu.Text);
+                    VatTu VatTu = new VatTu(txtMaVatTu.Text, txtTenVatTu.Text, txtMoTa.Text, int.Parse(txtSoLuong.Text), txtGhiChu.Text);
+                    VatTu.VatTuId = txtMaVatTu.Text;
 
                     if(bUS_vattu.Update(VatTu)==true)
                     {

@@ -15,18 +15,18 @@ namespace QuanLyKTX
         }
         BUS_NguoiDung bUS_NguoiDung = new BUS_NguoiDung();
         DataTable data;
-        bool  isLoginSuccess = false;   
+
 
         public void Login()
         {
             try
             {
                 data = bUS_NguoiDung.GetData();
-                if(data != null)
+                if (data != null && !string.IsNullOrEmpty(txtUserName.Text) && !string.IsNullOrEmpty(txtPassWord.Text))
                 {
-                    if(CheckUsername(txtUserName.Text))
+                    if (CheckUsername(txtUserName.Text))
                     {
-                        if(CheckPass(txtPassWord.Text))
+                        if (CheckPass(txtPassWord.Text))
                         {
 
                             //mở chức năng tương ứng với user
@@ -35,7 +35,7 @@ namespace QuanLyKTX
                             if (Const.CurrentUser.NguoiDungId == 1)
                             {
                                 Const.isFullOp = true;
-                                isLoginSuccess =  true;
+                                Const.isLogin = true;
                                 return;
                             }
                             BUS_PhanQuyen bUS_PhanQuyen = new BUS_PhanQuyen();
@@ -54,8 +54,8 @@ namespace QuanLyKTX
                             }
 
 
-                            isLoginSuccess =  true;
-                           
+                            Const.isLogin = true;
+
                         }
                         else
                         {
@@ -63,27 +63,27 @@ namespace QuanLyKTX
                             errorProvider1.BlinkStyle = ErrorBlinkStyle.BlinkIfDifferentError;
                             errorProvider1.BlinkRate = 500;
                             errorProvider1.SetError(txtPassWord, "Sai mật khâu người dùng!");
-                            isLoginSuccess = false;
+                            Const.isLogin = false;
                         }
                     }
                     else
                     {
                         errorProvider1.BlinkStyle = ErrorBlinkStyle.BlinkIfDifferentError;
                         errorProvider1.BlinkRate = 500;
-                        errorProvider1.SetError(txtPassWord, "Sai tên tài khoản người dùng!");
-                        isLoginSuccess = false;
+                        errorProvider1.SetError(txtUserName, "Sai tên tài khoản người dùng!");
+                        Const.isLogin = false ;
                     }
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
                 MessageBox.Show(e.Message);
             }
-           
+
         }
 
-        
+
 
         public bool CheckUsername(string userName)
         {
@@ -99,11 +99,11 @@ namespace QuanLyKTX
                     Const.CurrentUser.NguoiDungId = int.Parse(data.Rows[i][0].ToString());
 
 
-               
+
                     return true;
 
                 }
-                    
+
             }
             return false;
 
@@ -113,20 +113,25 @@ namespace QuanLyKTX
         public bool CheckPass(string pass)
         {
             return (Const.CurrentUser.MatKhau == pass) ? true : false;
-           
+
         }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             Login();
-            if(isLoginSuccess)
-            {
+            if (Const.isLogin)
+                this.Close();
 
-            }
+            Reset();
         }
 
+        public void Reset()
+        {
+            txtPassWord.ResetText();
+            txtUserName.ResetText();
+        }
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

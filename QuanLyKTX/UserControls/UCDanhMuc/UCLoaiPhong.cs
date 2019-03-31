@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
-    public partial class UCGiaLoaiPhong : UserControl
+    public partial class UCLoaiPhong : UserControl
     {
-        public UCGiaLoaiPhong()
+        public UCLoaiPhong()
         {
             InitializeComponent();
         }

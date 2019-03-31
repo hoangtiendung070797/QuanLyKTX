@@ -14,13 +14,16 @@
 
 
         #region Initialize
-        public DayNha(string ten,string ghichu="")
+        public DayNha(string ten, string ghichu = "")
         {
             this.TenDayNha = ten;
             this.GhiChu = ghichu;
         }
 
-      
+        public DayNha()
+        {
+
+        }
 
 
         #endregion

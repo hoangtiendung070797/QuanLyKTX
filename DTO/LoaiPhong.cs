@@ -27,7 +27,7 @@
 
    
 
-
+        public LoaiPhong() { }
 
 
         #endregion

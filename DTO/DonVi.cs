@@ -24,6 +24,9 @@
             this.Sdt = sdt;
             this.GhiChu = ghiChu;
         }
+
+        public DonVi()
+        { }
         #endregion
         
 

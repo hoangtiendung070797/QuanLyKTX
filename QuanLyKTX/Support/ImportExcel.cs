@@ -7,7 +7,7 @@ namespace QuanLyKTX.Support
 {
     public class ImportExcel
     {
-        private DataTable ReadDataFromExcelFile(string path)
+        public DataTable ReadDataFromExcelFile(string path)
         {
             string connectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + path.Trim() + ";Extended Properties=Excel 8.0";
             // Tạo đối tượng kết nối

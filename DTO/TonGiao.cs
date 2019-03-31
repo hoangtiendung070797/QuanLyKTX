@@ -14,6 +14,7 @@
             this.TonnGiaoId = TonGiaoId;
             this.TenTonGiao = tenDonVi;
         }
+        public TonGiao() { }
         #endregion
     }
 }

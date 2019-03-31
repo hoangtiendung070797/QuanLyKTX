@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmMain));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
@@ -44,7 +43,6 @@
             this.btnSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnKhoiPhuc = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
             this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
             this.btnThongTinNguoiDung = new DevExpress.XtraBars.BarButtonItem();
@@ -102,7 +100,10 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
+            this.btnImportExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -127,7 +128,6 @@
             this.btnSaoLuu,
             this.btnKhoiPhuc,
             this.barButtonItem10,
-            this.btnDangXuat,
             this.barButtonItem12,
             this.skinRibbonGalleryBarItem1,
             this.btnThongTinNguoiDung,
@@ -164,9 +164,12 @@
             this.barButtonItem30,
             this.barButtonItem31,
             this.barButtonItem32,
-            this.btnNguoiDung});
+            this.btnNguoiDung,
+            this.barCheckItem1,
+            this.btnImportExcel,
+            this.barButtonItem2});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -240,6 +243,7 @@
             this.btnNhatKyHoatDong.Id = 10;
             this.btnNhatKyHoatDong.ImageOptions.ImageIndex = 13;
             this.btnNhatKyHoatDong.Name = "btnNhatKyHoatDong";
+            this.btnNhatKyHoatDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhatKyHoatDong_ItemClick);
             // 
             // btnSaoLuu
             // 
@@ -261,16 +265,6 @@
             // 
             this.barButtonItem10.Id = 13;
             this.barButtonItem10.Name = "barButtonItem10";
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.Caption = "Đăng xuất";
-            this.btnDangXuat.Id = 14;
-            this.btnDangXuat.ImageOptions.Image = global::QuanLyKTX.Properties.Resources.Shutdown_48px;
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
             // 
             // barButtonItem12
             // 
@@ -357,7 +351,7 @@
             // 
             // btnGiaPhong
             // 
-            this.btnGiaPhong.Caption = "Bảng giá loại phòng";
+            this.btnGiaPhong.Caption = "Loại phòng";
             this.btnGiaPhong.Id = 28;
             this.btnGiaPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGiaPhong.ImageOptions.Image")));
             this.btnGiaPhong.Name = "btnGiaPhong";
@@ -627,7 +621,7 @@
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnDangXuat);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnImportExcel);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPage2
@@ -748,6 +742,27 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
+            // barCheckItem1
+            // 
+            this.barCheckItem1.Caption = "barCheckItem1";
+            this.barCheckItem1.Id = 1;
+            this.barCheckItem1.Name = "barCheckItem1";
+            // 
+            // btnImportExcel
+            // 
+            this.btnImportExcel.Caption = "Nhập dữ liệu Excel";
+            this.btnImportExcel.Id = 2;
+            this.btnImportExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.btnImportExcel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btnImportExcel.Name = "btnImportExcel";
+            this.btnImportExcel.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnImportExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnImportExcel_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Id = 3;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // fmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -841,11 +856,13 @@
         public DevExpress.XtraBars.BarButtonItem btnNhatKyHoatDong;
         public DevExpress.XtraBars.BarButtonItem btnThongTinNguoiDung;
         public DevExpress.XtraBars.BarButtonItem btnPhanQuyenNguoiDung;
-        public DevExpress.XtraBars.BarButtonItem btnDangXuat;
         public DevExpress.XtraTab.XtraTabControl xtraTabControlMain;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageStart;
         public DevExpress.XtraBars.BarButtonItem btnNguoiDung;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraBars.BarCheckItem barCheckItem1;
+        public DevExpress.XtraBars.BarButtonItem btnImportExcel;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
 
