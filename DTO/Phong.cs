@@ -27,6 +27,10 @@
             this.Tang = tang;
             this.GiaPhong = giaPhong;
         }
+        public Phong()
+        {
+
+        }
 
     }
 }

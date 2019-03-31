@@ -52,7 +52,7 @@ namespace DAL
                 row["TinhThanhId"] = doiTuong.TinhThanhId;
                 row["LopId"] = doiTuong.LopId;
                 row["maSinhVien"] = doiTuong.MaSinhVien;
-                row["hoDem "] = doiTuong.HoDem;
+                row["hoDem"] = doiTuong.HoDem;
                 row["ten"] = doiTuong.Ten;
                 row["ngaySinh"] = doiTuong.NgaySinh;
                 row["noiSinh"] = doiTuong.NoiSinh;

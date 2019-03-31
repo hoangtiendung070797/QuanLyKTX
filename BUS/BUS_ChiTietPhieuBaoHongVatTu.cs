@@ -1,29 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using DTO;
+using System.Data;
 
 namespace BUS
 {
     public class BUS_ChiTietPhieuBaoHongVatTu
     {
         DAL_ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu = new DAL_ChiTietPhieuBaoHongVatTu();
+
+        public DAL_ChiTietPhieuBaoHongVatTu ChiTietPhieuBaoHongVatTu { get => chiTietPhieuBaoHongVatTu; set => chiTietPhieuBaoHongVatTu = value; }
+
         public bool Insert(ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu)
         {
-            return this.chiTietPhieuBaoHongVatTu.Insert(chiTietPhieuBaoHongVatTu);
+            return this.ChiTietPhieuBaoHongVatTu.Insert(chiTietPhieuBaoHongVatTu);
         }
 
         public bool Delete(int chiTietPhieuBaoHongVatTuId)
         {
-            return this.chiTietPhieuBaoHongVatTu.Delete(chiTietPhieuBaoHongVatTuId);
+            return this.ChiTietPhieuBaoHongVatTu.Delete(chiTietPhieuBaoHongVatTuId);
         }
 
         public bool Update(ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu)
         {
-            return this.chiTietPhieuBaoHongVatTu.Update(chiTietPhieuBaoHongVatTu);
+            return this.ChiTietPhieuBaoHongVatTu.Update(chiTietPhieuBaoHongVatTu);
+        }
+
+        public DataTable GetData()
+        {
+            return this.ChiTietPhieuBaoHongVatTu.GetData();
         }
     }
 }
