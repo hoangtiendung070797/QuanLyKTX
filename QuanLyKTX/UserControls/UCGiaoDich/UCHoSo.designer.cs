@@ -136,6 +136,7 @@
             // 
             this.dgvHoSo.GridControl = this.gridControl1;
             this.dgvHoSo.Name = "dgvHoSo";
+            this.dgvHoSo.CustomRowCellEdit += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.dgvHoSo_CustomRowCellEdit);
             // 
             // searchControl1
             // 

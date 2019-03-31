@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoSo));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.panelThongTin = new DevExpress.XtraEditors.PanelControl();
+            this.pnllThongTin = new DevExpress.XtraEditors.PanelControl();
             this.btnHuyBo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapLai = new DevExpress.XtraEditors.SimpleButton();
             this.btnTaoHoSo = new DevExpress.XtraEditors.SimpleButton();
@@ -67,7 +67,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoDem = new System.Windows.Forms.TextBox();
-            this.panelImage = new DevExpress.XtraEditors.PanelControl();
+            this.pnlImage = new DevExpress.XtraEditors.PanelControl();
             this.btnLoadAnh = new DevExpress.XtraEditors.SimpleButton();
             this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             this.panelControlTitle = new DevExpress.XtraEditors.PanelControl();
@@ -75,8 +75,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelThongTin)).BeginInit();
-            this.panelThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).BeginInit();
+            this.pnllThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbQuocTich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTonGiao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bcTinhThanh.Properties)).BeginInit();
@@ -84,8 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTinhThanh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelImage)).BeginInit();
-            this.panelImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
+            this.pnlImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
@@ -93,8 +93,8 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.panelThongTin);
-            this.panelControl2.Controls.Add(this.panelImage);
+            this.panelControl2.Controls.Add(this.pnllThongTin);
+            this.panelControl2.Controls.Add(this.pnlImage);
             this.panelControl2.Controls.Add(this.panelControlTitle);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
@@ -102,49 +102,49 @@
             this.panelControl2.Size = new System.Drawing.Size(880, 601);
             this.panelControl2.TabIndex = 1;
             // 
-            // panelThongTin
+            // pnllThongTin
             // 
-            this.panelThongTin.Controls.Add(this.btnHuyBo);
-            this.panelThongTin.Controls.Add(this.btnNhapLai);
-            this.panelThongTin.Controls.Add(this.btnTaoHoSo);
-            this.panelThongTin.Controls.Add(this.label17);
-            this.panelThongTin.Controls.Add(this.txtGhiChu);
-            this.panelThongTin.Controls.Add(this.cbQuocTich);
-            this.panelThongTin.Controls.Add(this.label16);
-            this.panelThongTin.Controls.Add(this.cbTonGiao);
-            this.panelThongTin.Controls.Add(this.label15);
-            this.panelThongTin.Controls.Add(this.bcTinhThanh);
-            this.panelThongTin.Controls.Add(this.label14);
-            this.panelThongTin.Controls.Add(this.cbLop);
-            this.panelThongTin.Controls.Add(this.cbTinhThanh);
-            this.panelThongTin.Controls.Add(this.label13);
-            this.panelThongTin.Controls.Add(this.label12);
-            this.panelThongTin.Controls.Add(this.txtEmail);
-            this.panelThongTin.Controls.Add(this.label11);
-            this.panelThongTin.Controls.Add(this.txtSdt);
-            this.panelThongTin.Controls.Add(this.label10);
-            this.panelThongTin.Controls.Add(this.txtQueQuan);
-            this.panelThongTin.Controls.Add(this.label9);
-            this.panelThongTin.Controls.Add(this.txtHoKhau);
-            this.panelThongTin.Controls.Add(this.label8);
-            this.panelThongTin.Controls.Add(this.txtNoiSinh);
-            this.panelThongTin.Controls.Add(this.label7);
-            this.panelThongTin.Controls.Add(this.checkBoxNu);
-            this.panelThongTin.Controls.Add(this.checkBoxNam);
-            this.panelThongTin.Controls.Add(this.label6);
-            this.panelThongTin.Controls.Add(this.dateNgaySinh);
-            this.panelThongTin.Controls.Add(this.label5);
-            this.panelThongTin.Controls.Add(this.txtMaSinhVien);
-            this.panelThongTin.Controls.Add(this.label4);
-            this.panelThongTin.Controls.Add(this.txtTen);
-            this.panelThongTin.Controls.Add(this.label3);
-            this.panelThongTin.Controls.Add(this.label2);
-            this.panelThongTin.Controls.Add(this.txtHoDem);
-            this.panelThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelThongTin.Location = new System.Drawing.Point(178, 36);
-            this.panelThongTin.Name = "panelThongTin";
-            this.panelThongTin.Size = new System.Drawing.Size(700, 563);
-            this.panelThongTin.TabIndex = 2;
+            this.pnllThongTin.Controls.Add(this.btnHuyBo);
+            this.pnllThongTin.Controls.Add(this.btnNhapLai);
+            this.pnllThongTin.Controls.Add(this.btnTaoHoSo);
+            this.pnllThongTin.Controls.Add(this.label17);
+            this.pnllThongTin.Controls.Add(this.txtGhiChu);
+            this.pnllThongTin.Controls.Add(this.cbQuocTich);
+            this.pnllThongTin.Controls.Add(this.label16);
+            this.pnllThongTin.Controls.Add(this.cbTonGiao);
+            this.pnllThongTin.Controls.Add(this.label15);
+            this.pnllThongTin.Controls.Add(this.bcTinhThanh);
+            this.pnllThongTin.Controls.Add(this.label14);
+            this.pnllThongTin.Controls.Add(this.cbLop);
+            this.pnllThongTin.Controls.Add(this.cbTinhThanh);
+            this.pnllThongTin.Controls.Add(this.label13);
+            this.pnllThongTin.Controls.Add(this.label12);
+            this.pnllThongTin.Controls.Add(this.txtEmail);
+            this.pnllThongTin.Controls.Add(this.label11);
+            this.pnllThongTin.Controls.Add(this.txtSdt);
+            this.pnllThongTin.Controls.Add(this.label10);
+            this.pnllThongTin.Controls.Add(this.txtQueQuan);
+            this.pnllThongTin.Controls.Add(this.label9);
+            this.pnllThongTin.Controls.Add(this.txtHoKhau);
+            this.pnllThongTin.Controls.Add(this.label8);
+            this.pnllThongTin.Controls.Add(this.txtNoiSinh);
+            this.pnllThongTin.Controls.Add(this.label7);
+            this.pnllThongTin.Controls.Add(this.checkBoxNu);
+            this.pnllThongTin.Controls.Add(this.checkBoxNam);
+            this.pnllThongTin.Controls.Add(this.label6);
+            this.pnllThongTin.Controls.Add(this.dateNgaySinh);
+            this.pnllThongTin.Controls.Add(this.label5);
+            this.pnllThongTin.Controls.Add(this.txtMaSinhVien);
+            this.pnllThongTin.Controls.Add(this.label4);
+            this.pnllThongTin.Controls.Add(this.txtTen);
+            this.pnllThongTin.Controls.Add(this.label3);
+            this.pnllThongTin.Controls.Add(this.label2);
+            this.pnllThongTin.Controls.Add(this.txtHoDem);
+            this.pnllThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnllThongTin.Location = new System.Drawing.Point(178, 36);
+            this.pnllThongTin.Name = "pnllThongTin";
+            this.pnllThongTin.Size = new System.Drawing.Size(700, 563);
+            this.pnllThongTin.TabIndex = 2;
             // 
             // btnHuyBo
             // 
@@ -161,6 +161,7 @@
             this.btnNhapLai.Size = new System.Drawing.Size(134, 31);
             this.btnNhapLai.TabIndex = 18;
             this.btnNhapLai.Text = "Nhập lại";
+            this.btnNhapLai.Click += new System.EventHandler(this.btnNhapLai_Click);
             // 
             // btnTaoHoSo
             // 
@@ -169,6 +170,7 @@
             this.btnTaoHoSo.Size = new System.Drawing.Size(134, 31);
             this.btnTaoHoSo.TabIndex = 17;
             this.btnTaoHoSo.Text = "Tạo hồ sơ";
+            this.btnTaoHoSo.Click += new System.EventHandler(this.btnTaoHoSo_Click);
             // 
             // label17
             // 
@@ -471,15 +473,15 @@
             this.txtHoDem.Size = new System.Drawing.Size(216, 21);
             this.txtHoDem.TabIndex = 0;
             // 
-            // panelImage
+            // pnlImage
             // 
-            this.panelImage.Controls.Add(this.btnLoadAnh);
-            this.panelImage.Controls.Add(this.pictureHoSo);
-            this.panelImage.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelImage.Location = new System.Drawing.Point(2, 36);
-            this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(176, 563);
-            this.panelImage.TabIndex = 1;
+            this.pnlImage.Controls.Add(this.btnLoadAnh);
+            this.pnlImage.Controls.Add(this.pictureHoSo);
+            this.pnlImage.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlImage.Location = new System.Drawing.Point(2, 36);
+            this.pnlImage.Name = "pnlImage";
+            this.pnlImage.Size = new System.Drawing.Size(176, 563);
+            this.pnlImage.TabIndex = 1;
             // 
             // btnLoadAnh
             // 
@@ -539,9 +541,9 @@
             this.Load += new System.EventHandler(this.FrmHoSo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelThongTin)).EndInit();
-            this.panelThongTin.ResumeLayout(false);
-            this.panelThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).EndInit();
+            this.pnllThongTin.ResumeLayout(false);
+            this.pnllThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbQuocTich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTonGiao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bcTinhThanh.Properties)).EndInit();
@@ -549,8 +551,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTinhThanh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelImage)).EndInit();
-            this.panelImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
+            this.pnlImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).EndInit();
             this.panelControlTitle.ResumeLayout(false);
@@ -562,8 +564,8 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.PanelControl panelThongTin;
-        private DevExpress.XtraEditors.PanelControl panelImage;
+        private DevExpress.XtraEditors.PanelControl pnllThongTin;
+        private DevExpress.XtraEditors.PanelControl pnlImage;
         private DevExpress.XtraEditors.PanelControl panelControlTitle;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.PictureEdit pictureHoSo;

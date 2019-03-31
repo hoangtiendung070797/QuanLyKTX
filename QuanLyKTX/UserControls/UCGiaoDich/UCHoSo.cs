@@ -11,6 +11,7 @@ namespace QuanLyKTX
             InitializeComponent();
         }
         BUS_DoiTuong BUS_DoiTuong = new BUS_DoiTuong();
+        int id;
         private void UCHoSo_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = BUS_DoiTuong.GetData();
@@ -28,6 +29,11 @@ namespace QuanLyKTX
         {
             FrmThongTinHoSo frmThongTinHoSo = new FrmThongTinHoSo();
             frmThongTinHoSo.ShowDialog();
+        }
+
+        private void dgvHoSo_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+            id = (int)dgvHoSo.GetRowCellValue(e.RowHandle, "DoiTuongId");
         }
     }
 }

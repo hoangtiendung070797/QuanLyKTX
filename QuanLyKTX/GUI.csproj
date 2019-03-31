@@ -218,6 +218,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.designer.cs">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCHeThong\UCNguoiDung.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCHeThong\UCNguoiDung.Designer.cs">
+      <DependentUpon>UCNguoiDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCHeThong\UCNhatKyHoatDong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -302,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCHoSo.resx">
       <DependentUpon>UCHoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCHeThong\UCNguoiDung.resx">
+      <DependentUpon>UCNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNhatKyHoatDong.resx">
       <DependentUpon>UCNhatKyHoatDong.cs</DependentUpon>
