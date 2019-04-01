@@ -11,7 +11,7 @@ namespace DTO
         private int tonGiaoId;
         private int quocTichId;
         private int tinhThanhId;
-        private string lopId;
+        private int lopId;
 
 
         private string maSinhVien;
@@ -25,13 +25,17 @@ namespace DTO
         private string sdt;
         private string email;
         private string ghiChu;
+        private int danTocId;
+
+        private byte[] image;
+
 
         public int DoiTuongId { get => doiTuongId; set => doiTuongId = value; }
         public int LoaiDoiTuongId { get => loaiDoiTuongId; set => loaiDoiTuongId = value; }
         public int TonGiaoId { get => tonGiaoId; set => tonGiaoId = value; }
         public int QuocTichId { get => quocTichId; set => quocTichId = value; }
         public int TinhThanhId { get => tinhThanhId; set => tinhThanhId = value; }
-        public string LopId { get => lopId; set => lopId = value; }
+        public int LopId { get => lopId; set => lopId = value; }
         public string MaSinhVien { get => maSinhVien; set => maSinhVien = value; }
         public string HoDem { get => hoDem; set => hoDem = value; }
         public string Ten { get => ten; set => ten = value; }
@@ -43,11 +47,13 @@ namespace DTO
         public string Sdt { get => sdt; set => sdt = value; }
         public string Email { get => email; set => email = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public int DanTocId { get => danTocId; set => danTocId = value; }
+        public byte[] Image { get => image; set => image = value; }
         #endregion
 
 
         #region Initialize
-        public DoiTuong(int doiTuongId, int loaiDoiTuongId, int TonGiaoId, int QuocTichId, int TinhThanhId, string LopId, string maSinhVien,
+        public DoiTuong(int doiTuongId, int loaiDoiTuongId, int TonGiaoId, int QuocTichId, int TinhThanhId, int LopId, string maSinhVien,
                                                                                                                       string hoDem,
                                                                                                                         string ten,
                                                                                                                          DateTime ngaySinh,

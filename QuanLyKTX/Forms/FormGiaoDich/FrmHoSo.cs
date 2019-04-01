@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using BUS;
+using DTO;
+using QuanLyKTX.Support;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using QuanLyKTX.Support;
-using BUS;
 
 namespace QuanLyKTX
 {
     public partial class FrmHoSo : DevExpress.XtraEditors.XtraForm
     {
         BUS_DoiTuong BUS_DoiTuong = new BUS_DoiTuong();
+        BUS_DanToc BUS_DanToc = new BUS_DanToc();
+        BUS_LoaiDoiTuong BUS_LoaiDoiTuong = new BUS_LoaiDoiTuong();
+        BUS_QuocTich BUS_QuocTich = new BUS_QuocTich();
+        BUS_Lop BUS_Lop = new BUS_Lop();
+        BUS_TonGiao BUS_TonGiao = new BUS_TonGiao();
+        BUS_TinhThanh BUS_TinhThanh = new BUS_TinhThanh();
         SupportImageToDb support = new SupportImageToDb();
+        string path = "";
         public FrmHoSo()
         {
             
@@ -31,7 +33,7 @@ namespace QuanLyKTX
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureHoSo.Image = Image.FromFile(openFileDialog1.FileName);
-
+                path = openFileDialog1.FileName;
             }
             pictureHoSo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
         }
@@ -39,7 +41,7 @@ namespace QuanLyKTX
         private void FrmHoSo_Load(object sender, EventArgs e)
         {
             txtHoDem.Focus();
-           
+            LoadData();
         }
 
         private void btnNhapLai_Click(object sender, EventArgs e)
@@ -50,8 +52,40 @@ namespace QuanLyKTX
 
         private void btnTaoHoSo_Click(object sender, EventArgs e)
         {
-          
-            DuplicateCheck();
+            //Nếu không trùng và đầy đủ thông tin cần thiết thì add
+            if(!DuplicateCheck() && IsFullInfo())
+            {
+                DoiTuong doiTuong = new DoiTuong();
+                doiTuong.HoDem = txtHoDem.Text;
+                doiTuong.Ten = txtTen.Text;
+                doiTuong.MaSinhVien = txtMaSinhVien.Text;
+                doiTuong.NgaySinh = (DateTime)dateNgaySinh.EditValue;
+               
+                bool gioiTinh = true;
+                if (rdbNu.Checked)
+                    gioiTinh = false;
+                doiTuong.GioiTinh = gioiTinh;
+                doiTuong.NoiSinh = txtNoiSinh.Text;
+                doiTuong.HoKhau = txtHoKhau.Text;
+                doiTuong.QueQuan = txtQueQuan.Text;
+                doiTuong.Sdt = txtSdt.Text;
+                doiTuong.Email = txtEmail.Text;
+
+
+                doiTuong.LoaiDoiTuongId = (int)cbLoaiDoiTuong.SelectedValue;
+                doiTuong.TonGiaoId = (int)cbTonGiao.SelectedValue;
+                doiTuong.LopId = (int)cbLop.SelectedValue;
+                doiTuong.DanTocId = (int)cbDanToc.SelectedValue;
+                doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
+                doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
+                doiTuong.Image = support.converImgToByte(path);
+                doiTuong.GhiChu = txtGhiChu.Text;
+                BUS_DoiTuong.Insert(doiTuong);
+
+                MessageBox.Show("Thêm Thành Công!");
+                this.Close();
+
+            }
         }
 
         public bool IsFullInfo()
@@ -71,6 +105,34 @@ namespace QuanLyKTX
             else return false;  
         }
 
+
+        public void LoadData()
+        {
+            cbLoaiDoiTuong.DataSource = BUS_LoaiDoiTuong.GetData();
+            cbLoaiDoiTuong.DisplayMember = "tenLoaiDoiTuong";
+            cbLoaiDoiTuong.ValueMember = "LoaiDoiTuongId";
+
+            cbQuocTich.DataSource = BUS_QuocTich.GetData();
+            cbQuocTich.DisplayMember = "tenQuocTich";
+            cbQuocTich.ValueMember = "QuocTichId";
+
+            cbTinhThanh.DataSource = BUS_TinhThanh.GetData();
+            cbTinhThanh.DisplayMember = "tenTinhThanh";
+            cbTinhThanh.ValueMember = "TinhThanhId";
+
+            cbDanToc.DataSource = BUS_DanToc.GetData();
+            cbDanToc.DisplayMember = "tenDanToc";
+            cbDanToc.ValueMember = "DanTocId";
+
+            cbLop.DataSource = BUS_Lop.GetData();
+            cbLop.DisplayMember = "tenLop";
+            cbLop.ValueMember = "LopId";
+
+            cbTonGiao.DataSource = BUS_TonGiao.GetData();
+            cbTonGiao.DisplayMember = "tenTonGiao";
+            cbTonGiao.ValueMember = "TonGiaoId";
+
+        }
         public bool DuplicateCheck()
         {
             //nếu là loại đối tượng là sinh viên - thì chắc chắn sẽ có mã sinh viên
@@ -78,13 +140,9 @@ namespace QuanLyKTX
             {
                 //kiểm tra có trùng trong csdl?
                 DataTable data = BUS_DoiTuong.GetData();
-                //for (int i = 0; i < data.Rows.Count; i++)
-                //{
-                    
-                //}
                 DataRow[] row = data.Select("maSinhVien = '" + txtMaSinhVien.Text + "'");
-                MessageBox.Show(row.Length.ToString());
-                    return true;
+
+                return (row.Length !=0)?true:false;
             }
             else
             {
@@ -101,6 +159,11 @@ namespace QuanLyKTX
                 if (item is TextBox)
                     item.ResetText();
             }
+        }
+
+        private void btnHuyBo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

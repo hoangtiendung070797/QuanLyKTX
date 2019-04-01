@@ -30,7 +30,7 @@ namespace QuanLyKTX
                         {
 
                             //mở chức năng tương ứng với user
-                            MessageBox.Show(Const.CurrentUser.TenDangNhap + " đăng nhập thành công!");
+                           //MessageBox.Show(Const.CurrentUser.TenDangNhap + " đăng nhập thành công!");
 
                             if (Const.CurrentUser.NguoiDungId == 1)
                             {
@@ -123,12 +123,14 @@ namespace QuanLyKTX
             {
                 if(checkBoxGhiNho.Checked)
                 {
+                    Properties.Settings.Default.isCheckMemory = true;
                     Properties.Settings.Default.users = txtUserName.Text;
                     Properties.Settings.Default.pass = txtPassWord.Text;
                     Properties.Settings.Default.Save();
                 }
                 else
                 {
+                    Properties.Settings.Default.isCheckMemory = false;
                     Properties.Settings.Default.users = "";
                     Properties.Settings.Default.pass = "";
                     Properties.Settings.Default.Save();
@@ -149,6 +151,7 @@ namespace QuanLyKTX
         {
             txtUserName.Text = Properties.Settings.Default.users;
             txtPassWord.Text = Properties.Settings.Default.pass;
+            checkBoxGhiNho.Checked = Properties.Settings.Default.isCheckMemory;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

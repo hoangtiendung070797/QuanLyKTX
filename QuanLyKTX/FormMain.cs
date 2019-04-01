@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
-    public partial class fmMain : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         #region Properties
         public static XtraTabControl tabstatic;
@@ -24,7 +24,7 @@ namespace QuanLyKTX
         #region Initialize
 
 
-        public fmMain()
+        public FormMain()
         {
             InitializeComponent();
             tabstatic = xtraTabControlMain;

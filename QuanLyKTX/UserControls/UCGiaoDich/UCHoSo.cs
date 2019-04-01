@@ -1,5 +1,6 @@
 ﻿using BUS;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -14,7 +15,7 @@ namespace QuanLyKTX
         int id;
         private void UCHoSo_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = BUS_DoiTuong.GetData();
+            gridControl1.DataSource = BUS_DoiTuong.GetFullInfo();
         }
 
      
@@ -33,7 +34,27 @@ namespace QuanLyKTX
 
         private void dgvHoSo_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
-            id = (int)dgvHoSo.GetRowCellValue(e.RowHandle, "DoiTuongId");
+            //id = (int)dgvHoSo.GetRowCellValue(e.RowHandle, "DoiTuongId");
+            
+        }
+
+        private void layoutView1_FocusedRowLoaded(object sender, DevExpress.XtraGrid.Views.Base.RowEventArgs e)
+        {
+            int id = (int)layoutViewHoSo.GetRowCellValue(e.RowHandle, "DoiTuongId");
+            MessageBox.Show(id.ToString());
+        }
+
+        private void layoutViewHoSo_FieldValueClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.FieldValueClickEventArgs e)
+        {
+            //DataRow x = layoutViewHoSo.GetFocusedDataRow();
+            //MessageBox.Show(x["DoiTuongId"].ToString());
+
+        }
+
+        private void layoutViewHoSo_CardClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.CardClickEventArgs e)
+        {
+            DataRow x = layoutViewHoSo.GetFocusedDataRow();
+            MessageBox.Show(x["Mã Hồ Sơ"].ToString());
         }
     }
 }

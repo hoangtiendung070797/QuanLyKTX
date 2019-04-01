@@ -10,5 +10,6 @@ namespace QuanLyKTX
         public static List<PhanQuyen> PhanQuyens = new List<PhanQuyen>();
         public static bool isFullOp = false;
         public static bool isLogin = false;
+        public static int DoiTuongId = 0;
     }
 }

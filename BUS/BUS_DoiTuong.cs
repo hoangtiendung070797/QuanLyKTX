@@ -29,5 +29,9 @@ namespace BUS
         {
             return this.DoiTuong.GetData();
         }
+        public DataTable GetFullInfo()
+        {
+            return this.DoiTuong.GetFullInfo();
+        }
     }
 }

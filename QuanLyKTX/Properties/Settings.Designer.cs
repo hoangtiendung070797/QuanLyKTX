@@ -47,24 +47,14 @@ namespace QuanLyKTX.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True" +
-            "")]
-        public string ConnectionString1 {
+        public bool isCheckMemory {
             get {
-                return ((string)(this["ConnectionString1"]));
+                return ((bool)(this["isCheckMemory"]));
             }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True")]
-        public string ConnectionString2 {
-            get {
-                return ((string)(this["ConnectionString2"]));
+            set {
+                this["isCheckMemory"] = value;
             }
         }
     }
