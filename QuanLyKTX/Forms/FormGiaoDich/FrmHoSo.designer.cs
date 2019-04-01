@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoSo));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.pnllThongTin = new DevExpress.XtraEditors.PanelControl();
+            this.rdbNu = new System.Windows.Forms.RadioButton();
+            this.rdbNam = new System.Windows.Forms.RadioButton();
             this.btnHuyBo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapLai = new DevExpress.XtraEditors.SimpleButton();
             this.btnTaoHoSo = new DevExpress.XtraEditors.SimpleButton();
@@ -40,10 +42,10 @@
             this.label16 = new System.Windows.Forms.Label();
             this.cbTonGiao = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label15 = new System.Windows.Forms.Label();
-            this.bcTinhThanh = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbTinhThanh = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label14 = new System.Windows.Forms.Label();
             this.cbLop = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbTinhThanh = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cbLoaiDoiTuong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -56,8 +58,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtNoiSinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBoxNu = new System.Windows.Forms.CheckBox();
-            this.checkBoxNam = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,9 +79,9 @@
             this.pnllThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbQuocTich.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTonGiao.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bcTinhThanh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTinhThanh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbLop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbLoaiDoiTuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
@@ -104,6 +104,8 @@
             // 
             // pnllThongTin
             // 
+            this.pnllThongTin.Controls.Add(this.rdbNu);
+            this.pnllThongTin.Controls.Add(this.rdbNam);
             this.pnllThongTin.Controls.Add(this.btnHuyBo);
             this.pnllThongTin.Controls.Add(this.btnNhapLai);
             this.pnllThongTin.Controls.Add(this.btnTaoHoSo);
@@ -113,10 +115,10 @@
             this.pnllThongTin.Controls.Add(this.label16);
             this.pnllThongTin.Controls.Add(this.cbTonGiao);
             this.pnllThongTin.Controls.Add(this.label15);
-            this.pnllThongTin.Controls.Add(this.bcTinhThanh);
+            this.pnllThongTin.Controls.Add(this.cbTinhThanh);
             this.pnllThongTin.Controls.Add(this.label14);
             this.pnllThongTin.Controls.Add(this.cbLop);
-            this.pnllThongTin.Controls.Add(this.cbTinhThanh);
+            this.pnllThongTin.Controls.Add(this.cbLoaiDoiTuong);
             this.pnllThongTin.Controls.Add(this.label13);
             this.pnllThongTin.Controls.Add(this.label12);
             this.pnllThongTin.Controls.Add(this.txtEmail);
@@ -129,8 +131,6 @@
             this.pnllThongTin.Controls.Add(this.label8);
             this.pnllThongTin.Controls.Add(this.txtNoiSinh);
             this.pnllThongTin.Controls.Add(this.label7);
-            this.pnllThongTin.Controls.Add(this.checkBoxNu);
-            this.pnllThongTin.Controls.Add(this.checkBoxNam);
             this.pnllThongTin.Controls.Add(this.label6);
             this.pnllThongTin.Controls.Add(this.dateNgaySinh);
             this.pnllThongTin.Controls.Add(this.label5);
@@ -145,6 +145,30 @@
             this.pnllThongTin.Name = "pnllThongTin";
             this.pnllThongTin.Size = new System.Drawing.Size(700, 563);
             this.pnllThongTin.TabIndex = 2;
+            // 
+            // rdbNu
+            // 
+            this.rdbNu.AutoSize = true;
+            this.rdbNu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbNu.Location = new System.Drawing.Point(180, 122);
+            this.rdbNu.Name = "rdbNu";
+            this.rdbNu.Size = new System.Drawing.Size(38, 17);
+            this.rdbNu.TabIndex = 35;
+            this.rdbNu.TabStop = true;
+            this.rdbNu.Text = "Nữ";
+            this.rdbNu.UseVisualStyleBackColor = true;
+            // 
+            // rdbNam
+            // 
+            this.rdbNam.AutoSize = true;
+            this.rdbNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rdbNam.Location = new System.Drawing.Point(117, 122);
+            this.rdbNam.Name = "rdbNam";
+            this.rdbNam.Size = new System.Drawing.Size(45, 17);
+            this.rdbNam.TabIndex = 35;
+            this.rdbNam.TabStop = true;
+            this.rdbNam.Text = "Nam";
+            this.rdbNam.UseVisualStyleBackColor = true;
             // 
             // btnHuyBo
             // 
@@ -184,6 +208,7 @@
             // 
             // txtGhiChu
             // 
+            this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtGhiChu.Location = new System.Drawing.Point(117, 331);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
@@ -194,6 +219,7 @@
             // 
             this.cbQuocTich.Location = new System.Drawing.Point(543, 282);
             this.cbQuocTich.Name = "cbQuocTich";
+            this.cbQuocTich.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.cbQuocTich.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbQuocTich.Size = new System.Drawing.Size(117, 20);
@@ -213,6 +239,7 @@
             // 
             this.cbTonGiao.Location = new System.Drawing.Point(322, 282);
             this.cbTonGiao.Name = "cbTonGiao";
+            this.cbTonGiao.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.cbTonGiao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTonGiao.Size = new System.Drawing.Size(113, 20);
@@ -228,14 +255,15 @@
             this.label15.TabIndex = 29;
             this.label15.Text = "Tôn giáo   :";
             // 
-            // bcTinhThanh
+            // cbTinhThanh
             // 
-            this.bcTinhThanh.Location = new System.Drawing.Point(116, 282);
-            this.bcTinhThanh.Name = "bcTinhThanh";
-            this.bcTinhThanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbTinhThanh.Location = new System.Drawing.Point(116, 282);
+            this.cbTinhThanh.Name = "cbTinhThanh";
+            this.cbTinhThanh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.cbTinhThanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.bcTinhThanh.Size = new System.Drawing.Size(113, 20);
-            this.bcTinhThanh.TabIndex = 13;
+            this.cbTinhThanh.Size = new System.Drawing.Size(113, 20);
+            this.cbTinhThanh.TabIndex = 13;
             // 
             // label14
             // 
@@ -251,19 +279,21 @@
             // 
             this.cbLop.Location = new System.Drawing.Point(445, 200);
             this.cbLop.Name = "cbLop";
+            this.cbLop.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.cbLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbLop.Size = new System.Drawing.Size(216, 20);
             this.cbLop.TabIndex = 10;
             // 
-            // cbTinhThanh
+            // cbLoaiDoiTuong
             // 
-            this.cbTinhThanh.Location = new System.Drawing.Point(117, 200);
-            this.cbTinhThanh.Name = "cbTinhThanh";
-            this.cbTinhThanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbLoaiDoiTuong.Location = new System.Drawing.Point(117, 200);
+            this.cbLoaiDoiTuong.Name = "cbLoaiDoiTuong";
+            this.cbLoaiDoiTuong.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.cbLoaiDoiTuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTinhThanh.Size = new System.Drawing.Size(216, 20);
-            this.cbTinhThanh.TabIndex = 9;
+            this.cbLoaiDoiTuong.Size = new System.Drawing.Size(216, 20);
+            this.cbLoaiDoiTuong.TabIndex = 9;
             // 
             // label13
             // 
@@ -287,9 +317,10 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Location = new System.Drawing.Point(445, 154);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(216, 21);
+            this.txtEmail.Size = new System.Drawing.Size(216, 14);
             this.txtEmail.TabIndex = 8;
             // 
             // label11
@@ -304,9 +335,10 @@
             // 
             // txtSdt
             // 
+            this.txtSdt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSdt.Location = new System.Drawing.Point(117, 154);
             this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(216, 21);
+            this.txtSdt.Size = new System.Drawing.Size(216, 14);
             this.txtSdt.TabIndex = 7;
             // 
             // label10
@@ -321,9 +353,10 @@
             // 
             // txtQueQuan
             // 
+            this.txtQueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQueQuan.Location = new System.Drawing.Point(445, 239);
             this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(216, 21);
+            this.txtQueQuan.Size = new System.Drawing.Size(216, 14);
             this.txtQueQuan.TabIndex = 12;
             // 
             // label9
@@ -338,9 +371,10 @@
             // 
             // txtHoKhau
             // 
+            this.txtHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoKhau.Location = new System.Drawing.Point(117, 239);
             this.txtHoKhau.Name = "txtHoKhau";
-            this.txtHoKhau.Size = new System.Drawing.Size(216, 21);
+            this.txtHoKhau.Size = new System.Drawing.Size(216, 14);
             this.txtHoKhau.TabIndex = 11;
             // 
             // label8
@@ -355,9 +389,10 @@
             // 
             // txtNoiSinh
             // 
+            this.txtNoiSinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNoiSinh.Location = new System.Drawing.Point(445, 114);
             this.txtNoiSinh.Name = "txtNoiSinh";
-            this.txtNoiSinh.Size = new System.Drawing.Size(216, 21);
+            this.txtNoiSinh.Size = new System.Drawing.Size(216, 14);
             this.txtNoiSinh.TabIndex = 6;
             // 
             // label7
@@ -369,26 +404,6 @@
             this.label7.Size = new System.Drawing.Size(65, 14);
             this.label7.TabIndex = 12;
             this.label7.Text = "Nơi sinh   :";
-            // 
-            // checkBoxNu
-            // 
-            this.checkBoxNu.AutoSize = true;
-            this.checkBoxNu.Location = new System.Drawing.Point(190, 119);
-            this.checkBoxNu.Name = "checkBoxNu";
-            this.checkBoxNu.Size = new System.Drawing.Size(40, 17);
-            this.checkBoxNu.TabIndex = 5;
-            this.checkBoxNu.Text = "Nữ";
-            this.checkBoxNu.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxNam
-            // 
-            this.checkBoxNam.AutoSize = true;
-            this.checkBoxNam.Location = new System.Drawing.Point(117, 119);
-            this.checkBoxNam.Name = "checkBoxNam";
-            this.checkBoxNam.Size = new System.Drawing.Size(47, 17);
-            this.checkBoxNam.TabIndex = 4;
-            this.checkBoxNam.Text = "Nam";
-            this.checkBoxNam.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -405,10 +420,14 @@
             this.dateNgaySinh.EditValue = null;
             this.dateNgaySinh.Location = new System.Drawing.Point(445, 73);
             this.dateNgaySinh.Name = "dateNgaySinh";
+            this.dateNgaySinh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.dateNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgaySinh.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateNgaySinh.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateNgaySinh.Properties.Mask.EditMask = "D";
+            this.dateNgaySinh.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateNgaySinh.Size = new System.Drawing.Size(216, 20);
             this.dateNgaySinh.TabIndex = 3;
             // 
@@ -424,9 +443,10 @@
             // 
             // txtMaSinhVien
             // 
+            this.txtMaSinhVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaSinhVien.Location = new System.Drawing.Point(117, 77);
             this.txtMaSinhVien.Name = "txtMaSinhVien";
-            this.txtMaSinhVien.Size = new System.Drawing.Size(216, 21);
+            this.txtMaSinhVien.Size = new System.Drawing.Size(216, 14);
             this.txtMaSinhVien.TabIndex = 2;
             // 
             // label4
@@ -441,9 +461,10 @@
             // 
             // txtTen
             // 
+            this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTen.Location = new System.Drawing.Point(445, 30);
             this.txtTen.Name = "txtTen";
-            this.txtTen.Size = new System.Drawing.Size(216, 21);
+            this.txtTen.Size = new System.Drawing.Size(216, 14);
             this.txtTen.TabIndex = 1;
             // 
             // label3
@@ -468,9 +489,10 @@
             // 
             // txtHoDem
             // 
+            this.txtHoDem.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtHoDem.Location = new System.Drawing.Point(117, 30);
             this.txtHoDem.Name = "txtHoDem";
-            this.txtHoDem.Size = new System.Drawing.Size(216, 21);
+            this.txtHoDem.Size = new System.Drawing.Size(216, 14);
             this.txtHoDem.TabIndex = 0;
             // 
             // pnlImage
@@ -546,9 +568,9 @@
             this.pnllThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbQuocTich.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTonGiao.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bcTinhThanh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTinhThanh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbLop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbLoaiDoiTuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
@@ -577,11 +599,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMaSinhVien;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.DateEdit dateNgaySinh;
         private System.Windows.Forms.TextBox txtNoiSinh;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBoxNu;
-        private System.Windows.Forms.CheckBox checkBoxNam;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtQueQuan;
         private System.Windows.Forms.Label label9;
@@ -593,10 +612,10 @@
         private System.Windows.Forms.Label label16;
         private DevExpress.XtraEditors.ComboBoxEdit cbTonGiao;
         private System.Windows.Forms.Label label15;
-        private DevExpress.XtraEditors.ComboBoxEdit bcTinhThanh;
+        private DevExpress.XtraEditors.ComboBoxEdit cbTinhThanh;
         private System.Windows.Forms.Label label14;
         private DevExpress.XtraEditors.ComboBoxEdit cbLop;
-        private DevExpress.XtraEditors.ComboBoxEdit cbTinhThanh;
+        private DevExpress.XtraEditors.ComboBoxEdit cbLoaiDoiTuong;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtEmail;
@@ -607,5 +626,8 @@
         private DevExpress.XtraEditors.SimpleButton btnTaoHoSo;
         private DevExpress.XtraEditors.SimpleButton btnHuyBo;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.RadioButton rdbNu;
+        private System.Windows.Forms.RadioButton rdbNam;
+        private DevExpress.XtraEditors.DateEdit dateNgaySinh;
     }
 }

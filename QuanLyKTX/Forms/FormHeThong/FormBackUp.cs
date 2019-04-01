@@ -22,13 +22,14 @@ namespace QuanLyKTX.Forms
             {
                 btnPath.Text = folderBrowserDialog.SelectedPath;
                 path = folderBrowserDialog.SelectedPath;
-                file = txtTenTapTin.Text;
+                
             }
             
         }
 
         private void btnThucHien_Click(object sender, System.EventArgs e)
         {
+            file = txtTenTapTin.Text;
             if (!string.IsNullOrEmpty(btnPath.Text) &&!string.IsNullOrEmpty(txtTenTapTin.Text))
             {
                 if (MessageBox.Show("Thực hiện sao lưu", "Bạn có đồng ý sao lưu ?", MessageBoxButtons.YesNo) == DialogResult.Yes)

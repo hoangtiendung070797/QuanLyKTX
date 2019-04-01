@@ -11,8 +11,6 @@
         private int soLuong;
         private string donViTinh;
 
-        private string tinhTrang;
-        private int tyLeHoatDong;
 
         private decimal donGiaVatTu;
         private decimal thanhTien;
@@ -23,8 +21,7 @@
         public string PhongId1 { get => PhongId; set => PhongId = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public string DonViTinh { get => donViTinh; set => donViTinh = value; }
-        public string TinhTrang { get => tinhTrang; set => tinhTrang = value; }
-        public int TyLeHoatDong { get => tyLeHoatDong; set => tyLeHoatDong = value; }
+       
         public decimal DonGiaVatTu { get => donGiaVatTu; set => donGiaVatTu = value; }
         public decimal ThanhTien { get => thanhTien; set => thanhTien = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }

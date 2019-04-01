@@ -29,7 +29,9 @@ namespace QuanLyKTX.UserControls
                 try
                 {
 
-                    Lop Lop = new Lop(txtMaLop.Text,txtTenLop.Text,int.Parse(cbbDonvi.Text));
+                    Lop Lop = new Lop();
+                    Lop.TenLop = txtTenLop.Text;
+                    Lop.DonViId = int.Parse(cbbDonvi.Text);
                     //MessageBox.Show(dAL_Lop.GetIdentityId().ToString());
                     bUS_Lop.Insert(Lop);
                     MessageBox.Show("Thêm thành công!");
@@ -68,8 +70,10 @@ namespace QuanLyKTX.UserControls
                 try
                 {
 
-                    Lop Lop = new Lop(txtMaLop.Text,txtTenLop.Text,int.Parse(cbbDonvi.Text));
-                    Lop.LopId = txtMaLop.Text;
+                    Lop Lop = new Lop();
+                    Lop.TenLop = txtTenLop.Text;
+                    Lop.DonViId = int.Parse(cbbDonvi.Text);
+                    Lop.LopId = int.Parse( txtMaLop.Text);
 
                     if (bUS_Lop.Update(Lop) == true)
                     {

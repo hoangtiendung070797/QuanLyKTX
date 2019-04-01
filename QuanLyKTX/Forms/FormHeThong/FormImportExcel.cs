@@ -3,7 +3,9 @@ using DTO;
 using QuanLyKTX.Support;
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
+
 
 namespace QuanLyKTX.Forms.FormHeThong
 {
@@ -150,12 +152,16 @@ namespace QuanLyKTX.Forms.FormHeThong
             browseFile.Title = "Browse Excel file";
             if (browseFile.ShowDialog() == DialogResult.OK)
             {
+                
+
                 path = browseFile.FileName;
                 lblDuongDan.Text = path;
-
+                Process.Start(path);
+                
                 table = import.ReadDataFromExcelFile(path);
                 dgvImport.DataSource = table;
                 dgvImport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             }
             else
             {
@@ -272,7 +278,7 @@ namespace QuanLyKTX.Forms.FormHeThong
                         for (int i = 0; i < table.Rows.Count; i++)
                         {
                             Lop lop = new Lop();
-                            lop.LopId = table.Rows[i][0].ToString();
+                            lop.LopId = int.Parse(table.Rows[i][0].ToString());
                             lop.TenLop = table.Rows[i][1].ToString();
                             lop.DonViId = int.Parse(table.Rows[i][2].ToString());
                             bUS_Lop.Insert(lop);
@@ -307,7 +313,7 @@ namespace QuanLyKTX.Forms.FormHeThong
                         for (int i = 0; i < table.Rows.Count; i++)
                         {
                             DonVi donVi = new DonVi();
-                            donVi.DonViId = int.Parse(table.Rows[i][0].ToString());
+                          
                             donVi.TenDonVi = table.Rows[i][1].ToString();
                             donVi.DiaChi = table.Rows[i][2].ToString();
                             donVi.Sdt = table.Rows[i][3].ToString();

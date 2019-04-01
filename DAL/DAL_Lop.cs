@@ -48,7 +48,7 @@ namespace DAL
                 table = GetData();
                 DataRow row = table.NewRow();
                 row["tenLop"] = lop.TenLop;
-                row["DonViId "] = lop.DonViId;
+                row["DonViId"] = lop.DonViId;
 
                 table.Rows.Add(row);
 
@@ -98,7 +98,7 @@ namespace DAL
                 if (row != null)
                 {
                     row["tenLop"] = lop.TenLop;
-                    row["DonViId "] = lop.DonViId;
+                    row["DonViId"] = lop.DonViId;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

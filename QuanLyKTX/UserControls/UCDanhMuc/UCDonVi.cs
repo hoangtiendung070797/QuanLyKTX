@@ -32,6 +32,8 @@ namespace QuanLyKTX.UserControls
                 {
 
                     DonVi DonVi = new DonVi(int.Parse(txtMaDonVi.Text),txtTenDonVi.Text);
+                    DonVi.Sdt = txtSDT.Text;
+                    DonVi.GhiChu = txtGhiChu.Text;
                     //MessageBox.Show(dAL_DonVi.GetIdentityId().ToString());
                     bus_donvi.Insert(DonVi);
                     MessageBox.Show("Thêm thành công!");
