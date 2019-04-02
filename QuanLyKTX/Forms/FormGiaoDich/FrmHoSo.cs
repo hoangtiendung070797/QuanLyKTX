@@ -10,6 +10,7 @@ namespace QuanLyKTX
 {
     public partial class FrmHoSo : DevExpress.XtraEditors.XtraForm
     {
+        #region Properties
         BUS_DoiTuong BUS_DoiTuong = new BUS_DoiTuong();
         BUS_DanToc BUS_DanToc = new BUS_DanToc();
         BUS_LoaiDoiTuong BUS_LoaiDoiTuong = new BUS_LoaiDoiTuong();
@@ -19,13 +20,19 @@ namespace QuanLyKTX
         BUS_TinhThanh BUS_TinhThanh = new BUS_TinhThanh();
         SupportImageToDb support = new SupportImageToDb();
         string path = "";
+        #endregion
+
+
+        #region Initialize
         public FrmHoSo()
         {
-            
-            InitializeComponent();
-            
-        }
 
+            InitializeComponent();
+
+        }
+        #endregion
+
+        #region Methods
         private void btnLoadAnh_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Select Picture";
@@ -53,14 +60,14 @@ namespace QuanLyKTX
         private void btnTaoHoSo_Click(object sender, EventArgs e)
         {
             //Nếu không trùng và đầy đủ thông tin cần thiết thì add
-            if(!DuplicateCheck() && IsFullInfo())
+            if (!DuplicateCheck() && IsFullInfo())
             {
                 DoiTuong doiTuong = new DoiTuong();
                 doiTuong.HoDem = txtHoDem.Text;
                 doiTuong.Ten = txtTen.Text;
                 doiTuong.MaSinhVien = txtMaSinhVien.Text;
                 doiTuong.NgaySinh = (DateTime)dateNgaySinh.EditValue;
-               
+
                 bool gioiTinh = true;
                 if (rdbNu.Checked)
                     gioiTinh = false;
@@ -102,7 +109,7 @@ namespace QuanLyKTX
             {
                 return true;
             }
-            else return false;  
+            else return false;
         }
 
 
@@ -136,19 +143,19 @@ namespace QuanLyKTX
         public bool DuplicateCheck()
         {
             //nếu là loại đối tượng là sinh viên - thì chắc chắn sẽ có mã sinh viên
-            if(cbLoaiDoiTuong.Text == "Sinh Viên")
+            if (cbLoaiDoiTuong.Text == "Sinh Viên")
             {
                 //kiểm tra có trùng trong csdl?
                 DataTable data = BUS_DoiTuong.GetData();
                 DataRow[] row = data.Select("maSinhVien = '" + txtMaSinhVien.Text + "'");
 
-                return (row.Length !=0)?true:false;
+                return (row.Length != 0) ? true : false;
             }
             else
             {
                 return false;
             }
-            
+
 
         }
         public void Reset()
@@ -165,5 +172,8 @@ namespace QuanLyKTX
         {
 
         }
+        #endregion
+
+
     }
 }

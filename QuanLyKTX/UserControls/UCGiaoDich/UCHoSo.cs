@@ -12,49 +12,43 @@ namespace QuanLyKTX
             InitializeComponent();
         }
         BUS_DoiTuong BUS_DoiTuong = new BUS_DoiTuong();
-        int id;
+        
         private void UCHoSo_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = BUS_DoiTuong.GetFullInfo();
         }
 
-     
+        
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             FrmHoSo frmHoSo = new FrmHoSo();
             frmHoSo.ShowDialog();
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            FrmThongTinHoSo frmThongTinHoSo = new FrmThongTinHoSo();
-            frmThongTinHoSo.ShowDialog();
-        }
+            if(Const.DoiTuongId!=0)
+            {
+                FrmThongTinHoSo frmThongTinHoSo = new FrmThongTinHoSo();
+                frmThongTinHoSo.ShowDialog();
+            }
+            else
+            {
 
-        private void dgvHoSo_CustomRowCellEdit(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
-        {
-            //id = (int)dgvHoSo.GetRowCellValue(e.RowHandle, "DoiTuongId");
+                MessageBox.Show("Bạn cần chọn hồ sơ cần sửa!");
+            }
             
         }
 
-        private void layoutView1_FocusedRowLoaded(object sender, DevExpress.XtraGrid.Views.Base.RowEventArgs e)
-        {
-            int id = (int)layoutViewHoSo.GetRowCellValue(e.RowHandle, "DoiTuongId");
-            MessageBox.Show(id.ToString());
-        }
+    
 
-        private void layoutViewHoSo_FieldValueClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.FieldValueClickEventArgs e)
-        {
-            //DataRow x = layoutViewHoSo.GetFocusedDataRow();
-            //MessageBox.Show(x["DoiTuongId"].ToString());
-
-        }
-
+    
         private void layoutViewHoSo_CardClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.CardClickEventArgs e)
         {
-            DataRow x = layoutViewHoSo.GetFocusedDataRow();
-            MessageBox.Show(x["Mã Hồ Sơ"].ToString());
+            DataRow row = layoutViewHoSo.GetFocusedDataRow();
+            Const.DoiTuongId = (int)row["DoiTuongId"];
         }
     }
 }

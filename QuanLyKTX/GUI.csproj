@@ -103,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Const.cs" />
+    <Compile Include="Forms\FormGiaoDich\FormCapNhapHoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormCapNhapHoSo.Designer.cs">
+      <DependentUpon>FormCapNhapHoSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     <Compile Include="UserControls\UCDanhMuc\UCQuocTich.Designer.cs">
       <DependentUpon>UCQuocTich.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FormCapNhapHoSo.resx">
+      <DependentUpon>FormCapNhapHoSo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmHoSo.resx">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
     </EmbeddedResource>
