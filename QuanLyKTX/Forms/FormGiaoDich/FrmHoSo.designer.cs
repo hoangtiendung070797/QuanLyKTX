@@ -31,6 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoSo));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.pnllThongTin = new DevExpress.XtraEditors.PanelControl();
+            this.cbDanToc = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbLoaiDoiTuong = new System.Windows.Forms.ComboBox();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.cbQuocTich = new System.Windows.Forms.ComboBox();
+            this.cbTonGiao = new System.Windows.Forms.ComboBox();
+            this.cbTinhThanh = new System.Windows.Forms.ComboBox();
             this.rdbNu = new System.Windows.Forms.RadioButton();
             this.rdbNam = new System.Windows.Forms.RadioButton();
             this.btnHuyBo = new DevExpress.XtraEditors.SimpleButton();
@@ -64,17 +71,10 @@
             this.txtHoDem = new System.Windows.Forms.TextBox();
             this.pnlImage = new DevExpress.XtraEditors.PanelControl();
             this.btnLoadAnh = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             this.panelControlTitle = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.cbTinhThanh = new System.Windows.Forms.ComboBox();
-            this.cbLop = new System.Windows.Forms.ComboBox();
-            this.cbTonGiao = new System.Windows.Forms.ComboBox();
-            this.cbQuocTich = new System.Windows.Forms.ComboBox();
-            this.cbLoaiDoiTuong = new System.Windows.Forms.ComboBox();
-            this.cbDanToc = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).BeginInit();
@@ -83,9 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.pnlImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -144,6 +144,64 @@
             this.pnllThongTin.Name = "pnllThongTin";
             this.pnllThongTin.Size = new System.Drawing.Size(700, 563);
             this.pnllThongTin.TabIndex = 2;
+            // 
+            // cbDanToc
+            // 
+            this.cbDanToc.FormattingEnabled = true;
+            this.cbDanToc.Location = new System.Drawing.Point(118, 320);
+            this.cbDanToc.Name = "cbDanToc";
+            this.cbDanToc.Size = new System.Drawing.Size(101, 21);
+            this.cbDanToc.TabIndex = 39;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(13, 323);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(89, 14);
+            this.label18.TabIndex = 38;
+            this.label18.Text = "Dân Tộc        :";
+            // 
+            // cbLoaiDoiTuong
+            // 
+            this.cbLoaiDoiTuong.FormattingEnabled = true;
+            this.cbLoaiDoiTuong.Location = new System.Drawing.Point(117, 203);
+            this.cbLoaiDoiTuong.Name = "cbLoaiDoiTuong";
+            this.cbLoaiDoiTuong.Size = new System.Drawing.Size(216, 21);
+            this.cbLoaiDoiTuong.TabIndex = 37;
+            // 
+            // cbLop
+            // 
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(445, 203);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(216, 21);
+            this.cbLop.TabIndex = 36;
+            // 
+            // cbQuocTich
+            // 
+            this.cbQuocTich.FormattingEnabled = true;
+            this.cbQuocTich.Location = new System.Drawing.Point(543, 282);
+            this.cbQuocTich.Name = "cbQuocTich";
+            this.cbQuocTich.Size = new System.Drawing.Size(101, 21);
+            this.cbQuocTich.TabIndex = 36;
+            // 
+            // cbTonGiao
+            // 
+            this.cbTonGiao.FormattingEnabled = true;
+            this.cbTonGiao.Location = new System.Drawing.Point(322, 282);
+            this.cbTonGiao.Name = "cbTonGiao";
+            this.cbTonGiao.Size = new System.Drawing.Size(101, 21);
+            this.cbTonGiao.TabIndex = 36;
+            // 
+            // cbTinhThanh
+            // 
+            this.cbTinhThanh.FormattingEnabled = true;
+            this.cbTinhThanh.Location = new System.Drawing.Point(117, 282);
+            this.cbTinhThanh.Name = "cbTinhThanh";
+            this.cbTinhThanh.Size = new System.Drawing.Size(101, 21);
+            this.cbTinhThanh.TabIndex = 36;
             // 
             // rdbNu
             // 
@@ -464,17 +522,6 @@
             this.btnLoadAnh.Text = "Chọn ảnh";
             this.btnLoadAnh.Click += new System.EventHandler(this.btnLoadAnh_Click);
             // 
-            // pictureHoSo
-            // 
-            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureHoSo.EditValue = ((object)(resources.GetObject("pictureHoSo.EditValue")));
-            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
-            this.pictureHoSo.Name = "pictureHoSo";
-            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
-            this.pictureHoSo.TabIndex = 99;
-            // 
             // panelControlTitle
             // 
             this.panelControlTitle.Controls.Add(this.label1);
@@ -499,63 +546,16 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // cbTinhThanh
+            // pictureHoSo
             // 
-            this.cbTinhThanh.FormattingEnabled = true;
-            this.cbTinhThanh.Location = new System.Drawing.Point(117, 282);
-            this.cbTinhThanh.Name = "cbTinhThanh";
-            this.cbTinhThanh.Size = new System.Drawing.Size(101, 21);
-            this.cbTinhThanh.TabIndex = 36;
-            // 
-            // cbLop
-            // 
-            this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(445, 203);
-            this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(216, 21);
-            this.cbLop.TabIndex = 36;
-            // 
-            // cbTonGiao
-            // 
-            this.cbTonGiao.FormattingEnabled = true;
-            this.cbTonGiao.Location = new System.Drawing.Point(322, 282);
-            this.cbTonGiao.Name = "cbTonGiao";
-            this.cbTonGiao.Size = new System.Drawing.Size(101, 21);
-            this.cbTonGiao.TabIndex = 36;
-            // 
-            // cbQuocTich
-            // 
-            this.cbQuocTich.FormattingEnabled = true;
-            this.cbQuocTich.Location = new System.Drawing.Point(543, 282);
-            this.cbQuocTich.Name = "cbQuocTich";
-            this.cbQuocTich.Size = new System.Drawing.Size(101, 21);
-            this.cbQuocTich.TabIndex = 36;
-            // 
-            // cbLoaiDoiTuong
-            // 
-            this.cbLoaiDoiTuong.FormattingEnabled = true;
-            this.cbLoaiDoiTuong.Location = new System.Drawing.Point(117, 203);
-            this.cbLoaiDoiTuong.Name = "cbLoaiDoiTuong";
-            this.cbLoaiDoiTuong.Size = new System.Drawing.Size(216, 21);
-            this.cbLoaiDoiTuong.TabIndex = 37;
-            // 
-            // cbDanToc
-            // 
-            this.cbDanToc.FormattingEnabled = true;
-            this.cbDanToc.Location = new System.Drawing.Point(118, 320);
-            this.cbDanToc.Name = "cbDanToc";
-            this.cbDanToc.Size = new System.Drawing.Size(101, 21);
-            this.cbDanToc.TabIndex = 39;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(13, 323);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(89, 14);
-            this.label18.TabIndex = 38;
-            this.label18.Text = "Dân Tộc        :";
+            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureHoSo.EditValue = ((object)(resources.GetObject("pictureHoSo.EditValue")));
+            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
+            this.pictureHoSo.Name = "pictureHoSo";
+            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
+            this.pictureHoSo.TabIndex = 99;
             // 
             // FrmHoSo
             // 
@@ -579,10 +579,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
             this.pnlImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).EndInit();
             this.panelControlTitle.ResumeLayout(false);
             this.panelControlTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

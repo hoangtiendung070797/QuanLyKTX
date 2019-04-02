@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhapHoSo));
             this.pnlImage = new DevExpress.XtraEditors.PanelControl();
             this.btnLoadAnh = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             this.cbDanToc = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.cbLoaiDoiTuong = new System.Windows.Forms.ComboBox();
@@ -43,7 +41,7 @@
             this.rdbNam = new System.Windows.Forms.RadioButton();
             this.btnHuyBo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapLai = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTaoHoSo = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCapNhap = new DevExpress.XtraEditors.SimpleButton();
             this.label17 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -75,9 +73,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoDem = new System.Windows.Forms.TextBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.pnlImage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).BeginInit();
@@ -86,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlImage
@@ -105,17 +104,7 @@
             this.btnLoadAnh.Size = new System.Drawing.Size(134, 31);
             this.btnLoadAnh.TabIndex = 100;
             this.btnLoadAnh.Text = "Chọn ảnh";
-            // 
-            // pictureHoSo
-            // 
-            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureHoSo.EditValue = ((object)(resources.GetObject("pictureHoSo.EditValue")));
-            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
-            this.pictureHoSo.Name = "pictureHoSo";
-            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
-            this.pictureHoSo.TabIndex = 99;
+            this.btnLoadAnh.Click += new System.EventHandler(this.btnLoadAnh_Click);
             // 
             // cbDanToc
             // 
@@ -215,13 +204,14 @@
             this.btnNhapLai.TabIndex = 18;
             this.btnNhapLai.Text = "Nhập lại";
             // 
-            // btnTaoHoSo
+            // btnCapNhap
             // 
-            this.btnTaoHoSo.Location = new System.Drawing.Point(135, 522);
-            this.btnTaoHoSo.Name = "btnTaoHoSo";
-            this.btnTaoHoSo.Size = new System.Drawing.Size(134, 31);
-            this.btnTaoHoSo.TabIndex = 17;
-            this.btnTaoHoSo.Text = "Tạo hồ sơ";
+            this.btnCapNhap.Location = new System.Drawing.Point(135, 522);
+            this.btnCapNhap.Name = "btnCapNhap";
+            this.btnCapNhap.Size = new System.Drawing.Size(134, 31);
+            this.btnCapNhap.TabIndex = 17;
+            this.btnCapNhap.Text = "Cập nhập";
+            this.btnCapNhap.Click += new System.EventHandler(this.btnCapNhap_Click);
             // 
             // label17
             // 
@@ -306,7 +296,7 @@
             this.panelControlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTitle.Location = new System.Drawing.Point(2, 2);
             this.panelControlTitle.Name = "panelControlTitle";
-            this.panelControlTitle.Size = new System.Drawing.Size(860, 34);
+            this.panelControlTitle.Size = new System.Drawing.Size(852, 34);
             this.panelControlTitle.TabIndex = 0;
             // 
             // label1
@@ -347,7 +337,7 @@
             this.pnllThongTin.Controls.Add(this.rdbNam);
             this.pnllThongTin.Controls.Add(this.btnHuyBo);
             this.pnllThongTin.Controls.Add(this.btnNhapLai);
-            this.pnllThongTin.Controls.Add(this.btnTaoHoSo);
+            this.pnllThongTin.Controls.Add(this.btnCapNhap);
             this.pnllThongTin.Controls.Add(this.label17);
             this.pnllThongTin.Controls.Add(this.txtGhiChu);
             this.pnllThongTin.Controls.Add(this.label16);
@@ -377,7 +367,7 @@
             this.pnllThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnllThongTin.Location = new System.Drawing.Point(178, 36);
             this.pnllThongTin.Name = "pnllThongTin";
-            this.pnllThongTin.Size = new System.Drawing.Size(684, 583);
+            this.pnllThongTin.Size = new System.Drawing.Size(676, 583);
             this.pnllThongTin.TabIndex = 2;
             // 
             // txtSdt
@@ -550,20 +540,30 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(864, 621);
+            this.panelControl2.Size = new System.Drawing.Size(856, 621);
             this.panelControl2.TabIndex = 2;
+            // 
+            // pictureHoSo
+            // 
+            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
+            this.pictureHoSo.Name = "pictureHoSo";
+            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
+            this.pictureHoSo.TabIndex = 99;
             // 
             // FormCapNhapHoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 621);
+            this.ClientSize = new System.Drawing.Size(856, 621);
             this.Controls.Add(this.panelControl2);
             this.Name = "FormCapNhapHoSo";
             this.Text = "FormCapNhapHoSo";
+            this.Load += new System.EventHandler(this.FormCapNhapHoSo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
             this.pnlImage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).EndInit();
             this.panelControlTitle.ResumeLayout(false);
             this.panelControlTitle.PerformLayout();
@@ -574,6 +574,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -594,7 +595,7 @@
         private System.Windows.Forms.RadioButton rdbNam;
         private DevExpress.XtraEditors.SimpleButton btnHuyBo;
         private DevExpress.XtraEditors.SimpleButton btnNhapLai;
-        private DevExpress.XtraEditors.SimpleButton btnTaoHoSo;
+        private DevExpress.XtraEditors.SimpleButton btnCapNhap;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label16;

@@ -33,5 +33,11 @@ namespace BUS
         {
             return this.DoiTuong.GetFullInfo();
         }
+
+        public DataRow GetById(int id)
+        {
+            return this.DoiTuong.GetById(id);
+        }
+       
     }
 }

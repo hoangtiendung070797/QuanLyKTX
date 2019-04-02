@@ -159,6 +159,11 @@ namespace DAL
         //    }
         //}
 
+
+        /// <summary>
+        /// In ra cho đẹp
+        /// </summary>
+        /// <returns></returns>
         public DataTable GetFullInfo()
         {
             try
@@ -175,6 +180,15 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// Lấy ra đối tượng có id truyền vào.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public DataRow GetById(int id)
+        {
+            return table.Rows.Find(id);
+        }
 
 
 
