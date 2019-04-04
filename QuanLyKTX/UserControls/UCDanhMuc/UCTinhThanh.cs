@@ -40,6 +40,7 @@ namespace QuanLyKTX
                     bUS_TinhThanh.Insert(tinhThanh);
                     MessageBox.Show("Thêm thành công!");
                     txtTenTinhThanh.Enabled = false;
+                    UCTinhThanh_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -77,6 +78,7 @@ namespace QuanLyKTX
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenTinhThanh.Enabled = false;
+                        UCTinhThanh_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 
@@ -107,7 +109,7 @@ namespace QuanLyKTX
 
                     bUS_TinhThanh.Delete(int.Parse(txtMaTinhThanh.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCTinhThanh_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch

@@ -36,6 +36,7 @@ namespace QuanLyKTX.UserControls
                     bUS_Lop.Insert(Lop);
                     MessageBox.Show("Thêm thành công!");
                     txtTenLop.Enabled = false;
+                    UCLop_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -79,6 +80,7 @@ namespace QuanLyKTX.UserControls
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenLop.Enabled = false;
+                        UCLop_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 
@@ -118,7 +120,7 @@ namespace QuanLyKTX.UserControls
 
                     bUS_Lop.Delete(int.Parse(txtMaLop.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCLop_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch

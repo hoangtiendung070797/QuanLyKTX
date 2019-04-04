@@ -33,6 +33,7 @@ namespace QuanLyKTX.UserControls
                     bUS_vattu.Insert(VatTu);
                     MessageBox.Show("Thêm thành công!");
                     txtTenVatTu.Enabled = false;
+                    UCVatTu_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -76,6 +77,7 @@ namespace QuanLyKTX.UserControls
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenVatTu.Enabled = false;
+                        UCVatTu_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 
@@ -119,7 +121,7 @@ namespace QuanLyKTX.UserControls
 
                     bUS_vattu.Delete(txtMaVatTu.Text);
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCVatTu_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch

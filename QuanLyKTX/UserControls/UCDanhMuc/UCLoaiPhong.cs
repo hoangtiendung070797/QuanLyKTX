@@ -34,6 +34,7 @@ namespace QuanLyKTX
                     bUS_LoaiPhong.Insert(loaiPhong);
                     MessageBox.Show("Thêm thành công!");
                     txtTenLoaiPhong.Enabled = false;
+                    UCGiaLoaiPhong_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -72,6 +73,7 @@ namespace QuanLyKTX
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenLoaiPhong.Enabled = false;
+                        UCGiaLoaiPhong_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 
@@ -110,7 +112,7 @@ namespace QuanLyKTX
 
                     bUS_LoaiPhong.Delete(int.Parse(txtMaLoaiPhong.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCGiaLoaiPhong_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch

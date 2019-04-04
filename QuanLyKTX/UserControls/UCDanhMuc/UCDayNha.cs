@@ -26,10 +26,12 @@ namespace QuanLyKTX
                 {
 
                     DayNha dayNha = new DayNha(txtTenDayNha.Text);
-                    //MessageBox.Show(dAL_DayNha.GetIdentityId().ToString());
+             
                     bUS_DayNha.Insert(dayNha);
                     MessageBox.Show("Thêm thành công!");
                     txtTenDayNha.Enabled = false;
+                    UCDayNha_Load(sender, e);
+
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -66,6 +68,7 @@ namespace QuanLyKTX
 
                     if (bUS_DayNha.Update(DayNha) == true)
                     {
+                        UCDayNha_Load(sender, e);
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenDayNha.Enabled = false;
                         // lưu vào log ... viết sau
@@ -103,7 +106,7 @@ namespace QuanLyKTX
 
                     bUS_DayNha.Delete(int.Parse(txtDayNhaId.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridViewDayNha.RefreshData();
+                    UCDayNha_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch

@@ -34,6 +34,7 @@ namespace QuanLyKTX
                     bUS_QuocTich.Insert(quocTich);
                     MessageBox.Show("Thêm thành công!");
                     txtTenQuocTich.Enabled = false;
+                    UCQuocTich_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -69,7 +70,7 @@ namespace QuanLyKTX
 
                     bUS_QuocTich.Delete(int.Parse(txtMaQuocTich.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCQuocTich_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -102,6 +103,7 @@ namespace QuanLyKTX
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenQuocTich.Enabled = false;
+                        UCQuocTich_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 

@@ -37,6 +37,7 @@ namespace QuanLyKTX.UserControls
                     bUS_TonGiao.Insert(tongiao);
                     MessageBox.Show("Thêm thành công!");
                     txtTenTonGiao.Enabled = false;
+                    UCTonGiao_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -64,7 +65,7 @@ namespace QuanLyKTX.UserControls
 
                     bUS_TonGiao.Delete(int.Parse(txtMaTonGiao.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCTonGiao_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -91,6 +92,7 @@ namespace QuanLyKTX.UserControls
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenTonGiao.Enabled = false;
+                        UCTonGiao_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 

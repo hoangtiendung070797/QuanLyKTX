@@ -35,6 +35,7 @@ namespace QuanLyKTX.UserControls
                     bUS_LoiViPham.Insert(loivipham);
                     MessageBox.Show("Thêm thành công!");
                     txtTenLoi.Enabled = false;
+                    UCLoiViPham_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -75,6 +76,7 @@ namespace QuanLyKTX.UserControls
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenLoi.Enabled = false;
+                        UCLoiViPham_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 
@@ -114,7 +116,7 @@ namespace QuanLyKTX.UserControls
 
                     bUS_LoiViPham.Delete(int.Parse(txtMaLoi.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCLoiViPham_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch

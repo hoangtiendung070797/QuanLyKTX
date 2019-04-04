@@ -90,6 +90,7 @@ namespace QuanLyKTX
                 BUS_DoiTuong.Insert(doiTuong);
 
                 MessageBox.Show("Thêm Thành Công!");
+                
                 this.Close();
 
             }

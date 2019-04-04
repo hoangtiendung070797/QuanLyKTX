@@ -33,6 +33,7 @@ namespace QuanLyKTX.UserControls
                     bUS_LoaiDoiTuong.Insert(LoaiDoiTuong);
                     MessageBox.Show("Thêm thành công!");
                     txtTenLoaiDoiTuong.Enabled = false;
+                    UCLoaiDoiTuong_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -71,6 +72,7 @@ namespace QuanLyKTX.UserControls
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenLoaiDoiTuong.Enabled = false;
+                        UCLoaiDoiTuong_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 
@@ -106,6 +108,7 @@ namespace QuanLyKTX.UserControls
 
                     bUS_LoaiDoiTuong.Delete(int.Parse(txtMaLoaiDoiTuong.Text));
                     MessageBox.Show("Xóa thành công!");
+                    UCLoaiDoiTuong_Load(sender, e);
                     gridView1.RefreshData();
                     // lưu vào log ... viết sau
                 }

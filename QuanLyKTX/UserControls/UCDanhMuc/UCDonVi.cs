@@ -38,6 +38,7 @@ namespace QuanLyKTX.UserControls
                     bus_donvi.Insert(DonVi);
                     MessageBox.Show("Thêm thành công!");
                     txtTenDonVi.Enabled = false;
+                    UCDonVi_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -74,7 +75,7 @@ namespace QuanLyKTX.UserControls
 
                     bus_donvi.Delete(int.Parse(txtMaDonVi.Text));
                     MessageBox.Show("Xóa thành công!");
-                    gridView1.RefreshData();
+                    UCDonVi_Load(sender, e);
                     // lưu vào log ... viết sau
                 }
                 catch
@@ -101,6 +102,7 @@ namespace QuanLyKTX.UserControls
                     {
                         MessageBox.Show("Đã cập nhập thành công!");
                         txtTenDonVi.Enabled = false;
+                        UCDonVi_Load(sender, e);
                         // lưu vào log ... viết sau
                     }
 

@@ -115,12 +115,6 @@
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.designer.cs">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormGiaoDich\FrmThongTinHoSo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormGiaoDich\FrmThongTinHoSo.designer.cs">
-      <DependentUpon>FrmThongTinHoSo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\FormHeThong\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmHoSo.resx">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormGiaoDich\FrmThongTinHoSo.resx">
-      <DependentUpon>FrmThongTinHoSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHeThong\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>

@@ -25,7 +25,7 @@ namespace QuanLyKTX
         {
             FrmHoSo frmHoSo = new FrmHoSo();
             frmHoSo.ShowDialog();
-
+            UCHoSo_Load(sender, e);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -34,6 +34,7 @@ namespace QuanLyKTX
             {
                 FormCapNhapHoSo formCapNhapHoSo = new FormCapNhapHoSo();
                 formCapNhapHoSo.ShowDialog();
+                UCHoSo_Load(sender, e);
             }
             else
             {
@@ -59,6 +60,7 @@ namespace QuanLyKTX
                 try
                 {
                     BUS_DoiTuong.Delete(Const.DoiTuongId);
+                    UCHoSo_Load(sender, e);
                 }
                 catch
                 {
