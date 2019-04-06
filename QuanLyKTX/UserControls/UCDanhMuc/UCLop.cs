@@ -16,8 +16,17 @@ namespace QuanLyKTX.UserControls
         private void UCLop_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_Lop.GetData();
+            FixNColumnNames();
         }
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã lớp";
+            gridView1.Columns[1].Caption = "Tên lớp";
+            gridView1.Columns[2].Caption = "Mã đơn vị";
+           
 
+
+        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtTenLop.Enabled = true;

@@ -16,6 +16,7 @@ namespace QuanLyKTX.UserControls
         private void UCDonVi_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bus_donvi.GetData();
+            FixNColumnNames();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace QuanLyKTX.UserControls
                     DonVi DonVi = new DonVi(int.Parse(txtMaDonVi.Text),txtTenDonVi.Text);
                     DonVi.Sdt = txtSDT.Text;
                     DonVi.GhiChu = txtGhiChu.Text;
-                    //MessageBox.Show(dAL_DonVi.GetIdentityId().ToString());
+                   
                     bus_donvi.Insert(DonVi);
                     MessageBox.Show("Thêm thành công!");
                     txtTenDonVi.Enabled = false;
@@ -77,6 +78,7 @@ namespace QuanLyKTX.UserControls
                     MessageBox.Show("Xóa thành công!");
                     UCDonVi_Load(sender, e);
                     // lưu vào log ... viết sau
+
                 }
                 catch
                 {
@@ -104,7 +106,9 @@ namespace QuanLyKTX.UserControls
                         txtTenDonVi.Enabled = false;
                         UCDonVi_Load(sender, e);
                         // lưu vào log ... viết sau
+
                     }
+
 
 
                 }
@@ -134,6 +138,15 @@ namespace QuanLyKTX.UserControls
             txtDiaChi.Enabled = true;
             txtSDT.Enabled = true;
             txtGhiChu.Enabled = true;
+        }
+
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã đơn vị";
+            gridView1.Columns[1].Caption = "Tên đơn vị";
+            gridView1.Columns[2].Caption = "Địa chỉ";
+            gridView1.Columns[3].Caption = "sđt";
+            gridView1.Columns[4].Caption = "Ghi chú";
         }
     }
 }

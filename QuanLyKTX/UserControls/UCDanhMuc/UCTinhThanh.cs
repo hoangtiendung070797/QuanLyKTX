@@ -18,6 +18,12 @@ namespace QuanLyKTX
         private void UCTinhThanh_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_TinhThanh.GetData();
+            FixNColumnNames();
+        }
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã tỉnh thành";
+            gridView1.Columns[1].Caption = "Tên tỉnh thành ";
         }
 
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)

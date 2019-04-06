@@ -30,6 +30,7 @@
         {
             this.pnlImage = new DevExpress.XtraEditors.PanelControl();
             this.btnLoadAnh = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             this.cbDanToc = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.cbLoaiDoiTuong = new System.Windows.Forms.ComboBox();
@@ -73,9 +74,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoDem = new System.Windows.Forms.TextBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.pnlImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).BeginInit();
@@ -84,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlImage
@@ -105,6 +105,16 @@
             this.btnLoadAnh.TabIndex = 100;
             this.btnLoadAnh.Text = "Chọn ảnh";
             this.btnLoadAnh.Click += new System.EventHandler(this.btnLoadAnh_Click);
+            // 
+            // pictureHoSo
+            // 
+            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
+            this.pictureHoSo.Name = "pictureHoSo";
+            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
+            this.pictureHoSo.TabIndex = 99;
             // 
             // cbDanToc
             // 
@@ -543,16 +553,6 @@
             this.panelControl2.Size = new System.Drawing.Size(856, 621);
             this.panelControl2.TabIndex = 2;
             // 
-            // pictureHoSo
-            // 
-            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
-            this.pictureHoSo.Name = "pictureHoSo";
-            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
-            this.pictureHoSo.TabIndex = 99;
-            // 
             // FormCapNhapHoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -564,6 +564,7 @@
             this.Load += new System.EventHandler(this.FormCapNhapHoSo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
             this.pnlImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).EndInit();
             this.panelControlTitle.ResumeLayout(false);
             this.panelControlTitle.PerformLayout();
@@ -574,7 +575,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

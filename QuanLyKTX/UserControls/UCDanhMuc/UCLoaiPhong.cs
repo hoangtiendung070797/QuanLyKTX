@@ -16,6 +16,7 @@ namespace QuanLyKTX
         private void UCGiaLoaiPhong_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_LoaiPhong.GetData();
+            FixNColumnNames();
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -123,6 +124,14 @@ namespace QuanLyKTX
                     txtTenLoaiPhong.Focus();
                 }
             }
+        }
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã loại phòng";
+            gridView1.Columns[1].Caption = "Tên loại phòng";
+            gridView1.Columns[2].Caption = "Số lượng tối đa";
+            gridView1.Columns[3].Caption = "Giá loại phòng";
+           
         }
     }
 }

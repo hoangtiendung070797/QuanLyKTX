@@ -16,7 +16,7 @@ namespace QuanLyKTX
         private void UCQuocTich_Load(object sender, EventArgs e)
         {
             gridControlQuocTich.DataSource = bUS_QuocTich.GetData();
-
+            FixNColumnNames();
         }
      
         private void btnAdd_Click(object sender, EventArgs e)
@@ -123,6 +123,13 @@ namespace QuanLyKTX
                 txtTenQuocTich.ResetText();
                 txtTenQuocTich.Focus();
             }
+        }
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã quốc tịch";
+            gridView1.Columns[1].Caption = "Tên quốc tịch";
+           
+
         }
     }
 }

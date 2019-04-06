@@ -32,10 +32,20 @@ namespace QuanLyKTX
                             //mở chức năng tương ứng với user
                            //MessageBox.Show(Const.CurrentUser.TenDangNhap + " đăng nhập thành công!");
 
-                            if (Const.CurrentUser.NguoiDungId == 1)
+                            if (Const.CurrentUser.TenDangNhap == "admin")
                             {
                                 Const.isFullOp = true;
                                 Const.isLogin = true;
+                                NhatKyHoatDong nhatKyHoatDong = new NhatKyHoatDong();
+                                nhatKyHoatDong.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                                nhatKyHoatDong.NoiDung = "Tài khoản: admin đã đăng nhập";
+                                nhatKyHoatDong.ThaoTac = "";
+                                nhatKyHoatDong.ThoiGian = DateTime.Now;
+                                nhatKyHoatDong.ChucNang = "Đăng nhập";
+
+
+
+                                Const.NhatKyHoatDong.Insert(nhatKyHoatDong);
                                 return;
                             }
                             BUS_PhanQuyen bUS_PhanQuyen = new BUS_PhanQuyen();
@@ -99,7 +109,7 @@ namespace QuanLyKTX
                     Const.CurrentUser.DiaChi = data.Rows[i][5].ToString();
                     Const.CurrentUser.NguoiDungId = int.Parse(data.Rows[i][0].ToString());
 
-
+                    
 
                     return true;
 
@@ -135,6 +145,17 @@ namespace QuanLyKTX
                     Properties.Settings.Default.pass = "";
                     Properties.Settings.Default.Save();
                 }
+
+                NhatKyHoatDong nhatKyHoatDong = new NhatKyHoatDong();
+                nhatKyHoatDong.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                nhatKyHoatDong.NoiDung = "Tài khoản: "+ Const.CurrentUser.TenDangNhap +" đã đăng nhập";
+                nhatKyHoatDong.ThaoTac = "";
+                nhatKyHoatDong.ThoiGian = DateTime.Now;
+                nhatKyHoatDong.ChucNang = "Đăng nhập";
+
+
+
+                Const.NhatKyHoatDong.Insert(nhatKyHoatDong);
                 this.Close();
             }
                
@@ -156,7 +177,10 @@ namespace QuanLyKTX
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            if(MessageBox.Show("Bạn có muốn thoát?","Thoát chương trình",MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
     }
 }

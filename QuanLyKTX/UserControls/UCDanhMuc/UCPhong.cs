@@ -16,8 +16,19 @@ namespace QuanLyKTX.UserControls
         private void UCPhong_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_Phong.GetData();
+            FixNColumnNames();
         }
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã phòng";
+            gridView1.Columns[1].Caption = "Mã dãy nhà";
+            gridView1.Columns[2].Caption = "Loại phòng";
+            gridView1.Columns[3].Caption = "Tên phòng";
+            gridView1.Columns[4].Caption = "Tầng";
+            gridView1.Columns[5].Caption = "Giá phòng";
 
+
+        }
 
 
 

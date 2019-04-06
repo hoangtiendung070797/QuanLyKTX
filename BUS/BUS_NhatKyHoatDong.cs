@@ -4,7 +4,7 @@ using System.Data;
 
 namespace BUS
 {
-    class BUS_NhatKyHoatDong
+    public class BUS_NhatKyHoatDong
     {
         DAL_NhatKyHoatDong nhatKyHoatDong = new DAL_NhatKyHoatDong();
 

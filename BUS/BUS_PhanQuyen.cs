@@ -27,11 +27,21 @@ namespace BUS
         }
         public DataTable GetData()
         {
-            return this.phanQuyen.GetData();
+            return this.PhanQuyen.GetData();
         }
         public DataTable GetDetailPhanQuyen(int nguoiDungId)
         {
-            return this.phanQuyen.GetDetailPhanQuyen(nguoiDungId);
+            return this.PhanQuyen.GetDetailPhanQuyen(nguoiDungId);
+        }
+
+        public bool IsNguoiDungIdInPQ(int nguoiDungId)
+        {
+            return this.PhanQuyen.IsNguoiDungIdInPQ(nguoiDungId);
+        }
+
+        public bool UpdateDetail(DataTable table)
+        {
+            return this.PhanQuyen.UpdateDetail(table);
         }
     }
 }

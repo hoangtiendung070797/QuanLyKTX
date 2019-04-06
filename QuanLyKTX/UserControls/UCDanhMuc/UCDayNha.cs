@@ -15,6 +15,7 @@ namespace QuanLyKTX
         private void UCDayNha_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_DayNha.GetData();
+            FixNColumnNames();
         }
         private void btnThemDayNha_Click(object sender, EventArgs e)
         {
@@ -97,6 +98,12 @@ namespace QuanLyKTX
             txtTenDayNha.Enabled = true;
         }
 
+        public void FixNColumnNames()
+        {
+            gridViewDayNha.Columns[0].Caption = "Mã Dãy Nhà";
+            gridViewDayNha.Columns[1].Caption = "Tên Dãy Nhà";
+        }
+
         private void z_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -107,6 +114,7 @@ namespace QuanLyKTX
                     bUS_DayNha.Delete(int.Parse(txtDayNhaId.Text));
                     MessageBox.Show("Xóa thành công!");
                     UCDayNha_Load(sender, e);
+
                     // lưu vào log ... viết sau
                 }
                 catch

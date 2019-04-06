@@ -16,6 +16,19 @@ namespace QuanLyKTX.UserControls
         private void UCLoiViPham_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_LoiViPham.GetData();
+            FixNColumnNames();
+        }
+
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã lỗi vi phạm";
+            gridView1.Columns[1].Caption = "Tên lỗi vi phạm";
+            gridView1.Columns[2].Caption = "Nội dung";
+            gridView1.Columns[3].Caption = "Hình thức xử lý";
+
+            gridView1.Columns[4].Caption = "Ghi chú";
+            
+
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {

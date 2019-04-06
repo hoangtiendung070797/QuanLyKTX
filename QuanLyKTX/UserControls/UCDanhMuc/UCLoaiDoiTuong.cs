@@ -17,8 +17,16 @@ namespace QuanLyKTX.UserControls
         private void UCLoaiDoiTuong_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_LoaiDoiTuong.GetData();
+            FixNColumnNames();
         }
-        
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã loại đối tượng";
+            gridView1.Columns[1].Caption = "Tên loại đối tượng";
+           
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             txtTenLoaiDoiTuong.Enabled = true;

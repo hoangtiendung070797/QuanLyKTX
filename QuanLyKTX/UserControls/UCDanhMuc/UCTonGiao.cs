@@ -16,7 +16,13 @@ namespace QuanLyKTX.UserControls
         private void UCTonGiao_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_TonGiao.GetData();
+            FixNColumnNames();
+        }
 
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã tôn giáo";
+            gridView1.Columns[1].Caption = "Tên tôn giáo";
         }
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
@@ -33,11 +39,11 @@ namespace QuanLyKTX.UserControls
                 {
 
                     TonGiao tongiao = new TonGiao(int.Parse(txtMaTonGiao.Text),txtTenTonGiao.Text);
-                    //MessageBox.Show(dAL_QuocTich.GetIdentityId().ToString());
                     bUS_TonGiao.Insert(tongiao);
                     MessageBox.Show("Thêm thành công!");
                     txtTenTonGiao.Enabled = false;
                     UCTonGiao_Load(sender, e);
+
                     // lưu vào log ... viết sau
                 }
                 catch

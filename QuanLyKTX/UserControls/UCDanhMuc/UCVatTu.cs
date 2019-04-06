@@ -17,8 +17,17 @@ namespace QuanLyKTX.UserControls
         private void UCVatTu_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = bUS_vattu.GetData();
+            FixNColumnNames();
         }
-
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã vật tư";
+            gridView1.Columns[1].Caption = "Tên tỉnh thành ";
+            gridView1.Columns[2].Caption = "Mã vật tư";
+            gridView1.Columns[3].Caption = "Tên tỉnh thành ";
+            gridView1.Columns[4].Caption = "Mã vật tư";
+          
+        }
         private void btnadd_Click(object sender, EventArgs e)
         {
             txtTenVatTu.Enabled = true;

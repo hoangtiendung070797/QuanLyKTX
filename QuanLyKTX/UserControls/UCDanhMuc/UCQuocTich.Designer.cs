@@ -114,8 +114,12 @@
             // 
             this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.gridView1.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControlQuocTich;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.PrintDetails = true;
+            this.gridView1.OptionsPrint.PrintSelectedRowsOnly = true;
+            this.gridView1.OptionsPrint.PrintVertLines = false;
             this.gridView1.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEditForEditing);
             // 
             // btnDelete

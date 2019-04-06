@@ -1,9 +1,13 @@
-﻿using DevExpress.XtraEditors;
+﻿using BUS;
+using DevExpress.XtraBars.Ribbon;
+using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
+using DTO;
 using QuanLyKTX.Forms;
 using QuanLyKTX.Forms.FormHeThong;
 using QuanLyKTX.UserControls;
+using QuanLyKTX.UserControls.UCHeThong;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,10 +18,11 @@ namespace QuanLyKTX
     {
         #region Properties
         public static XtraTabControl tabstatic;
+        public BUS_PhanQuyen BUS_PhanQuyen = new BUS_PhanQuyen();
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong,UCHoSo
+            UCNhatKyHoatDong, UCHoSo,UCPhanQuyen
         }
         #endregion
 
@@ -29,14 +34,14 @@ namespace QuanLyKTX
             InitializeComponent();
             tabstatic = xtraTabControlMain;
         }
-       
-        
+
+
         private void fmMain_Load(object sender, EventArgs e)
         {
-           
+
             skins();
             Login();
-  
+
 
         }
         #endregion
@@ -61,10 +66,18 @@ namespace QuanLyKTX
         }
         public void Enable()
         {
-            foreach (Control item in this.Controls)
+            switch (Const.CurrentUser.TenDangNhap)
             {
-                item.Enabled = true;
+                case "admin":
+                    foreach (Control item in this.Controls)
+                    {
+                        item.Enabled = true;
+                    }
+                    break;
+                default:
+                    break;
             }
+
 
         }
         #endregion
@@ -133,8 +146,8 @@ namespace QuanLyKTX
         #endregion
 
         #region Thêm tabpage
-        public void AddTabPages(string nameOfTab,int select)
-        { 
+        public void AddTabPages(string nameOfTab, int select)
+        {
             XtraTabPage tabPage = new XtraTabPage();
             tabPage.Text = nameOfTab;
             if (ExitsTabpages(tabPage.Text) == false)
@@ -259,15 +272,56 @@ namespace QuanLyKTX
 
                 case (int)EnumUCDanhMuc.UCHoSo:
 
-                    UCHoSo uCHoSo  = new UCHoSo();
+                    UCHoSo uCHoSo = new UCHoSo();
                     tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCHoSo);
                     uCHoSo.Dock = DockStyle.Fill;
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+
+                case (int)EnumUCDanhMuc.UCPhanQuyen:
+
+                    UCPhanQuyen uCPhanQuyen = new UCPhanQuyen();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCPhanQuyen);
+                    uCPhanQuyen.LoadPhanQuyen += UCPhanQuyen_LoadPhanQuyen;
+                    uCPhanQuyen.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
-            }        
+            }
+        }
+
+        /// <summary>
+        /// Nếu trường là chưa có thì add quyền vào(TH user mới) còn bản chất luôn có tất cả các quyền chỉ có điều là được sủ dụng chức năng gì
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UCPhanQuyen_LoadPhanQuyen(object sender, EventArgs e)
+        {
+            if(!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
+            {
+                for (int i = 0; i < ribbonControlMain.Pages.Count; i++)
+                {
+                    for (int j = 0; j < ribbonControlMain.Pages[i].Groups.Count; j++)
+                    {
+                        for (int k = 0; k < ribbonControlMain.Pages[i].Groups[j].ItemLinks.Count; k++)
+                        {
+                            PhanQuyen quyen = new PhanQuyen();
+                            quyen.NguoiDungId = Const.NguoiDungId;
+                            quyen.TenNhomChucNang = ribbonControlMain.Pages[i].Text;
+                            quyen.TenChucNang = ribbonControlMain.Pages[i].Groups[j].ItemLinks[k].Caption;
+                            quyen.ChucNangThem = true;
+                            quyen.ChucNangSua = false;
+                            quyen.ChucNangDoc = true;
+                            quyen.ChucNangXoa = false;
+                            BUS_PhanQuyen.Insert(quyen);
+                        }
+                    }
+                }
+            }
         }
         #endregion
 
@@ -284,7 +338,7 @@ namespace QuanLyKTX
         #endregion
 
 
-        
+
 
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
@@ -293,7 +347,7 @@ namespace QuanLyKTX
 
         #region Gọi Form Or UserControl.
 
-        
+
 
         private void btnHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -307,7 +361,7 @@ namespace QuanLyKTX
 
         private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages("Dân Tộc", (int)EnumUCDanhMuc.UCTinhThanh);
+            AddTabPages("Dân Tộc", (int)EnumUCDanhMuc.UCDanToc);
         }
 
         private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -366,11 +420,17 @@ namespace QuanLyKTX
             FormRestore formRestore = new FormRestore();
             formRestore.StartPosition = FormStartPosition.CenterParent;
             formRestore.ShowDialog();
-            
+
         }
 
-
-
+        private void btnNhatKyHoatDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Nhật Ký Hoạt Động", (int)EnumUCDanhMuc.UCNhatKyHoatDong);
+        }
+        private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Hồ Sơ", (int)EnumUCDanhMuc.UCHoSo);
+        }
         #endregion
 
         #region Phần Hệ Thống
@@ -395,7 +455,7 @@ namespace QuanLyKTX
 
         #region Đăng Nhập - Đăng Xuất
 
-        
+
 
         public void Login()
         {
@@ -406,6 +466,19 @@ namespace QuanLyKTX
                 formDangNhap.ShowDialog();
             }
             Enable();
+        }
+        /// <summary>
+        /// //////////////////////////////////////
+        /// </summary>
+        public void MoQuyenTuongUng()
+        {
+            Const.DanhSachQuyen = BUS_PhanQuyen.GetDetailPhanQuyen(Const.NguoiDungId);
+
+
+            foreach (var item in ribbonControlMain.Controls)
+            {
+
+            }
         }
 
         public void Logout()
@@ -419,10 +492,7 @@ namespace QuanLyKTX
             }
         }
         #endregion
-        private void btnNhatKyHoatDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Nhật Ký Hoạt Động", (int)EnumUCDanhMuc.UCNhatKyHoatDong);
-        }
+      
 
         private void btnImportExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -434,9 +504,21 @@ namespace QuanLyKTX
 
         #endregion
 
-        private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+     
+
+        private void btnThongTinNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            AddTabPages("Hồ Sơ", (int)EnumUCDanhMuc.UCHoSo);
+
         }
+
+        private void btnPhanQuyenNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Phân Quyền Người Dùng", (int)EnumUCDanhMuc.UCPhanQuyen);
+
+          
+        }
+
+   
+
     }
 }

@@ -101,7 +101,7 @@
             this.layoutControl1.Controls.Add(this.btnDelete);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.layoutControl1.Margin = new System.Windows.Forms.Padding(2);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(891, 40, 562, 500);
             this.layoutControl1.Root = this.layoutControlGroup1;
@@ -111,10 +111,10 @@
             // 
             // gridControl1
             // 
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Location = new System.Drawing.Point(12, 127);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(748, 276);
             this.gridControl1.TabIndex = 19;
@@ -130,7 +130,7 @@
             // 
             this.cbbDonvi.FormattingEnabled = true;
             this.cbbDonvi.Location = new System.Drawing.Point(337, 43);
-            this.cbbDonvi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbDonvi.Margin = new System.Windows.Forms.Padding(2);
             this.cbbDonvi.Name = "cbbDonvi";
             this.cbbDonvi.Size = new System.Drawing.Size(185, 21);
             this.cbbDonvi.TabIndex = 14;
@@ -149,7 +149,7 @@
             // txtTenLop
             // 
             this.txtTenLop.Location = new System.Drawing.Point(61, 67);
-            this.txtTenLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenLop.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Size = new System.Drawing.Size(195, 20);
             this.txtTenLop.StyleController = this.layoutControl1;
@@ -158,7 +158,7 @@
             // txtMaLop
             // 
             this.txtMaLop.Location = new System.Drawing.Point(61, 43);
-            this.txtMaLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaLop.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaLop.Name = "txtMaLop";
             this.txtMaLop.Size = new System.Drawing.Size(195, 20);
             this.txtMaLop.StyleController = this.layoutControl1;
@@ -167,7 +167,7 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(12, 101);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(90, 22);
             this.btnAdd.StyleController = this.layoutControl1;
@@ -178,7 +178,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(106, 101);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 22);
             this.btnSave.StyleController = this.layoutControl1;
@@ -189,7 +189,7 @@
             // btnEdit
             // 
             this.btnEdit.Location = new System.Drawing.Point(200, 101);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(90, 22);
             this.btnEdit.StyleController = this.layoutControl1;
@@ -200,7 +200,7 @@
             // btnDelete
             // 
             this.btnDelete.Location = new System.Drawing.Point(294, 101);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 22);
             this.btnDelete.StyleController = this.layoutControl1;
@@ -399,7 +399,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.layoutControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCLop";
             this.Size = new System.Drawing.Size(772, 425);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

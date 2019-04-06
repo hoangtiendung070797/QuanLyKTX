@@ -141,6 +141,44 @@ namespace DAL
                 return null;
             }
         }
+
+        public bool IsNguoiDungIdInPQ(int nguoiDungId)
+        {
+            try
+            {
+                string query = "SELECT	COUNT(NguoiDungId) FROM dbo.PhanQuyen WHERE NguoiDungId = " + nguoiDungId;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                
+                return ((int)table.Rows[0][0] > 0?true:false);
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+
+        public bool UpdateDetail(DataTable table)
+        {
+            try
+            {
+                string query = "SELECT * FROM PhanQuyen";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                
+
+
+                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(table);
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+        }
         #endregion
     }
 }

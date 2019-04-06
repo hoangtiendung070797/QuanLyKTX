@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCLoaiPhong));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtGia = new DevExpress.XtraEditors.TextEdit();
@@ -55,8 +56,8 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGia.Properties)).BeginInit();
@@ -200,7 +201,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(843, 31);
             this.label1.TabIndex = 4;
-            this.label1.Text = "DANH MỤC GIÁ THEO LOẠI PHÒNG";
+            this.label1.Text = "DANH MỤC LOẠI PHÒNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // layoutControlGroup1
