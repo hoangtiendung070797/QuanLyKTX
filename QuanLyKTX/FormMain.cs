@@ -22,7 +22,7 @@ namespace QuanLyKTX
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong, UCHoSo,UCPhanQuyen
+            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen
         }
         #endregion
 
@@ -301,27 +301,30 @@ namespace QuanLyKTX
         /// <param name="e"></param>
         private void UCPhanQuyen_LoadPhanQuyen(object sender, EventArgs e)
         {
-            if(!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
+            if (!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
             {
-                for (int i = 0; i < ribbonControlMain.Pages.Count; i++)
+
+                foreach (DevExpress.XtraBars.Ribbon.RibbonPage page in ribbonControlMain.Pages)
                 {
-                    for (int j = 0; j < ribbonControlMain.Pages[i].Groups.Count; j++)
+                    foreach (DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroup in page.Groups)
                     {
-                        for (int k = 0; k < ribbonControlMain.Pages[i].Groups[j].ItemLinks.Count; k++)
+                        foreach (DevExpress.XtraBars.BarButtonItemLink itemLink in pageGroup.ItemLinks)
                         {
                             PhanQuyen quyen = new PhanQuyen();
                             quyen.NguoiDungId = Const.NguoiDungId;
-                            quyen.TenNhomChucNang = ribbonControlMain.Pages[i].Text;
-                            quyen.TenChucNang = ribbonControlMain.Pages[i].Groups[j].ItemLinks[k].Caption;
+                            quyen.TenNhomChucNang = page.Text;
+                            quyen.TenChucNang = itemLink.Caption;
                             quyen.ChucNangThem = true;
                             quyen.ChucNangSua = false;
                             quyen.ChucNangDoc = true;
                             quyen.ChucNangXoa = false;
                             BUS_PhanQuyen.Insert(quyen);
+                  
                         }
                     }
                 }
             }
+
         }
         #endregion
 
@@ -492,7 +495,7 @@ namespace QuanLyKTX
             }
         }
         #endregion
-      
+
 
         private void btnImportExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -504,7 +507,7 @@ namespace QuanLyKTX
 
         #endregion
 
-     
+
 
         private void btnThongTinNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -514,11 +517,9 @@ namespace QuanLyKTX
         private void btnPhanQuyenNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages("Phân Quyền Người Dùng", (int)EnumUCDanhMuc.UCPhanQuyen);
-
-          
         }
 
-   
+
 
     }
 }

@@ -8,7 +8,7 @@ using QuanLyKTX.Forms.FormHeThong;
 using QuanLyKTX.Forms;
 using System.Configuration;
 using System.Collections.Specialized;
-using QuanLyKTX.UserControls.UCTroGiup;
+
 
 namespace QuanLyKTX
 {
