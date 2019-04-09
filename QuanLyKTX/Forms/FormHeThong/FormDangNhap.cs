@@ -36,16 +36,16 @@ namespace QuanLyKTX
                             {
                                 Const.isFullOp = true;
                                 Const.isLogin = true;
-                                NhatKyHoatDong nhatKyHoatDong = new NhatKyHoatDong();
-                                nhatKyHoatDong.NguoiDungId = Const.CurrentUser.NguoiDungId;
-                                nhatKyHoatDong.NoiDung = "Tài khoản: admin đã đăng nhập";
-                                nhatKyHoatDong.ThaoTac = "";
-                                nhatKyHoatDong.ThoiGian = DateTime.Now;
-                                nhatKyHoatDong.ChucNang = "Đăng nhập";
+                                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                                nhatKy.NoiDung = "Tài khoản: admin đã đăng nhập";
+                                nhatKy.ThaoTac = "";
+                                nhatKy.ThoiGian = DateTime.Now;
+                                nhatKy.ChucNang = "Đăng nhập";
 
 
 
-                                Const.NhatKyHoatDong.Insert(nhatKyHoatDong);
+                                Const.NhatKyHoatDong.Insert(nhatKy);
                                 return;
                             }
                             BUS_PhanQuyen bUS_PhanQuyen = new BUS_PhanQuyen();
@@ -53,6 +53,7 @@ namespace QuanLyKTX
                             for (int i = 0; i < data.Rows.Count; i++)
                             {
                                 PhanQuyen quyen = new PhanQuyen();
+
                                 quyen.TenNhomChucNang = data.Rows[i][1].ToString();
                                 quyen.TenChucNang = data.Rows[i][2].ToString();
                                 quyen.ChucNangThem = (bool)data.Rows[i][3];
@@ -65,8 +66,17 @@ namespace QuanLyKTX
 
 
                             Const.isLogin = true;
-                            
 
+                            NhatKyHoatDong nhatKyHoatDong = new NhatKyHoatDong();
+                            nhatKyHoatDong.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                            nhatKyHoatDong.NoiDung = "Tài khoản: "+ Const.CurrentUser.TenDangNhap+ " đã đăng nhập";
+                            nhatKyHoatDong.ThaoTac = "";
+                            nhatKyHoatDong.ThoiGian = DateTime.Now;
+                            nhatKyHoatDong.ChucNang = "Đăng nhập";
+
+
+
+                            Const.NhatKyHoatDong.Insert(nhatKyHoatDong);
                         }
                         else
                         {

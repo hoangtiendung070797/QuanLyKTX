@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
 using DevExpress.XtraTab;
@@ -9,6 +10,7 @@ using QuanLyKTX.Forms.FormHeThong;
 using QuanLyKTX.UserControls;
 using QuanLyKTX.UserControls.UCHeThong;
 using System;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -32,6 +34,7 @@ namespace QuanLyKTX
         public FormMain()
         {
             InitializeComponent();
+            
             tabstatic = xtraTabControlMain;
         }
 
@@ -66,20 +69,16 @@ namespace QuanLyKTX
         }
         public void Enable()
         {
-            switch (Const.CurrentUser.TenDangNhap)
+
+            foreach (Control item in this.Controls)
             {
-                case "admin":
-                    foreach (Control item in this.Controls)
-                    {
-                        item.Enabled = true;
-                    }
-                    break;
-                default:
-                    break;
+                item.Enabled = true;
             }
 
-
         }
+
+
+
         #endregion
 
         #region Support for TabPages
@@ -293,39 +292,7 @@ namespace QuanLyKTX
             }
         }
 
-        /// <summary>
-        /// Nếu trường là chưa có thì add quyền vào(TH user mới) còn bản chất luôn có tất cả các quyền chỉ có điều là được sủ dụng chức năng gì
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UCPhanQuyen_LoadPhanQuyen(object sender, EventArgs e)
-        {
-            if (!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
-            {
 
-                foreach (DevExpress.XtraBars.Ribbon.RibbonPage page in ribbonControlMain.Pages)
-                {
-                    foreach (DevExpress.XtraBars.Ribbon.RibbonPageGroup pageGroup in page.Groups)
-                    {
-                        foreach (DevExpress.XtraBars.BarButtonItemLink itemLink in pageGroup.ItemLinks)
-                        {
-                            PhanQuyen quyen = new PhanQuyen();
-                            quyen.NguoiDungId = Const.NguoiDungId;
-                            quyen.TenNhomChucNang = page.Text;
-                            quyen.TenChucNang = itemLink.Caption;
-                            quyen.ChucNangThem = true;
-                            quyen.ChucNangSua = false;
-                            quyen.ChucNangDoc = true;
-                            quyen.ChucNangXoa = false;
-                            BUS_PhanQuyen.Insert(quyen);
-                  
-                        }
-                    }
-                }
-            }
-
-        }
         #endregion
 
 
@@ -468,27 +435,24 @@ namespace QuanLyKTX
             {
                 formDangNhap.ShowDialog();
             }
+
             Enable();
-        }
-        /// <summary>
-        /// //////////////////////////////////////
-        /// </summary>
-        public void MoQuyenTuongUng()
-        {
-            Const.DanhSachQuyen = BUS_PhanQuyen.GetDetailPhanQuyen(Const.NguoiDungId);
 
-
-            foreach (var item in ribbonControlMain.Controls)
+            if (Const.CurrentUser.TenDangNhap != "admin")
             {
-
+                DisableItem();
+                MoQuyenTuongUng();
             }
+
         }
+
 
         public void Logout()
         {
             Const.isLogin = false;
             Disable();
             FormDangNhap formDangNhap = new FormDangNhap();
+
             while (!Const.isLogin)
             {
                 formDangNhap.ShowDialog();
@@ -517,9 +481,93 @@ namespace QuanLyKTX
         private void btnPhanQuyenNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages("Phân Quyền Người Dùng", (int)EnumUCDanhMuc.UCPhanQuyen);
+
+
+
         }
 
+        #region  Phân quyền mở các chức năng
 
+
+        /// <summary>
+        /// Nếu trường hợp là chưa có thì add quyền vào(TH user mới) còn bản chất luôn có tất cả các quyền chỉ có điều là được sủ dụng chức năng gì
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UCPhanQuyen_LoadPhanQuyen(object sender, EventArgs e)
+        {
+            if (!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
+            {
+
+                foreach (RibbonPage page in this.ribbonControlMain.Pages)
+                {
+                    foreach (RibbonPageGroup pageGroup in page.Groups)
+                    {
+                        foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                        {
+                            PhanQuyen quyen = new PhanQuyen();
+                            quyen.NguoiDungId = Const.NguoiDungId;
+                            quyen.TenNhomChucNang = page.Text;
+                            quyen.TenChucNang = itemLink.Caption;
+                            quyen.ChucNangThem = true;
+                            quyen.ChucNangSua = false;
+                            quyen.ChucNangDoc = true;
+                            quyen.ChucNangXoa = false;
+                            BUS_PhanQuyen.Insert(quyen);
+
+
+                        }
+                    }
+                }
+            }
+
+        }
+        public bool CheckOpen(string str)
+        {
+            foreach (PhanQuyen item in Const.PhanQuyens)
+            {
+                if (item.TenChucNang == str && item.ChucNangDoc == true)
+                    return true;
+            }
+            return false;
+        }
+
+        public void MoQuyenTuongUng()
+        {
+            foreach (RibbonPage page in this.ribbonControlMain.Pages)
+            {
+                foreach (RibbonPageGroup pageGroup in page.Groups)
+                {
+                    foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                    {
+                        if (CheckOpen(itemLink.Caption))
+                            itemLink.Item.Enabled = true;
+
+
+                    }
+                }
+            }
+
+
+        }
+        public void DisableItem()
+        {
+            foreach (RibbonPage page in this.ribbonControlMain.Pages)
+            {
+                foreach (RibbonPageGroup pageGroup in page.Groups)
+                {
+                    foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                    {
+                        itemLink.Item.Enabled = false;
+
+
+
+                    }
+                }
+            }
+        }
+        #endregion
 
     }
 }

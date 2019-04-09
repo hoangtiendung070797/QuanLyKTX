@@ -12,6 +12,21 @@
     <AssemblyName>QuanLyKTX</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,6 +68,9 @@
     <Reference Include="DevExpress.Printing.v17.1.Core" />
     <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v17.1.Export, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Snap.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Snap.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.TreeMap.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1" />
     <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -82,6 +100,30 @@
     <Reference Include="DevExpress.XtraTreeMap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraWizard.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -97,6 +139,7 @@
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -151,6 +194,7 @@
     <Compile Include="Forms\FormHeThong\FormDangNhap.designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Support\SupportCatchError.cs" />
     <Compile Include="UserControls\UCDanhMuc\UCDayNha.cs">
       <SubType>UserControl</SubType>
@@ -224,6 +268,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.designer.cs">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCThuTienPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCThuTienPhong.Designer.cs">
+      <DependentUpon>UCThuTienPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCHeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,6 +313,18 @@
     </Compile>
     <Compile Include="UserControls\UCHeThong\UCPhanQuyen.Designer.cs">
       <DependentUpon>UCPhanQuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCTroGiup\UCLienHe_GopY.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCTroGiup\UCLienHe_GopY.designer.cs">
+      <DependentUpon>UCLienHe_GopY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCTroGiup\UCThongTinPM.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCTroGiup\UCThongTinPM.designer.cs">
+      <DependentUpon>UCThongTinPM.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\FormGiaoDich\FormCapNhapHoSo.resx">
       <DependentUpon>FormCapNhapHoSo.cs</DependentUpon>
@@ -321,6 +383,9 @@
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCHoSo.resx">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienPhong.resx">
+      <DependentUpon>UCThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNguoiDung.resx">
       <DependentUpon>UCNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
@@ -350,6 +415,12 @@
     <EmbeddedResource Include="UserControls\UCHeThong\UCPhanQuyen.resx">
       <DependentUpon>UCPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCTroGiup\UCLienHe_GopY.resx">
+      <DependentUpon>UCLienHe_GopY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCTroGiup\UCThongTinPM.resx">
+      <DependentUpon>UCThongTinPM.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -361,9 +432,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Shutdown_48px.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
@@ -380,7 +448,110 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\UCTroGiup\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity History_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add User Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brief_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Contract_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Backup_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Backup_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Backup_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Recovery_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Recovery_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Denied_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find User Male_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Shutdown.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Shutdown_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Increase_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Registration_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Request Money_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Request Money_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Request Service_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shutdown_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Team_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Access_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

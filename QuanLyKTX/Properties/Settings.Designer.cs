@@ -57,5 +57,16 @@ namespace QuanLyKTX.Properties {
                 this["isCheckMemory"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-K0913AQ\\SQLEXPRESS;Initial Catalog=DBQuanLyKyTucXa;Integrated" +
+            " Security=True")]
+        public string DBQuanLyKyTucXaConnectionString {
+            get {
+                return ((string)(this["DBQuanLyKyTucXaConnectionString"]));
+            }
+        }
     }
 }

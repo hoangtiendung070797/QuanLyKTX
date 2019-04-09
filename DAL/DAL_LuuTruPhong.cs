@@ -50,7 +50,7 @@ namespace DAL
                 row["NguoiDungId"] = luuTruPhong.NguoiDungId;
                 row["PhongId"] = luuTruPhong.PhongId;
                 row["DoiTuongId"] = luuTruPhong.DoiTuongId;
-                row["ngayXep "] = luuTruPhong.NgayXep;
+                row["ngayXep"] = luuTruPhong.NgayXep;
                 row["ngayRoi"] = luuTruPhong.NgayRoi;
                 row["trangThai"] = luuTruPhong.TrangThai;
 
@@ -105,7 +105,7 @@ namespace DAL
                     row["NguoiDungId"] = luuTruPhong.NguoiDungId;
                     row["PhongId"] = luuTruPhong.PhongId;
                     row["DoiTuongId"] = luuTruPhong.DoiTuongId;
-                    row["ngayXep "] = luuTruPhong.NgayXep;
+                    row["ngayXep"] = luuTruPhong.NgayXep;
                     row["ngayRoi"] = luuTruPhong.NgayRoi;
                     row["trangThai"] = luuTruPhong.TrangThai;
                 }
