@@ -28,5 +28,9 @@ namespace BUS
         {
             return this.VatTu.GetData();
         }
+        public DataTable SeachData(string text)
+        {
+            return this.VatTu.SeachData(text);
+        }
     }
 }

@@ -28,5 +28,20 @@ namespace BUS
         {
             return this.Phong.GetData();
         }
+
+        public DataTable GetDataNew()
+        {
+            return this.Phong.GetDataNew();
+        }
+
+        public DataTable GetEmptyRoom(bool check)
+        {
+            return this.Phong.GetEmptyRoom(check);
+        }
+
+        public bool IsFullRoom(string phongID)
+        {
+            return this.Phong.IsFullRoom(phongID);
+        }
     }
 }

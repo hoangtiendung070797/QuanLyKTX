@@ -51,7 +51,7 @@ namespace DAL
                 row["tenDayDu"] = nguoiDung.TenDayDu;
                 row["sdt"] = nguoiDung.Sdt;
                 row["diachi"] = nguoiDung.DiaChi;
-              
+
 
                 table.Rows.Add(row);
 
@@ -72,6 +72,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM NguoiDung";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(nguoiDungId);
 
                 if (row != null)
@@ -96,6 +98,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM NguoiDung";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(nguoiDung.NguoiDungId);
 
                 if (row != null)
@@ -105,7 +109,7 @@ namespace DAL
                     row["tenDayDu"] = nguoiDung.TenDayDu;
                     row["sdt"] = nguoiDung.Sdt;
                     row["diachi"] = nguoiDung.DiaChi;
-                 
+
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -122,7 +126,7 @@ namespace DAL
 
 
 
-      
+
         #endregion
     }
 }

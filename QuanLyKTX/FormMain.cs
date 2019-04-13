@@ -8,6 +8,7 @@ using DTO;
 using QuanLyKTX.Forms;
 using QuanLyKTX.Forms.FormHeThong;
 using QuanLyKTX.UserControls;
+using QuanLyKTX.UserControls.UCGiaoDich;
 using QuanLyKTX.UserControls.UCHeThong;
 using System;
 using System.Data;
@@ -24,7 +25,7 @@ namespace QuanLyKTX
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen
+            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong
         }
         #endregion
 
@@ -144,6 +145,295 @@ namespace QuanLyKTX
         }
         #endregion
 
+        
+
+
+        #region Thoát tab
+        public static void thoattab()
+        {
+            int i = tabstatic.SelectedTabPageIndex;
+            tabstatic.TabPages.RemoveAt(i);
+            tabstatic.SelectedTabPageIndex = i - 1;
+        }
+        #endregion
+
+        #endregion
+
+
+
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Gọi Form Or UserControl.
+
+
+
+        private void btnHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Dãy Nhà", (int)EnumUCDanhMuc.UCDayNha);
+        }
+
+        private void btnCity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Tỉnh Thành", (int)EnumUCDanhMuc.UCTinhThanh);
+        }
+
+        private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Dân Tộc", (int)EnumUCDanhMuc.UCDanToc);
+        }
+
+        private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Quốc Tịch", (int)EnumUCDanhMuc.UCQuocTich);
+        }
+
+        private void btnGiaPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Loại Phòng", (int)EnumUCDanhMuc.UCLoaiPhong);
+        }
+
+        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormBackUp formBackUp = new FormBackUp();
+            formBackUp.ShowDialog();
+        }
+
+        private void btnTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Tôn Giáo", (int)EnumUCDanhMuc.UCTonGiao);
+        }
+
+        private void btnRoom_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Phòng", (int)EnumUCDanhMuc.UCPhong);
+        }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Vật Tư", (int)EnumUCDanhMuc.UCVatTu);
+        }
+
+        private void btnDonVi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Đơn Vị", (int)EnumUCDanhMuc.UCDonVi);
+        }
+
+        private void btnClass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Lớp", (int)EnumUCDanhMuc.UCLop);
+        }
+
+        private void btnViPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Lỗi Vi Phạm", (int)EnumUCDanhMuc.UCLoiViPham);
+        }
+
+        private void btnOject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Loại Đối Tượng", (int)EnumUCDanhMuc.UCLoaiDoiTuong);
+        }
+        private void btnPhanQuyenNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Phân Quyền Người Dùng", (int)EnumUCDanhMuc.UCPhanQuyen);
+        }
+        private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormRestore formRestore = new FormRestore();
+            formRestore.StartPosition = FormStartPosition.CenterParent;
+            formRestore.ShowDialog();
+
+        }
+
+        private void btnNhatKyHoatDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Nhật Ký Hoạt Động", (int)EnumUCDanhMuc.UCNhatKyHoatDong);
+        }
+        private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddTabPages("Hồ Sơ", (int)EnumUCDanhMuc.UCHoSo);
+        }
+
+        #endregion
+
+        #region Phần Hệ Thống
+        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau();
+            formDoiMatKhau.ShowDialog();
+        }
+
+        private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Logout();
+
+
+        }
+        #endregion
+
+        #region Đăng Nhập - Đăng Xuất
+
+
+
+        public void Login()
+        {
+            Disable();
+            FormDangNhap formDangNhap = new FormDangNhap();
+            while (!Const.isLogin)
+            {
+                formDangNhap.ShowDialog();
+            }
+
+            Enable();
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                DisableItem();
+                MoQuyenTuongUng();
+            }
+
+        }
+
+
+        public void Logout()
+        {
+            Const.isLogin = false;
+            Disable();
+            FormDangNhap formDangNhap = new FormDangNhap();
+
+            while (!Const.isLogin)
+            {
+                formDangNhap.ShowDialog();
+            }
+        }
+        #endregion
+
+
+        private void btnImportExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormImportExcel formImportExcel = new FormImportExcel();
+            formImportExcel.ShowDialog();
+        }
+
+
+
+        #endregion
+
+
+
+        private void btnThongTinNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+     
+
+        #region  Phân quyền mở các chức năng
+
+
+        /// <summary>
+        /// Nếu trường hợp là chưa có thì add quyền vào(TH user mới) còn bản chất luôn có tất cả các quyền chỉ có điều là được sủ dụng chức năng gì
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UCPhanQuyen_LoadPhanQuyen(object sender, EventArgs e)
+        {
+            if (!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
+            {
+
+                foreach (RibbonPage page in this.ribbonControlMain.Pages)
+                {
+                    foreach (RibbonPageGroup pageGroup in page.Groups)
+                    {
+                        foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                        {
+                            PhanQuyen quyen = new PhanQuyen();
+                            quyen.NguoiDungId = Const.NguoiDungId;
+                            quyen.TenNhomChucNang = page.Text;
+                            quyen.TenChucNang = itemLink.Caption;
+                            quyen.ChucNangThem = true;
+                            quyen.ChucNangSua = false;
+                            quyen.ChucNangDoc = true;
+                            quyen.ChucNangXoa = false;
+                            BUS_PhanQuyen.Insert(quyen);
+
+
+                        }
+                    }
+                }
+            }
+
+        }
+        public bool CheckOpen(string str)
+        {
+            foreach (PhanQuyen item in Const.PhanQuyens)
+            {
+                if (item.TenChucNang == str && item.ChucNangDoc == true)
+                    return true;
+            }
+            return false;
+        }
+
+        public void MoQuyenTuongUng()
+        {
+            foreach (RibbonPage page in this.ribbonControlMain.Pages)
+            {
+                foreach (RibbonPageGroup pageGroup in page.Groups)
+                {
+                    foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                    {
+                        if (CheckOpen(itemLink.Caption))
+                            itemLink.Item.Enabled = true;
+
+
+                    }
+                }
+            }
+
+
+        }
+        public void DisableItem()
+        {
+            foreach (RibbonPage page in this.ribbonControlMain.Pages)
+            {
+                foreach (RibbonPageGroup pageGroup in page.Groups)
+                {
+                    foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                    {
+                        itemLink.Item.Enabled = false;
+
+
+
+                    }
+                }
+            }
+        }
+        #endregion
+
+        private void btnThuTienPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thu Phí Phòng", (int)EnumUCDanhMuc.UCThuTienPhong);
+        }
+
+        private void btnPhieuYeuCauCapPhat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Phiếu yêu cầu cấp phát", (int)EnumUCDanhMuc.UCPhieuCapPhat);
+        }
+
+        private void btnCapPhatVatTu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Cấp phát vật tư", (int)EnumUCDanhMuc.UCCapPhat);
+          
+        }
         #region Thêm tabpage
         public void AddTabPages(string nameOfTab, int select)
         {
@@ -287,6 +577,39 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+
+                case (int)EnumUCDanhMuc.UCThuTienPhong:
+
+                    UCThuTienPhong uCThuTienPhong = new UCThuTienPhong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCThuTienPhong);
+                    uCThuTienPhong.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCPhieuCapPhat:
+
+                    UCPhieuCapPhat uCPhieuCapPhat = new UCPhieuCapPhat();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCPhieuCapPhat);
+                    uCPhieuCapPhat.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCCapPhat:
+
+                    UCCapPhat uCCapPhat = new UCCapPhat();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCCapPhat);
+                    uCCapPhat.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCXepPhong:
+
+                    UCXepPhong uCXepPhong = new UCXepPhong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCXepPhong);
+                    uCXepPhong.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
             }
@@ -295,279 +618,9 @@ namespace QuanLyKTX
 
         #endregion
 
-
-        #region Thoát tab
-        public static void thoattab()
+        private void btnXepPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
-            int i = tabstatic.SelectedTabPageIndex;
-            tabstatic.TabPages.RemoveAt(i);
-            tabstatic.SelectedTabPageIndex = i - 1;
+            AddTabPages("Xếp phòng", (int)EnumUCDanhMuc.UCXepPhong);
         }
-        #endregion
-
-        #endregion
-
-
-
-
-        private void ribbonControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        #region Gọi Form Or UserControl.
-
-
-
-        private void btnHome_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Dãy Nhà", (int)EnumUCDanhMuc.UCDayNha);
-        }
-
-        private void btnCity_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Tỉnh Thành", (int)EnumUCDanhMuc.UCTinhThanh);
-        }
-
-        private void btnDanToc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Dân Tộc", (int)EnumUCDanhMuc.UCDanToc);
-        }
-
-        private void btnQuocTich_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Quốc Tịch", (int)EnumUCDanhMuc.UCQuocTich);
-        }
-
-        private void btnGiaPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Loại Phòng", (int)EnumUCDanhMuc.UCLoaiPhong);
-        }
-
-        private void btnSaoLuu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormBackUp formBackUp = new FormBackUp();
-            formBackUp.ShowDialog();
-        }
-
-        private void btnTonGiao_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Tôn Giáo", (int)EnumUCDanhMuc.UCTonGiao);
-        }
-
-        private void btnRoom_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Phòng", (int)EnumUCDanhMuc.UCPhong);
-        }
-
-        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Vật Tư", (int)EnumUCDanhMuc.UCVatTu);
-        }
-
-        private void btnDonVi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Đơn Vị", (int)EnumUCDanhMuc.UCDonVi);
-        }
-
-        private void btnClass_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Lớp", (int)EnumUCDanhMuc.UCLop);
-        }
-
-        private void btnViPham_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Lỗi Vi Phạm", (int)EnumUCDanhMuc.UCLoiViPham);
-        }
-
-        private void btnOject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Loại Đối Tượng", (int)EnumUCDanhMuc.UCLoaiDoiTuong);
-        }
-
-        private void btnKhoiPhuc_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormRestore formRestore = new FormRestore();
-            formRestore.StartPosition = FormStartPosition.CenterParent;
-            formRestore.ShowDialog();
-
-        }
-
-        private void btnNhatKyHoatDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Nhật Ký Hoạt Động", (int)EnumUCDanhMuc.UCNhatKyHoatDong);
-        }
-        private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Hồ Sơ", (int)EnumUCDanhMuc.UCHoSo);
-        }
-        #endregion
-
-        #region Phần Hệ Thống
-        private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau();
-            formDoiMatKhau.ShowDialog();
-        }
-
-        private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            Logout();
-
-
-        }
-        #endregion
-
-        #region Đăng Nhập - Đăng Xuất
-
-
-
-        public void Login()
-        {
-            Disable();
-            FormDangNhap formDangNhap = new FormDangNhap();
-            while (!Const.isLogin)
-            {
-                formDangNhap.ShowDialog();
-            }
-
-            Enable();
-
-            if (Const.CurrentUser.TenDangNhap != "admin")
-            {
-                DisableItem();
-                MoQuyenTuongUng();
-            }
-
-        }
-
-
-        public void Logout()
-        {
-            Const.isLogin = false;
-            Disable();
-            FormDangNhap formDangNhap = new FormDangNhap();
-
-            while (!Const.isLogin)
-            {
-                formDangNhap.ShowDialog();
-            }
-        }
-        #endregion
-
-
-        private void btnImportExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            FormImportExcel formImportExcel = new FormImportExcel();
-            formImportExcel.ShowDialog();
-        }
-
-
-
-        #endregion
-
-
-
-        private void btnThongTinNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
-
-        private void btnPhanQuyenNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            AddTabPages("Phân Quyền Người Dùng", (int)EnumUCDanhMuc.UCPhanQuyen);
-
-
-
-        }
-
-        #region  Phân quyền mở các chức năng
-
-
-        /// <summary>
-        /// Nếu trường hợp là chưa có thì add quyền vào(TH user mới) còn bản chất luôn có tất cả các quyền chỉ có điều là được sủ dụng chức năng gì
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UCPhanQuyen_LoadPhanQuyen(object sender, EventArgs e)
-        {
-            if (!BUS_PhanQuyen.IsNguoiDungIdInPQ(Const.NguoiDungId))
-            {
-
-                foreach (RibbonPage page in this.ribbonControlMain.Pages)
-                {
-                    foreach (RibbonPageGroup pageGroup in page.Groups)
-                    {
-                        foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
-                        {
-                            PhanQuyen quyen = new PhanQuyen();
-                            quyen.NguoiDungId = Const.NguoiDungId;
-                            quyen.TenNhomChucNang = page.Text;
-                            quyen.TenChucNang = itemLink.Caption;
-                            quyen.ChucNangThem = true;
-                            quyen.ChucNangSua = false;
-                            quyen.ChucNangDoc = true;
-                            quyen.ChucNangXoa = false;
-                            BUS_PhanQuyen.Insert(quyen);
-
-
-                        }
-                    }
-                }
-            }
-
-        }
-        public bool CheckOpen(string str)
-        {
-            foreach (PhanQuyen item in Const.PhanQuyens)
-            {
-                if (item.TenChucNang == str && item.ChucNangDoc == true)
-                    return true;
-            }
-            return false;
-        }
-
-        public void MoQuyenTuongUng()
-        {
-            foreach (RibbonPage page in this.ribbonControlMain.Pages)
-            {
-                foreach (RibbonPageGroup pageGroup in page.Groups)
-                {
-                    foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
-                    {
-                        if (CheckOpen(itemLink.Caption))
-                            itemLink.Item.Enabled = true;
-
-
-                    }
-                }
-            }
-
-
-        }
-        public void DisableItem()
-        {
-            foreach (RibbonPage page in this.ribbonControlMain.Pages)
-            {
-                foreach (RibbonPageGroup pageGroup in page.Groups)
-                {
-                    foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
-                    {
-                        itemLink.Item.Enabled = false;
-
-
-
-                    }
-                }
-            }
-        }
-        #endregion
-
     }
 }

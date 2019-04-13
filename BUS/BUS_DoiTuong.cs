@@ -38,6 +38,9 @@ namespace BUS
         {
             return this.DoiTuong.GetById(id);
         }
-       
+        public DataTable GetData_Find(string timkiem)
+        {
+            return this.DoiTuong.GetData_Find(timkiem);
+        }
     }
 }

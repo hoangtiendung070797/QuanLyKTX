@@ -38,6 +38,22 @@ namespace DAL
             }
         }
 
+        public DataTable GetData_Find(string timkiem)
+        {
+            try
+            {
+                string query = "SELECT * FROM DoiTuong where DoiTuong.maSinhVien = '" + timkiem + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
 
         public bool Insert(DoiTuong doiTuong)
         {
@@ -52,7 +68,6 @@ namespace DAL
                 row["TinhThanhId"] = doiTuong.TinhThanhId;
                 row["LopId"] = doiTuong.LopId;
                 row["DanTocId"] = doiTuong.DanTocId;
-                row["TonGiaoId"] = doiTuong.TonGiaoId;
                 row["maSinhVien"] = doiTuong.MaSinhVien;
                 row["hoDem"] = doiTuong.HoDem;
                 row["ten"] = doiTuong.Ten;
@@ -117,7 +132,6 @@ namespace DAL
                     row["TinhThanhId"] = doiTuong.TinhThanhId;
                     row["LopId"] = doiTuong.LopId;
                     row["DanTocId"] = doiTuong.DanTocId;
-                    row["TonGiaoId"] = doiTuong.TonGiaoId;
                     row["maSinhVien"] = doiTuong.MaSinhVien;
                     row["hoDem"] = doiTuong.HoDem;
                     row["ten"] = doiTuong.Ten;

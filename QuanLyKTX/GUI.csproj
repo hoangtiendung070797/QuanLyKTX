@@ -152,17 +152,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Const.cs" />
+    <Compile Include="Forms\FormChonTaoPhieuThuTienPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormChonTaoPhieuThuTienPhong.Designer.cs">
+      <DependentUpon>FormChonTaoPhieuThuTienPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FormCapNhapHoSo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FormCapNhapHoSo.Designer.cs">
       <DependentUpon>FormCapNhapHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormRoiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormRoiPhong.designer.cs">
+      <DependentUpon>FormRoiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormXepPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormXepPhong.designer.cs">
+      <DependentUpon>FormXepPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmCapPhatVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmCapPhatVatTu.designer.cs">
+      <DependentUpon>FrmCapPhatVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.designer.cs">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.designer.cs">
+      <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.designer.cs">
+      <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHeThong\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -194,8 +230,13 @@
     <Compile Include="Forms\FormHeThong\FormDangNhap.designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Support\SupportCatchError.cs" />
+    <Compile Include="UserControls\UCDanhMuc\UCDanToc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDanhMuc\UCDanToc.designer.cs">
+      <DependentUpon>UCDanToc.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCDayNha.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -208,17 +249,17 @@
     <Compile Include="UserControls\UCDanhMuc\UCDonVi.designer.cs">
       <DependentUpon>UCDonVi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCDanhMuc\UCLoaiPhong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCDanhMuc\UCLoaiPhong.designer.cs">
-      <DependentUpon>UCLoaiPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCLoaiDoiTuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCLoaiDoiTuong.designer.cs">
       <DependentUpon>UCLoaiDoiTuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCDanhMuc\UCLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDanhMuc\UCLoaiPhong.designer.cs">
+      <DependentUpon>UCLoaiPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCLoiViPham.cs">
       <SubType>UserControl</SubType>
@@ -244,6 +285,12 @@
     <Compile Include="UserControls\UCDanhMuc\UCPhong.designer.cs">
       <DependentUpon>UCPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCDanhMuc\UCQuocTich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCDanhMuc\UCQuocTich.designer.cs">
+      <DependentUpon>UCQuocTich.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCTinhThanh.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,17 +309,47 @@
     <Compile Include="UserControls\UCDanhMuc\UCVatTu.designer.cs">
       <DependentUpon>UCVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCCapPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCCapPhat.designer.cs">
+      <DependentUpon>UCCapPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.designer.cs">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCKhenThuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCKhenThuong.designer.cs">
+      <DependentUpon>UCKhenThuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuCapPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuCapPhat.designer.cs">
+      <DependentUpon>UCPhieuCapPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCThuTienPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCThuTienPhong.Designer.cs">
       <DependentUpon>UCThuTienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCXepPhong.designer.cs">
+      <DependentUpon>UCXepPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\XtraReportPhieuThuPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\XtraReportPhieuThuPhong.Designer.cs">
+      <DependentUpon>XtraReportPhieuThuPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCHeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
@@ -288,12 +365,6 @@
     </Compile>
     <Compile Include="Support\ImportExcel.cs" />
     <Compile Include="Support\SupportImageToDb.cs" />
-    <Compile Include="UserControls\UCDanhMuc\UCDanToc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCDanhMuc\UCDanToc.Designer.cs">
-      <DependentUpon>UCDanToc.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,35 +373,35 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControls\UCDanhMuc\UCQuocTich.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCDanhMuc\UCQuocTich.Designer.cs">
-      <DependentUpon>UCQuocTich.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UCHeThong\UCPhanQuyen.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCHeThong\UCPhanQuyen.Designer.cs">
       <DependentUpon>UCPhanQuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCTroGiup\UCLienHe_GopY.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCTroGiup\UCLienHe_GopY.designer.cs">
-      <DependentUpon>UCLienHe_GopY.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UCTroGiup\UCThongTinPM.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCTroGiup\UCThongTinPM.designer.cs">
-      <DependentUpon>UCThongTinPM.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Forms\FormChonTaoPhieuThuTienPhong.resx">
+      <DependentUpon>FormChonTaoPhieuThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FormCapNhapHoSo.resx">
       <DependentUpon>FormCapNhapHoSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FormRoiPhong.resx">
+      <DependentUpon>FormRoiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FormXepPhong.resx">
+      <DependentUpon>FormXepPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmCapPhatVatTu.resx">
+      <DependentUpon>FrmCapPhatVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmHoSo.resx">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.resx">
+      <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.resx">
+      <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHeThong\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
@@ -347,17 +418,20 @@
     <EmbeddedResource Include="Forms\FormHeThong\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCDanhMuc\UCDanToc.resx">
+      <DependentUpon>UCDanToc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDayNha.resx">
       <DependentUpon>UCDayNha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDonVi.resx">
       <DependentUpon>UCDonVi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCDanhMuc\UCLoaiPhong.resx">
-      <DependentUpon>UCLoaiPhong.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCLoaiDoiTuong.resx">
       <DependentUpon>UCLoaiDoiTuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCDanhMuc\UCLoaiPhong.resx">
+      <DependentUpon>UCLoaiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCLoiViPham.resx">
       <DependentUpon>UCLoiViPham.cs</DependentUpon>
@@ -371,6 +445,9 @@
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCPhong.resx">
       <DependentUpon>UCPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCDanhMuc\UCQuocTich.resx">
+      <DependentUpon>UCQuocTich.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCTinhThanh.resx">
       <DependentUpon>UCTinhThanh.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,20 +457,29 @@
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCVatTu.resx">
       <DependentUpon>UCVatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCCapPhat.resx">
+      <DependentUpon>UCCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCHoSo.resx">
       <DependentUpon>UCHoSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCKhenThuong.resx">
+      <DependentUpon>UCKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuCapPhat.resx">
+      <DependentUpon>UCPhieuCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienPhong.resx">
       <DependentUpon>UCThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
+      <DependentUpon>UCXepPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNguoiDung.resx">
       <DependentUpon>UCNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNhatKyHoatDong.resx">
       <DependentUpon>UCNhatKyHoatDong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCDanhMuc\UCDanToc.resx">
-      <DependentUpon>UCDanToc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -409,17 +495,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControls\UCDanhMuc\UCQuocTich.resx">
-      <DependentUpon>UCQuocTich.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCPhanQuyen.resx">
       <DependentUpon>UCPhanQuyen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCTroGiup\UCLienHe_GopY.resx">
-      <DependentUpon>UCLienHe_GopY.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCTroGiup\UCThongTinPM.resx">
-      <DependentUpon>UCThongTinPM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
@@ -539,19 +616,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Folder Include="UserControls\UCTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

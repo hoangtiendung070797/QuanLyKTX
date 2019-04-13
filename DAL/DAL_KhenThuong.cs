@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM KhenThuong";
+                string query = "SELECT KhenThuong.KhenThuongId,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,KhenThuong.tenKhenThuong,noiDung,ngay,ghiChu FROM KhenThuong join ";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -51,7 +51,7 @@ namespace DAL
                 row["tenKhenThuong"] = khenThuong.TenKhenThuong;
                 row["noiDung "] = khenThuong.NoiDung;
                 row["ngay"] = khenThuong.Ngay;
-                row["ghiChu"] = khenThuong.GhiChu;              
+                row["ghiChu"] = khenThuong.GhiChu;
 
                 table.Rows.Add(row);
 

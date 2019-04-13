@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class DAL_DanToc:DbConnect
+    public class DAL_DanToc : DbConnect
     {
         #region Properties
         DataTable table = new DataTable();
@@ -47,8 +47,9 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
+
                 row["tenDanToc"] = danToc.TenDanToc;
-          
+
 
                 table.Rows.Add(row);
 
@@ -69,6 +70,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM DanToc";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(danTocId);
 
                 if (row != null)
@@ -93,12 +96,14 @@ namespace DAL
             {
                 string query = "SELECT * FROM DanToc";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(danToc.DanTocId);
 
                 if (row != null)
                 {
                     row["tenDanToc"] = danToc.TenDanToc;
-                 
+
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

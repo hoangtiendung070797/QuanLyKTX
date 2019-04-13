@@ -13,10 +13,34 @@ namespace QuanLyKTX.UserControls
             InitializeComponent();
         }
         BUS_TonGiao bUS_TonGiao = new BUS_TonGiao();
+        int chucnang = 0;
+
         private void UCTonGiao_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = bUS_TonGiao.GetData();
+            reset();
             FixNColumnNames();
+        }
+
+        void display()
+        {
+            gridControl1.DataSource = bUS_TonGiao.GetData();
+        }
+        void reset()
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+            txtMaTonGiao.Enabled = false;
+            txtTenTonGiao.Enabled = false;
+
+            txtMaTonGiao.Text = "";
+            txtTenTonGiao.Text = "";
+
+            display();
+
         }
 
         public void FixNColumnNames()
@@ -24,105 +48,88 @@ namespace QuanLyKTX.UserControls
             gridView1.Columns[0].Caption = "Mã tôn giáo";
             gridView1.Columns[1].Caption = "Tên tôn giáo";
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            chucnang = 1;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            txtTenTonGiao.Enabled = true;
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            txtTenTonGiao.Enabled = true;
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (txtTenTonGiao.Text != "")
+            {
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (bUS_TonGiao.Delete(int.Parse(txtMaTonGiao.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        reset();
+                    }
+                    else MessageBox.Show("Xóa thất bại!");
+                }
+            }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            if (txtTenTonGiao.Text == "")
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
+            else
+            {
+                TonGiao tongiao = new TonGiao();
+
+                if (chucnang == 1)
+                {
+                    tongiao.TenTonGiao = txtTenTonGiao.Text;
+                    if (bUS_TonGiao.Insert(tongiao))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+
+                }
+
+                if (chucnang == 2)
+                {
+                    tongiao.TonnGiaoId = int.Parse(txtMaTonGiao.Text);
+                    tongiao.TenTonGiao = txtTenTonGiao.Text;
+                    if (bUS_TonGiao.Update(tongiao))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
+            }
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaTonGiao.Text = gridView1.GetRowCellValue(e.RowHandle, "TonGiaoId").ToString();
             txtTenTonGiao.Text = gridView1.GetRowCellValue(e.RowHandle, "tenTonGiao").ToString();
-        }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            txtTenTonGiao.Enabled = true;
-
-            if (!string.IsNullOrEmpty(txtTenTonGiao.Text))
-            {
-                try
-                {
-
-                    TonGiao tongiao = new TonGiao(int.Parse(txtMaTonGiao.Text),txtTenTonGiao.Text);
-                    bUS_TonGiao.Insert(tongiao);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenTonGiao.Enabled = false;
-                    UCTonGiao_Load(sender, e);
-
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được tôn giáo\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenTonGiao.ResetText();
-                    txtTenTonGiao.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenTonGiao, "Chưa điền tên tôn giáo!");
-                txtTenTonGiao.ResetText();
-                txtTenTonGiao.Focus();
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-
-                    bUS_TonGiao.Delete(int.Parse(txtMaTonGiao.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    UCTonGiao_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi tôn giáo\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenTonGiao.ResetText();
-                    txtTenTonGiao.Focus();
-                }
-            }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtTenTonGiao.Text))
-            {
-                try
-                {
-
-                    TonGiao tongiao = new TonGiao(int.Parse(txtMaTonGiao.Text),txtTenTonGiao.Text);
-                    tongiao.TonnGiaoId = int.Parse(txtMaTonGiao.Text);
-
-                    if (bUS_TonGiao.Update(tongiao) == true)
-                    {
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenTonGiao.Enabled = false;
-                        UCTonGiao_Load(sender, e);
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được tôn giáo\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenTonGiao.ResetText();
-                    txtTenTonGiao.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenTonGiao, "Chưa điền tên tôn giáo!");
-                txtTenTonGiao.ResetText();
-                txtTenTonGiao.Focus();
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            txtTenTonGiao.Enabled = true;
         }
     }
 }

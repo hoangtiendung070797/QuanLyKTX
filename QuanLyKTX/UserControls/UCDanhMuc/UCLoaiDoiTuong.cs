@@ -14,50 +14,107 @@ namespace QuanLyKTX.UserControls
         }
 
         BUS_LoaiDoiTuong bUS_LoaiDoiTuong = new BUS_LoaiDoiTuong();
-        private void UCLoaiDoiTuong_Load(object sender, EventArgs e)
+        int chucnang = 0;
+       
+
+        void display()
         {
             gridControl1.DataSource = bUS_LoaiDoiTuong.GetData();
-            FixNColumnNames();
         }
-        public void FixNColumnNames()
+        void reset()
         {
-            gridView1.Columns[0].Caption = "Mã loại đối tượng";
-            gridView1.Columns[1].Caption = "Tên loại đối tượng";
-           
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
 
+            txtMaLoaiDoiTuong.Enabled = false;
+            txtTenLoaiDoiTuong.Enabled = false;
+
+            txtMaLoaiDoiTuong.Text = "";
+            txtTenLoaiDoiTuong.Text = "";
+
+            display();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            chucnang = 1;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtTenLoaiDoiTuong.Enabled = true;
 
-            if (!string.IsNullOrEmpty(txtTenLoaiDoiTuong.Text))
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            txtTenLoaiDoiTuong.Enabled = true;
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtMaLoaiDoiTuong.Text != "")
             {
-                try
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    LoaiDoiTuong LoaiDoiTuong = new LoaiDoiTuong(int.Parse(txtMaLoaiDoiTuong.Text),txtTenLoaiDoiTuong.Text);
-                    //MessageBox.Show(dAL_LoaiDoiTuong.GetIdentityId().ToString());
-                    bUS_LoaiDoiTuong.Insert(LoaiDoiTuong);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenLoaiDoiTuong.Enabled = false;
-                    UCLoaiDoiTuong_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được loại đối tượng\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenLoaiDoiTuong.ResetText();
-                    txtTenLoaiDoiTuong.Focus();
+                    if (bUS_LoaiDoiTuong.Delete(int.Parse(txtMaLoaiDoiTuong.Text)))
+                      { 
+                        MessageBox.Show("Xóa thành công!");
+                        reset();
+                    }
+                    else MessageBox.Show("Xóa thất bại!");
                 }
             }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtTenLoaiDoiTuong.Text == "" )
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
             else
             {
-                errorProvider1.SetError(txtTenLoaiDoiTuong, "Chưa điền tên loại đối tượng!");
-                txtTenLoaiDoiTuong.ResetText();
-                txtTenLoaiDoiTuong.Focus();
+                LoaiDoiTuong loaidoituong = new LoaiDoiTuong();
+
+                if (chucnang == 1)
+                {
+                    loaidoituong.TenLoaiDoiTuong = txtTenLoaiDoiTuong.Text;
+                    if (bUS_LoaiDoiTuong.Insert(loaidoituong))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+
+                }
+
+                if (chucnang == 2)
+                {
+                    loaidoituong.LoaiDoiTuongId = int.Parse(txtMaLoaiDoiTuong.Text);
+                    loaidoituong.TenLoaiDoiTuong = txtTenLoaiDoiTuong.Text;
+                    if(bUS_LoaiDoiTuong.Update(loaidoituong))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reset();
         }
 
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
@@ -66,68 +123,9 @@ namespace QuanLyKTX.UserControls
             txtTenLoaiDoiTuong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLoaiDoiTuong").ToString();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void UCLoaiDoiTuong_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtTenLoaiDoiTuong.Text))
-            {
-                try
-                {
-
-                    LoaiDoiTuong loaiDoiTuong = new LoaiDoiTuong(int.Parse(txtMaLoaiDoiTuong.Text),txtTenLoaiDoiTuong.Text);
-                    loaiDoiTuong.LoaiDoiTuongId = int.Parse(txtMaLoaiDoiTuong.Text);
-
-                    if (bUS_LoaiDoiTuong.Update(loaiDoiTuong) == true)
-                    {
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenLoaiDoiTuong.Enabled = false;
-                        UCLoaiDoiTuong_Load(sender, e);
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được loại đối tượng\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenLoaiDoiTuong.ResetText();
-                    txtTenLoaiDoiTuong.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenLoaiDoiTuong, "Chưa điền tên loại đối tượng!");
-                txtTenLoaiDoiTuong.ResetText();
-                txtTenLoaiDoiTuong.Focus();
-            }
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            txtTenLoaiDoiTuong.Enabled = true;
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-
-                    bUS_LoaiDoiTuong.Delete(int.Parse(txtMaLoaiDoiTuong.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    UCLoaiDoiTuong_Load(sender, e);
-                    gridView1.RefreshData();
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi loại đối tượng\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenLoaiDoiTuong.ResetText();
-                    txtTenLoaiDoiTuong.Focus();
-                }
-            }
+            reset();
         }
     }
 }

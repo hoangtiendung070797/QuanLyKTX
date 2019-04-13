@@ -4,7 +4,7 @@ using System.Data;
 
 namespace BUS
 {
-    class BUS_LuuTruPhong
+    public class BUS_LuuTruPhong
     {
         DAL_LuuTruPhong luuTruPhong = new DAL_LuuTruPhong();
 
@@ -28,6 +28,14 @@ namespace BUS
         public DataTable GetData()
         {
             return this.LuuTruPhong.GetData();
+        }
+        public DataTable DoiTuong_TrongPhong(string phongid)
+        {
+            return this.LuuTruPhong.DoiTuong_TrongPhong(phongid);
+        }
+        public DataTable DoiTuong_ChuaCoPhong()
+        {
+            return this.LuuTruPhong.DoiTuong_ChuaCoPhong();
         }
     }
 }

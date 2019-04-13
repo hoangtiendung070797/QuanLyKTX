@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    public class DAL_QuocTich:DbConnect
+    public class DAL_QuocTich : DbConnect
     {
         #region Properties
         DataTable table = new DataTable();
@@ -79,6 +79,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM QuocTich";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(quocTichId);
 
                 if (row != null)
@@ -103,12 +105,14 @@ namespace DAL
             {
                 string query = "SELECT * FROM QuocTich";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(quocTich.QuocTichId);
 
                 if (row != null)
                 {
                     row["tenQuocTich"] = quocTich.TenQuocTich;
-                 
+
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

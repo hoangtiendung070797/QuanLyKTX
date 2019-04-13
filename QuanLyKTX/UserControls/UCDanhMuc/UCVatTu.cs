@@ -14,55 +14,51 @@ namespace QuanLyKTX.UserControls
         }
 
         BUS_VatTu bUS_vattu = new BUS_VatTu();
+        int chucnang = 0;
+
         private void UCVatTu_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = bUS_vattu.GetData();
+            reset();
             FixNColumnNames();
         }
         public void FixNColumnNames()
         {
             gridView1.Columns[0].Caption = "Mã vật tư";
-            gridView1.Columns[1].Caption = "Tên tỉnh thành ";
-            gridView1.Columns[2].Caption = "Mã vật tư";
-            gridView1.Columns[3].Caption = "Tên tỉnh thành ";
-            gridView1.Columns[4].Caption = "Mã vật tư";
+            gridView1.Columns[1].Caption = "Tên Vật Tư";
+            gridView1.Columns[2].Caption = "Số Lượng";
+            gridView1.Columns[3].Caption = "Mô Tả";
+            gridView1.Columns[4].Caption = "Ghi Chú";
           
         }
-        private void btnadd_Click(object sender, EventArgs e)
+
+        void display()
         {
-            txtTenVatTu.Enabled = true;
-            txtMaVatTu.Enabled = true;
-            if (!string.IsNullOrEmpty(txtTenVatTu.Text) && !string.IsNullOrEmpty(txtMaVatTu.Text) && !string.IsNullOrEmpty(txtMoTa.Text) && !string.IsNullOrEmpty(txtSoLuong.Text))
-            {
-                try
-                {
-
-                    VatTu VatTu = new VatTu(txtMaVatTu.Text,txtTenVatTu.Text,txtMoTa.Text,int.Parse(txtSoLuong.Text),txtGhiChu.Text);
-                    //MessageBox.Show(dAL_VatTu.GetIdentityId().ToString());
-                    bUS_vattu.Insert(VatTu);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenVatTu.Enabled = false;
-                    UCVatTu_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được vật tư\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenVatTu.ResetText();
-                    txtTenVatTu.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenVatTu, "Chưa điền tên vật tư!");
-                errorProvider1.SetError(txtMaVatTu, "Chưa điền mã vật tư!");
-                errorProvider1.SetError(txtMoTa, "Chưa điền mô tả vật tư!");
-                errorProvider1.SetError(txtSoLuong, "Chưa điền số lượng vật tư!");
-                txtTenVatTu.ResetText();
-                txtTenVatTu.Focus();
-            }
+            gridControl1.DataSource = bUS_vattu.GetData();
         }
+        void reset()
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+            txtMaVatTu.Enabled = false;
+            txtTenVatTu.Enabled = false;
+            txtSoLuong.Enabled = false;
+            txtMoTa.Enabled = false;
+            txtGhiChu.Enabled = false;
+
+            txtMaVatTu.Text = "";
+            txtTenVatTu.Text = "";
+            txtMaVatTu.Text = "";
+            txtTenVatTu.Text = "";
+            txtMaVatTu.Text = "";
+
+            display();
+
+        }
+
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaVatTu.Text = gridView1.GetRowCellValue(e.RowHandle, "VatTuId").ToString();
@@ -72,75 +68,96 @@ namespace QuanLyKTX.UserControls
             txtMoTa.Text = gridView1.GetRowCellValue(e.RowHandle, "moTa").ToString();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtTenVatTu.Text) && !string.IsNullOrEmpty(txtMaVatTu.Text) && !string.IsNullOrEmpty(txtMoTa.Text) && !string.IsNullOrEmpty(txtSoLuong.Text))
-            {
-                try
-                {
+            chucnang = 1;
 
-                    VatTu VatTu = new VatTu(txtMaVatTu.Text, txtTenVatTu.Text, txtMoTa.Text, int.Parse(txtSoLuong.Text), txtGhiChu.Text);
-                    VatTu.VatTuId = txtMaVatTu.Text;
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
 
-                    if(bUS_vattu.Update(VatTu)==true)
-                    {
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenVatTu.Enabled = false;
-                        UCVatTu_Load(sender, e);
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được vật tư\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenVatTu.ResetText();
-                    txtTenVatTu.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenVatTu, "Chưa điền tên vật tư!");
-                errorProvider1.SetError(txtMaVatTu, "Chưa điền mã vật tư!");
-                errorProvider1.SetError(txtMoTa, "Chưa điền mô tả vật tư!");
-                errorProvider1.SetError(txtSoLuong, "Chưa điền số lượng vật tư!");
-                txtTenVatTu.ResetText();
-                txtTenVatTu.Focus();
-            }
+            txtMaVatTu.Enabled = true;
+            txtTenVatTu.Enabled = true;
+            txtSoLuong.Enabled = true;
+            txtMoTa.Enabled = true;
+            txtGhiChu.Enabled = true;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            txtTenVatTu.Enabled = true;
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtMaVatTu.Enabled = true;
+            txtTenVatTu.Enabled = true;
+            txtSoLuong.Enabled = true;
             txtMoTa.Enabled = true;
             txtGhiChu.Enabled = true;
-            txtSoLuong.Enabled = true;
-        
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtMaVatTu.Text != "")
             {
-                try
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    bUS_vattu.Delete(txtMaVatTu.Text);
-                    MessageBox.Show("Xóa thành công!");
-                    UCVatTu_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi vật tư\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenVatTu.ResetText();
-                    txtTenVatTu.Focus();
+                    if (bUS_vattu.Delete(txtMaVatTu.Text))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        reset();
+                    }
+                    else MessageBox.Show("Xóa thất bại!");
                 }
             }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtTenVatTu.Text == "" || txtMaVatTu.Text==""||txtSoLuong.Text==""||txtMoTa.Text=="")
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
+            else
+            {
+                VatTu vattu = new VatTu();
+
+                if (chucnang == 1)
+                {
+                    vattu.VatTuId = txtMaVatTu.Text;
+                    vattu.TenVatTu = txtTenVatTu.Text;
+                    vattu.SoLuong = int.Parse(txtSoLuong.Text);
+                    vattu.MoTa = txtMoTa.Text;
+                    vattu.GhiChu = txtGhiChu.Text;
+                    if (bUS_vattu.Insert(vattu))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+
+                }
+
+                if (chucnang == 2)
+                {
+                    vattu.VatTuId = txtMaVatTu.Text;
+                    vattu.TenVatTu = txtTenVatTu.Text;
+                    vattu.SoLuong = int.Parse(txtSoLuong.Text);
+                    vattu.MoTa = txtMoTa.Text;
+                    vattu.GhiChu = txtGhiChu.Text;
+                    if (bUS_vattu.Update(vattu))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reset();
         }
     }
 }

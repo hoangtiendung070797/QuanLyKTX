@@ -27,6 +27,24 @@ namespace BUS
         public DataTable GetData()
         {
             return this.ChiTietPhieuCapPhatVatTu.GetData();
+
+        }
+        public DataTable GetDataListView()
+        {
+            return this.ChiTietPhieuCapPhatVatTu.GetDataListView();
+        }
+        public int GetIndex(string PhieuCapPhatId)
+        {
+            return this.ChiTietPhieuCapPhatVatTu.GetIndex(PhieuCapPhatId);
+        }
+        public bool CheckVatTu(int phieuCapPhatId, string vatTuId)
+        {
+            return this.ChiTietPhieuCapPhatVatTu.CheckVatTu(phieuCapPhatId, vatTuId);
+        }
+
+        public int GetChiTietID(int phieuCapPhatId, string vatTuId)
+        {
+            return this.ChiTietPhieuCapPhatVatTu.GetChiTietID(phieuCapPhatId, vatTuId);
         }
     }
 }

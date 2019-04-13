@@ -14,10 +14,11 @@ namespace QuanLyKTX
             InitializeComponent();
         }
         BUS_TinhThanh bUS_TinhThanh = new BUS_TinhThanh();
+        int chucnang = 0;
 
         private void UCTinhThanh_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = bUS_TinhThanh.GetData();
+            reset();
             FixNColumnNames();
         }
         public void FixNColumnNames()
@@ -26,106 +27,109 @@ namespace QuanLyKTX
             gridView1.Columns[1].Caption = "Tên tỉnh thành ";
         }
 
+        void display()
+        {
+            gridControl1.DataSource = bUS_TinhThanh.GetData();
+        }
+        void reset()
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+            txtMaTinhThanh.Enabled = false;
+            txtTenTinhThanh.Enabled = false;
+
+            txtMaTinhThanh.Text = "";
+            txtTenTinhThanh.Text = "";
+
+            display();
+
+        }
+
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaTinhThanh.Text = gridView1.GetRowCellValue(e.RowHandle, "TinhThanhId").ToString();
             txtTenTinhThanh.Text = gridView1.GetRowCellValue(e.RowHandle, "tenTinhThanh").ToString();
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
+            chucnang = 1;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtTenTinhThanh.Enabled = true;
-
-            if (!string.IsNullOrEmpty(txtTenTinhThanh.Text))
-            {
-                try
-                {
-
-                    TinhThanh tinhThanh = new TinhThanh(int.Parse(txtMaTinhThanh.Text),txtTenTinhThanh.Text);
-                    //MessageBox.Show(dAL_QuocTich.GetIdentityId().ToString());
-                    bUS_TinhThanh.Insert(tinhThanh);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenTinhThanh.Enabled = false;
-                    UCTinhThanh_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được tỉnh thành\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenTinhThanh.ResetText();
-                    txtTenTinhThanh.Focus();
-                }
-            }
-            else
-            {
-                errorProvider.SetError(txtTenTinhThanh, "Chưa điền tên tỉnh thành!");
-                txtTenTinhThanh.ResetText();
-                txtTenTinhThanh.Focus();
-            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtTenTinhThanh.Enabled = true;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtTenTinhThanh.Text))
-            {
-                try
-                {
-
-                    TinhThanh tinhthanh = new TinhThanh(int.Parse(txtMaTinhThanh.Text),txtTenTinhThanh.Text);
-                    tinhthanh.TinhThanhId = int.Parse(txtMaTinhThanh.Text);
-
-                    if (bUS_TinhThanh.Update(tinhthanh) == true)
-                    {
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenTinhThanh.Enabled = false;
-                        UCTinhThanh_Load(sender, e);
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể sửa được tỉnh thành\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenTinhThanh.ResetText();
-                    txtTenTinhThanh.Focus();
-                }
-            }
-            else
-            {
-                errorProvider.SetError(txtTenTinhThanh, "Chưa điền tên ỉnh thành!");
-                txtTenTinhThanh.ResetText();
-                txtTenTinhThanh.Focus();
-            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtMaTinhThanh.Text != "")
             {
-                try
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    bUS_TinhThanh.Delete(int.Parse(txtMaTinhThanh.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    UCTinhThanh_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi tỉnh thành\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenTinhThanh.ResetText();
-                    txtTenTinhThanh.Focus();
+                    if (bUS_TinhThanh.Delete(int.Parse(txtMaTinhThanh.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        reset();
+                    }
+                    else MessageBox.Show("Xóa thất bại!");
                 }
             }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtTenTinhThanh.Text == "")
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
+            else
+            {
+                TinhThanh tinhthanh = new TinhThanh();
+
+                if (chucnang == 1)
+                {
+                    tinhthanh.TenTinhThanh = txtTenTinhThanh.Text;
+                    if (bUS_TinhThanh.Insert(tinhthanh))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+
+                }
+
+                if (chucnang == 2)
+                {
+                    tinhthanh.TinhThanhId = int.Parse(txtMaTinhThanh.Text);
+                    tinhthanh.TenTinhThanh = txtTenTinhThanh.Text;
+                    if (bUS_TinhThanh.Update(tinhthanh))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reset();
         }
     }
 }

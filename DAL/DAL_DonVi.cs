@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -16,7 +17,7 @@ namespace DAL
         public DAL_DonVi()
         {
             table = GetData();
-            table.PrimaryKey = new DataColumn[] {table.Columns[0]};
+            table.PrimaryKey = new DataColumn[] { table.Columns[0] };
 
         }
         #endregion
@@ -32,7 +33,7 @@ namespace DAL
                 dataAdapter.Fill(table);
                 return table;
             }
-            catch 
+            catch
             {
                 return null;
             }
@@ -59,7 +60,7 @@ namespace DAL
 
                 return true;
             }
-            catch 
+            catch
             {
                 return false;
             }
@@ -67,27 +68,30 @@ namespace DAL
 
         public bool Delete(int donViId)
         {
-            try
+            // try
+            //  {
+            table = GetData();
+            string query = "SELECT * FROM DonVi";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+            table = GetData();
+            table.PrimaryKey = new DataColumn[] { table.Columns[0] };
+            DataRow row = table.Rows.Find(donViId);
+
+            if (row != null)
             {
-                string query = "SELECT * FROM DonVi";
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataRow row = table.Rows.Find(donViId);
-
-                if(row != null)
-                {
-                    row.Delete();
-                }
-
-                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Update(table);
-                return true;
+                row.Delete();
             }
-            catch 
-            {
 
-                return false;
-            }
+            SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+            dataAdapter.Update(table);
+            return true;
         }
+        //  catch (Exception e)
+        //  { 
+
+        //     return false;
+        //     }
+        //   }
 
         public bool Update(DonVi donVi)
         {
@@ -95,6 +99,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM DonVi";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(donVi.DonViId);
 
                 if (row != null)

@@ -18,5 +18,6 @@ namespace QuanLyKTX
         public static int NguoiDungId = 0;
         public static BUS_NhatKyHoatDong NhatKyHoatDong = new BUS_NhatKyHoatDong();
 
+        public static string PhongId = "";
     }
 }

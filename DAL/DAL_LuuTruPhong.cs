@@ -37,6 +37,37 @@ namespace DAL
             }
         }
 
+        public DataTable DoiTuong_TrongPhong(string phongId)
+        {
+            try
+            {
+                string query = "SELECT   DoiTuong.DoiTuongId,anh,maSinhVien,hoDem,ten,LuuTruPhong.LuuTruPhongId,NhanVienId,NguoiDungId,PhongId,ngayXep,ngayRoi,trangThai from LuuTruPhong join DoiTuong on DoiTuong.DoiTuongId = LuuTruPhong.DoiTuongId  where LuuTruPhong.PhongId = '" + phongId + "' and LuuTruPhong.trangThai = 1";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public DataTable DoiTuong_ChuaCoPhong()
+        {
+            try
+            {
+                string query = "select * from DoiTuong where DoiTuong.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or DoiTuong.DoiTuongId  in (select LuuTruPhong.DoiTuongId from LuuTruPhong where LuuTruPhong.trangThai = 0)";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public bool Insert(LuuTruPhong luuTruPhong)
         {

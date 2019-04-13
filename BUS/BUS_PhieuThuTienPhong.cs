@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using System;
 using System.Data;
 
 namespace BUS
@@ -27,6 +28,19 @@ namespace BUS
         public DataTable GetData()
         {
             return this.PhieuThuTienPhong.GetData();
+        }
+        public DataTable GetDataById(int doiTuongId)
+        {
+            return this.PhieuThuTienPhong.GetDataById(doiTuongId);
+        }
+        public DataTable GetDataByDate(DateTime date)
+        {
+            return this.PhieuThuTienPhong.GetDataByDate(date);
+        }
+
+        public int GetIdentityId()
+        {
+            return this.GetIdentityId();
         }
     }
 }

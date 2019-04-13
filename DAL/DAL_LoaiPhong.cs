@@ -70,6 +70,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM LoaiPhong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(loaiPhongId);
 
                 if (row != null)
@@ -94,6 +96,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM LoaiPhong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(loaiPhong.LoaiPhongId);
 
                 if (row != null)

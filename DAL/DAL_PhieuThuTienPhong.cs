@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 namespace DAL
@@ -46,13 +47,14 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
+
                 row["DoiTuongId"] = phieuThuTienPhong.DoiTuongId;
                 row["NhanVienId"] = phieuThuTienPhong.NhanVienId;
                 row["NguoiDungId"] = phieuThuTienPhong.NguoiDungId;
                 row["tenNguoiLap"] = phieuThuTienPhong.TenNguoiLap;
                 row["ngayThu"] = phieuThuTienPhong.NgayThu;
                 row["tuNgay"] = phieuThuTienPhong.TuNgay;
-                row["denNgay"] = phieuThuTienPhong.DenNgay;                                      
+                row["denNgay"] = phieuThuTienPhong.DenNgay;
                 row["tienThu"] = phieuThuTienPhong.TienThu;
                 row["ghiChu"] = phieuThuTienPhong.GhiChu;
                 row["tinhTrang"] = phieuThuTienPhong.TinhTrang;
@@ -76,6 +78,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM PhieuThuTienPhong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(phieuThuTienPhongID);
 
                 if (row != null)
@@ -100,6 +104,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM PhieuThuTienPhong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(phieuThuTienPhong.PhieuThuTienPhongId);
 
                 if (row != null)
@@ -110,7 +116,7 @@ namespace DAL
                     row["tenNguoiLap"] = phieuThuTienPhong.TenNguoiLap;
                     row["ngayThu"] = phieuThuTienPhong.NgayThu;
                     row["tuNgay"] = phieuThuTienPhong.TuNgay;
-                    row["denNgay"] = phieuThuTienPhong.DenNgay;                                      
+                    row["denNgay"] = phieuThuTienPhong.DenNgay;
                     row["tienThu"] = phieuThuTienPhong.TienThu;
                     row["ghiChu"] = phieuThuTienPhong.GhiChu;
                     row["tinhTrang"] = phieuThuTienPhong.TinhTrang;
@@ -126,6 +132,56 @@ namespace DAL
                 return false;
             }
         }
+
+        public DataTable GetDataById(int doiTuongId)
+        {
+            try
+            {
+                string query = "SELECT dbo.PhieuThuTienPhong.* FROM	 dbo.DoiTuong INNER JOIN dbo.PhieuThuTienPhong ON	PhieuThuTienPhong.DoiTuongId = DoiTuong.DoiTuongId WHERE dbo.PhieuThuTienPhong.DoiTuongId = " + doiTuongId;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public int GetIdentityId()
+        {
+            string query = "SELECT IDENT_CURRENT('PhieuThuTienPhong') as LastID";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            dataAdapter.Fill(table);
+            return int.Parse(table.Rows[0][0].ToString());
+        }
+
+        public DataTable GetDataByDate(DateTime date)
+        {
+            try
+            {
+                string query = "SELECT dbo.PhieuThuTienPhong.* FROM	 dbo.DoiTuong INNER JOIN dbo.PhieuThuTienPhong ON	PhieuThuTienPhong.DoiTuongId = DoiTuong.DoiTuongId WHERE dbo.PhieuThuTienPhong.ngayThu = '" + date.ToString("MM-dd-yyyy") + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public bool isInPhieuThuTienPhong(int doiTuongId, DateTime tuNgay, DateTime denNgay)
+        {
+
+
+
+            return true;
+        }
+
         #endregion
     }
 }

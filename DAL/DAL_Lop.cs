@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM Lop";
+                string query = "SELECT Lop.LopId,tenLop,DonVi.DonViId,tenDonVi FROM Lop join DonVi on DonVi.DonViId = Lop.DonViId";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -39,7 +39,7 @@ namespace DAL
         }
 
 
-        public bool Insert(Lop  lop)
+        public bool Insert(Lop lop)
         {
             try
             {
@@ -69,6 +69,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM Lop";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(lopId);
 
                 if (row != null)
@@ -93,6 +95,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM Lop";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(lop.LopId);
 
                 if (row != null)

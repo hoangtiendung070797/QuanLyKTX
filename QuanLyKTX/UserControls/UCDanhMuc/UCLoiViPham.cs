@@ -13,11 +13,12 @@ namespace QuanLyKTX.UserControls
             InitializeComponent();
         }
         BUS_LoiViPham bUS_LoiViPham = new BUS_LoiViPham();
-        private void UCLoiViPham_Load(object sender, EventArgs e)
+        int chucnang = 0;
+        private void UCLoiViPham_Load_1(object sender, EventArgs e)
         {
-            gridControl1.DataSource = bUS_LoiViPham.GetData();
+            reset();
             FixNColumnNames();
-        }
+        }   
 
         public void FixNColumnNames()
         {
@@ -25,47 +26,126 @@ namespace QuanLyKTX.UserControls
             gridView1.Columns[1].Caption = "Tên lỗi vi phạm";
             gridView1.Columns[2].Caption = "Nội dung";
             gridView1.Columns[3].Caption = "Hình thức xử lý";
-
             gridView1.Columns[4].Caption = "Ghi chú";
-            
-
         }
+
+        void display()
+        {
+            gridControl1.DataSource = bUS_LoiViPham.GetData();
+        }
+        void reset()
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+            txtMaLoi.Enabled = false;
+            txtTenLoi.Enabled = false;
+            txtNoiDung.Enabled = false;
+            txtHinhThucXuLy.Enabled = false;
+            txtGhiChu.Enabled = false;
+
+            txtMaLoi.Text = "";
+            txtTenLoi.Text = "";
+            txtNoiDung.Text = "";
+            txtHinhThucXuLy.Text = "";
+            txtGhiChu.Text = "";
+
+            display();
+        }
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            chucnang = 1;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtTenLoi.Enabled = true;
-            txtMaLoi.Enabled = true;
-            txtHinhThucXuLy.Enabled = true;
             txtNoiDung.Enabled = true;
+            txtHinhThucXuLy.Enabled = true;
             txtGhiChu.Enabled = true;
+        }
 
-            if (!string.IsNullOrEmpty(txtTenLoi.Text))
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            txtTenLoi.Enabled = true;
+            txtNoiDung.Enabled = true;
+            txtHinhThucXuLy.Enabled = true;
+            txtGhiChu.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtMaLoi.Text != "")
             {
-                try
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    LoiViPham loivipham = new LoiViPham(int.Parse(txtMaLoi.Text),txtTenLoi.Text,txtNoiDung.Text,txtHinhThucXuLy.Text,txtGhiChu.Text);
-                    //MessageBox.Show(dAL_QuocTich.GetIdentityId().ToString());
-                    bUS_LoiViPham.Insert(loivipham);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenLoi.Enabled = false;
-                    UCLoiViPham_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được lỗi vi phạm\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenLoi.ResetText();
-                    txtTenLoi.Focus();
+                    if (bUS_LoiViPham.Delete(int.Parse(txtMaLoi.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        reset();
+                    }
+                    else MessageBox.Show("Xóa thất bại!");
                 }
             }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtTenLoi.Text == "" ||txtHinhThucXuLy.Text==""||txtNoiDung.Text=="")
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
             else
             {
-                errorProvider1.SetError(txtTenLoi, "Chưa điền tên lỗi vi phạm!");
-                txtTenLoi.ResetText();
-                txtTenLoi.Focus();
+                LoiViPham loivipham = new LoiViPham();
+
+                if (chucnang == 1)
+                {
+                    loivipham.TenLoiViPham = txtTenLoi.Text;
+                    loivipham.NoiDung = txtNoiDung.Text;
+                    loivipham.HinhThucXuLy = txtHinhThucXuLy.Text;
+                    loivipham.GhiChu = txtGhiChu.Text;
+                    if (bUS_LoiViPham.Insert(loivipham))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+
+                }
+
+                if (chucnang == 2)
+                {
+                    loivipham.LoiViPhamId = int.Parse(txtMaLoi.Text);
+                    loivipham.TenLoiViPham = txtTenLoi.Text;
+                    loivipham.NoiDung = txtNoiDung.Text;
+                    loivipham.HinhThucXuLy = txtHinhThucXuLy.Text;
+                    loivipham.GhiChu = txtGhiChu.Text;
+                    if (bUS_LoiViPham.Update(loivipham))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaLoi.Text = gridView1.GetRowCellValue(e.RowHandle, "LoiViPhamId").ToString();
@@ -73,73 +153,9 @@ namespace QuanLyKTX.UserControls
             txtNoiDung.Text = gridView1.GetRowCellValue(e.RowHandle, "noiDung").ToString();
             txtHinhThucXuLy.Text = gridView1.GetRowCellValue(e.RowHandle, "hinhThucXuLy").ToString();
             txtGhiChu.Text = gridView1.GetRowCellValue(e.RowHandle, "ghiChu").ToString();
-          
-        }
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtTenLoi.Text))
-            {
-                try
-                {
-
-                    LoiViPham loivipham = new LoiViPham(int.Parse(txtMaLoi.Text), txtTenLoi.Text, txtNoiDung.Text, txtHinhThucXuLy.Text, txtGhiChu.Text);
-                    loivipham.LoiViPhamId = int.Parse(txtMaLoi.Text);
-
-                    if (bUS_LoiViPham.Update(loivipham) == true)
-                    {
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenLoi.Enabled = false;
-                        UCLoiViPham_Load(sender, e);
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được lỗi vi phạm\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenLoi.ResetText();
-                    txtTenLoi.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenLoi, "Chưa điền tên lỗi vi phạm!");
-                txtTenLoi.ResetText();
-                txtTenLoi.Focus();
-            }
+    
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            txtTenLoi.Enabled = true;
-            txtMaLoi.Enabled = true;
-            txtHinhThucXuLy.Enabled = true;
-            txtNoiDung.Enabled = true;
-            txtGhiChu.Enabled = true;
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-
-                    bUS_LoiViPham.Delete(int.Parse(txtMaLoi.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    UCLoiViPham_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi lỗi vi phạm\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenLoi.ResetText();
-                    txtTenLoi.Focus();
-                }
-            }
-        }
+        
     }
 }

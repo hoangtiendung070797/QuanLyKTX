@@ -71,10 +71,10 @@
             this.txtHoDem = new System.Windows.Forms.TextBox();
             this.pnlImage = new DevExpress.XtraEditors.PanelControl();
             this.btnLoadAnh = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             this.panelControlTitle = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).BeginInit();
@@ -83,9 +83,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.pnlImage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -522,6 +522,17 @@
             this.btnLoadAnh.Text = "Chọn ảnh";
             this.btnLoadAnh.Click += new System.EventHandler(this.btnLoadAnh_Click);
             // 
+            // pictureHoSo
+            // 
+            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureHoSo.EditValue = ((object)(resources.GetObject("pictureHoSo.EditValue")));
+            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
+            this.pictureHoSo.Name = "pictureHoSo";
+            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
+            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
+            this.pictureHoSo.TabIndex = 99;
+            // 
             // panelControlTitle
             // 
             this.panelControlTitle.Controls.Add(this.label1);
@@ -546,17 +557,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureHoSo
-            // 
-            this.pictureHoSo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureHoSo.EditValue = ((object)(resources.GetObject("pictureHoSo.EditValue")));
-            this.pictureHoSo.Location = new System.Drawing.Point(7, 6);
-            this.pictureHoSo.Name = "pictureHoSo";
-            this.pictureHoSo.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureHoSo.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureHoSo.Size = new System.Drawing.Size(164, 201);
-            this.pictureHoSo.TabIndex = 99;
-            // 
             // FrmHoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -579,10 +579,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
             this.pnlImage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).EndInit();
             this.panelControlTitle.ResumeLayout(false);
             this.panelControlTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

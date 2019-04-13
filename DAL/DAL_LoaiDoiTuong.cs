@@ -47,7 +47,7 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["tenDoiTuong"] = loaiDoiTuong.TenLoaiDoiTuong;
+                row["tenLoaiDoiTuong"] = loaiDoiTuong.TenLoaiDoiTuong;
 
                 table.Rows.Add(row);
 
@@ -68,6 +68,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM LoaiDoiTuong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(loaiDoiTuongId);
 
                 if (row != null)
@@ -92,11 +94,14 @@ namespace DAL
             {
                 string query = "SELECT * FROM LoaiDoiTuong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(loaiDoiTuong.LoaiDoiTuongId);
+
 
                 if (row != null)
                 {
-                    row["tenDoiTuong"] = loaiDoiTuong.TenLoaiDoiTuong;
+                    row["tenLoaiDoiTuong"] = loaiDoiTuong.TenLoaiDoiTuong;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);

@@ -13,9 +13,12 @@ namespace QuanLyKTX.UserControls
             InitializeComponent();
         }
         BUS_Lop bUS_Lop = new BUS_Lop();
+        int chucnang = 0;
+        BUS_DonVi bus_DonVi = new BUS_DonVi();
+
         private void UCLop_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = bUS_Lop.GetData();
+            reset();
             FixNColumnNames();
         }
         public void FixNColumnNames()
@@ -23,123 +26,132 @@ namespace QuanLyKTX.UserControls
             gridView1.Columns[0].Caption = "Mã lớp";
             gridView1.Columns[1].Caption = "Tên lớp";
             gridView1.Columns[2].Caption = "Mã đơn vị";
-           
-
-
         }
+
+        void display_cbb()
+        {
+            cbbDonvi.DataSource = bus_DonVi.GetData();
+            cbbDonvi.DisplayMember = "tenDonVi";
+            cbbDonvi.ValueMember = "DonViId";
+        }
+
+        void display()
+        {
+            gridControl1.DataSource = bUS_Lop.GetData();
+        }
+        void reset()
+        {
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
+
+            txtMaLop.Enabled = false;
+            txtTenLop.Enabled = false;
+            cbbDonvi.Enabled = false;
+
+            txtMaLop.Text = "";
+            txtTenLop.Text = "";
+            cbbDonvi.Text = "";
+
+            display();
+            display_cbb();
+        }
+
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            chucnang = 1;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtTenLop.Enabled = true;
-            txtMaLop.Enabled = true;
             cbbDonvi.Enabled = true;
-
-            if (!string.IsNullOrEmpty(txtTenLop.Text) && !string.IsNullOrEmpty(txtMaLop.Text) && !string.IsNullOrEmpty(cbbDonvi.Text))
-            {
-                try
-                {
-
-                    Lop Lop = new Lop();
-                    Lop.TenLop = txtTenLop.Text;
-                    Lop.DonViId = int.Parse(cbbDonvi.Text);
-                    //MessageBox.Show(dAL_Lop.GetIdentityId().ToString());
-                    bUS_Lop.Insert(Lop);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenLop.Enabled = false;
-                    UCLop_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được lớp\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenLop.ResetText();
-                    txtTenLop.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenLop, "Chưa điền tên lớp!");
-                errorProvider1.SetError(txtMaLop, "Chưa điền tên lớp!");
-                errorProvider1.SetError(cbbDonvi, "Chưa điền tên lớp!");
-                txtTenLop.ResetText();
-                txtTenLop.Focus();
-            }
-        }
-
-        private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
-        {
-            txtMaLop.Text = gridView1.GetRowCellValue(e.RowHandle, "LopId").ToString();
-            txtTenLop.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLop").ToString();
-            cbbDonvi.Text = gridView1.GetRowCellValue(e.RowHandle, "DonViId").ToString();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txtTenLop.Text) && !string.IsNullOrEmpty(txtMaLop.Text) && !string.IsNullOrEmpty(cbbDonvi.Text))
-            {
-                try
-                {
-
-                    Lop Lop = new Lop();
-                    Lop.TenLop = txtTenLop.Text;
-                    Lop.DonViId = int.Parse(cbbDonvi.Text);
-                    Lop.LopId = int.Parse( txtMaLop.Text);
-
-                    if (bUS_Lop.Update(Lop) == true)
-                    {
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenLop.Enabled = false;
-                        UCLop_Load(sender, e);
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được lớp\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenLop.ResetText();
-                    txtTenLop.Focus();
-                }
-            }
-            else
-            {
-                errorProvider1.SetError(txtTenLop, "Chưa điền tên lớp!");
-                errorProvider1.SetError(txtMaLop, "Chưa điền tên lớp!");
-                errorProvider1.SetError(cbbDonvi, "Chưa điền tên lớp!");
-                txtTenLop.ResetText();
-                txtTenLop.Focus();
-            }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
             txtTenLop.Enabled = true;
-            txtMaLop.Enabled = true;
             cbbDonvi.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (txtMaLop.Text != "")
             {
-                try
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    bUS_Lop.Delete(int.Parse(txtMaLop.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    UCLop_Load(sender, e);
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi lớp\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenLop.ResetText();
-                    txtTenLop.Focus();
+                    if (bUS_Lop.Delete(int.Parse(txtMaLop.Text)))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        reset();
+                    }
+                    else MessageBox.Show("Xóa thất bại!");
                 }
             }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtTenLop.Text == "" || cbbDonvi.Text == "")
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
+            else
+            {
+                Lop lop = new Lop();
+
+                if (chucnang == 1)
+                {
+                    lop.TenLop = txtTenLop.Text;
+                    lop.DonViId = int.Parse(cbbDonvi.SelectedValue.ToString());
+                    if (bUS_Lop.Insert(lop))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+
+                }
+
+                if (chucnang == 2)
+                {
+                    lop.LopId = int.Parse(txtMaLop.Text);
+                    lop.TenLop = txtTenLop.Text;
+                    lop.DonViId = int.Parse(cbbDonvi.SelectedValue.ToString());
+                    if (bUS_Lop.Update(lop))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
+            }
+
+     
+
+           
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        int tempDonVi=0;
+        private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+            txtMaLop.Text = gridView1.GetRowCellValue(e.RowHandle, "LopId").ToString();
+            txtTenLop.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLop").ToString();
+            tempDonVi= int.Parse(gridView1.GetRowCellValue(e.RowHandle, "DonViId").ToString());
+            cbbDonvi.Text = gridView1.GetRowCellValue(e.RowHandle, "tenDonVi").ToString();
         }
     }
 }

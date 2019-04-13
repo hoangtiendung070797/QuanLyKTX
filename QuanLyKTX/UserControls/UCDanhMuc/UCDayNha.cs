@@ -12,119 +12,122 @@ namespace QuanLyKTX
             InitializeComponent();
         }
         BUS_DayNha bUS_DayNha = new BUS_DayNha();
-        private void UCDayNha_Load(object sender, EventArgs e)
+        int chucnang = 0;
+
+       
+
+        void display()
         {
             gridControl1.DataSource = bUS_DayNha.GetData();
-            FixNColumnNames();
         }
-        private void btnThemDayNha_Click(object sender, EventArgs e)
+        void reset()
         {
-            txtTenDayNha.Enabled = true;
+            btnAdd.Enabled = true;
+            btnEdit.Enabled = true;
+            btnDelete.Enabled = true;
+            btnSave.Enabled = false;
+            btnCancel.Enabled = false;
 
-            if (!string.IsNullOrEmpty(txtTenDayNha.Text))
-            {
-                try
-                {
+            txtDayNhaId.Enabled = false;
+            txtTenDayNha.Enabled = false;
+            txtGhiChu.Enabled = false;
 
-                    DayNha dayNha = new DayNha(txtTenDayNha.Text);
-             
-                    bUS_DayNha.Insert(dayNha);
-                    MessageBox.Show("Thêm thành công!");
-                    txtTenDayNha.Enabled = false;
-                    UCDayNha_Load(sender, e);
+            txtDayNhaId.Text = "";
+            txtTenDayNha.Text = "";
+            txtGhiChu.Text = "";
 
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được dãy nhà\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenDayNha.ResetText();
-                    txtTenDayNha.Focus();
-                }
-            }
-            else
-            {
-                errorProvider.SetError(txtTenDayNha, "Chưa điền tên dãy nhà!");
-                txtTenDayNha.ResetText();
-                txtTenDayNha.Focus();
-            }
+            display();
         }
 
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
-            txtDayNhaId.Text = gridViewDayNha.GetRowCellValue(e.RowHandle, "DayNhaId").ToString();
-            txtTenDayNha.Text = gridViewDayNha.GetRowCellValue(e.RowHandle, "tenDayNha").ToString();
+            txtDayNhaId.Text = gridView1.GetRowCellValue(e.RowHandle, "DayNhaId").ToString();
+            txtTenDayNha.Text = gridView1.GetRowCellValue(e.RowHandle, "tenDayNha").ToString();
+            txtGhiChu.Text = gridView1.GetRowCellValue(e.RowHandle, "ghiChu").ToString();
         }
 
-        private void btnLuuDayNha_Click(object sender, EventArgs e)
+        private void btnThemDayNha_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtTenDayNha.Text))
+            chucnang = 1;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            txtTenDayNha.Enabled = true;
+            txtGhiChu.Enabled = true;
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            chucnang = 2;
+
+            btnAdd.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+
+            txtTenDayNha.Enabled = true;
+            txtGhiChu.Enabled = true;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtDayNhaId.Text != "")
             {
-                try
+                if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
-                    DayNha DayNha = new DayNha(txtTenDayNha.Text);
-                    DayNha.DayNhaId = int.Parse(txtDayNhaId.Text);
-
-                    if (bUS_DayNha.Update(DayNha) == true)
-                    {
-                        UCDayNha_Load(sender, e);
-                        MessageBox.Show("Đã cập nhập thành công!");
-                        txtTenDayNha.Enabled = false;
-                        // lưu vào log ... viết sau
-                    }
-
-
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể thêm được dãy nhà\nVui lòng kiểm tra lại kết nối và dữ liệu nhập!");
-                    txtTenDayNha.ResetText();
-                    txtTenDayNha.Focus();
+                    if (bUS_DayNha.Delete(int.Parse(txtDayNhaId.Text)))
+                        MessageBox.Show("Xóa dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Xóa dữ liệu lỗi.", "Thông báo.");
+                    reset();
                 }
             }
+            else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            if (txtTenDayNha.Text == "")
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
             else
             {
-                errorProvider.SetError(txtTenDayNha, "Chưa điền tên dãy nhà!");
-                txtTenDayNha.ResetText();
-                txtTenDayNha.Focus();
+                DayNha daynha = new DayNha();
+                if (chucnang == 1)
+                {
+                    daynha.TenDayNha = txtTenDayNha.Text;
+                    daynha.GhiChu = txtGhiChu.Text;                
+                    if (bUS_DayNha.Insert(daynha))
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+                }
+
+                if (chucnang == 2)
+                {
+                    daynha.DayNhaId = int.Parse(txtDayNhaId.Text);
+                    daynha.TenDayNha = txtTenDayNha.Text;
+                    daynha.GhiChu = txtGhiChu.Text;
+                    if (bUS_DayNha.Update(daynha))
+                        MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    else MessageBox.Show("Cập nhật dữ liệu lỗi.", "Thông báo.");
+                }
+                reset();
             }
         }
 
-        private void btnSuaDayNha_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtTenDayNha.Enabled = true;
+            reset();
         }
 
-        public void FixNColumnNames()
+        private void UCDayNha_Load(object sender, EventArgs e)
         {
-            gridViewDayNha.Columns[0].Caption = "Mã Dãy Nhà";
-            gridViewDayNha.Columns[1].Caption = "Tên Dãy Nhà";
-        }
-
-        private void z_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                try
-                {
-
-                    bUS_DayNha.Delete(int.Parse(txtDayNhaId.Text));
-                    MessageBox.Show("Xóa thành công!");
-                    UCDayNha_Load(sender, e);
-
-                    // lưu vào log ... viết sau
-                }
-                catch
-                {
-
-                    MessageBox.Show("Thao tác bị lỗi, không thể xóa được bản ghi dãy nhà\nVui lòng kiểm tra lại kết nối và dữ liệu chọn!");
-                    txtTenDayNha.ResetText();
-                    txtTenDayNha.Focus();
-                }
-            }
+            reset();
         }
     }
 }
