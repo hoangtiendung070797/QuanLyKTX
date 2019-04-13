@@ -23,10 +23,23 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         BUS_LuuTruPhong bUS_luutruphong = new BUS_LuuTruPhong();
         private void cardView1_Click(object sender, EventArgs e)
         {
-            DataRow row = cardView1.GetFocusedDataRow();
+            try
+            {
+                if(cardView1.DataRowCount != 0)
+                {
+                    DataRow row = cardView1.GetFocusedDataRow();
 
-            Const.PhongId = row["PhongId"].ToString();
-            grcDoiTuong.DataSource = bUS_luutruphong.DoiTuong_TrongPhong(Const.PhongId);
+                    Const.PhongId = row["PhongId"].ToString();
+                    grcDoiTuong.DataSource = bUS_luutruphong.DoiTuong_TrongPhong(Const.PhongId);
+                }
+               
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
             
         }
 
