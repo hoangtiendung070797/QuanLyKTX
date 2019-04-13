@@ -511,6 +511,7 @@
             this.btnCapPhatTBVT.Name = "btnCapPhatTBVT";
             this.btnCapPhatTBVT.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnCapPhatTBVT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCapPhatTBVT_ItemClick);
             // 
             // btnKTKL
             // 
@@ -563,6 +564,7 @@
             this.btnYeuCauCapPhat.Name = "btnYeuCauCapPhat";
             this.btnYeuCauCapPhat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnYeuCauCapPhat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeuCauCapPhat_ItemClick);
             // 
             // btnYeuCauSuaChua
             // 

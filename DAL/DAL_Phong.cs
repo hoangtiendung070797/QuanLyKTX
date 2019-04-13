@@ -38,7 +38,22 @@ namespace DAL
             }
         }
 
-
+        public DataTable GetDataNew()
+        {
+            try
+            {
+                string query = "SELECT PhongId AS 'Mã phòng',tenPhong AS 'Tên Phòng',tenDayNha AS 'Dãy nhà',tenLoaiPhong AS 'Loại Phòng',tang AS 'Tầng',giaPhong AS 'Giá phòng' " +
+                    "FROM  dbo.DayNha join dbo.Phong join dbo.LoaiPhong  ON LoaiPhong.LoaiPhongId = Phong.LoaiPhongId ON LoaiPhong.LoaiPhongId = Phong.LoaiPhongId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public bool Insert(Phong phong)
         {
             try

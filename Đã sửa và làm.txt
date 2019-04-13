@@ -1,0 +1,8 @@
+DAL_VatTu.cs + Bus
+dal_Phong +Bus
+dal_Phieucapphatvattu +Bus
+dal_CHiTietPhieuCapPhat +Bus
+
+UC CapPhat , UC PhieuCapPhat
+form TaoPhieuCapPhat, SuaPhieuCapPhat , CapPhatVatTu
+

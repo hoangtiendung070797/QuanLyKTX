@@ -28,5 +28,10 @@ namespace BUS
         {
             return this.Phong.GetData();
         }
+
+        public DataTable GetDataNew()
+        {
+            return this.Phong.GetDataNew();
+        }
     }
 }

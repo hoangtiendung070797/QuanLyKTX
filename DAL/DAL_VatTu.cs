@@ -37,7 +37,21 @@ namespace DAL
                 return null;
             }
         }
-
+        public DataTable SeachData(string text)
+        {
+            try
+            {
+                string query = "SELECT * FROM dbo.VatTu WHERE VatTuId LIKE '%"+text+"%' OR tenVatTu LIKE N'%"+text+"%'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public bool Insert(VatTu vatTu)
         {

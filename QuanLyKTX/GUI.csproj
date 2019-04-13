@@ -102,11 +102,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Const.cs" />
+    <Compile Include="Forms\FormGiaoDich\FrmCapPhatVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmCapPhatVatTu.Designer.cs">
+      <DependentUpon>FrmCapPhatVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.designer.cs">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.Designer.cs">
+      <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.Designer.cs">
+      <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmThongTinHoSo.cs">
       <SubType>Form</SubType>
@@ -211,11 +229,23 @@
     <Compile Include="UserControls\UCDanhMuc\UCVatTu.designer.cs">
       <DependentUpon>UCVatTu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCCapPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCCapPhat.Designer.cs">
+      <DependentUpon>UCCapPhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.designer.cs">
       <DependentUpon>UCHoSo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuCapPhat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuCapPhat.Designer.cs">
+      <DependentUpon>UCPhieuCapPhat.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
       <SubType>UserControl</SubType>
@@ -251,8 +281,17 @@
     <Compile Include="UserControls\UCDanhMuc\UCQuocTich.Designer.cs">
       <DependentUpon>UCQuocTich.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmCapPhatVatTu.resx">
+      <DependentUpon>FrmCapPhatVatTu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmHoSo.resx">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.resx">
+      <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.resx">
+      <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmThongTinHoSo.resx">
       <DependentUpon>FrmThongTinHoSo.cs</DependentUpon>
@@ -305,8 +344,14 @@
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCVatTu.resx">
       <DependentUpon>UCVatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCCapPhat.resx">
+      <DependentUpon>UCCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCHoSo.resx">
       <DependentUpon>UCHoSo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuCapPhat.resx">
+      <DependentUpon>UCPhieuCapPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
       <DependentUpon>UCXepPhong.cs</DependentUpon>

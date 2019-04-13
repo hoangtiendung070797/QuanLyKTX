@@ -28,5 +28,22 @@ namespace BUS
         {
             return this.PhieuCapPhatVatTu.GetData();
         }
+        public DataTable GetDataPhong()
+        {
+            return this.phieuCapPhatVatTu.DataPhongNotIn();
+        }
+        public DataTable GetDataNew()
+        {
+            return this.phieuCapPhatVatTu.GetDataNew();
+        }
+        public int getPhieuID(string phongid, string ngay)
+        {
+            return this.phieuCapPhatVatTu.getPhieuID(phongid, ngay);
+        }
+
+        public DataTable TimKiemNgay(string date)
+        {
+            return this.phieuCapPhatVatTu.TimKiemNgay(date);
+        }
     }
 }

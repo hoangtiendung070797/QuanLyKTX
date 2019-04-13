@@ -71,6 +71,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM DonVi";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(donViId);
 
                 if(row != null)

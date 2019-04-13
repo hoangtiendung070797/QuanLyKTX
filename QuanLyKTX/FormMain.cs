@@ -251,9 +251,9 @@ namespace QuanLyKTX
         #endregion
         #region Phần Hệ Thống
         private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+        {         
             FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau();
-            formDoiMatKhau.ShowDialog();
+            formDoiMatKhau.ShowDialog();         
         }
 
         private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -285,7 +285,7 @@ namespace QuanLyKTX
 
         private void xtraTabPageStart_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void btnXepPhong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -299,7 +299,7 @@ namespace QuanLyKTX
             int t = 0;
             foreach (DevExpress.XtraTab.XtraTabPage tab in xtraTabControlMain.TabPages)
             {
-                if (tab.Text == "Nhà")
+                if (tab.Text == "Xếp phòng")
                 {
                     xtraTabControlMain.SelectedTabPage = tab;
                     t = 1;
@@ -316,6 +316,68 @@ namespace QuanLyKTX
                 xtraTabControlMain.SelectedTabPage = xtraTabXepPhong;
             }
 
+        }
+        public void AddTabPage(UserControl userControl)
+        {
+
+        }
+        
+        private void btnCapPhatTBVT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UCCapPhat uCCapPhat = new UCCapPhat();
+            DevExpress.XtraTab.XtraTabPage xtraTabCapPhat= new DevExpress.XtraTab.XtraTabPage();
+
+            xtraTabCapPhat.Text = "Cấp phát vật tư";
+            xtraTabCapPhat.Controls.Add(uCCapPhat);
+            uCCapPhat.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtraTabControlMain.TabPages)
+            {
+                if (tab.Text == "Cấp phát vật tư")
+                {
+                    xtraTabControlMain.SelectedTabPage = tab;
+                    t = 1;
+                }
+
+            }
+            if (t == 1)
+            {
+
+            }
+            else
+            {
+                xtraTabControlMain.TabPages.Add(xtraTabCapPhat);
+                xtraTabControlMain.SelectedTabPage = xtraTabCapPhat;
+            }
+        }
+
+        private void btnYeuCauCapPhat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            UCPhieuCapPhat uCPhieuCapPhat = new UCPhieuCapPhat();
+            DevExpress.XtraTab.XtraTabPage xtraTabPhieuCapPhat = new DevExpress.XtraTab.XtraTabPage();
+
+            xtraTabPhieuCapPhat.Text = "Phiếu cấp phát vật tư";
+            xtraTabPhieuCapPhat.Controls.Add(uCPhieuCapPhat);
+            uCPhieuCapPhat.Dock = DockStyle.Fill;
+            int t = 0;
+            foreach (DevExpress.XtraTab.XtraTabPage tab in xtraTabControlMain.TabPages)
+            {
+                if (tab.Text == "Phiếu cấp phát vật tư")
+                {
+                    xtraTabControlMain.SelectedTabPage = tab;
+                    t = 1;
+                }
+
+            }
+            if (t == 1)
+            {
+
+            }
+            else
+            {
+                xtraTabControlMain.TabPages.Add(xtraTabPhieuCapPhat);
+                xtraTabControlMain.SelectedTabPage = xtraTabPhieuCapPhat;
+            }
         }
     }
 }
