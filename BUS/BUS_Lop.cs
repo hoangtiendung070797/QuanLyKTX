@@ -27,5 +27,13 @@ namespace BUS
         {
             return this.Lop.GetData();
         }
+        public DataTable GetSinhVienTheoLop(int lopId)
+        {
+            return this.Lop.GetSinhVienTheoLop(lopId);
+        }
+        public DataTable GetDataLop()
+        {
+            return Lop.GetDataLop();
+        }
     }
 }

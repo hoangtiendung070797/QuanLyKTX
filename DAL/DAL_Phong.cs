@@ -212,6 +212,36 @@ namespace DAL
                 return false;
             }
         }
+        public DataTable GetSinhVienTheoPhong(string phongId, int dayNhaId)
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when  DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', LoaiPhong.tenLoaiPhong as N'Loại Phòng', LoaiPhong.soLuongtoiDa as N'Số lượng tối đa' FROM LoaiPhong inner join DayNha inner join Phong inner join LuuTruPhong inner join DoiTuong on DoiTuong.DoiTuongId = LuuTruPhong.DoiTuongId on Phong.PhongId = LuuTruPhong.PhongId on Phong.DayNhaId = DayNha.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId WHERE Phong.DayNhaID = " + dayNhaId + " and Phong.PhongId = '" + phongId + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataSinhVienTheoPhong()
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when  DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', LoaiPhong.tenLoaiPhong as N'Loại Phòng', LoaiPhong.soLuongtoiDa as N'Số lượng tối đa' FROM LoaiPhong inner join DayNha inner join Phong inner join LuuTruPhong inner join DoiTuong on DoiTuong.DoiTuongId = LuuTruPhong.DoiTuongId on Phong.PhongId = LuuTruPhong.PhongId on Phong.DayNhaId = DayNha.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

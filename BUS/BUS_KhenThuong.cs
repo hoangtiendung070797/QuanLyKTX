@@ -33,5 +33,9 @@ namespace BUS
         {
             return this.KhenThuong.GetData();
         }
+        public DataTable GetSinhVienTheoKhenThuong()
+        {
+            return this.KhenThuong.GetSinhVienTheoKhenThuong();
+        }
     }
 }

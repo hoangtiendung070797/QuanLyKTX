@@ -27,6 +27,13 @@ namespace BUS
         {
             return this.DonVi.Update(donVi);
         }
-
+        public DataTable GetSinhVienTheoDonVi(int donViId)
+        {
+            return DonVi.GetSinhVienTheoDonVi(donViId);
+        }
+        public DataTable GetDataDonVi()
+        {
+            return DonVi.GetDataDonVi();
+        }
     }
 }

@@ -33,6 +33,9 @@ namespace BUS
         {
             return this.KyLuat.GetData();
         }
-
+        public DataTable GetSinhVienTheoKyLuat()
+        {
+            return this.KyLuat.GetSinhVienTheoKyLuat();
+        }
     }
 }

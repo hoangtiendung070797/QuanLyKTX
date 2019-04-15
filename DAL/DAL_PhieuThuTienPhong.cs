@@ -174,6 +174,22 @@ namespace DAL
             }
         }
 
+        public DataTable PrintInfo()
+        {
+
+            try
+            {
+                string query = "SELECT PhieuThuTienPhongId, maSinhVien AS N'MSV',(dbo.DoiTuong.hoDem + N' ' + dbo.DoiTuong.ten) AS N'Họ và tên',ngayThu AS N'Ngày thu',tuNgay AS N'Phí từ ngày', denNgay AS N'Phí đến ngày', tenNguoiLap AS N'Tên người lập phiếu', tienThu AS N'Số tiền thu', CASE WHEN tinhTrang = 1 THEN N'Đã thu' ELSE N'Chưa thu' END  AS N'Tình trạng thu' FROM dbo.PhieuThuTienPhong INNER JOIN dbo.DoiTuong ON	DoiTuong.DoiTuongId = PhieuThuTienPhong.DoiTuongId ";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public bool isInPhieuThuTienPhong(int doiTuongId, DateTime tuNgay, DateTime denNgay)
         {
 
@@ -182,6 +198,36 @@ namespace DAL
             return true;
         }
 
+        public DataTable GetSinhVienTheoTinhTrangPhieuThuTienPhong(int tinhTrang)
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', PhieuThuTienPhong.tuNgay as N'Từ ngày', PhieuThuTienPhong.denNgay as N'Đến ngày', PhieuThuTienPhong.tienThu as N'Tiền thu',Case when PhieuThuTienPhong.tinhTrang = 1 then N'Đã thu' when PhieuThuTienPhong.tinhTrang = 0 then N'Chưa thu' end as N'Tình Trạng', PhieuThuTienPhong.ngayThu as N'Ngày thu', NhanVien.tenNhanVien as N'Tên người lập' FROM NhanVien inner join PhieuThuTienPhong inner join DoiTuong on DoiTuong.DoiTuongId = PhieuThuTienPhong.DoiTuongId on PhieuThuTienPhong.NhanVienId = NhanVien.NhanVienID WHERE PhieuThuTienPhong.tinhTrang = " + tinhTrang;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataPhieuThuTienPhong()
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when  DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', PhieuThuTienPhong.tuNgay as N'Từ ngày', PhieuThuTienPhong.denNgay as N'Đến ngày', PhieuThuTienPhong.tienThu as N'Tiền thu',Case when  PhieuThuTienPhong.tinhTrang = 1 then N'Đã thu' when PhieuThuTienPhong.tinhTrang = 0 then N'Chưa thu' end as N'Tình Trạng', PhieuThuTienPhong.ngayThu as N'Ngày thu', NhanVien.tenNhanVien as N'Tên người lập' FROM NhanVien inner join PhieuThuTienPhong inner join DoiTuong on DoiTuong.DoiTuongId = PhieuThuTienPhong.DoiTuongId on PhieuThuTienPhong.NhanVienId = NhanVien.NhanVienID";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

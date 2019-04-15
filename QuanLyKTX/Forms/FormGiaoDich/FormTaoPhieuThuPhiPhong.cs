@@ -33,7 +33,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 phieuThuTienPhong.DoiTuongId = DoiTuongId;
                 phieuThuTienPhong.NguoiDungId = Const.CurrentUser.NguoiDungId;
                 phieuThuTienPhong.NhanVienId = (int)cbbNhanVien.SelectedValue;
-                phieuThuTienPhong.TenNguoiLap = cbbNhanVien.SelectedText;
+                phieuThuTienPhong.TenNguoiLap = cbbNhanVien.Text;
                 phieuThuTienPhong.NgayThu = (DateTime)dteNgayThu.EditValue;
                 phieuThuTienPhong.TuNgay = (DateTime)dteTuNgay.EditValue;
                 phieuThuTienPhong.DenNgay = (DateTime)dteDenNgay.EditValue;
@@ -60,6 +60,15 @@ namespace QuanLyKTX.Forms.FormGiaoDich
 
         }
 
+
+        public void Reset()
+        {
+            txtGhiChu.ResetText();
+            txtTienThu.ResetText();
+            cbTinhTrang.Checked = false;
+            dteTuNgay.EditValue = Properties.Settings.Default.TuNgay;
+            dteDenNgay.EditValue = Properties.Settings.Default.DenNgay;
+        }
         private void FormTaoPhieuThuPhiPhong_Load(object sender, EventArgs e)
         {
             gridControl1.DataSource = BUS_DoiTuong.GetData();

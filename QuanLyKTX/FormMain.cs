@@ -8,6 +8,14 @@ using DTO;
 using QuanLyKTX.Forms;
 using QuanLyKTX.Forms.FormHeThong;
 using QuanLyKTX.UserControls;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeDonVi;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeKhenThuong;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKePhieuThuTienPhong;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeSinhVienTheoDSPhong;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeTheoDanhSachPhong;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeThuTienSH;
+using QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeVatTuHongTheoPhong;
 using QuanLyKTX.UserControls.UCGiaoDich;
 using QuanLyKTX.UserControls.UCHeThong;
 using System;
@@ -25,7 +33,8 @@ namespace QuanLyKTX
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong
+            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
+            UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong
         }
         #endregion
 
@@ -626,6 +635,73 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+                case (int)EnumUCDanhMuc.UCTKDonVi:
+
+                    UCTKDonVi uCTKDonVi = new UCTKDonVi();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKDonVi);
+                    uCTKDonVi.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCTKKhenThuongKyLuat:
+
+                    UCTKKhenThuongKyLuat uCTKKhenThuongKyLuat = new UCTKKhenThuongKyLuat();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKKhenThuongKyLuat);
+                    uCTKKhenThuongKyLuat.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCTKThuTienPhong:
+
+                    UCTKThuTienPhong uCTKThuTienPhong = new UCTKThuTienPhong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKThuTienPhong);
+                    uCTKThuTienPhong.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCTKSinhVienTheoDSPhong:
+
+                    UCTKSinhVienTheoDSPhong uCTKSinhVienTheoDSPhong = new UCTKSinhVienTheoDSPhong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKSinhVienTheoDSPhong);
+                    uCTKSinhVienTheoDSPhong.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+
+                case (int)EnumUCDanhMuc.UCTKLop:
+
+                    UCTKLop uCTK = new UCTKLop();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTK);
+                    uCTK.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCTKThuTienSH:
+
+                    UCTKThuTienSH uCTKThuTienSH = new UCTKThuTienSH();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKThuTienSH);
+                    uCTKThuTienSH.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+
+                case (int)EnumUCDanhMuc.UCTKVatTuHongTheoPhong:
+
+                    UCTKVatTuHongTheoPhong uCTKVatTuHongTheoPhong = new UCTKVatTuHongTheoPhong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKVatTuHongTheoPhong);
+                    uCTKVatTuHongTheoPhong.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+
+                case (int)EnumUCDanhMuc.UCTKVatTuTheoPhong:
+
+                    UCTKVatTuTheoPhong uCTKVatTuTheoPhong = new UCTKVatTuTheoPhong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCTKVatTuTheoPhong);
+                    uCTKVatTuTheoPhong.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
             }
@@ -647,6 +723,52 @@ namespace QuanLyKTX
         private void btnHopDong_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddTabPages("Hợp đồng", (int)EnumUCDanhMuc.UCHopDong);
+        }
+
+        private void btnThongKeTheoDonVi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê theo đơn vị", (int)EnumUCDanhMuc.UCTKDonVi);
+        }
+
+        private void btnThongKeTheoKhenThuongKyLuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê khen thưởng, Kỷ luật", (int)EnumUCDanhMuc.UCTKKhenThuongKyLuat);
+        }
+
+        private void btnThongKeThuTienPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+         
+        }
+
+        private void btnThongKeDSPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê sinh viên theo danh sách phòng", (int)EnumUCDanhMuc.UCTKSinhVienTheoDSPhong);
+        }
+
+        private void btnTheoLop_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê sinh viên theo lớp", (int)EnumUCDanhMuc.UCTKLop);
+        }
+
+
+        private void btnThongKeVatTuHongTheoPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê vật tư hỏng theo phòng", (int)EnumUCDanhMuc.UCTKVatTuHongTheoPhong);
+        }
+
+        private void btnVatTuTheoPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê vật tư theo phòng", (int)EnumUCDanhMuc.UCTKVatTuTheoPhong);
+        }
+
+        private void btnTKPhiSH_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê thu phí sinh hoạt", (int)EnumUCDanhMuc.UCTKThuTienSH);
+        }
+
+        private void btnTKThuTienPhong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thống kê thu phí phòng", (int)EnumUCDanhMuc.UCTKThuTienPhong);
         }
     }
 }

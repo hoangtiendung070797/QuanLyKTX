@@ -104,6 +104,22 @@
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.btnThongKeTheoDonVi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKeTheoKhenThuongKyLuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKeThuTienPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThongKeSVTheoDSPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnThongKeDSPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTheoLop = new DevExpress.XtraBars.BarButtonItem();
+            this.btnthongKeThuPhiPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnThongKeVatTuHongTheoPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnVatTuTheoPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnTKThuTienPhong = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTKPhiSH = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -172,10 +188,23 @@
             this.btnNguoiDung,
             this.barCheckItem1,
             this.btnImportExcel,
-            this.barButtonItem2});
+            this.barButtonItem2,
+            this.btnThongKeTheoDonVi,
+            this.btnThongKeTheoKhenThuongKyLuat,
+            this.btnThongKeThuTienPhong,
+            this.btnThongKeSVTheoDSPhong,
+            this.barSubItem2,
+            this.btnThongKeDSPhong,
+            this.btnTheoLop,
+            this.btnthongKeThuPhiPhong,
+            this.barButtonItem7,
+            this.btnThongKeVatTuHongTheoPhong,
+            this.btnVatTuTheoPhong,
+            this.btnTKThuTienPhong,
+            this.btnTKPhiSH});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 130;
+            this.ribbonControlMain.MaxItemId = 143;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -205,30 +234,35 @@
             this.barButtonItem3.Caption = "barButtonItem3";
             this.barButtonItem3.Id = 3;
             this.barButtonItem3.Name = "barButtonItem3";
+            
             // 
             // btnPhanQuyen
             // 
             this.btnPhanQuyen.Caption = "barButtonItem4";
             this.btnPhanQuyen.Id = 4;
             this.btnPhanQuyen.Name = "btnPhanQuyen";
+          
             // 
             // barButtonItem5
             // 
             this.barButtonItem5.Caption = "barButtonItem5";
             this.barButtonItem5.Id = 5;
             this.barButtonItem5.Name = "barButtonItem5";
+           
             // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "barButtonItem6";
             this.barButtonItem6.Id = 6;
             this.barButtonItem6.Name = "barButtonItem6";
+            
             // 
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "Người dùng";
             this.barButtonItem1.Id = 7;
             this.barButtonItem1.Name = "barButtonItem1";
+            
             // 
             // btnDoiMatKhau
             // 
@@ -244,6 +278,7 @@
             this.barButtonItem4.Caption = "Đăng xuất";
             this.barButtonItem4.Id = 9;
             this.barButtonItem4.Name = "barButtonItem4";
+           
             // 
             // btnNhatKyHoatDong
             // 
@@ -276,12 +311,14 @@
             // 
             this.barButtonItem10.Id = 13;
             this.barButtonItem10.Name = "barButtonItem10";
+         
             // 
             // barButtonItem12
             // 
             this.barButtonItem12.Caption = "barButtonItem12";
             this.barButtonItem12.Id = 15;
             this.barButtonItem12.Name = "barButtonItem12";
+           
             // 
             // skinRibbonGalleryBarItem1
             // 
@@ -292,6 +329,7 @@
             this.skinRibbonGalleryBarItem1.Gallery.ShowItemText = true;
             this.skinRibbonGalleryBarItem1.Id = 16;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            
             // 
             // btnThongTinNguoiDung
             // 
@@ -730,14 +768,19 @@
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup11});
+            this.ribbonPageGroup11,
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Báo cáo, Thống kê";
             // 
             // ribbonPageGroup11
             // 
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnThongKeTheoDonVi);
+            this.ribbonPageGroup11.ItemLinks.Add(this.btnThongKeTheoKhenThuongKyLuat);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "ribbonPageGroup11";
+            this.ribbonPageGroup11.Text = "Tích điểm";
             // 
             // ribbonPage1
             // 
@@ -783,6 +826,114 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
+            // 
+            // btnThongKeTheoDonVi
+            // 
+            this.btnThongKeTheoDonVi.Caption = "Thống kê theo đơn vị";
+            this.btnThongKeTheoDonVi.Id = 130;
+            this.btnThongKeTheoDonVi.Name = "btnThongKeTheoDonVi";
+            this.btnThongKeTheoDonVi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeTheoDonVi_ItemClick);
+            // 
+            // btnThongKeTheoKhenThuongKyLuat
+            // 
+            this.btnThongKeTheoKhenThuongKyLuat.Caption = "Thống kê khen thưởng, kỷ luật";
+            this.btnThongKeTheoKhenThuongKyLuat.Id = 131;
+            this.btnThongKeTheoKhenThuongKyLuat.Name = "btnThongKeTheoKhenThuongKyLuat";
+            this.btnThongKeTheoKhenThuongKyLuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeTheoKhenThuongKyLuat_ItemClick);
+            // 
+            // btnThongKeThuTienPhong
+            // 
+            this.btnThongKeThuTienPhong.Caption = "Thống kê thu tiền phòng";
+            this.btnThongKeThuTienPhong.Id = 132;
+            this.btnThongKeThuTienPhong.Name = "btnThongKeThuTienPhong";
+            this.btnThongKeThuTienPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeThuTienPhong_ItemClick);
+            // 
+            // btnThongKeSVTheoDSPhong
+            // 
+            this.btnThongKeSVTheoDSPhong.Caption = "Thống kê sinh viên theo danh sách phòng";
+            this.btnThongKeSVTheoDSPhong.Id = 133;
+            this.btnThongKeSVTheoDSPhong.Name = "btnThongKeSVTheoDSPhong";
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "barSubItem2";
+            this.barSubItem2.Id = 134;
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnThongKeDSPhong);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnTheoLop);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Sinh viên";
+            // 
+            // btnThongKeDSPhong
+            // 
+            this.btnThongKeDSPhong.Caption = "Thống kê theo danh sách phòng";
+            this.btnThongKeDSPhong.Id = 135;
+            this.btnThongKeDSPhong.Name = "btnThongKeDSPhong";
+            this.btnThongKeDSPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeDSPhong_ItemClick);
+            // 
+            // btnTheoLop
+            // 
+            this.btnTheoLop.Caption = "Thống kê theo lớp";
+            this.btnTheoLop.Id = 136;
+            this.btnTheoLop.Name = "btnTheoLop";
+            this.btnTheoLop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTheoLop_ItemClick);
+            // 
+            // btnthongKeThuPhiPhong
+            // 
+            this.btnthongKeThuPhiPhong.Caption = "barButtonItem7";
+            this.btnthongKeThuPhiPhong.Id = 137;
+            this.btnthongKeThuPhiPhong.Name = "btnthongKeThuPhiPhong";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "barButtonItem7";
+            this.barButtonItem7.Id = 138;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnThongKeVatTuHongTheoPhong);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnVatTuTheoPhong);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Vật tư";
+            // 
+            // btnThongKeVatTuHongTheoPhong
+            // 
+            this.btnThongKeVatTuHongTheoPhong.Caption = "Vật tư hỏng theo phòng";
+            this.btnThongKeVatTuHongTheoPhong.Id = 139;
+            this.btnThongKeVatTuHongTheoPhong.Name = "btnThongKeVatTuHongTheoPhong";
+            this.btnThongKeVatTuHongTheoPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongKeVatTuHongTheoPhong_ItemClick);
+            // 
+            // btnVatTuTheoPhong
+            // 
+            this.btnVatTuTheoPhong.Caption = "Vật tư theo phòng";
+            this.btnVatTuTheoPhong.Id = 140;
+            this.btnVatTuTheoPhong.Name = "btnVatTuTheoPhong";
+            this.btnVatTuTheoPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnVatTuTheoPhong_ItemClick);
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnTKThuTienPhong);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnTKPhiSH);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Thu Chi";
+            // 
+            // btnTKThuTienPhong
+            // 
+            this.btnTKThuTienPhong.Caption = "Thống kê thu phí phòng";
+            this.btnTKThuTienPhong.Id = 141;
+            this.btnTKThuTienPhong.Name = "btnTKThuTienPhong";
+            this.btnTKThuTienPhong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKThuTienPhong_ItemClick);
+            // 
+            // btnTKPhiSH
+            // 
+            this.btnTKPhiSH.Caption = "Thống kê phí sinh hoạt hàng tháng";
+            this.btnTKPhiSH.Id = 142;
+            this.btnTKPhiSH.Name = "btnTKPhiSH";
+            this.btnTKPhiSH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKPhiSH_ItemClick);
             // 
             // FormMain
             // 
@@ -888,6 +1039,22 @@
         public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeTheoDonVi;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeTheoKhenThuongKyLuat;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeThuTienPhong;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeSVTheoDSPhong;
+        private DevExpress.XtraBars.BarSubItem barSubItem2;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeDSPhong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem btnTheoLop;
+        private DevExpress.XtraBars.BarButtonItem btnthongKeThuPhiPhong;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem btnThongKeVatTuHongTheoPhong;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.BarButtonItem btnVatTuTheoPhong;
+        private DevExpress.XtraBars.BarButtonItem btnTKThuTienPhong;
+        private DevExpress.XtraBars.BarButtonItem btnTKPhiSH;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }
 

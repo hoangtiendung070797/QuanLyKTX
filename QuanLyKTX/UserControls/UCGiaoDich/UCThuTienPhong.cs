@@ -14,17 +14,21 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         }
         BUS_NhanVien BUS_NhanVien = new BUS_NhanVien();
         BUS_PhieuThuTienPhong BUS_PhieuThuTienPhong = new BUS_PhieuThuTienPhong();
-
+        int PhieuThuPhiPhongId = 0;
         private void UCThuTienPhong_Load(object sender, EventArgs e)
         {
+
+            btnCapNhap.Visible = false; 
+           
             cbbNhanVienThu.DataSource = BUS_NhanVien.GetData();
             cbbNhanVienThu.DisplayMember = "tenNhanVien";
             cbbNhanVienThu.ValueMember = "NhanVienId";
+            
 
+        
 
-
-            gridControl1.DataSource = BUS_PhieuThuTienPhong.GetData();
-            gridView1.Columns[4].Visible = false;
+            gridControl1.DataSource = BUS_PhieuThuTienPhong.PrintInfo();
+            //gridView1.Columns[0].Visible = false;
 
             //load từ properties
             txtPhiPhong4.Text = Properties.Settings.Default.PhiPhong4.ToString();
@@ -36,8 +40,9 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         }
         public void LoadAgainPhieuThu()
         {
-            gridControl1.DataSource = BUS_PhieuThuTienPhong.GetData();
-            gridView1.SelectRow(gridView1.RowCount - 1);
+            gridControl1.DataSource = BUS_PhieuThuTienPhong.PrintInfo();
+            gridControl1.Refresh();
+            gridView1.FocusedRowHandle = gridView1.RowCount -1;
         }
         private void btnTaoDanhSachPhieuKy_Click(object sender, EventArgs e)
         {
@@ -77,6 +82,16 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnTaoPhieuTheoKy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+            PhieuThuPhiPhongId = (int)gridView1.GetRowCellValue(e.RowHandle, "PhieuThuTienPhongId");
         }
     }
 }

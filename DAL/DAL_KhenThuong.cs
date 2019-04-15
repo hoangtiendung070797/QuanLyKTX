@@ -121,6 +121,21 @@ namespace DAL
                 return false;
             }
         }
+        public DataTable GetSinhVienTheoKhenThuong()
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when  DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', KhenThuong.tenKhenThuong as N'Tên khen thưởng', KhenThuong.noiDung as N'Nội dung khen thưởng', KhenThuong.ngay as N'Ngày khen thưởng' From KhenThuong inner join DoiTuong on DoiTuong.DoiTuongId = KhenThuong.DoiTuongId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

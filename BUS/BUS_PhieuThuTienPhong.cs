@@ -40,7 +40,20 @@ namespace BUS
 
         public int GetIdentityId()
         {
-            return this.GetIdentityId();
+            return this.PhieuThuTienPhong.GetIdentityId();
+        }
+        public DataTable PrintInfo()
+        {
+            return this.PhieuThuTienPhong.PrintInfo();
+        }
+
+        public DataTable GetSinhVienTheoTinhTrangPhieuThuTienPhong(int tinhTrang)
+        {
+            return PhieuThuTienPhong.GetSinhVienTheoTinhTrangPhieuThuTienPhong(tinhTrang);
+        }
+        public DataTable GetDataPhieuThuTienPhong()
+        {
+            return this.PhieuThuTienPhong.GetDataPhieuThuTienPhong();
         }
     }
 }

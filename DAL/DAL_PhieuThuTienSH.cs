@@ -143,6 +143,37 @@ namespace DAL
                 return false;
             }
         }
+
+        public DataTable GetPhongTheoPhieuThuTienSH(string phongId, int dayNhaId)
+        {
+            try
+            {
+                string query = "select Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', PhieuThuTienSH.soDienCuoi - PhieuThuTienSH.soDienDau as N'Số Điện', PhieuThuTienSH.soNuocCuoi - PhieuThuTienSH.soNuocDau as N'Số Nước',PhieuThuTienSH.donGiaDien as N'Đơn giá điện', PhieuThuTienSH.donGiaNuoc as N'Đơn giá nước', PhieuThuTienSH.phiDichVu as N'Tiền dịch vụ', PhieuThuTienSH.tong as N'Tổng tiền', PhieuThuTienSH.ngayThu as N'Ngày thu' from PhieuThuTienSH inner join Phong inner join DayNha on DayNha.DayNhaId = Phong.DayNhaId on Phong.PhongId = PhieuThuTienSH.PhongId WHERE Phong.DayNhaID = " + dayNhaId + " and PhieuThuTienSH.PhongId = '" + phongId + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataPhieuThuTienSH()
+        {
+            try
+            {
+                string query = "select Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', PhieuThuTienSH.soDienCuoi - PhieuThuTienSH.soDienDau as N'Số Điện', PhieuThuTienSH.soNuocCuoi - PhieuThuTienSH.soNuocDau as N'Số Nước',PhieuThuTienSH.donGiaDien as N'Đơn giá điện', PhieuThuTienSH.donGiaNuoc as N'Đơn giá nước', PhieuThuTienSH.phiDichVu as N'Tiền dịch vụ', PhieuThuTienSH.tong as N'Tổng tiền', PhieuThuTienSH.ngayThu as N'Ngày thu' from PhieuThuTienSH inner join Phong inner join DayNha on DayNha.DayNhaId = Phong.DayNhaId on Phong.PhongId = PhieuThuTienSH.PhongId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

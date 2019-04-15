@@ -123,6 +123,36 @@ namespace DAL
                 return false;
             }
         }
+        public DataTable GetVatTuHongTheoPhong(string phongId, int dayNhaId)
+        {
+            try
+            {
+                string query = "select Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', VatTu.tenVatTu as N'Tên vật tư', ChiTietPhieuBaoHongVatTu.soLuong as N'Số Lượng', ChiTietPhieuBaoHongVatTu.donViTinh as N'Đơn vị Tính', ChiTietPhieuBaoHongVatTu.lyDo as N'Lý do', ChiTietPhieuBaoHongVatTu.yeuCau as N'Yêu Cầu' FROM VatTu inner join ChiTietPhieuBaoHongVatTu inner join Phong inner join DayNha on DayNha.DayNhaId = Phong.DayNhaId on phong.PhongId = ChiTietPhieuBaoHongVatTu.PhongId on ChiTietPhieuBaoHongVatTu.VatTuId = VatTu.VatTuId WHERE Phong.DayNhaID = " + dayNhaId + " and ChiTietPhieuBaoHongVatTu.PhongId = '" + phongId + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataVatTuHongTheoPhong()
+        {
+            try
+            {
+                string query = "select Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', VatTu.tenVatTu as N'Tên vật tư', ChiTietPhieuBaoHongVatTu.soLuong as N'Số Lượng', ChiTietPhieuBaoHongVatTu.donViTinh as N'Đơn vị Tính', ChiTietPhieuBaoHongVatTu.lyDo as N'Lý do', ChiTietPhieuBaoHongVatTu.yeuCau as N'Yêu Cầu' FROM VatTu inner join ChiTietPhieuBaoHongVatTu inner join Phong inner join DayNha on DayNha.DayNhaId = Phong.DayNhaId on phong.PhongId = ChiTietPhieuBaoHongVatTu.PhongId on ChiTietPhieuBaoHongVatTu.VatTuId = VatTu.VatTuId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

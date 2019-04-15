@@ -239,6 +239,108 @@
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Support\SupportCatchError.cs" />
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.designer.cs">
+      <DependentUpon>UCTKDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\XtraReportTKDonVi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\XtraReportTKDonVi.designer.cs">
+      <DependentUpon>XtraReportTKDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\XtraReportTKKhenThuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\XtraReportTKKhenThuong.designer.cs">
+      <DependentUpon>XtraReportTKKhenThuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeKhenThuong-KyLuat\UCTKKhenThuongKyLuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeKhenThuong-KyLuat\UCTKKhenThuongKyLuat.designer.cs">
+      <DependentUpon>UCTKKhenThuongKyLuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeKhenThuong-KyLuat\XtraReportKyLuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeKhenThuong-KyLuat\XtraReportKyLuat.designer.cs">
+      <DependentUpon>XtraReportKyLuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKePhieuThuTienPhong\UCTKThuTienPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKePhieuThuTienPhong\UCTKThuTienPhong.designer.cs">
+      <DependentUpon>UCTKThuTienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKePhieuThuTienPhong\XtraReportTKThuTienPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKePhieuThuTienPhong\XtraReportTKThuTienPhong.designer.cs">
+      <DependentUpon>XtraReportTKThuTienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeSinhVienTheoDSPhong\UCTKSinhVienTheoDSPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeSinhVienTheoDSPhong\UCTKSinhVienTheoDSPhong.designer.cs">
+      <DependentUpon>UCTKSinhVienTheoDSPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeSinhVienTheoDSPhong\XtraReportTKSinhVienTheoPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeSinhVienTheoDSPhong\XtraReportTKSinhVienTheoPhong.designer.cs">
+      <DependentUpon>XtraReportTKSinhVienTheoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeTheoLop\UCTKLop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeTheoLop\UCTKLop.designer.cs">
+      <DependentUpon>UCTKLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeTheoLop\XtraReportTKLop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeTheoLop\XtraReportTKLop.designer.cs">
+      <DependentUpon>XtraReportTKLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeThuTienSH\UCTKThuTienSH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeThuTienSH\UCTKThuTienSH.designer.cs">
+      <DependentUpon>UCTKThuTienSH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeThuTienSH\XtraReportThuTienSH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeThuTienSH\XtraReportThuTienSH.designer.cs">
+      <DependentUpon>XtraReportThuTienSH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuHongTheoPhong\UCTKVatTuHongTheoPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuHongTheoPhong\UCTKVatTuHongTheoPhong.designer.cs">
+      <DependentUpon>UCTKVatTuHongTheoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuHongTheoPhong\XtraReportTKVatTuHongTheoPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuHongTheoPhong\XtraReportTKVatTuHongTheoPhong.designer.cs">
+      <DependentUpon>XtraReportTKVatTuHongTheoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\UCTKVatTuTheoPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\UCTKVatTuTheoPhong.designer.cs">
+      <DependentUpon>UCTKVatTuTheoPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\XtraReportVatTuTheoPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\XtraReportVatTuTheoPhong.designer.cs">
+      <DependentUpon>XtraReportVatTuTheoPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCDanToc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -447,6 +549,57 @@
     <EmbeddedResource Include="Forms\FormHeThong\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.resx">
+      <DependentUpon>UCTKDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\XtraReportTKDonVi.resx">
+      <DependentUpon>XtraReportTKDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\XtraReportTKKhenThuong.resx">
+      <DependentUpon>XtraReportTKKhenThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeKhenThuong-KyLuat\UCTKKhenThuongKyLuat.resx">
+      <DependentUpon>UCTKKhenThuongKyLuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeKhenThuong-KyLuat\XtraReportKyLuat.resx">
+      <DependentUpon>XtraReportKyLuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKePhieuThuTienPhong\UCTKThuTienPhong.resx">
+      <DependentUpon>UCTKThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKePhieuThuTienPhong\XtraReportTKThuTienPhong.resx">
+      <DependentUpon>XtraReportTKThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeSinhVienTheoDSPhong\UCTKSinhVienTheoDSPhong.resx">
+      <DependentUpon>UCTKSinhVienTheoDSPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeSinhVienTheoDSPhong\XtraReportTKSinhVienTheoPhong.resx">
+      <DependentUpon>XtraReportTKSinhVienTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeTheoLop\UCTKLop.resx">
+      <DependentUpon>UCTKLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeTheoLop\XtraReportTKLop.resx">
+      <DependentUpon>XtraReportTKLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeThuTienSH\UCTKThuTienSH.resx">
+      <DependentUpon>UCTKThuTienSH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeThuTienSH\XtraReportThuTienSH.resx">
+      <DependentUpon>XtraReportThuTienSH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuHongTheoPhong\UCTKVatTuHongTheoPhong.resx">
+      <DependentUpon>UCTKVatTuHongTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuHongTheoPhong\XtraReportTKVatTuHongTheoPhong.resx">
+      <DependentUpon>XtraReportTKVatTuHongTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\UCTKVatTuTheoPhong.resx">
+      <DependentUpon>UCTKVatTuTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\XtraReportVatTuTheoPhong.resx">
+      <DependentUpon>XtraReportVatTuTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDanToc.resx">
       <DependentUpon>UCDanToc.cs</DependentUpon>
     </EmbeddedResource>
@@ -654,7 +807,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\UCGiaoDich\CacLoaiPhieu\" />
     <Folder Include="UserControls\UCTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

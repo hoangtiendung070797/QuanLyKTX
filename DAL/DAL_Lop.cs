@@ -115,6 +115,38 @@ namespace DAL
                 return false;
             }
         }
+
+        //Lấy ra thông tin sinh viên nội trú theo lớp.
+        public DataTable GetSinhVienTheoLop(int lopId)
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when  DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Phòng',Lop.tenLop as N'Tên lớp'  FROM Lop inner join DoiTuong inner join LuuTruPhong inner join Phong inner join DayNha on  DayNha.DayNhaId = Phong.DayNhaId  on Phong.PhongId = LuuTruPhong.PhongId on LuuTruPhong.DoiTuongId = DoiTuong.DoiTuongId on DoiTuong.LopId = Lop.LopId WHERE Lop.LopId = " + lopId;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataLop()
+        {
+            try
+            {
+                string query = "Select DoiTuong.hoDem + N' '+ DoiTuong.ten as N'Họ và tên',DoiTuong.maSinhVien as N'Mã sinh viên', DoiTuong.ngaySinh AS N'Ngày sinh', Case when  DoiTuong.gioiTinh = 1 then N'Nam' when DoiTuong.gioiTinh = 0 then N'Nữ' end as N'Giới tính', Phong.tenPhong + N'-' + DayNha.tenDayNha as N'Phòng',Lop.tenLop as N'Tên lớp'  FROM Lop inner join DoiTuong inner join LuuTruPhong inner join Phong inner join DayNha on  DayNha.DayNhaId = Phong.DayNhaId  on Phong.PhongId = LuuTruPhong.PhongId on LuuTruPhong.DoiTuongId = DoiTuong.DoiTuongId on DoiTuong.LopId = Lop.LopId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

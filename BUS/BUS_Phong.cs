@@ -43,5 +43,13 @@ namespace BUS
         {
             return this.Phong.IsFullRoom(phongID);
         }
+        public DataTable GetSinhVienTheoPhong(string phongID, int dayNhaId)
+        {
+            return this.phong.GetSinhVienTheoPhong(phongID, dayNhaId);
+        }
+        public DataTable GetDataSinhVienTheoPhong()
+        {
+            return this.Phong.GetDataSinhVienTheoPhong();
+        }
     }
 }
