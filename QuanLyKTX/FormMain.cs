@@ -114,14 +114,11 @@ namespace QuanLyKTX
             ClosePageButtonEventArgs arg = e as ClosePageButtonEventArgs;
             if (xtraTabControlMain.SelectedTabPage.Equals((arg.Page as XtraTabPage)))
                 h = xtraTabControlMain.SelectedTabPageIndex;
-            if ((arg.Page as XtraTabPage).Text != "Start Page")
-            {
-                xtraTabControlMain.TabPages.Remove((arg.Page as XtraTabPage));
 
-                xtraTabControlMain.SelectedTabPageIndex = h - 1;
-            }
-            else
-                XtraMessageBox.Show("Bạn không thể tắt\nTab bắt đầu này !", "Thông báo");
+            xtraTabControlMain.TabPages.Remove((arg.Page as XtraTabPage));
+
+            xtraTabControlMain.SelectedTabPageIndex = h - 1;
+
 
 
         }
@@ -766,10 +763,8 @@ namespace QuanLyKTX
             Disable();
             FormDangNhap formDangNhap = new FormDangNhap();
 
-            while (!Const.isLogin)
-            {
-                formDangNhap.ShowDialog();
-            }
+            formDangNhap.ShowDialog();
+            
         }
         #endregion
         private void btnLogout_ItemClick(object sender, ItemClickEventArgs e)

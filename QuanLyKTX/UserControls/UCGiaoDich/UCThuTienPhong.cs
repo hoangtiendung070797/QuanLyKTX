@@ -93,5 +93,19 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
             PhieuThuPhiPhongId = (int)gridView1.GetRowCellValue(e.RowHandle, "PhieuThuTienPhongId");
         }
+
+        private void btnCapNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaPhieu_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Chắc chắn muốn xóa?","Xóa phiếu",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                BUS_PhieuThuTienPhong.Delete(PhieuThuPhiPhongId);
+                LoadAgainPhieuThu();
+            }
+        }
     }
 }

@@ -157,6 +157,7 @@
             this.btnXoaPhieu.StyleController = this.layoutControl1;
             this.btnXoaPhieu.TabIndex = 15;
             this.btnXoaPhieu.Text = "Xóa phiếu";
+            this.btnXoaPhieu.Click += new System.EventHandler(this.btnXoaPhieu_Click);
             // 
             // btnCapNhap
             // 
@@ -167,6 +168,7 @@
             this.btnCapNhap.StyleController = this.layoutControl1;
             this.btnCapNhap.TabIndex = 14;
             this.btnCapNhap.Text = "Cập nhập phiếu";
+            this.btnCapNhap.Click += new System.EventHandler(this.btnCapNhap_Click);
             // 
             // btnTaoPhieuTheoKy
             // 

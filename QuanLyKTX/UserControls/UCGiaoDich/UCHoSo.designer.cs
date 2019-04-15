@@ -138,19 +138,32 @@
             // 
             // layoutViewHoSo
             // 
+            this.layoutViewHoSo.Appearance.CardCaption.Options.UseTextOptions = true;
+            this.layoutViewHoSo.Appearance.CardCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
             this.layoutViewHoSo.Appearance.FilterPanel.Options.UseFont = true;
+            this.layoutViewHoSo.Appearance.ViewCaption.Image = ((System.Drawing.Image)(resources.GetObject("layoutViewHoSo.Appearance.ViewCaption.Image")));
+            this.layoutViewHoSo.Appearance.ViewCaption.Options.UseImage = true;
             this.layoutViewHoSo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.layoutViewHoSo.GridControl = this.gridControl1;
             this.layoutViewHoSo.Name = "layoutViewHoSo";
+            this.layoutViewHoSo.OptionsBehavior.AllowExpandCollapse = false;
+            this.layoutViewHoSo.OptionsFind.AllowFindPanel = false;
+            this.layoutViewHoSo.OptionsFind.AlwaysVisible = true;
+            this.layoutViewHoSo.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.layoutViewHoSo.OptionsLayout.StoreAllOptions = true;
+            this.layoutViewHoSo.OptionsMultiRecordMode.StretchCardToViewHeight = true;
+            this.layoutViewHoSo.OptionsMultiRecordMode.StretchCardToViewWidth = true;
+            this.layoutViewHoSo.OptionsPrint.PrintMode = DevExpress.XtraGrid.Views.Layout.LayoutViewPrintMode.MultiRow;
             this.layoutViewHoSo.OptionsSelection.MultiSelect = true;
+            this.layoutViewHoSo.OptionsView.ViewMode = DevExpress.XtraGrid.Views.Layout.LayoutViewMode.MultiRow;
+            this.layoutViewHoSo.PaintStyleName = "Skin";
             this.layoutViewHoSo.TemplateCard = this.layoutViewCard2;
             this.layoutViewHoSo.CardClick += new DevExpress.XtraGrid.Views.Layout.Events.CardClickEventHandler(this.layoutViewHoSo_CardClick);
             // 
             // layoutViewCard2
             // 
             this.layoutViewCard2.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.layoutViewCard2.Name = "layoutViewCard2";
+            this.layoutViewCard2.Name = "layoutViewTemplateCard";
             // 
             // searchControl1
             // 

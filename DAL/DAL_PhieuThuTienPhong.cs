@@ -228,6 +228,27 @@ namespace DAL
                 return null;
             }
         }
+
+
+        public DataRow GetInforById(int phieuThuTienPhongID)
+        {
+            try
+            {
+                string query = "SELECT * FROM PhieuThuTienPhong";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
+                return table.Rows.Find(phieuThuTienPhongID);
+
+               
+            }
+            catch
+            {
+
+                return null;
+            }
+
+        }
         #endregion
     }
 }

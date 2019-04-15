@@ -473,12 +473,6 @@
     <Compile Include="UserControls\UCGiaoDich\UCXepPhong.designer.cs">
       <DependentUpon>UCXepPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCGiaoDich\XtraReportPhieuThuPhong.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCGiaoDich\XtraReportPhieuThuPhong.Designer.cs">
-      <DependentUpon>XtraReportPhieuThuPhong.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\UCHeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
