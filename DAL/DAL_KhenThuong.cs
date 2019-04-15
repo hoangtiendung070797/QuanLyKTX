@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT KhenThuong.KhenThuongId,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,KhenThuong.tenKhenThuong,noiDung,ngay,ghiChu FROM KhenThuong join ";
+                string query = "SELECT KhenThuong.KhenThuongId,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,KhenThuong.tenKhenThuong,noiDung,ngay,KhenThuong.ghiChu FROM KhenThuong join DoiTuong on DoiTuong.DoiTuongId=KhenThuong.DoiTuongId";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -49,7 +49,7 @@ namespace DAL
                 DataRow row = table.NewRow();
                 row["DoiTuongId"] = khenThuong.DoiTuongId;
                 row["tenKhenThuong"] = khenThuong.TenKhenThuong;
-                row["noiDung "] = khenThuong.NoiDung;
+                row["noiDung"] = khenThuong.NoiDung;
                 row["ngay"] = khenThuong.Ngay;
                 row["ghiChu"] = khenThuong.GhiChu;
 
@@ -72,6 +72,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM KhenThuong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(KhenThuongId);
 
                 if (row != null)
@@ -96,13 +98,15 @@ namespace DAL
             {
                 string query = "SELECT * FROM KhenThuong";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(khenThuong.DoiTuongId);
 
                 if (row != null)
                 {
                     row["DoiTuongId"] = khenThuong.DoiTuongId;
                     row["tenKhenThuong"] = khenThuong.TenKhenThuong;
-                    row["noiDung "] = khenThuong.NoiDung;
+                    row["noiDung"] = khenThuong.NoiDung;
                     row["ngay"] = khenThuong.Ngay;
                     row["ghiChu"] = khenThuong.GhiChu;
                 }

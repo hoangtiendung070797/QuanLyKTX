@@ -39,7 +39,10 @@ namespace DTO
         }
 
        
+        public HopDong()
+        {
 
+        }
 
 
 

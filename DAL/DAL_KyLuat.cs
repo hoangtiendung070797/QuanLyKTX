@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM KyLuat";
+                string query = "SELECT KyLuat.KyLuatId,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,KyLuat.tenKyLuat,noiDung,ngay,KyLuat.ghiChu FROM KyLuat join DoiTuong on DoiTuong.DoiTuongId=KyLuat.DoiTuongId";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -70,8 +70,10 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT * FROM DonVi";
+                string query = "SELECT * FROM KyLuat";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(kyLuatId);
 
                 if (row != null)
@@ -96,6 +98,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM KyLuat";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(kyLuat.KyLuatId);
 
                 if (row != null)
