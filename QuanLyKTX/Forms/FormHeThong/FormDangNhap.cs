@@ -189,8 +189,15 @@ namespace QuanLyKTX
         {
             if(MessageBox.Show("Bạn có muốn thoát?","Thoát chương trình",MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                Const.isLogin = true;
                 Application.Exit();
             }
+        }
+
+        private void FormDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!Const.isLogin)
+                e.Cancel = true;
         }
     }
 }

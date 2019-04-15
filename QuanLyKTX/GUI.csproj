@@ -809,6 +809,72 @@
   <ItemGroup>
     <Folder Include="UserControls\UCTroGiup\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agreement_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\area_chart_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullish_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bullish_filled_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_report_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph_report_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medal_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profit_report_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report Card_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report Card_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_card_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report_card_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\soccer_yellow_card_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agreement_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_list_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strike_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Classroom_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\system_report_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_bag_euro_80px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yandex Money_100px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
