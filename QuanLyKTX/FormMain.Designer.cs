@@ -551,6 +551,7 @@
             this.btnThuTienSinhHoat.Name = "btnThuTienSinhHoat";
             this.btnThuTienSinhHoat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnThuTienSinhHoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuTienSinhHoat_ItemClick);
             // 
             // barButtonItem29
             // 

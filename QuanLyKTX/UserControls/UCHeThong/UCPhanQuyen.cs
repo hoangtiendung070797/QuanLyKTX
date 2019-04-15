@@ -49,9 +49,13 @@ namespace QuanLyKTX.UserControls.UCHeThong
 
         private void btnThucHien_Click(object sender, EventArgs e)
         {
+            
             BUS_PhanQuyen.UpdateDetail((DataTable)gridControl1.DataSource);
         }
 
-      
+        private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
+        {
+
+        }
     }
 }

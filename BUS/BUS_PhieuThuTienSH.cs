@@ -28,5 +28,35 @@ namespace BUS
         {
             return this.PhieuThuTienSH.GetData();
         }
+        public DataTable GetDataTheoThang(int month)
+        {
+            return this.PhieuThuTienSH.GetDataTheoThang(month);
+        }
+        public DataTable DienNuocDau(string phong)
+        {
+            return this.PhieuThuTienSH.DienNuocDau(phong);
+        }
+        public bool CheckInPhieuThu(string phongid, string ngaythu)
+        {
+            return this.PhieuThuTienSH.CheckInPhieuThu(phongid, ngaythu);
+        }
+        public bool UpdateDetail(DataTable table)
+        {
+            return this.phieuThuTienSH.UpdateDetail(table);
+        }
+        public DataTable GetDataNew()
+        {
+            return this.PhieuThuTienSH.GetDataNew();
+        }
+        public bool UpdateDetailNew(DataTable table)
+        {
+            return this.PhieuThuTienSH.UpdateDetailNew(table);
+        }
+
+
+        public DataTable GetDataTheoThangNew(int month)
+        {
+            return this.PhieuThuTienSH.GetDataTheoThangNew(month);
+        }
     }
 }

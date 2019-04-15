@@ -25,7 +25,7 @@ namespace QuanLyKTX
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong
+            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCThuTienSinhHoat
         }
         #endregion
 
@@ -610,6 +610,12 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+                case (int)EnumUCDanhMuc.UCThuTienSinhHoat:
+                    UCThuTienSinhHoat uCThuTienSinhHoat = new UCThuTienSinhHoat();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCThuTienSinhHoat);
+                    uCThuTienSinhHoat.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+                    break;
                 default:
                     break;
             }
@@ -621,6 +627,11 @@ namespace QuanLyKTX
         private void btnXepPhong_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddTabPages("Xếp phòng", (int)EnumUCDanhMuc.UCXepPhong);
+        }
+
+        private void btnThuTienSinhHoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thu tiền sinh hoạt", (int)EnumUCDanhMuc.UCThuTienSinhHoat);
         }
     }
 }
