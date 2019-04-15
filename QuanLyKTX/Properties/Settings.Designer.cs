@@ -25,7 +25,7 @@ namespace QuanLyKTX.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
         public string users {
             get {
                 return ((string)(this["users"]));
@@ -37,7 +37,7 @@ namespace QuanLyKTX.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
         public string pass {
             get {
                 return ((string)(this["pass"]));
@@ -49,6 +49,7 @@ namespace QuanLyKTX.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool isCheckMemory {
             get {
                 return ((bool)(this["isCheckMemory"]));
@@ -66,6 +67,66 @@ namespace QuanLyKTX.Properties {
         public string DBQuanLyKyTucXaConnectionString {
             get {
                 return ((string)(this["DBQuanLyKyTucXaConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100000")]
+        public decimal PhiPhong4 {
+            get {
+                return ((decimal)(this["PhiPhong4"]));
+            }
+            set {
+                this["PhiPhong4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("150000")]
+        public string PhiPhong6 {
+            get {
+                return ((string)(this["PhiPhong6"]));
+            }
+            set {
+                this["PhiPhong6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200000")]
+        public string PhiPhong8 {
+            get {
+                return ((string)(this["PhiPhong8"]));
+            }
+            set {
+                this["PhiPhong8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2019-04-13")]
+        public global::System.DateTime TuNgay {
+            get {
+                return ((global::System.DateTime)(this["TuNgay"]));
+            }
+            set {
+                this["TuNgay"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2019-04-21")]
+        public global::System.DateTime DenNgay {
+            get {
+                return ((global::System.DateTime)(this["DenNgay"]));
+            }
+            set {
+                this["DenNgay"] = value;
             }
         }
     }

@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="users" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">admin</Value>
     </Setting>
     <Setting Name="pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">admin</Value>
     </Setting>
     <Setting Name="isCheckMemory" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="DBQuanLyKyTucXaConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -18,6 +18,21 @@
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-K0913AQ\SQLEXPRESS;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="PhiPhong4" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">100000</Value>
+    </Setting>
+    <Setting Name="PhiPhong6" Type="System.String" Scope="User">
+      <Value Profile="(Default)">150000</Value>
+    </Setting>
+    <Setting Name="PhiPhong8" Type="System.String" Scope="User">
+      <Value Profile="(Default)">200000</Value>
+    </Setting>
+    <Setting Name="TuNgay" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2019-04-13</Value>
+    </Setting>
+    <Setting Name="DenNgay" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2019-04-21</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -85,5 +85,10 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
            
         }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

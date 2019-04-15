@@ -13,8 +13,8 @@ namespace QuanLyKTX.UserControls.UCHeThong
         }
         BUS_PhanQuyen BUS_PhanQuyen = new BUS_PhanQuyen();
         BUS_NguoiDung BUS_NguoiDung = new BUS_NguoiDung();
-        
-      
+
+        public event EventHandler LoadPhanQuyen = null;
 
         private void UCPhanQuyen_Load_1(object sender, System.EventArgs e)
         {
@@ -45,7 +45,7 @@ namespace QuanLyKTX.UserControls.UCHeThong
             gridView1.Columns[6].Caption = "Quyền tìm kiếm,đọc bản ghi";
 
         }
-        public event EventHandler LoadPhanQuyen = null;
+    
 
         private void btnThucHien_Click(object sender, EventArgs e)
         {

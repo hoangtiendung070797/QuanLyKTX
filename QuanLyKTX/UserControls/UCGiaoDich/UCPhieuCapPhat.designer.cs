@@ -129,6 +129,7 @@
             this.btnInPhieu.StyleController = this.layoutControl1;
             this.btnInPhieu.TabIndex = 10;
             this.btnInPhieu.Text = "IN PHIẾU";
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // label1
             // 

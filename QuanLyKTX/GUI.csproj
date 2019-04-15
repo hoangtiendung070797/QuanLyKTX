@@ -170,6 +170,12 @@
     <Compile Include="Forms\FormGiaoDich\FormRoiPhong.designer.cs">
       <DependentUpon>FormRoiPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormTaoPhieuThuPhiPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FormTaoPhieuThuPhiPhong.Designer.cs">
+      <DependentUpon>FormTaoPhieuThuPhiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FormXepPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FormRoiPhong.resx">
       <DependentUpon>FormRoiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FormTaoPhieuThuPhiPhong.resx">
+      <DependentUpon>FormTaoPhieuThuPhiPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FormXepPhong.resx">
       <DependentUpon>FormXepPhong.cs</DependentUpon>
@@ -616,6 +625,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="UserControls\UCGiaoDich\CacLoaiPhieu\" />
     <Folder Include="UserControls\UCTroGiup\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

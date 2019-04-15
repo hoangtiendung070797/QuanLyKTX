@@ -24,7 +24,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
 
         #region Initialize
 
-        
+
         public FormCapNhapHoSo()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
 
         #region Methods
 
-      
+
         private void FormCapNhapHoSo_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -113,7 +113,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbTonGiao.DisplayMember = "tenTonGiao";
             cbTonGiao.ValueMember = "TonGiaoId";
 
-            
+
 
 
 
@@ -156,13 +156,13 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 pictureHoSo.Image = support.ByteToImg(str);
                 pictureHoSo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             }
-            catch 
+            catch
             {
 
-                
+
             }
-            
-            
+
+
 
         }
 
@@ -172,40 +172,41 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         {
 
             //Nếu không trùng và đầy đủ thông tin cần thiết thì add
-            
-                DoiTuong doiTuong = new DoiTuong();
-                doiTuong.DoiTuongId = Const.DoiTuongId;
-                doiTuong.HoDem = txtHoDem.Text;
-                doiTuong.Ten = txtTen.Text;
-                doiTuong.MaSinhVien = txtMaSinhVien.Text;
-                doiTuong.NgaySinh = (DateTime)dateNgaySinh.EditValue;
 
-                bool gioiTinh = true;
-                if (rdbNu.Checked)
-                    gioiTinh = false;
-                doiTuong.GioiTinh = gioiTinh;
-                doiTuong.NoiSinh = txtNoiSinh.Text;
-                doiTuong.HoKhau = txtHoKhau.Text;
-                doiTuong.QueQuan = txtQueQuan.Text;
-                doiTuong.Sdt = txtSdt.Text;
-                doiTuong.Email = txtEmail.Text;
+            DoiTuong doiTuong = new DoiTuong();
+            doiTuong.DoiTuongId = Const.DoiTuongId;
+            doiTuong.HoDem = txtHoDem.Text;
+            doiTuong.Ten = txtTen.Text;
+            doiTuong.MaSinhVien = txtMaSinhVien.Text;
+            doiTuong.NgaySinh = (DateTime)dateNgaySinh.EditValue;
+
+            bool gioiTinh = true;
+            if (rdbNu.Checked)
+                gioiTinh = false;
+            doiTuong.GioiTinh = gioiTinh;
+            doiTuong.NoiSinh = txtNoiSinh.Text;
+            doiTuong.HoKhau = txtHoKhau.Text;
+            doiTuong.QueQuan = txtQueQuan.Text;
+            doiTuong.Sdt = txtSdt.Text;
+            doiTuong.Email = txtEmail.Text;
 
 
-                doiTuong.LoaiDoiTuongId = (int)cbLoaiDoiTuong.SelectedValue;
-                doiTuong.TonGiaoId = (int)cbTonGiao.SelectedValue;
-                doiTuong.LopId = (int)cbLop.SelectedValue;
-                doiTuong.DanTocId = (int)cbDanToc.SelectedValue;
-                doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
-                doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
-                doiTuong.Image = support.converImgToByte(path);
-                doiTuong.GhiChu = txtGhiChu.Text;
+            doiTuong.LoaiDoiTuongId = (int)cbLoaiDoiTuong.SelectedValue;
+            doiTuong.TonGiaoId = (int)cbTonGiao.SelectedValue;
+            doiTuong.LopId = (int)cbLop.SelectedValue;
+            doiTuong.DanTocId = (int)cbDanToc.SelectedValue;
+            doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
+            doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
 
-                BUS_DoiTuong.Update(doiTuong);
+            doiTuong.Image = (!string.IsNullOrEmpty(path)) ? support.converImgToByte(path) : doiTuong.Image;
+            doiTuong.GhiChu = txtGhiChu.Text;
 
-                MessageBox.Show("Cập nhập Thành Công!");
-                this.Close();
+            BUS_DoiTuong.Update(doiTuong);
 
-            
+            MessageBox.Show("Cập nhập Thành Công!");
+            this.Close();
+
+
         }
 
         private void btnLoadAnh_Click(object sender, EventArgs e)

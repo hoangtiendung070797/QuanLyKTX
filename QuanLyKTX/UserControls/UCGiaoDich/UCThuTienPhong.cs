@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
+﻿using BUS;
 using QuanLyKTX.Forms;
+using QuanLyKTX.Forms.FormGiaoDich;
+using System;
+using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls.UCGiaoDich
 {
@@ -23,22 +17,31 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
         private void UCThuTienPhong_Load(object sender, EventArgs e)
         {
-            cmbNhanVien.DataSource = BUS_NhanVien.GetData();
-            cmbNhanVien.DisplayMember = "tenNhanVien";
-            cmbNhanVien.ValueMember = "NhanVienId";
-            cmbTaiKhoan.Text = Const.CurrentUser.TenDangNhap;
-            cmbTaiKhoan.Enabled = false;
-            dateNgayLapPhieu.EditValue = DateTime.Now;
-            dateTuNgay.EditValue = DateTime.Now;
-            dateDenNgay.EditValue = DateTime.Now;
+            cbbNhanVienThu.DataSource = BUS_NhanVien.GetData();
+            cbbNhanVienThu.DisplayMember = "tenNhanVien";
+            cbbNhanVienThu.ValueMember = "NhanVienId";
+
+
 
             gridControl1.DataSource = BUS_PhieuThuTienPhong.GetData();
             gridView1.Columns[4].Visible = false;
-        }
 
+            //load từ properties
+            txtPhiPhong4.Text = Properties.Settings.Default.PhiPhong4.ToString();
+            txtPhiPhong6.Text = Properties.Settings.Default.PhiPhong6.ToString();
+            txtPhiPhong8.Text = Properties.Settings.Default.PhiPhong8.ToString();
+            dteTuNgay.EditValue = Properties.Settings.Default.TuNgay;
+            dteDenNgay.EditValue = Properties.Settings.Default.DenNgay;
+
+        }
+        public void LoadAgainPhieuThu()
+        {
+            gridControl1.DataSource = BUS_PhieuThuTienPhong.GetData();
+            gridView1.SelectRow(gridView1.RowCount - 1);
+        }
         private void btnTaoDanhSachPhieuKy_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         public void CreateFeeEmpty(DateTime tuNgay, DateTime denNgay)
@@ -51,8 +54,29 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             FormDSThuTienPhong formDSThuTienPhong = new FormDSThuTienPhong();
+
             formDSThuTienPhong.Show();
 
+        }
+
+        private void btnTaoPhieu_Click(object sender, EventArgs e)
+        {
+            FormTaoPhieuThuPhiPhong formTaoPhieuThuPhiPhong = new FormTaoPhieuThuPhiPhong();
+            formTaoPhieuThuPhiPhong.eventTaoPhieuDone += FormTaoPhieuThuPhiPhong_eventTaoPhieuDone;
+            formTaoPhieuThuPhiPhong.Show();
+        }
+
+        private void FormTaoPhieuThuPhiPhong_eventTaoPhieuDone(object sender, EventArgs e)
+        {
+            LoadAgainPhieuThu();
+        }
+
+        private void txtPhiPhong4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
