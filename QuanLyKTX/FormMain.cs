@@ -25,7 +25,7 @@ namespace QuanLyKTX
         public enum EnumUCDanhMuc
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
-            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat
+            UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong
         }
         #endregion
 
@@ -612,9 +612,17 @@ namespace QuanLyKTX
                     break;
                 case (int)EnumUCDanhMuc.UCKhenThuong_KyLuat:
 
-                    UCKhenThuong_KyLuat uCKhenThuong = new UCKhenThuong_KyLuat();
-                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCKhenThuong);
-                    uCKhenThuong.Dock = DockStyle.Fill;
+                    UCKhenThuong_KyLuat uCKhenThuong_KyLuat = new UCKhenThuong_KyLuat();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCKhenThuong_KyLuat);
+                    uCKhenThuong_KyLuat.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
+                case (int)EnumUCDanhMuc.UCHopDong:
+
+                    UCHopDong uCHopDong = new UCHopDong();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCHopDong);
+                    uCHopDong.Dock = DockStyle.Fill;
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
@@ -634,6 +642,11 @@ namespace QuanLyKTX
         private void btnKhenThuongKyLuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddTabPages("Khen thưởng, kỷ luật", (int)EnumUCDanhMuc.UCKhenThuong_KyLuat);
+        }
+
+        private void btnHopDong_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Hợp đồng", (int)EnumUCDanhMuc.UCHopDong);
         }
     }
 }

@@ -323,6 +323,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCCapPhat.designer.cs">
       <DependentUpon>UCCapPhat.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCHopDong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCHopDong.designer.cs">
+      <DependentUpon>UCHopDong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCHoSo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -482,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCCapPhat.resx">
       <DependentUpon>UCCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCHopDong.resx">
+      <DependentUpon>UCHopDong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCHoSo.resx">
       <DependentUpon>UCHoSo.cs</DependentUpon>
