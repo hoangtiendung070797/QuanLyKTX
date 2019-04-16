@@ -51,6 +51,7 @@ namespace QuanLyKTX.UserControls
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -95,7 +96,10 @@ namespace QuanLyKTX.UserControls
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             if (txtTenTonGiao.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                errorProvider1.SetError(txtTenTonGiao, "Chưa điền tên.");
+            }
             else
             {
                 TonGiao tongiao = new TonGiao();

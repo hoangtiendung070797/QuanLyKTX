@@ -22,6 +22,22 @@ namespace DAL
         #endregion
 
         #region Methods
+        public DataTable PrintInfor()
+        {
+            try
+            {
+                string query = "SELECT HopDong.HopDongId,tenHopDong,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,HopDong.tuNgay,denNgay,thoiHanTheoNam,thoiHanTheoThang,noiDung FROM HopDong join DoiTuong on DoiTuong.DoiTuongId=HopDong.DoiTuongId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public DataTable GetData()
         {
             try

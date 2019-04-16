@@ -29,5 +29,9 @@ namespace BUS
         {
             return this.HopDong.GetData();
         }
+        public DataTable PrintInfor()
+        {
+            return this.HopDong.PrintInfor();
+        }
     }
 }

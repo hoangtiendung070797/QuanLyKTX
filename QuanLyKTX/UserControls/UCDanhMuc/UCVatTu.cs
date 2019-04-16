@@ -70,6 +70,7 @@ namespace QuanLyKTX.UserControls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -121,8 +122,13 @@ namespace QuanLyKTX.UserControls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenVatTu.Text == "" || txtMaVatTu.Text==""||txtSoLuong.Text==""||txtMoTa.Text=="")
+            if (txtTenVatTu.Text == "" || txtMaVatTu.Text == "" || txtSoLuong.Text == "" || txtMoTa.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtTenVatTu.Text == "") errorProvider1.SetError(txtTenVatTu, "Chưa điền tên.");
+                if (txtSoLuong.Text == "") errorProvider1.SetError(txtSoLuong, "Chưa điền số lượng.");
+                if (txtMoTa.Text == "") errorProvider1.SetError(txtMoTa, "Chưa điền mô tả.");
+            }
             else
             {
                 VatTu vattu = new VatTu();

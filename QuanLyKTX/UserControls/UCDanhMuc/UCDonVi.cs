@@ -15,9 +15,18 @@ namespace QuanLyKTX.UserControls
         BUS_DonVi bus_donvi = new BUS_DonVi();
         int chucnang = 0;
 
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã đơn vị";
+            gridView1.Columns[1].Caption = "Tên đơn vị";
+            gridView1.Columns[2].Caption = "Địa chỉ";
+            gridView1.Columns[3].Caption = "SĐT";
+            gridView1.Columns[4].Caption = "Ghi chú";
+        }
         void display()
         {
             gridControl1.DataSource = bus_donvi.GetData();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -44,6 +53,7 @@ namespace QuanLyKTX.UserControls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -94,7 +104,13 @@ namespace QuanLyKTX.UserControls
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTenDonVi.Text == "" || txtSDT.Text==""||txtDiaChi.Text=="")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtTenDonVi.Text == "") errorProvider1.SetError(txtTenDonVi, "Chưa điền tên.");
+                if (txtSDT.Text == "") errorProvider1.SetError(txtSDT, "Chưa điền sđt.");
+                if (txtDiaChi.Text == "") errorProvider1.SetError(txtDiaChi, "Chưa điền địa chỉ.");
+            }
+                
             else
             {
                 DonVi donvi = new DonVi();

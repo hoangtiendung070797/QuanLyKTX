@@ -27,32 +27,14 @@ namespace QuanLyKTX.UserControls
         public void FixNColumnNames()
         {
             gridView1.Columns[0].Caption = "Mã phòng";
-            gridView1.Columns[1].Caption = "Mã dãy nhà";
-            gridView1.Columns[2].Caption = "Loại phòng";
-            gridView1.Columns[3].Caption = "Tên phòng";
+            gridView1.Columns[2].Caption = "Dãy nhà";
+            gridView1.Columns[3].Caption = "Loại phòng";
+            gridView1.Columns[1].Caption = "Tên phòng";
             gridView1.Columns[4].Caption = "Tầng";
             gridView1.Columns[5].Caption = "Giá phòng";
-
-
         }
 
-        string tenloaiphong = "";
-        string tendaynha = "";
-        void MaToTen(int daynhaID, int loaiphongID)
-        {
-            DataTable loaiphong = bus_loaiphong.GetData();
-            for(int i=0;i<loaiphong.Rows.Count;i++)
-            {
-                if (loaiphongID == int.Parse(loaiphong.Rows[i][0].ToString()))
-                    tenloaiphong = loaiphong.Rows[i][1].ToString();
-            }
-            DataTable daynha = bus_daynha.GetData();
-            for (int i = 0; i < daynha.Rows.Count; i++)
-            {
-                if (daynhaID == int.Parse(daynha.Rows[i][0].ToString()))
-                    tendaynha = daynha.Rows[i][1].ToString();
-            }
-        }
+    
         void display_cbb()
         {
             cbbLoaiPhong.DataSource = bus_loaiphong.GetData();
@@ -65,7 +47,8 @@ namespace QuanLyKTX.UserControls
 
         void display()
         {
-            gridControl1.DataSource = bUS_Phong.GetData();
+            gridControl1.DataSource = bUS_Phong.PrintInfor();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -95,6 +78,7 @@ namespace QuanLyKTX.UserControls
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -154,15 +138,22 @@ namespace QuanLyKTX.UserControls
             txtGiaPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "giaPhong").ToString();
             txtTang.Text = gridView1.GetRowCellValue(e.RowHandle, "tang").ToString();
             txtTenPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenPhong").ToString();
-            MaToTen(int.Parse(gridView1.GetRowCellValue(e.RowHandle, "DayNhaId").ToString()), int.Parse(gridView1.GetRowCellValue(e.RowHandle, "LoaiPhongId").ToString()));
-            cbbDayNha.Text = tendaynha;
-            cbbLoaiPhong.Text = tenloaiphong;
+            cbbDayNha.Text= gridView1.GetRowCellValue(e.RowHandle, "tenDayNha").ToString();
+            cbbLoaiPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLoaiPhong").ToString();
         }
 
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (txtTenPhong.Text == "" || txtTang.Text == "" || txtMaPhong.Text == "" || txtGiaPhong.Text == "" || cbbLoaiPhong.Text == "" || cbbDayNha.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtTenPhong.Text == "") errorProvider1.SetError(txtTenPhong, "Chưa điền tên.");
+                if (txtTang.Text == "") errorProvider1.SetError(txtTang,"");
+                if (txtMaPhong.Text == "") errorProvider1.SetError(txtMaPhong, "Chưa điền mã phòng");
+                if (txtGiaPhong.Text == "") errorProvider1.SetError(txtGiaPhong, "Chưa điền giá phòng.");
+                if (cbbDayNha.Text == "") errorProvider1.SetError(cbbDayNha, "Chưa chọn dãy nhà.");
+                if (cbbLoaiPhong.Text == "") errorProvider1.SetError(cbbLoaiPhong, "Chưa chọn loại phòng.");
+            }
             else
             {
                 Phong phong = new Phong();

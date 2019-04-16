@@ -35,5 +35,9 @@ namespace BUS
         {
             return Lop.GetDataLop();
         }
+        public DataTable PrintInfor()
+        {
+            return this.Lop.PrintInfor();
+        }
     }
 }

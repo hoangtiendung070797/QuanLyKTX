@@ -59,6 +59,7 @@ namespace QuanLyKTX.UserControls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -108,8 +109,13 @@ namespace QuanLyKTX.UserControls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenLoi.Text == "" ||txtHinhThucXuLy.Text==""||txtNoiDung.Text=="")
+            if (txtTenLoi.Text == "" || txtHinhThucXuLy.Text == "" || txtNoiDung.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtTenLoi.Text == "") errorProvider1.SetError(txtTenLoi, "Chưa điền tên.");
+                if (txtNoiDung.Text == "") errorProvider1.SetError(txtNoiDung, "Chưa điền thông tin.");
+                if (txtHinhThucXuLy.Text == "") errorProvider1.SetError(txtHinhThucXuLy, "Chưa điền thông tin.");
+            }
             else
             {
                 LoiViPham loivipham = new LoiViPham();

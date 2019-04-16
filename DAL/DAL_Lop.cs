@@ -147,6 +147,21 @@ namespace DAL
                 return null;
             }
         }
+        public DataTable PrintInfor()
+        {
+            try
+            {
+                string query = "SELECT Lop.LopId,tenLop,DonVi.tenDonVi FROM Lop join DonVi on DonVi.DonViId = Lop.DonViId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

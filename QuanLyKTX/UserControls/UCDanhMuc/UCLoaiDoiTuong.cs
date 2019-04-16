@@ -15,11 +15,17 @@ namespace QuanLyKTX.UserControls
 
         BUS_LoaiDoiTuong bUS_LoaiDoiTuong = new BUS_LoaiDoiTuong();
         int chucnang = 0;
-       
 
+
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã loại đối tượng";
+            gridView1.Columns[1].Caption = "Tên loại đối tượng";
+        }
         void display()
         {
             gridControl1.DataSource = bUS_LoaiDoiTuong.GetData();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -40,6 +46,7 @@ namespace QuanLyKTX.UserControls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -85,8 +92,11 @@ namespace QuanLyKTX.UserControls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenLoaiDoiTuong.Text == "" )
+            if (txtTenLoaiDoiTuong.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                errorProvider1.SetError(txtTenLoaiDoiTuong, "Chưa điền tên.");
+            }
             else
             {
                 LoaiDoiTuong loaidoituong = new LoaiDoiTuong();
@@ -104,7 +114,7 @@ namespace QuanLyKTX.UserControls
                 {
                     loaidoituong.LoaiDoiTuongId = int.Parse(txtMaLoaiDoiTuong.Text);
                     loaidoituong.TenLoaiDoiTuong = txtTenLoaiDoiTuong.Text;
-                    if(bUS_LoaiDoiTuong.Update(loaidoituong))
+                    if (bUS_LoaiDoiTuong.Update(loaidoituong))
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }

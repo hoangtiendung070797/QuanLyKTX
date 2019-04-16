@@ -33,6 +33,7 @@ namespace QuanLyKTX
         }
         void reset()
         {
+            
             btnAdd.Enabled = true;
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
@@ -57,6 +58,7 @@ namespace QuanLyKTX
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -101,7 +103,10 @@ namespace QuanLyKTX
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTenTinhThanh.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+               errorProvider.SetError(txtTenTinhThanh, "Chưa điền tên.");
+            }
             else
             {
                 TinhThanh tinhthanh = new TinhThanh();

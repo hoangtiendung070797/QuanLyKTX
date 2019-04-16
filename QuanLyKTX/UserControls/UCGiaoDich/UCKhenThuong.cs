@@ -37,9 +37,24 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             reset();
         }
 
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "ID Khen Thưởng";
+            gridView1.Columns[1].Caption = "ID Đối Tượng";
+          //  gridView1.Columns[2].Caption = "ID Đối Tượng";
+            gridView1.Columns[2].Caption = "Mã Sinh Viên";
+            gridView1.Columns[3].Caption = "Họ Đệm";
+            gridView1.Columns[4].Caption = "Tên";
+            gridView1.Columns[5].Caption = "Tên Khen Thưởng";
+            gridView1.Columns[6].Caption = "Nội Dung";
+            gridView1.Columns[7].Caption = "Ngày";
+            gridView1.Columns[8].Caption = "Ghi Chú";
+
+        }
         void display()
         {
             gridControl1.DataSource = bus_KhenThuong.GetData();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -98,6 +113,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             txtTenKhenthuong.Enabled = true;
             txtNoiDung.Enabled = true;
             txtGhiChu.Enabled = true;
+            dpkNgayThem.Enabled = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -137,7 +153,8 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
                 if(txtHoTen.Text=="")
                     MessageBox.Show("Không tìm thấy đối tượng.");
-                else MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtNoiDung.Text == "") errorProvider1.SetError(txtNoiDung, "Chưa điền nội dung.");
+                if (txtTenKhenthuong.Text == "") errorProvider1.SetError(txtTenKhenthuong, "Chưa điền tên.");
             }
                 
             else

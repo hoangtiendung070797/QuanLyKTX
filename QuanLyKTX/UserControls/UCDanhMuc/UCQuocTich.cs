@@ -58,6 +58,7 @@ namespace QuanLyKTX
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -101,15 +102,18 @@ namespace QuanLyKTX
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtTenQuocTich.Text == "" )
+            if (txtTenQuocTich.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                errorProvider.SetError(txtTenQuocTich, "Chưa điền tên.");
+            }
             else
             {
                 QuocTich quoctich = new QuocTich();
 
                 if (chucnang == 1)
                 {
-                    quoctich.TenQuocTich = txtTenQuocTich.Text;                   
+                    quoctich.TenQuocTich = txtTenQuocTich.Text;
                     if (bUS_QuocTich.Insert(quoctich))
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");

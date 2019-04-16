@@ -34,7 +34,8 @@ namespace QuanLyKTX
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
             UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
-            UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat
+            UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat,
+            
         }
         #endregion
 
@@ -243,9 +244,14 @@ namespace QuanLyKTX
                     tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCLop);
                     uCLop.Dock = DockStyle.Fill;
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Image = Properties.Resources.Classroom_50px;
                     break;
 
                 case (int)EnumUCDanhMuc.UCNguoiDung:
+                    UCNguoiDung uCNguoiDung = new UCNguoiDung();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCNguoiDung);
+                    uCNguoiDung.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
                     break;
 
                 case (int)EnumUCDanhMuc.UCPhong:

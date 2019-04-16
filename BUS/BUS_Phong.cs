@@ -51,5 +51,9 @@ namespace BUS
         {
             return this.Phong.GetDataSinhVienTheoPhong();
         }
+        public DataTable PrintInfor()
+        {
+            return this.Phong.PrintInfor();
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace QuanLyKTX.UserControls
         {
             gridView1.Columns[0].Caption = "Mã lớp";
             gridView1.Columns[1].Caption = "Tên lớp";
-            gridView1.Columns[2].Caption = "Mã đơn vị";
+            gridView1.Columns[2].Caption = "Đơn vị";
         }
 
         void display_cbb()
@@ -37,7 +37,7 @@ namespace QuanLyKTX.UserControls
 
         void display()
         {
-            gridControl1.DataSource = bUS_Lop.GetData();
+            gridControl1.DataSource = bUS_Lop.PrintInfor();
         }
         void reset()
         {
@@ -57,11 +57,14 @@ namespace QuanLyKTX.UserControls
 
             display();
             display_cbb();
+            cbbDonvi.Text = "";
         }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -108,7 +111,11 @@ namespace QuanLyKTX.UserControls
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTenLop.Text == "" || cbbDonvi.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtTenLop.Text == "") errorProvider1.SetError(txtTenLop, "Chưa điền tên.");
+                if (cbbDonvi.Text == "") errorProvider1.SetError(cbbDonvi, "Chưa chọn đơn vị.");
+            }
             else
             {
                 Lop lop = new Lop();
@@ -116,11 +123,11 @@ namespace QuanLyKTX.UserControls
                 if (chucnang == 1)
                 {
                     lop.TenLop = txtTenLop.Text;
-                    lop.DonViId = int.Parse(cbbDonvi.SelectedValue.ToString());
+                    lop.DonViId = (int)cbbDonvi.SelectedValue;
+                    //   MessageBox.Show(cbbDonvi.SelectedValue.ToString());
                     if (bUS_Lop.Insert(lop))
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
-
                 }
 
                 if (chucnang == 2)
@@ -149,9 +156,9 @@ namespace QuanLyKTX.UserControls
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaLop.Text = gridView1.GetRowCellValue(e.RowHandle, "LopId").ToString();
-            txtTenLop.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLop").ToString();
-            tempDonVi= int.Parse(gridView1.GetRowCellValue(e.RowHandle, "DonViId").ToString());
+            txtTenLop.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLop").ToString();          
             cbbDonvi.Text = gridView1.GetRowCellValue(e.RowHandle, "tenDonVi").ToString();
+            MessageBox.Show(cbbDonvi.SelectedValue.ToString());
         }
     }
 }

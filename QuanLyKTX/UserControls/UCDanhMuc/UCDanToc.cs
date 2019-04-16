@@ -19,9 +19,15 @@ namespace QuanLyKTX
             reset();
         }
 
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã dân tộc";
+            gridView1.Columns[1].Caption = "Tên dân tộc";
+        }
         void display()
         {
             gridControl1.DataSource = bus_DanToc.GetData();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -41,6 +47,7 @@ namespace QuanLyKTX
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -74,7 +81,11 @@ namespace QuanLyKTX
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTenDanToc.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                errorProvider1.SetError(txtTenDanToc,"Chưa điền tên.");
+            }
+                
             else
             {
                 DanToc dantoc = new DanToc();

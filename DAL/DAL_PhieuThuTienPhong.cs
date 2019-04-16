@@ -249,6 +249,21 @@ namespace DAL
             }
 
         }
+        public DataTable PrinftPhieu(int phieuId)
+        {
+            try
+            {
+                string query = "SELECT dbo.NhanVien.tenNhanVien, dbo.NhanVien.sdt, dbo.DoiTuong.hoDem + N' ' + dbo.DoiTuong.ten AS hoTen, dbo.DoiTuong.maSinhVien,dbo.PhieuThuTienPhong.tuNgay, dbo.PhieuThuTienPhong.denNgay, dbo.PhieuThuTienPhong.tienThu FROM dbo.NhanVien INNER JOIN dbo.PhieuThuTienPhong INNER JOIN dbo.DoiTuong ON DoiTuong.DoiTuongId = PhieuThuTienPhong.DoiTuongId ON PhieuThuTienPhong.NhanVienId = NhanVien.NhanVienID WHERE dbo.PhieuThuTienPhong.PhieuThuTienPhongId = " + phieuId; ;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

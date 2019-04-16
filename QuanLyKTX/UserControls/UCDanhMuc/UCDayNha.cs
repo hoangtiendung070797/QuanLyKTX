@@ -14,11 +14,17 @@ namespace QuanLyKTX
         BUS_DayNha bUS_DayNha = new BUS_DayNha();
         int chucnang = 0;
 
-       
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "Mã dãy nhà";
+            gridView1.Columns[1].Caption = "Tên dãy nhà";
+            gridView1.Columns[2].Caption = "Ghi chú";
+        }
 
         void display()
         {
             gridControl1.DataSource = bUS_DayNha.GetData();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -48,6 +54,7 @@ namespace QuanLyKTX
 
         private void btnThemDayNha_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -94,7 +101,11 @@ namespace QuanLyKTX
         {
 
             if (txtTenDayNha.Text == "")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                errorProvider1.SetError(txtTenDayNha, "Chưa điền tên.");
+            }
+                
             else
             {
                 DayNha daynha = new DayNha();

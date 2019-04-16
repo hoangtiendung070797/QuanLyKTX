@@ -20,6 +20,7 @@ namespace QuanLyKTX
         void display()
         {
             gridControl1.DataSource = bUS_LoaiPhong.GetData();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -55,6 +56,7 @@ namespace QuanLyKTX
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -103,7 +105,13 @@ namespace QuanLyKTX
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTenLoaiPhong.Text == ""||txtGia.Text==""||txtSoNguoi.Text=="")
+            {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtTenLoaiPhong.Text == "") errorProvider1.SetError(txtTenLoaiPhong, "Chưa điền tên.");
+                if (txtSoNguoi.Text == "") errorProvider1.SetError(txtSoNguoi, "Chưa điền số người.");
+                if (txtGia.Text == "") errorProvider1.SetError(txtGia, "Chưa điền giá.");
+            }
+                
             else
             {
                 LoaiPhong loaiphong = new LoaiPhong();

@@ -30,9 +30,24 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             reset();
         }
 
+        public void FixNColumnNames()
+        {
+            gridView1.Columns[0].Caption = "ID Hợp Đồng";
+            gridView1.Columns[1].Caption = "Tên Hợp Đồng";
+            gridView1.Columns[2].Caption = "ID Đối Tượng";
+            gridView1.Columns[3].Caption = "Mã Sinh Viên";
+            gridView1.Columns[4].Caption = "Họ Đệm";
+            gridView1.Columns[5].Caption = "Tên";
+            gridView1.Columns[6].Caption = "Từ Ngày";
+            gridView1.Columns[7].Caption = "Đến Ngày";
+            gridView1.Columns[8].Caption = "Thời Hạn Theo Năm";
+            gridView1.Columns[9].Caption = "Thời Hạn Theo Tháng";
+            gridView1.Columns[10].Caption = "Nội Dung";
+        }
         void display()
         {
-            gridControl1.DataSource = bUS_HopDong.GetData();
+            gridControl1.DataSource = bUS_HopDong.PrintInfor();
+            FixNColumnNames();
         }
         void reset()
         {
@@ -66,6 +81,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            reset();
             chucnang = 1;
 
             btnAdd.Enabled = false;
@@ -125,8 +141,14 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             if (txtMSV.Text == "" || txtHoTen.Text == "" || txtNoiDung.Text == "" || txtTenHopDong.Text == ""||txtThoiHanTheoNam.Text==""||txtThoiHanTheoThang.Text=="")
             {
                 if (txtHoTen.Text == "")
+                {
                     MessageBox.Show("Không tìm thấy đối tượng.");
-                else MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                    if (txtMSV.Text == "") errorProvider1.SetError(txtMSV, "Chưa điền MSV.");
+                }
+                if (txtNoiDung.Text == "") errorProvider1.SetError(txtNoiDung, "Chưa điền nội dung.");
+                if (txtTenHopDong.Text == "") errorProvider1.SetError(txtTenHopDong, "Chưa điền tên.");
+                if (txtThoiHanTheoNam.Text == "") errorProvider1.SetError(txtThoiHanTheoNam, "Chưa điền nội dung.");
+                if (txtThoiHanTheoThang.Text == "") errorProvider1.SetError(txtThoiHanTheoThang, "Chưa điền nội dung.");
             }
 
             else

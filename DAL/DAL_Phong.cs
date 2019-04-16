@@ -37,6 +37,21 @@ namespace DAL
                 return null;
             }
         }
+        public DataTable PrintInfor()
+        {
+            try
+            {
+                string query = "SELECT Phong.PhongId,tenPhong,DayNha.tenDayNha,LoaiPhong.tenLoaiPhong,Phong.tang,giaPhong FROM LoaiPhong join Phong join DayNha on DayNha.DayNhaId=Phong.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public DataTable GetDataNew()
         {
