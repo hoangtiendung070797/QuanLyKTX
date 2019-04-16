@@ -27,6 +27,7 @@ namespace DTO
         private decimal tong;
         private string tenNguoiThu;
         private string ghiChu;
+        private bool tinhTrang;
 
         public int PhieuThuTienSHId { get => phieuThuTienSHId; set => phieuThuTienSHId = value; }
         public string PhongId1 { get => PhongId; set => PhongId = value; }
@@ -47,6 +48,7 @@ namespace DTO
         public decimal Tong { get => tong; set => tong = value; }
         public string TenNguoiThu { get => tenNguoiThu; set => tenNguoiThu = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public bool TinhTrang { get => tinhTrang; set => tinhTrang = value; }
         #endregion
 
         #region Initialize
@@ -55,7 +57,7 @@ namespace DTO
 
         }
 
-       
+
         #endregion
     }
 }

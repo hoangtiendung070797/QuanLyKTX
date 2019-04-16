@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.ribbonControlMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -97,12 +98,14 @@
             this.btnVatTuTheoPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnTKThuTienPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnTKPhiSH = new DevExpress.XtraBars.BarButtonItem();
+            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.PageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PageGroupBaoMat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupQLNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupDuLieu = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupGiaoDien = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupExcel = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGiaoDich = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -119,9 +122,7 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -591,6 +592,7 @@
             this.btnThuTienSinhHoat.Name = "btnThuTienSinhHoat";
             this.btnThuTienSinhHoat.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnThuTienSinhHoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThuTienSinhHoat_ItemClick);
             // 
             // barButtonItem29
             // 
@@ -753,6 +755,14 @@
             this.btnTKPhiSH.Name = "btnTKPhiSH";
             this.btnTKPhiSH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTKPhiSH_ItemClick);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Caption = "Đăng xuất";
+            this.btnLogout.Id = 143;
+            this.btnLogout.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.Shutdown_48px;
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
+            // 
             // PageHeThong
             // 
             this.PageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -797,6 +807,12 @@
             // 
             this.PageGroupExcel.ItemLinks.Add(this.btnImportExcel);
             this.PageGroupExcel.Name = "PageGroupExcel";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnLogout);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // PageGiaoDich
             // 
@@ -937,20 +953,6 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
-            // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.btnLogout);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Caption = "Đăng xuất";
-            this.btnLogout.Id = 143;
-            this.btnLogout.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.Shutdown_48px;
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
             // 
             // FormMain
             // 

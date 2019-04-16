@@ -202,11 +202,23 @@
     <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.designer.cs">
       <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuThuTienSH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuThuTienSH.designer.cs">
+      <DependentUpon>FrmSuaPhieuThuTienSH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.designer.cs">
       <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuThuTienSH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuThuTienSH.designer.cs">
+      <DependentUpon>FrmTaoPhieuThuTienSH.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormHeThong\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -467,6 +479,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCThuTienPhong.Designer.cs">
       <DependentUpon>UCThuTienPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.designer.cs">
+      <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -525,8 +543,14 @@
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.resx">
       <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuThuTienSH.resx">
+      <DependentUpon>FrmSuaPhieuThuTienSH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.resx">
       <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmTaoPhieuThuTienSH.resx">
+      <DependentUpon>FrmTaoPhieuThuTienSH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHeThong\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
@@ -656,6 +680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienPhong.resx">
       <DependentUpon>UCThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.resx">
+      <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
       <DependentUpon>UCXepPhong.cs</DependentUpon>

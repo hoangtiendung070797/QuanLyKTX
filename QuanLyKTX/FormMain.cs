@@ -34,7 +34,7 @@ namespace QuanLyKTX
         {
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
             UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
-            UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong
+            UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat
         }
         #endregion
 
@@ -424,6 +424,15 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+
+                case (int)EnumUCDanhMuc.UCThuTienSinhHoat:
+
+                    UCThuTienSinhHoat uCThuTienSinhHoat = new UCThuTienSinhHoat();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCThuTienSinhHoat);
+                    uCThuTienSinhHoat.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
             }
@@ -555,6 +564,11 @@ namespace QuanLyKTX
 
 
         #region Chức năng giao dịch
+        private void btnThuTienSinhHoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Thu tiền sinh hoạt", (int)EnumUCDanhMuc.UCThuTienSinhHoat);
+        }
+
         private void btnHoSo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             AddTabPages("Hồ Sơ", (int)EnumUCDanhMuc.UCHoSo);
@@ -771,5 +785,7 @@ namespace QuanLyKTX
         {
             Logout();
         }
+
+      
     }
 }
