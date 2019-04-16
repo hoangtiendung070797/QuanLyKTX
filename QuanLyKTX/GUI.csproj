@@ -250,6 +250,7 @@
     <Compile Include="Forms\FormHeThong\FormDangNhap.designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Support\ReadNumber.cs" />
     <Compile Include="Support\SupportCatchError.cs" />
     <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.cs">
       <SubType>UserControl</SubType>
@@ -513,6 +514,18 @@
     <Compile Include="UserControls\UCHeThong\UCPhanQuyen.Designer.cs">
       <DependentUpon>UCPhanQuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienPhong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienPhong.designer.cs">
+      <DependentUpon>XtraReportHoaDonThuTienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.designer.cs">
+      <DependentUpon>XtraReportHoaDonThuTienSH.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FormChonTaoPhieuThuTienPhong.resx">
       <DependentUpon>FormChonTaoPhieuThuTienPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -700,6 +713,12 @@
     </Compile>
     <EmbeddedResource Include="UserControls\UCHeThong\UCPhanQuyen.resx">
       <DependentUpon>UCPhanQuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienPhong.resx">
+      <DependentUpon>XtraReportHoaDonThuTienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.resx">
+      <DependentUpon>XtraReportHoaDonThuTienSH.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

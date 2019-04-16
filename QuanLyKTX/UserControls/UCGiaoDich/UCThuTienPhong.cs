@@ -1,7 +1,10 @@
 ﻿using BUS;
+using DevExpress.XtraReports.UI;
 using QuanLyKTX.Forms;
 using QuanLyKTX.Forms.FormGiaoDich;
+using QuanLyKTX.UserControls.UCInHoaDon.HoaDonThuTienPhong;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls.UCGiaoDich
@@ -106,6 +109,18 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 BUS_PhieuThuTienPhong.Delete(PhieuThuPhiPhongId);
                 LoadAgainPhieuThu();
             }
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = BUS_PhieuThuTienPhong.PrinftPhieu(PhieuThuPhiPhongId);
+            XtraReportHoaDonThuTienPhong xtraReportHoaDonThuTienPhong = new XtraReportHoaDonThuTienPhong();
+            xtraReportHoaDonThuTienPhong.SetAllProperty(dataTable);
+            
+            ReportPrintTool printTool = new ReportPrintTool(xtraReportHoaDonThuTienPhong);
+            printTool.PrinterSettings.DefaultPageSettings.Landscape = true;
+           // printTool.PrintingSystem.
+            printTool.ShowPreviewDialog();
         }
     }
 }
