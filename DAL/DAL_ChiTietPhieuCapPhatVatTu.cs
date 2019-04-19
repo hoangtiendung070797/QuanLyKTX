@@ -92,9 +92,9 @@ namespace DAL
                 row["PhongId"] = chiTietPhieuCapPhatVatTu.PhongId1;
                 row["soLuong"] = chiTietPhieuCapPhatVatTu.SoLuong;
                 row["donViTinh"] = chiTietPhieuCapPhatVatTu.DonViTinh;
-        
+                row["tinhTrang"] = chiTietPhieuCapPhatVatTu.TinhTrang;
                 row["donGiaVatTu"] = chiTietPhieuCapPhatVatTu.DonGiaVatTu;
-         
+
                 row["thanhTien"] = chiTietPhieuCapPhatVatTu.ThanhTien;
                 row["ghiChu"] = chiTietPhieuCapPhatVatTu.GhiChu;
 
@@ -159,9 +159,9 @@ namespace DAL
                     row["PhongId"] = chiTietPhieuCapPhatVatTu.PhongId1;
                     row["soLuong"] = chiTietPhieuCapPhatVatTu.SoLuong;
                     row["donViTinh"] = chiTietPhieuCapPhatVatTu.DonViTinh;
-                    
+                    row["tinhTrang"] = chiTietPhieuCapPhatVatTu.TinhTrang;
                     row["donGiaVatTu"] = chiTietPhieuCapPhatVatTu.DonGiaVatTu;
-            
+
                     row["thanhTien"] = chiTietPhieuCapPhatVatTu.ThanhTien;
                     row["ghiChu"] = chiTietPhieuCapPhatVatTu.GhiChu;
                 }
