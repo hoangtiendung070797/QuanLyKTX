@@ -10,7 +10,7 @@
         private string PhongId;
         private int soLuong;
         private string donViTinh;
-
+        private string tinhTrang;
 
         private decimal donGiaVatTu;
         private decimal thanhTien;
@@ -26,6 +26,7 @@
         public decimal ThanhTien { get => thanhTien; set => thanhTien = value; }
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
         public int ChiTietPhieuCapPhatVatTuId { get => chiTietPhieuCapPhatVatTuId; set => chiTietPhieuCapPhatVatTuId = value; }
+        public string TinhTrang { get => tinhTrang; set => tinhTrang = value; }
         #endregion
 
         #region Initialize

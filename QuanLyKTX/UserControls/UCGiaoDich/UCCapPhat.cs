@@ -29,7 +29,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             listViewCapPhat.Columns.Add("Số lượng", 100);
             listViewCapPhat.Columns.Add("Đơn vị tính", 100);
             listViewCapPhat.Columns.Add("Tình trạng", 100);
-            
+
             listViewCapPhat.Columns.Add("Đơn giá", 100);
             listViewCapPhat.Columns.Add("Thành tiền", 100);
             listViewCapPhat.Columns.Add("Ghi chú", 100);
@@ -69,7 +69,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             }
         }
 
-        public void LoadVatTuTimKiem(ListView listView,string text)  // Load dữ liệu vật tư ra bảng
+        public void LoadVatTuTimKiem(ListView listView, string text)  // Load dữ liệu vật tư ra bảng
         {
             listView.Items.Clear();
             listView.GridLines = true;
@@ -132,7 +132,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                         MessageBox.Show(listViewCapPhat.Items[i].SubItems[1].Text);
                         MessageBox.Show(item.SubItems[0].Text);
                         frmCapPhatVatTu.txtDonViTinh.Enabled = false;
-                        
+
                         frmCapPhatVatTu.txtDonGia.Enabled = false;
                         frmCapPhatVatTu.txtTinhTrang.Enabled = false;
                         frmCapPhatVatTu.txtGhiChu.Enabled = false;
@@ -141,7 +141,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                         listViewCapPhat.Items[i].SubItems[7].Text = (double.Parse(listViewCapPhat.Items[i].SubItems[3].Text) * double.Parse(listViewCapPhat.Items[i].SubItems[6].Text)).ToString();
                         return;
                     }
-                }               
+                }
                 frmCapPhatVatTu.ShowDialog();
 
                 if (frmCapPhatVatTu.ckOk.Checked)
@@ -191,7 +191,6 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     if (CheckInRoom(item.SubItems[1].Text))
                     {
-                        MessageBox.Show(BUS_ChiTietPhieuCapPhatVatTu.GetChiTietID(int.Parse(phieuID), item.SubItems[1].Text).ToString());
                         BUS_ChiTietPhieuCapPhatVatTu.Delete(BUS_ChiTietPhieuCapPhatVatTu.GetChiTietID(int.Parse(phieuID), item.SubItems[1].Text));
 
                         inRoom.Remove(item.SubItems[1].Text.ToString());
@@ -204,6 +203,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     listViewCapPhat.Items[i].SubItems[0].Text = (i + 1).ToString();
                 }
             }
+            LoadVatTu(listViewVatTu);
             listViewCapPhat.Refresh();
         }
         private void btnCapNhatCapPhat_Click(object sender, EventArgs e)
@@ -228,22 +228,22 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                             ChiTietPhieuCapPhatVatTu.PhongId1 = cbPhong.SelectedValue.ToString();
                             ChiTietPhieuCapPhatVatTu.SoLuong = int.Parse(listViewCapPhat.Items[i].SubItems[3].Text);
                             ChiTietPhieuCapPhatVatTu.DonViTinh = listViewCapPhat.Items[i].SubItems[4].Text;
-                            //ChiTietPhieuCapPhatVatTu.TinhTrang = listViewCapPhat.Items[i].SubItems[5].Text;
+                            ChiTietPhieuCapPhatVatTu.TinhTrang = listViewCapPhat.Items[i].SubItems[5].Text;
                             ChiTietPhieuCapPhatVatTu.DonGiaVatTu = decimal.Parse(listViewCapPhat.Items[i].SubItems[6].Text);
                             ChiTietPhieuCapPhatVatTu.ThanhTien = decimal.Parse(listViewCapPhat.Items[i].SubItems[7].Text);
                             ChiTietPhieuCapPhatVatTu.GhiChu = listViewCapPhat.Items[i].SubItems[8].Text;
-                            if (BUS_ChiTietPhieuCapPhatVatTu.CheckVatTu(ChiTietPhieuCapPhatVatTu.PhieuCapPhatVatTuId, ChiTietPhieuCapPhatVatTu.VatTuId)==true)
+                            if (BUS_ChiTietPhieuCapPhatVatTu.CheckVatTu(ChiTietPhieuCapPhatVatTu.PhieuCapPhatVatTuId, ChiTietPhieuCapPhatVatTu.VatTuId) == true)
                             {
                                 BUS_ChiTietPhieuCapPhatVatTu.Update(ChiTietPhieuCapPhatVatTu);
                             }
                             else
-                            {                             
-                                BUS_ChiTietPhieuCapPhatVatTu.Insert(ChiTietPhieuCapPhatVatTu);                              
+                            {
+                                BUS_ChiTietPhieuCapPhatVatTu.Insert(ChiTietPhieuCapPhatVatTu);
                             }
                         }
+                        LoadVatTu(listViewVatTu);
                         LoadData();
                     }
-                   // cbPhong_SelectedValueChanged(sender, e);
                     MessageBox.Show("Đã cập nhật cấp phát !", "Thông báo");
                     return;
                 }
@@ -355,29 +355,29 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             DialogResult result = MessageBox.Show("Bạn có muốn xóa tất cả vật tư phòng này hay không ?", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                
-                for (int i = 0; i < listViewCapPhat.Items.Count; i++)              
+
+                for (int i = 0; i < listViewCapPhat.Items.Count; i++)
                 {
                     if (CheckInRoom(listViewCapPhat.Items[i].SubItems[1].Text))
                     {
-                        MessageBox.Show(BUS_ChiTietPhieuCapPhatVatTu.GetChiTietID(int.Parse(phieuID), listViewCapPhat.Items[i].SubItems[1].Text).ToString());
                         BUS_ChiTietPhieuCapPhatVatTu.Delete(BUS_ChiTietPhieuCapPhatVatTu.GetChiTietID(int.Parse(phieuID), listViewCapPhat.Items[i].SubItems[1].Text));
 
                         inRoom.Remove(listViewCapPhat.Items[i].SubItems[1].Text);
                     }
-                                      
+
                 }
+                LoadVatTu(listViewVatTu);
                 listViewCapPhat.Items.Clear();
                 i = 1;
             }
-          
+
         }
 
         private void searchControlVatTu_TextChanged(object sender, EventArgs e)
         {
-            if (searchControlVatTu.Text !="")
+            if (searchControlVatTu.Text != "")
             {
-                LoadVatTuTimKiem(listViewVatTu,searchControlVatTu.Text);
+                LoadVatTuTimKiem(listViewVatTu, searchControlVatTu.Text);
 
             }
             else

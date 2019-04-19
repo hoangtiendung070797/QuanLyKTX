@@ -115,11 +115,11 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
             DataTable dataTable = BUS_PhieuThuTienPhong.PrinftPhieu(PhieuThuPhiPhongId);
             XtraReportHoaDonThuTienPhong xtraReportHoaDonThuTienPhong = new XtraReportHoaDonThuTienPhong();
-            xtraReportHoaDonThuTienPhong.SetAllProperty(dataTable);
-            
-            ReportPrintTool printTool = new ReportPrintTool(xtraReportHoaDonThuTienPhong);
-            printTool.PrinterSettings.DefaultPageSettings.Landscape = true;
-           // printTool.PrintingSystem.
+            xtraReportHoaDonThuTienPhong.SetAllProperty(dataTable);           
+            xtraReportHoaDonThuTienPhong.PaperKind = System.Drawing.Printing.PaperKind.Statement;
+            xtraReportHoaDonThuTienPhong.Landscape = true;
+
+            ReportPrintTool printTool = new ReportPrintTool(xtraReportHoaDonThuTienPhong);         
             printTool.ShowPreviewDialog();
         }
     }
