@@ -773,6 +773,8 @@ namespace QuanLyKTX
             {
                 DisableItem();
                 MoQuyenTuongUng();
+                
+                statusUser.Caption = "Tài khoản đang sử dụng: " + Const.CurrentUser.TenDangNhap + "     Thời gian từ: " + DateTime.Now;
             }
             else
             {
@@ -789,6 +791,7 @@ namespace QuanLyKTX
                         }
                     }
                 }
+                statusUser.Caption = "Tài khoản đang sử dụng: Administrator     Thời gian từ: " + DateTime.Now;
             }
 
         }
@@ -805,6 +808,7 @@ namespace QuanLyKTX
 
         public void ClearInfor()
         {
+            statusUser.Caption = "";
             Const.CurrentUser = new NguoiDung();
             Const.DanhSachQuyen = new DataTable();
             Const.PhanQuyens = new System.Collections.Generic.List<PhanQuyen>();
@@ -812,7 +816,7 @@ namespace QuanLyKTX
             Const.isLogin = false;
             Const.DoiTuongId = 0;
             Const.NguoiDungId = 0;
-            Const.NhatKyHoatDong = new BUS_NhatKyHoatDong();
+           
 
             Const.PhongId = "";
 

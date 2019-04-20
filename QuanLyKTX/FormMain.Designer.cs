@@ -99,6 +99,8 @@
             this.btnTKThuTienPhong = new DevExpress.XtraBars.BarButtonItem();
             this.btnTKPhiSH = new DevExpress.XtraBars.BarButtonItem();
             this.btnLogout = new DevExpress.XtraBars.BarButtonItem();
+            this.statusNguoiDung = new DevExpress.XtraBars.BarStaticItem();
+            this.anhNguoiDung = new DevExpress.XtraBars.BarStaticItem();
             this.PageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PageGroupBaoMat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupQLNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -123,13 +125,11 @@
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.statusNguoiDung = new DevExpress.XtraBars.BarStaticItem();
-            this.anhNguoiDung = new DevExpress.XtraBars.BarStaticItem();
+            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.statusUser = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
-            this.xtraTabPageStart.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -211,10 +211,11 @@
             this.btnTKPhiSH,
             this.btnLogout,
             this.statusNguoiDung,
-            this.anhNguoiDung});
+            this.anhNguoiDung,
+            this.statusUser});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 147;
+            this.ribbonControlMain.MaxItemId = 148;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -224,7 +225,7 @@
             this.ribbonPage1});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControlMain.Size = new System.Drawing.Size(894, 147);
-            this.ribbonControlMain.StatusBar = this.statusBar;
+            this.ribbonControlMain.StatusBar = this.ribbonStatusBar1;
             this.ribbonControlMain.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControlMain.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -770,6 +771,19 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLogout_ItemClick);
             // 
+            // statusNguoiDung
+            // 
+            this.statusNguoiDung.Caption = "Tài khoản: admin - ";
+            this.statusNguoiDung.Id = 145;
+            this.statusNguoiDung.Name = "statusNguoiDung";
+            // 
+            // anhNguoiDung
+            // 
+            this.anhNguoiDung.Caption = "barStaticItem1";
+            this.anhNguoiDung.Id = 146;
+            this.anhNguoiDung.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.User_96px;
+            this.anhNguoiDung.Name = "anhNguoiDung";
+            // 
             // PageHeThong
             // 
             this.PageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -941,7 +955,7 @@
             this.xtraTabControlMain.MultiLine = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageStart;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(894, 424);
+            this.xtraTabControlMain.Size = new System.Drawing.Size(894, 396);
             this.xtraTabControlMain.TabIndex = 7;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageStart});
@@ -949,38 +963,29 @@
             // 
             // xtraTabPageStart
             // 
-            this.xtraTabPageStart.Controls.Add(this.statusBar);
             this.xtraTabPageStart.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.xtraTabPageStart.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageStart.Image")));
             this.xtraTabPageStart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.xtraTabPageStart.Name = "xtraTabPageStart";
-            this.xtraTabPageStart.Size = new System.Drawing.Size(892, 380);
+            this.xtraTabPageStart.Size = new System.Drawing.Size(892, 352);
             this.xtraTabPageStart.Text = "Start Page";
             // 
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
             // 
-            // statusBar
+            // ribbonStatusBar1
             // 
-            this.statusBar.ItemLinks.Add(this.statusNguoiDung);
-            this.statusBar.Location = new System.Drawing.Point(0, 352);
-            this.statusBar.Name = "statusBar";
-            this.statusBar.Ribbon = this.ribbonControlMain;
-            this.statusBar.Size = new System.Drawing.Size(892, 28);
+            this.ribbonStatusBar1.ItemLinks.Add(this.statusUser);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 543);
+            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
+            this.ribbonStatusBar1.Ribbon = this.ribbonControlMain;
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(894, 28);
             // 
-            // statusNguoiDung
+            // statusUser
             // 
-            this.statusNguoiDung.Caption = "Tài khoản: admin - ";
-            this.statusNguoiDung.Id = 145;
-            this.statusNguoiDung.Name = "statusNguoiDung";
-            // 
-            // anhNguoiDung
-            // 
-            this.anhNguoiDung.Caption = "barStaticItem1";
-            this.anhNguoiDung.Id = 146;
-            this.anhNguoiDung.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.User_96px;
-            this.anhNguoiDung.Name = "anhNguoiDung";
+            this.statusUser.Id = 147;
+            this.statusUser.Name = "statusUser";
             // 
             // FormMain
             // 
@@ -992,6 +997,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(894, 571);
             this.Controls.Add(this.xtraTabControlMain);
+            this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControlMain);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Glow;
@@ -999,14 +1005,12 @@
             this.Name = "FormMain";
             this.Ribbon = this.ribbonControlMain;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StatusBar = this.statusBar;
             this.Text = "QUẢN LÝ KÝ TÚC XÁ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
-            this.xtraTabPageStart.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1106,9 +1110,10 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btnLogout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar statusBar;
         private DevExpress.XtraBars.BarStaticItem statusNguoiDung;
         private DevExpress.XtraBars.BarStaticItem anhNguoiDung;
+        private DevExpress.XtraBars.BarStaticItem statusUser;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
     }
 }
 
