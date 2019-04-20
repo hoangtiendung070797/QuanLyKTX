@@ -6,9 +6,9 @@ using System;
 
 namespace QuanLyKTX
 {
-    public class Const
+    public class Const:IDisposable
     {
-        public static string ConnectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True";
+        public static string ConnectionString = @"Data Source=.;Initial Catalog=DBQuanLyKyTucXa;Integrated Security=True";
         public static NguoiDung CurrentUser = new NguoiDung();
         public static DataTable DanhSachQuyen = new DataTable();
 
@@ -22,11 +22,16 @@ namespace QuanLyKTX
         public static string PhongId = "";
 
 
-        // phần thu tiền phongnf
+        //phần thu tiền phòng 
         public static DateTime TuNgay;
         public static DateTime DenNgay;
         public static decimal PhiPhong4 = 0;
         public static decimal PhiPhong6 = 0;
         public static decimal PhiPhong8 = 0;
+
+        public void Dispose()
+        {
+            
+        }
     }
 }

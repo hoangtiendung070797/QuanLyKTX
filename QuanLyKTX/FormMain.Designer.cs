@@ -123,9 +123,13 @@
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.statusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.statusNguoiDung = new DevExpress.XtraBars.BarStaticItem();
+            this.anhNguoiDung = new DevExpress.XtraBars.BarStaticItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
+            this.xtraTabPageStart.SuspendLayout();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -205,10 +209,12 @@
             this.btnVatTuTheoPhong,
             this.btnTKThuTienPhong,
             this.btnTKPhiSH,
-            this.btnLogout});
+            this.btnLogout,
+            this.statusNguoiDung,
+            this.anhNguoiDung});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 144;
+            this.ribbonControlMain.MaxItemId = 147;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -218,6 +224,7 @@
             this.ribbonPage1});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControlMain.Size = new System.Drawing.Size(894, 147);
+            this.ribbonControlMain.StatusBar = this.statusBar;
             this.ribbonControlMain.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControlMain.Click += new System.EventHandler(this.ribbonControl1_Click);
             // 
@@ -812,7 +819,6 @@
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnLogout);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "ribbonPageGroup9";
             // 
             // PageGiaoDich
             // 
@@ -943,6 +949,7 @@
             // 
             // xtraTabPageStart
             // 
+            this.xtraTabPageStart.Controls.Add(this.statusBar);
             this.xtraTabPageStart.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.xtraTabPageStart.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageStart.Image")));
             this.xtraTabPageStart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -953,6 +960,27 @@
             // defaultLookAndFeel1
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2013 Light Gray";
+            // 
+            // statusBar
+            // 
+            this.statusBar.ItemLinks.Add(this.statusNguoiDung);
+            this.statusBar.Location = new System.Drawing.Point(0, 352);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Ribbon = this.ribbonControlMain;
+            this.statusBar.Size = new System.Drawing.Size(892, 28);
+            // 
+            // statusNguoiDung
+            // 
+            this.statusNguoiDung.Caption = "Tài khoản: admin - ";
+            this.statusNguoiDung.Id = 145;
+            this.statusNguoiDung.Name = "statusNguoiDung";
+            // 
+            // anhNguoiDung
+            // 
+            this.anhNguoiDung.Caption = "barStaticItem1";
+            this.anhNguoiDung.Id = 146;
+            this.anhNguoiDung.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.User_96px;
+            this.anhNguoiDung.Name = "anhNguoiDung";
             // 
             // FormMain
             // 
@@ -971,12 +999,14 @@
             this.Name = "FormMain";
             this.Ribbon = this.ribbonControlMain;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StatusBar = this.statusBar;
             this.Text = "QUẢN LÝ KÝ TÚC XÁ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
+            this.xtraTabPageStart.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1076,6 +1106,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarButtonItem btnLogout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar statusBar;
+        private DevExpress.XtraBars.BarStaticItem statusNguoiDung;
+        private DevExpress.XtraBars.BarStaticItem anhNguoiDung;
     }
 }
 
