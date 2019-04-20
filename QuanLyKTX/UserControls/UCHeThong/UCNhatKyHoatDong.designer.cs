@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.cbbChucNang = new System.Windows.Forms.ComboBox();
+            this.cbbThaoTac = new System.Windows.Forms.ComboBox();
+            this.cbbTenNguoiDung = new System.Windows.Forms.ComboBox();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btnXemLog = new DevExpress.XtraEditors.SimpleButton();
@@ -40,13 +43,10 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbbTenNguoiDung = new System.Windows.Forms.ComboBox();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbbThaoTac = new System.Windows.Forms.ComboBox();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cbbChucNang = new System.Windows.Forms.ComboBox();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -82,6 +82,30 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // cbbChucNang
+            // 
+            this.cbbChucNang.FormattingEnabled = true;
+            this.cbbChucNang.Location = new System.Drawing.Point(576, 56);
+            this.cbbChucNang.Name = "cbbChucNang";
+            this.cbbChucNang.Size = new System.Drawing.Size(162, 21);
+            this.cbbChucNang.TabIndex = 17;
+            // 
+            // cbbThaoTac
+            // 
+            this.cbbThaoTac.FormattingEnabled = true;
+            this.cbbThaoTac.Location = new System.Drawing.Point(415, 56);
+            this.cbbThaoTac.Name = "cbbThaoTac";
+            this.cbbThaoTac.Size = new System.Drawing.Size(79, 21);
+            this.cbbThaoTac.TabIndex = 16;
+            // 
+            // cbbTenNguoiDung
+            // 
+            this.cbbTenNguoiDung.FormattingEnabled = true;
+            this.cbbTenNguoiDung.Location = new System.Drawing.Point(232, 56);
+            this.cbbTenNguoiDung.Name = "cbbTenNguoiDung";
+            this.cbbTenNguoiDung.Size = new System.Drawing.Size(101, 21);
+            this.cbbTenNguoiDung.TabIndex = 15;
+            // 
             // gridControl1
             // 
             this.gridControl1.Location = new System.Drawing.Point(12, 82);
@@ -113,6 +137,7 @@
             this.btnXemLog.StyleController = this.layoutControl1;
             this.btnXemLog.TabIndex = 10;
             this.btnXemLog.Text = "Xem log";
+            this.btnXemLog.Click += new System.EventHandler(this.btnXemLog_Click);
             // 
             // dateEditNgay
             // 
@@ -202,20 +227,6 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // cbbTenNguoiDung
-            // 
-            this.cbbTenNguoiDung.FormattingEnabled = true;
-            this.cbbTenNguoiDung.Location = new System.Drawing.Point(232, 56);
-            this.cbbTenNguoiDung.Name = "cbbTenNguoiDung";
-            this.cbbTenNguoiDung.Size = new System.Drawing.Size(101, 21);
-            this.cbbTenNguoiDung.TabIndex = 15;
-            // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.cbbTenNguoiDung;
@@ -224,14 +235,6 @@
             this.layoutControlItem9.Size = new System.Drawing.Size(183, 26);
             this.layoutControlItem9.Text = "Tên người dùng";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(75, 13);
-            // 
-            // cbbThaoTac
-            // 
-            this.cbbThaoTac.FormattingEnabled = true;
-            this.cbbThaoTac.Location = new System.Drawing.Point(415, 56);
-            this.cbbThaoTac.Name = "cbbThaoTac";
-            this.cbbThaoTac.Size = new System.Drawing.Size(79, 21);
-            this.cbbThaoTac.TabIndex = 16;
             // 
             // layoutControlItem4
             // 
@@ -242,14 +245,6 @@
             this.layoutControlItem4.Text = "Thao tác";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(75, 13);
             // 
-            // cbbChucNang
-            // 
-            this.cbbChucNang.FormattingEnabled = true;
-            this.cbbChucNang.Location = new System.Drawing.Point(576, 56);
-            this.cbbChucNang.Name = "cbbChucNang";
-            this.cbbChucNang.Size = new System.Drawing.Size(162, 21);
-            this.cbbChucNang.TabIndex = 17;
-            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.cbbChucNang;
@@ -258,6 +253,12 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(244, 26);
             this.layoutControlItem5.Text = "Chức năng";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(75, 13);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
             // 
             // UCNhatKyHoatDong
             // 

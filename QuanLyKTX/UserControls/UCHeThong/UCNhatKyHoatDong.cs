@@ -76,5 +76,10 @@ namespace QuanLyKTX
             //load table on gridview
             gridControl1.DataSource = Const.NhatKyHoatDong.GetData();
         }
+
+        private void btnXemLog_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
