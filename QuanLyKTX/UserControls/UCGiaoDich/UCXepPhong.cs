@@ -53,8 +53,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 grcPhong.DataSource = bUS_Phong.GetEmptyRoom(false);
 
         }
-        //   BUS_LuuTruPhong bus_LuuTruPhong = new BUS_LuuTruPhong();
-        //   DataTable bangsoluongnguoi = new DataTable();
+        
         BUS_Phong bus_phong = new BUS_Phong();
         private void btnVaoPhong_Click(object sender, EventArgs e)
         {

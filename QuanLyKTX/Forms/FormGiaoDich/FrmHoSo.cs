@@ -59,8 +59,9 @@ namespace QuanLyKTX
 
         private void btnTaoHoSo_Click(object sender, EventArgs e)
         {
+           
             //Nếu không trùng và đầy đủ thông tin cần thiết thì add
-            if (!DuplicateCheck() && IsFullInfo())
+             if (!DuplicateCheck() && IsFullInfo())
             {
                 DoiTuong doiTuong = new DoiTuong();
                 doiTuong.HoDem = txtHoDem.Text;
@@ -92,6 +93,19 @@ namespace QuanLyKTX
                 MessageBox.Show("Thêm Thành Công!");
                 
                 this.Close();
+            }
+            else
+            {
+                if (DuplicateCheck()) errorProvider1.SetError(txtMaSinhVien,"MSV đã tồn tại");
+                if (txtHoDem.Text=="") errorProvider1.SetError(txtHoDem, "Chưa điền tên");
+                if (txtTen.Text == "") errorProvider1.SetError(txtTen, "Chưa điền tên");
+                if (txtMaSinhVien.Text == "") errorProvider1.SetError(txtMaSinhVien, "Chưa điền msv");
+                if (dateNgaySinh.Text == "") errorProvider1.SetError(txtHoDem, "Chưa chọn ngày sinh");
+                if (txtNoiSinh.Text == "") errorProvider1.SetError(txtNoiSinh, "Chưa điền dữ liệu");
+                if (txtSdt.Text == "") errorProvider1.SetError(txtSdt, "Chưa điền dữ liệu");
+                if (txtEmail.Text == "") errorProvider1.SetError(txtEmail, "Chưa điền dữ liệu");
+                if (txtHoKhau.Text == "") errorProvider1.SetError(txtHoKhau, "Chưa điền dữ liệu");
+                if (txtQueQuan.Text == "") errorProvider1.SetError(txtQueQuan, "Chưa điền dữ liệu");
 
             }
         }
@@ -141,7 +155,21 @@ namespace QuanLyKTX
             cbTonGiao.ValueMember = "TonGiaoId";
 
         }
-        public bool DuplicateCheck()
+
+        public bool check_LoaiDoiTuong()
+        {
+            //nếu là loại đối tượng là sinh viên - thì chắc chắn sẽ có mã sinh viên
+            if (cbLoaiDoiTuong.Text == "Sinh Viên")
+            {
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+            public bool DuplicateCheck()
         {
             //nếu là loại đối tượng là sinh viên - thì chắc chắn sẽ có mã sinh viên
             if (cbLoaiDoiTuong.Text == "Sinh Viên")
@@ -157,7 +185,6 @@ namespace QuanLyKTX
                 return false;
             }
 
-
         }
         public void Reset()
         {
@@ -171,7 +198,7 @@ namespace QuanLyKTX
 
         private void btnHuyBo_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         #endregion
 

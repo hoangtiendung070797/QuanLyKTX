@@ -55,18 +55,12 @@ namespace QuanLyKTX
 
         private void fmMain_Load(object sender, EventArgs e)
         {
-            //SplashScreenManager.ShowForm(this, typeof(FormSplashSreen), true, true, false);
-            //SplashScreenManager.Default.SetWaitFormCaption("Processing data...");
+           
             //for (int i = 0; i < 100; i++)
             //{
-            //    Thread.Sleep(10);
-
+            //    Thread.Sleep(50);
             //}
-            //SplashScreenManager.CloseForm();
-            for (int i = 0; i < 100; i++)
-            {
-                Thread.Sleep(50);
-            }
+
             skins();
             Login();
 

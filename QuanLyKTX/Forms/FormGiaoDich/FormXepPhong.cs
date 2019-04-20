@@ -30,13 +30,21 @@ namespace QuanLyKTX.Forms.FormGiaoDich
 
         private void cardView1_Click(object sender, EventArgs e)
         {
-            DataRow row = cardView1.GetFocusedDataRow();
+            if(cardView1.RowCount !=0)
+            {
+                DataRow row = cardView1.GetFocusedDataRow();
+                doituongID = (int)row["DoiTuongId"];
+                txtHoDem.Text = row["hoDem"].ToString();
+                txtTen.Text = row["ten"].ToString();
+                txtMaSinhVien.Text = row["maSinhVien"].ToString();
+                //  pictureHoSo.Image = (Image)row["anh"];
 
-            doituongID = (int)row["DoiTuongId"];
-            txtHoDem.Text = row["hoDem"].ToString();
-            txtTen.Text = row["ten"].ToString();
-            txtMaSinhVien.Text = row["maSinhVien"].ToString();
-          //  pictureHoSo.Image = (Image)row["anh"];
+            }
+
+
+
+
+
 
         }
 

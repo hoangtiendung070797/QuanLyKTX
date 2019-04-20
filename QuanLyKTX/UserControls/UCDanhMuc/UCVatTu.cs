@@ -3,6 +3,7 @@ using DAL;
 using DTO;
 using System;
 using System.Windows.Forms;
+using System.Data;
 
 namespace QuanLyKTX.UserControls
 {
@@ -120,11 +121,26 @@ namespace QuanLyKTX.UserControls
             else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
         }
 
+        public bool checkma()
+        {
+            DataTable bang_VatTu = bUS_vattu.GetData();
+            bool check = false; // không trùng
+            for (int i = 0; i < bang_VatTu.Rows.Count; i++)
+                if (txtMaVatTu.Text == bang_VatTu.Rows[i][0].ToString())
+                {
+                    check = true;   // trùng mã
+                    break;
+                }
+            return check;
+        }
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTenVatTu.Text == "" || txtMaVatTu.Text == "" || txtSoLuong.Text == "" || txtMoTa.Text == "")
             {
                 MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                if (txtMaVatTu.Text == "") errorProvider1.SetError(txtMaVatTu, "Chưa điền mã.");
                 if (txtTenVatTu.Text == "") errorProvider1.SetError(txtTenVatTu, "Chưa điền tên.");
                 if (txtSoLuong.Text == "") errorProvider1.SetError(txtSoLuong, "Chưa điền số lượng.");
                 if (txtMoTa.Text == "") errorProvider1.SetError(txtMoTa, "Chưa điền mô tả.");
@@ -135,14 +151,23 @@ namespace QuanLyKTX.UserControls
 
                 if (chucnang == 1)
                 {
-                    vattu.VatTuId = txtMaVatTu.Text;
-                    vattu.TenVatTu = txtTenVatTu.Text;
-                    vattu.SoLuong = int.Parse(txtSoLuong.Text);
-                    vattu.MoTa = txtMoTa.Text;
-                    vattu.GhiChu = txtGhiChu.Text;
-                    if (bUS_vattu.Insert(vattu))
-                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
-                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+                    if (checkma() == true)
+                    {
+                        MessageBox.Show("Mã vật tư đã tồn tại.", "Thông Báo");
+                        errorProvider1.SetError(txtMaVatTu, "Mã vật tư đã tồn tại.");
+                    }
+                    else
+                    {
+                        vattu.VatTuId = txtMaVatTu.Text;
+                        vattu.TenVatTu = txtTenVatTu.Text;
+                        vattu.SoLuong = int.Parse(txtSoLuong.Text);
+                        vattu.MoTa = txtMoTa.Text;
+                        vattu.GhiChu = txtGhiChu.Text;
+                        if (bUS_vattu.Insert(vattu))
+                            MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                        else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+                        reset();
+                    }
 
                 }
 
@@ -156,14 +181,24 @@ namespace QuanLyKTX.UserControls
                     if (bUS_vattu.Update(vattu))
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+
+                    reset();
                 }
-                reset();
+                
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             reset();
+        }
+
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

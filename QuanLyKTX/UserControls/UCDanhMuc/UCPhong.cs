@@ -142,6 +142,19 @@ namespace QuanLyKTX.UserControls
             cbbLoaiPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLoaiPhong").ToString();
         }
 
+        public bool checkma()
+        {
+            DataTable bang_Phong = bUS_Phong.GetData();
+            bool check = false; // không trùng
+            for (int i = 0; i < bang_Phong.Rows.Count; i++)
+                if (txtMaPhong.Text == bang_Phong.Rows[i][0].ToString())
+                {
+                    check = true;   // trùng mã
+                    break;
+                }
+            return check;
+        }
+
         private void btnSave_Click_1(object sender, EventArgs e)
         {
             if (txtTenPhong.Text == "" || txtTang.Text == "" || txtMaPhong.Text == "" || txtGiaPhong.Text == "" || cbbLoaiPhong.Text == "" || cbbDayNha.Text == "")
@@ -160,17 +173,25 @@ namespace QuanLyKTX.UserControls
 
                 if (chucnang == 1)
                 {
-                    phong.PhongId = txtMaPhong.Text;
-                    phong.TenPhong = txtTenPhong.Text;
-                    phong.GiaPhong = decimal.Parse(txtGiaPhong.Text);
-                    phong.Tang = int.Parse(txtTang.Text);
-                    phong.DayNhaId = int.Parse(cbbDayNha.SelectedValue.ToString());
-                    phong.LoaiPhongId = int.Parse(cbbLoaiPhong.SelectedValue.ToString());
+                    if (checkma() == true)
+                    {
+                        MessageBox.Show("Mã vật tư đã tồn tại.", "Thông Báo");
+                        errorProvider1.SetError(txtMaPhong, "Mã vật tư đã tồn tại.");
+                    }
+                    else
+                    {
+                        phong.PhongId = txtMaPhong.Text;
+                        phong.TenPhong = txtTenPhong.Text;
+                        phong.GiaPhong = decimal.Parse(txtGiaPhong.Text);
+                        phong.Tang = int.Parse(txtTang.Text);
+                        phong.DayNhaId = int.Parse(cbbDayNha.SelectedValue.ToString());
+                        phong.LoaiPhongId = int.Parse(cbbLoaiPhong.SelectedValue.ToString());
 
-                    if (bUS_Phong.Insert(phong))
-                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
-                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
-
+                        if (bUS_Phong.Insert(phong))
+                            MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                        else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+                        reset();
+                    }
                 }
 
                 if (chucnang == 2)
@@ -184,8 +205,9 @@ namespace QuanLyKTX.UserControls
                     if (bUS_Phong.Update(phong))
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
+                    reset();
                 }
-                reset();
+                
             }
         }
 

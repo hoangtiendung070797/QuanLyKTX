@@ -134,6 +134,9 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             }
             else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
         }
+
+      
+
         int HopDongid = 0;
         int doituongID;
         private void btnSave_Click(object sender, EventArgs e)
@@ -157,18 +160,19 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
                 if (chucnang == 1)
                 {
-                    hopdong.DoiTuongId = TempDoiTuongID;                 
-                    hopdong.TenHopDong = txtTenHopDong.Text;                   
-                    hopdong.NoiDung = txtNoiDung.Text;
-                    hopdong.TuNgay = (DateTime)dpkTuNgay.Value;                 
-                    hopdong.DenNgay = (DateTime)dpkDenNgay.Value;
-                    hopdong.ThoiHanTheoNam = int.Parse(txtThoiHanTheoNam.Text);
-                    hopdong.ThoiHanTheoThang = int.Parse(txtThoiHanTheoThang.Text);
+                    
+                        hopdong.DoiTuongId = TempDoiTuongID;
+                        hopdong.TenHopDong = txtTenHopDong.Text;
+                        hopdong.NoiDung = txtNoiDung.Text;
+                        hopdong.TuNgay = (DateTime)dpkTuNgay.Value;
+                        hopdong.DenNgay = (DateTime)dpkDenNgay.Value;
+                        hopdong.ThoiHanTheoNam = int.Parse(txtThoiHanTheoNam.Text);
+                        hopdong.ThoiHanTheoThang = int.Parse(txtThoiHanTheoThang.Text);
 
-                    if (bUS_HopDong.Insert(hopdong))
-                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
-                    else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
-
+                        if (bUS_HopDong.Insert(hopdong))
+                            MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                        else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
+                    
                 }
 
                 if (chucnang == 2)
