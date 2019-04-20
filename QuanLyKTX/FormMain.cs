@@ -35,6 +35,7 @@ namespace QuanLyKTX
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
             UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
             UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat,
+            UCNhanVien
 
         }
         #endregion
@@ -439,6 +440,15 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+
+                case (int)EnumUCDanhMuc.UCNhanVien:
+
+                    UCNhanVien uCNhanVien =  new UCNhanVien();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCNhanVien);
+                    uCNhanVien.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
             }
@@ -829,6 +839,9 @@ namespace QuanLyKTX
        
         }
 
-
+        private void btnQLNhanVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Nhân viên", (int)EnumUCDanhMuc.UCNhanVien);
+        }
     }
 }

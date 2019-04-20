@@ -29,16 +29,9 @@ namespace DTO
 
 
         #region Initialize
-        public NhanVien(int id, string ten, string sdt, string email, DateTime ngaysinh,string diachi,string chucvu,string phutrach)
+        public NhanVien()
         {
-            this.NhanVienId = id;
-            this.TenNhanVien = ten;
-            this.Sdt = sdt;
-            this.Email = email;
-            this.NgaySinh = ngaysinh;
-            this.DiaChi = diachi;
-            this.ChucVu = chucvu;
-            this.PhuTrach = phutrach;
+
         }
 
         #endregion
