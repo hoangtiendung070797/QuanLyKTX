@@ -250,6 +250,12 @@
     <Compile Include="Forms\FormHeThong\FormDangNhap.designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Support\ReadNumber.cs" />
     <Compile Include="Support\SupportCatchError.cs" />
     <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.cs">
@@ -532,6 +538,12 @@
     <Compile Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.designer.cs">
       <DependentUpon>XtraReportHoaDonThuTienSH.cs</DependentUpon>
     </Compile>
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FormChonTaoPhieuThuTienPhong.resx">
       <DependentUpon>FormChonTaoPhieuThuTienPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +591,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormHeThong\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.resx">
       <DependentUpon>UCTKDonVi.cs</DependentUpon>
@@ -728,6 +743,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.resx">
       <DependentUpon>XtraReportHoaDonThuTienSH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />
@@ -914,6 +932,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Yandex Money_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\technology-images-png-3-transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

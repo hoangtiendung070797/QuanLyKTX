@@ -523,6 +523,16 @@ namespace QuanLyKTX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap technology_images_png_3_transparent {
+            get {
+                object obj = ResourceManager.GetObject("technology_images_png_3_transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap User_48px {
             get {
                 object obj = ResourceManager.GetObject("User_48px", resourceCulture);

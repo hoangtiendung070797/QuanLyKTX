@@ -2,6 +2,7 @@
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraEditors;
+using DevExpress.XtraSplashScreen;
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using DTO;
@@ -21,6 +22,7 @@ using QuanLyKTX.UserControls.UCHeThong;
 using System;
 using System.Data;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -53,7 +55,18 @@ namespace QuanLyKTX
 
         private void fmMain_Load(object sender, EventArgs e)
         {
+            //SplashScreenManager.ShowForm(this, typeof(FormSplashSreen), true, true, false);
+            //SplashScreenManager.Default.SetWaitFormCaption("Processing data...");
+            //for (int i = 0; i < 100; i++)
+            //{
+            //    Thread.Sleep(10);
 
+            //}
+            //SplashScreenManager.CloseForm();
+            for (int i = 0; i < 100; i++)
+            {
+                Thread.Sleep(50);
+            }
             skins();
             Login();
 
