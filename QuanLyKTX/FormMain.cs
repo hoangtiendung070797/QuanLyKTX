@@ -35,7 +35,7 @@ namespace QuanLyKTX
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
             UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
             UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat,
-            
+
         }
         #endregion
 
@@ -67,7 +67,7 @@ namespace QuanLyKTX
         public void skins()
         {
             DevExpress.LookAndFeel.DefaultLookAndFeel themes = new DevExpress.LookAndFeel.DefaultLookAndFeel();
-            themes.LookAndFeel.SkinName = "Office 2013 Dark Gray";
+            themes.LookAndFeel.SkinName = "McSkin";
         }
 
         public void Disable()
@@ -563,7 +563,7 @@ namespace QuanLyKTX
 
         private void btnNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            AddTabPages("Quản lý người dùng", (int)EnumUCDanhMuc.UCNguoiDung);
         }
 
         #endregion
@@ -709,12 +709,16 @@ namespace QuanLyKTX
         }
         public bool CheckOpen(string str)
         {
-            foreach (PhanQuyen item in Const.PhanQuyens)
+            if(Const.CurrentUser.TenDangNhap != "admin")
             {
-                if (item.TenChucNang == str && item.ChucNangDoc == true)
-                    return true;
+                foreach (PhanQuyen item in Const.PhanQuyens)
+                {
+                    if (item.TenChucNang == str && item.ChucNangDoc == true)
+                        return true;
+                }
+                return false;
             }
-            return false;
+            return true;
         }
 
         public void MoQuyenTuongUng()
@@ -744,9 +748,6 @@ namespace QuanLyKTX
                     foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
                     {
                         itemLink.Item.Enabled = false;
-
-
-
                     }
                 }
             }
@@ -773,25 +774,57 @@ namespace QuanLyKTX
                 DisableItem();
                 MoQuyenTuongUng();
             }
+            else
+            {
+                foreach (RibbonPage page in this.ribbonControlMain.Pages)
+                {
+                    foreach (RibbonPageGroup pageGroup in page.Groups)
+                    {
+                        foreach (BarButtonItemLink itemLink in pageGroup.ItemLinks)
+                        {
+                            if (CheckOpen(itemLink.Caption))
+                                itemLink.Item.Enabled = true;
+
+
+                        }
+                    }
+                }
+            }
 
         }
 
 
-        public void Logout()
-        {
-            Const.isLogin = false;
-            Disable();
-            FormDangNhap formDangNhap = new FormDangNhap();
-
-            formDangNhap.ShowDialog();
-            
-        }
+       
         #endregion
         private void btnLogout_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Logout();
+            ClearInfor();
+            Login();
+          
         }
 
-      
+        public void ClearInfor()
+        {
+            Const.CurrentUser = new NguoiDung();
+            Const.DanhSachQuyen = new DataTable();
+            Const.PhanQuyens = new System.Collections.Generic.List<PhanQuyen>();
+            Const.isFullOp = false;
+            Const.isLogin = false;
+            Const.DoiTuongId = 0;
+            Const.NguoiDungId = 0;
+            Const.NhatKyHoatDong = new BUS_NhatKyHoatDong();
+
+            Const.PhongId = "";
+
+            Const.PhiPhong4 = 0;
+            Const.PhiPhong6 = 0;
+            Const.PhiPhong8 = 0;
+
+
+            tabstatic.TabPages.Clear();
+       
+        }
+
+
     }
 }
