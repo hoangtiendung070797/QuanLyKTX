@@ -68,6 +68,21 @@ namespace DAL
                 return null;
             }
         }
+        public DataTable DoiTuong_ChuaCoPhong_GioiTinh(string gioitinh)     //thay đổi => BUS
+        {
+            try
+            {
+                string query = "select DoiTuong.anh,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,ngaySinh,noiSinh,gioiTinh,hoKhau,queQuan,sdt,email,ghiChu from DoiTuong  where  DoiTuong.gioiTinh = '" + gioitinh + "' and DoiTuong.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or DoiTuong.DoiTuongId  in (select LuuTruPhong.DoiTuongId from LuuTruPhong where LuuTruPhong.trangThai = 0)";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public bool Insert(LuuTruPhong luuTruPhong)
         {

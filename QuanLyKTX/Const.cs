@@ -20,7 +20,7 @@ namespace QuanLyKTX
         public static BUS_NhatKyHoatDong NhatKyHoatDong = new BUS_NhatKyHoatDong();
 
         public static string PhongId = "";
-
+        public static string GioiTinhPhong = "";
 
         //phần thu tiền phòng 
         public static DateTime TuNgay;

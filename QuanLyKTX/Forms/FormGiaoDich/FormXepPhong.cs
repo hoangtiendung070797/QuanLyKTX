@@ -20,7 +20,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         BUS_NhanVien bUS_NhanVien = new BUS_NhanVien();
         private void FormXepPhong_Load(object sender, EventArgs e)
         {
-            gridControl1.DataSource = bus_LuuTruPhong.DoiTuong_ChuaCoPhong();
+            gridControl1.DataSource = bus_LuuTruPhong.DoiTuong_ChuaCoPhong_GioiTinh(Const.GioiTinhPhong);
             cbbNhanVien.DataSource = bUS_NhanVien.GetData();
             cbbNhanVien.DisplayMember = "tenNhanVien";
             cbbNhanVien.ValueMember = "NhanVienID";

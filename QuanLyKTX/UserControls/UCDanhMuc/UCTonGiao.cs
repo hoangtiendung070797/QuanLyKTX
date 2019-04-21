@@ -84,6 +84,15 @@ namespace QuanLyKTX.UserControls
                 {
                     if (bUS_TonGiao.Delete(int.Parse(txtMaTonGiao.Text)))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công tôn giáo " + txtTenTonGiao.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Tôn giáo";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -108,7 +117,19 @@ namespace QuanLyKTX.UserControls
                 {
                     tongiao.TenTonGiao = txtTenTonGiao.Text;
                     if (bUS_TonGiao.Insert(tongiao))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công tôn giáo " + txtTenTonGiao.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Tôn giáo";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
+                  
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -118,7 +139,18 @@ namespace QuanLyKTX.UserControls
                     tongiao.TonnGiaoId = int.Parse(txtMaTonGiao.Text);
                     tongiao.TenTonGiao = txtTenTonGiao.Text;
                     if (bUS_TonGiao.Update(tongiao))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công tôn giáo " + txtTenTonGiao.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Tôn giáo";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    } 
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

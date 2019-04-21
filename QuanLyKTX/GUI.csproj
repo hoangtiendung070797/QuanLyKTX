@@ -426,6 +426,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCKyLuat.designer.cs">
       <DependentUpon>UCKyLuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCXepPhong.designer.cs">
+      <DependentUpon>UCXepPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCHeThong\UCNguoiDung.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -491,12 +497,6 @@
     </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.designer.cs">
       <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCGiaoDich\UCXepPhong.designer.cs">
-      <DependentUpon>UCXepPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCHeThong\UCNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -679,6 +679,9 @@
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCKyLuat.resx">
       <DependentUpon>UCKyLuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
+      <DependentUpon>UCXepPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNguoiDung.resx">
       <DependentUpon>UCNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
@@ -711,9 +714,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.resx">
       <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
-      <DependentUpon>UCXepPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNhanVien.resx">
       <DependentUpon>UCNhanVien.cs</DependentUpon>

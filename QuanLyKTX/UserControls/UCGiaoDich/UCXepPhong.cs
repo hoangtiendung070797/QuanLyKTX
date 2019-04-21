@@ -11,20 +11,22 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         public UCXepPhong()
         {
             InitializeComponent();
-         
         }
         BUS_Phong bUS_Phong = new BUS_Phong();
         private void UCXepPhong_Load(object sender, EventArgs e)
         {
-
-            grcPhong.DataSource = bUS_Phong.PrintInfor();
-
+            display();
             cbbPhong.Text = "Tất cả phòng";
-  
+            //grcPhong.DataSource = bUS_Phong.GetEmptyRoom(true);
             
         }
-        BUS_LuuTruPhong bUS_luutruphong = new BUS_LuuTruPhong();
+        void display()
+        {
+            grcPhong.DataSource = bUS_Phong.PrintInfor();         
+        }
 
+      
+        BUS_LuuTruPhong bUS_luutruphong = new BUS_LuuTruPhong();
         private void cardView1_Click(object sender, EventArgs e)
         {
             try
@@ -34,6 +36,12 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     DataRow row = cardView1.GetFocusedDataRow();
 
                     Const.PhongId = row["PhongId"].ToString();
+                    if (row["thuocGioiTinh"].ToString() == "Nam")
+                        Const.GioiTinhPhong = "true";
+                    if (row["thuocGioiTinh"].ToString() == "Nữ")
+                        Const.GioiTinhPhong = "false";
+
+                    MessageBox.Show(Const.GioiTinhPhong);
                     grcDoiTuong.DataSource = bUS_luutruphong.DoiTuong_TrongPhong(Const.PhongId);
                 }
                
@@ -55,7 +63,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 grcPhong.DataSource = bUS_Phong.GetEmptyRoom(true);
             if (cbbPhong.SelectedIndex == 2)
                 grcPhong.DataSource = bUS_Phong.GetEmptyRoom(false);
-
+           
         }
         
         BUS_Phong bus_phong = new BUS_Phong();

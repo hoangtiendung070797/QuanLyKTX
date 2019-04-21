@@ -112,6 +112,15 @@ namespace QuanLyKTX.UserControls
                 {
                     if (bUS_vattu.Delete(txtMaVatTu.Text))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công vật tư " + txtTenVatTu.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Vật tư";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -164,7 +173,19 @@ namespace QuanLyKTX.UserControls
                         vattu.MoTa = txtMoTa.Text;
                         vattu.GhiChu = txtGhiChu.Text;
                         if (bUS_vattu.Insert(vattu))
+                        {
+                            //------------Ghi log
+                            NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                            nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                            nhatKy.NoiDung = "Thêm thành công vật tư " + txtTenVatTu.Text + " vào hệ thống";
+                            nhatKy.ThaoTac = "Tạo";
+                            nhatKy.ThoiGian = DateTime.Now;
+                            nhatKy.ChucNang = "Vật tư";
+                            Const.NhatKyHoatDong.Insert(nhatKy);
+                            //-------------------
+
                             MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                        }
                         else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
                         reset();
                     }
@@ -179,7 +200,19 @@ namespace QuanLyKTX.UserControls
                     vattu.MoTa = txtMoTa.Text;
                     vattu.GhiChu = txtGhiChu.Text;
                     if (bUS_vattu.Update(vattu))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công vật tư " + txtTenVatTu.Text + " trong hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Vật tư";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
 
                     reset();

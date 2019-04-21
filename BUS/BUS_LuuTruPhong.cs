@@ -37,5 +37,9 @@ namespace BUS
         {
             return this.LuuTruPhong.DoiTuong_ChuaCoPhong();
         }
+        public DataTable DoiTuong_ChuaCoPhong_GioiTinh(string GioiTinh)
+        {
+            return this.LuuTruPhong.DoiTuong_ChuaCoPhong_GioiTinh(GioiTinh);
+        }
     }
 }

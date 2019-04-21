@@ -37,11 +37,11 @@ namespace DAL
                 return null;
             }
         }
-        public DataTable PrintInfor()
+        public DataTable PrintInfor()  // //thay đổi 
         {
             try
             {
-                string query = "SELECT Phong.PhongId,tenPhong,DayNha.tenDayNha,LoaiPhong.tenLoaiPhong,Phong.tang,giaPhong,case thuocGioiTinh when 1 then N'Nam' when 0 then N'Nữ' end as 'Giới tính' FROM LoaiPhong join Phong join DayNha on DayNha.DayNhaId=Phong.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId";
+                string query = "SELECT Phong.PhongId,tenPhong,DayNha.tenDayNha,LoaiPhong.tenLoaiPhong,Phong.tang,giaPhong,case thuocGioiTinh when 1 then N'Nam' when 0 then N'Nữ' end as 'thuocGioiTinh' FROM LoaiPhong join Phong join DayNha on DayNha.DayNhaId=Phong.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -53,7 +53,7 @@ namespace DAL
             }
         }
 
-        public DataTable GetDataNew()/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        public DataTable GetDataNew()////////////
         {
             try
             {
@@ -151,20 +151,20 @@ namespace DAL
                 return false;
             }
         }
-        public DataTable GetEmptyRoom(bool check)
+        public DataTable GetEmptyRoom(bool check) //thay đổi 
         {
-            DataTable table = this.GetData();
+            DataTable table = this.PrintInfor();
             DataTable result = new DataTable();
-
+            // Phong.PhongId,tenPhong,DayNha.tenDayNha,LoaiPhong.tenLoaiPhong,Phong.tang,giaPhong,case thuocGioiTinh when 1 then N'Nam' when 0 then N'N
             //Adding columns to datatable
 
             result.Columns.Add("PhongId", typeof(string));
-            result.Columns.Add("DayNhaId", typeof(int));
-            result.Columns.Add("LoaiPhongId", typeof(int));
             result.Columns.Add("tenPhong", typeof(string));
+            result.Columns.Add("tenDayNha", typeof(string));
+            result.Columns.Add("tenLoaiPhong", typeof(string));
             result.Columns.Add("tang", typeof(int));
             result.Columns.Add("giaPhong", typeof(decimal));
-            result.Columns.Add("thuocGioiTinh", typeof(bool));
+            result.Columns.Add("thuocGioiTinh", typeof(string));
 
             foreach (DataRow row in table.Rows)
             {
@@ -175,9 +175,9 @@ namespace DAL
                         DataRow temp = result.NewRow();
 
                         temp["PhongId"] = row["PhongId"];
-                        temp["DayNhaId"] = row["DayNhaId"];
-                        temp["LoaiPhongId"] = row["LoaiPhongId"];
                         temp["tenPhong"] = row["tenPhong"];
+                        temp["tenDayNha"] = row["tenDayNha"];
+                        temp["tenLoaiPhong"] = row["tenLoaiPhong"];
                         temp["tang"] = row["tang"];
                         temp["giaPhong"] = row["giaPhong"];
                         temp["thuocGioiTinh"] = row["thuocGioiTinh"];
@@ -191,9 +191,9 @@ namespace DAL
                         DataRow temp = result.NewRow();
 
                         temp["PhongId"] = row["PhongId"];
-                        temp["DayNhaId"] = row["DayNhaId"];
-                        temp["LoaiPhongId"] = row["LoaiPhongId"];
                         temp["tenPhong"] = row["tenPhong"];
+                        temp["tenDayNha"] = row["tenDayNha"];
+                        temp["tenLoaiPhong"] = row["tenLoaiPhong"];
                         temp["tang"] = row["tang"];
                         temp["giaPhong"] = row["giaPhong"];
                         temp["thuocGioiTinh"] = row["thuocGioiTinh"];
