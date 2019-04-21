@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
-using DAL;
+﻿using BUS;
 using DTO;
+using System;
+using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls.UCHeThong
 {
@@ -119,6 +111,15 @@ namespace QuanLyKTX.UserControls.UCHeThong
                     {
                         MessageBox.Show("Xóa thành công!");
                         reset();
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công nhân viên: " + txtTenNV.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Nhân viên";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                     }
                     else MessageBox.Show("Xóa thất bại!");
                 }
@@ -152,7 +153,19 @@ namespace QuanLyKTX.UserControls.UCHeThong
                     nhanvien.Email = txtEmail.Text;
                     nhanvien.NgaySinh = (DateTime)dpkNgaySinh.Value;
                     if (bUS_nhanvien.Insert(nhanvien))
+                    {
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công nhân viên: " + txtTenNV.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Nhân viên";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+                    }
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -168,7 +181,18 @@ namespace QuanLyKTX.UserControls.UCHeThong
                     nhanvien.Email = txtEmail.Text;
                     nhanvien.NgaySinh = (DateTime)dpkNgaySinh.Value;
                     if (bUS_nhanvien.Update(nhanvien))
+                    {
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công nhân viên: " + txtTenNV.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Nhân viên";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

@@ -820,7 +820,17 @@ namespace QuanLyKTX
         {
             ClearInfor();
             Login();
-          
+
+            //------------Ghi log
+            NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+            nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+            nhatKy.NoiDung = Const.CurrentUser.TenDangNhap + " đăng xuất ";
+            nhatKy.ThaoTac = "";
+            nhatKy.ThoiGian = DateTime.Now;
+            nhatKy.ChucNang = "Đăng xuất";
+            Const.NhatKyHoatDong.Insert(nhatKy);
+            //-------------------
+
         }
 
         public void ClearInfor()
@@ -833,15 +843,10 @@ namespace QuanLyKTX
             Const.isLogin = false;
             Const.DoiTuongId = 0;
             Const.NguoiDungId = 0;
-           
-
             Const.PhongId = "";
-
             Const.PhiPhong4 = 0;
             Const.PhiPhong6 = 0;
             Const.PhiPhong8 = 0;
-
-
             tabstatic.TabPages.Clear();
        
         }

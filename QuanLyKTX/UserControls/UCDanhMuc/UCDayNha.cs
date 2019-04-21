@@ -89,7 +89,18 @@ namespace QuanLyKTX
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (bUS_DayNha.Delete(int.Parse(txtDayNhaId.Text)))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công dãy nhà " + txtTenDayNha.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Dãy nhà";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("Xóa dữ liệu lỗi.", "Thông báo.");
                     reset();
                 }
@@ -114,7 +125,18 @@ namespace QuanLyKTX
                     daynha.TenDayNha = txtTenDayNha.Text;
                     daynha.GhiChu = txtGhiChu.Text;                
                     if (bUS_DayNha.Insert(daynha))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công dãy nhà " + txtTenDayNha.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Dãy nhà";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }  
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
                 }
 
@@ -124,7 +146,19 @@ namespace QuanLyKTX
                     daynha.TenDayNha = txtTenDayNha.Text;
                     daynha.GhiChu = txtGhiChu.Text;
                     if (bUS_DayNha.Update(daynha))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công dãy nhà " + txtTenDayNha.Text + " trong hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Dãy nhà";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
+                        
                     else MessageBox.Show("Cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

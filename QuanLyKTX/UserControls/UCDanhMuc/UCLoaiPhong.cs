@@ -93,6 +93,16 @@ namespace QuanLyKTX
                 {
                     if (bUS_LoaiPhong.Delete(int.Parse(txtMaLoaiPhong.Text)))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công loại đối tượng " + txtTenLoaiPhong.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Loại phòng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -122,7 +132,20 @@ namespace QuanLyKTX
                     loaiphong.SoLuongtoiDa = int.Parse(txtSoNguoi.Text);
                     loaiphong.GiaLoaiPhong = decimal.Parse(txtGia.Text);
                     if (bUS_LoaiPhong.Insert(loaiphong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công loại đối tượng " + txtTenLoaiPhong.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Loại phòng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
+                       
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -134,7 +157,19 @@ namespace QuanLyKTX
                     loaiphong.SoLuongtoiDa = int.Parse(txtSoNguoi.Text);
                     loaiphong.GiaLoaiPhong = decimal.Parse(txtGia.Text);
                     if (bUS_LoaiPhong.Update(loaiphong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công loại đối tượng " + txtTenLoaiPhong.Text + " trong hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Loại phòng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
+                       
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

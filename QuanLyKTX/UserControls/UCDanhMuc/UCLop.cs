@@ -99,6 +99,15 @@ namespace QuanLyKTX.UserControls
                 {
                     if (bUS_Lop.Delete(int.Parse(txtMaLop.Text)))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công lớp " + txtTenLop.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Lớp";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -124,9 +133,20 @@ namespace QuanLyKTX.UserControls
                 {
                     lop.TenLop = txtTenLop.Text;
                     lop.DonViId = (int)cbbDonvi.SelectedValue;
-                    //   MessageBox.Show(cbbDonvi.SelectedValue.ToString());
+           
                     if (bUS_Lop.Insert(lop))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công lớp " + txtTenLop.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Lớp";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }    
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
                 }
 
@@ -136,7 +156,19 @@ namespace QuanLyKTX.UserControls
                     lop.TenLop = txtTenLop.Text;
                     lop.DonViId = int.Parse(cbbDonvi.SelectedValue.ToString());
                     if (bUS_Lop.Update(lop))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công lớp " + txtTenLop.Text + " trong hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Lớp";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

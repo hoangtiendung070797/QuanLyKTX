@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.Utils;
 using System;
 using System.Windows.Forms;
 
@@ -78,11 +79,13 @@ namespace QuanLyKTX
 
             //load table on gridview
             gridControl1.DataSource = Const.NhatKyHoatDong.PrintfAllInfor();
+            FixColumnName();
         }
 
         private void btnXemLog_Click(object sender, EventArgs e)
         {
             gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByAllCondition(cbbTenNguoiDung.Text, dateEditNgay.DateTime,cbbThaoTac.Text,cbbChucNang.Text);
+            FixColumnName();
         }
 
         private void cbbTenNguoiDung_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,6 +93,7 @@ namespace QuanLyKTX
             if(!toggleSwitch.IsOn)
             {
                 gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByUser(cbbTenNguoiDung.Text);
+                FixColumnName();
             }
            
         }
@@ -99,8 +103,8 @@ namespace QuanLyKTX
             if (!toggleSwitch.IsOn)
             {
                 gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByDate(dateEditNgay.DateTime);
-                
-              
+
+                FixColumnName();
             }
         }
 
@@ -117,8 +121,8 @@ namespace QuanLyKTX
                 {
                     gridControl1.DataSource = Const.NhatKyHoatDong.PrintfAllInfor();
                 }
-                   
-               
+
+                FixColumnName();
             }
         }
 
@@ -134,15 +138,25 @@ namespace QuanLyKTX
                 else
                 {
                     gridControl1.DataSource = Const.NhatKyHoatDong.PrintfAllInfor();
+        
                 }
 
-                
+                FixColumnName();
             }
         }
 
 
         public void FixColumnName()
         {
+            gridView1.Columns[0].Caption = "Mã nhật ký hoạt động";
+            gridView1.Columns[1].Caption = "Tên người dùng";
+            gridView1.Columns[2].Caption = "Chức năng";
+            gridView1.Columns[3].Caption = "Thao tác";
+            gridView1.Columns[4].Caption = "Nội dung";
+            gridView1.Columns[5].Caption = "Thời gian";
+
+            gridView1.Columns[5].DisplayFormat.FormatType = FormatType.DateTime;
+            gridView1.Columns[5].DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss";
 
         }
     }

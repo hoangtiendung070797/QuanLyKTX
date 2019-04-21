@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Windows.Forms;
 
@@ -71,6 +72,16 @@ namespace QuanLyKTX
                     Const.CurrentUser.MatKhau = txtMatKhauNew.Text;
                     bUS_NguoiDung.Update(Const.CurrentUser);
                     MessageBox.Show("Đổi mật khâu thành công!");
+
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Đổi mật khẩu tài khoản " + Const.CurrentUser.TenDangNhap;
+                    nhatKy.ThaoTac = "";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Đổi mật khẩu";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
                 }
                 catch 
                 {

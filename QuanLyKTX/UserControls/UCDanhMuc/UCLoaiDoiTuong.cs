@@ -80,7 +80,17 @@ namespace QuanLyKTX.UserControls
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (bUS_LoaiDoiTuong.Delete(int.Parse(txtMaLoaiDoiTuong.Text)))
-                      { 
+                      {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công loại đối tượng " + txtTenLoaiDoiTuong.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Loại đối tượng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -105,7 +115,18 @@ namespace QuanLyKTX.UserControls
                 {
                     loaidoituong.TenLoaiDoiTuong = txtTenLoaiDoiTuong.Text;
                     if (bUS_LoaiDoiTuong.Insert(loaidoituong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công loại đối tượng " + txtTenLoaiDoiTuong.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Loại đối tượng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -115,7 +136,18 @@ namespace QuanLyKTX.UserControls
                     loaidoituong.LoaiDoiTuongId = int.Parse(txtMaLoaiDoiTuong.Text);
                     loaidoituong.TenLoaiDoiTuong = txtTenLoaiDoiTuong.Text;
                     if (bUS_LoaiDoiTuong.Update(loaidoituong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công loại đối tượng " + txtTenLoaiDoiTuong.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Loại đối tượng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

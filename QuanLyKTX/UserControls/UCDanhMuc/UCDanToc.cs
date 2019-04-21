@@ -93,7 +93,19 @@ namespace QuanLyKTX
                 {
                     dantoc.TenDanToc = txtTenDanToc.Text;
                     if(bus_DanToc.Insert(dantoc))
+                    {
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "thêm thành công dân tộc " + txtMaDanToc.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Dân tộc";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+                    }
+                  
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
                 }
 
@@ -102,7 +114,18 @@ namespace QuanLyKTX
                     dantoc.DanTocId = int.Parse(txtMaDanToc.Text);
                     dantoc.TenDanToc = txtTenDanToc.Text;
                     if (bus_DanToc.Update(dantoc))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công dân tộc " + txtMaDanToc.Text + " trong hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Dân tộc";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("Cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();
@@ -116,7 +139,19 @@ namespace QuanLyKTX
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (bus_DanToc.Delete(int.Parse(txtMaDanToc.Text)))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công dân tộc " + txtMaDanToc.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Dân tộc";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa dữ liệu thành công.", "Thông báo.");
+                    }
+                  
                     else MessageBox.Show("Xóa dữ liệu lỗi.", "Thông báo.");
                     reset();
                 }

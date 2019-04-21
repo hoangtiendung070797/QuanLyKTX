@@ -130,6 +130,16 @@ namespace QuanLyKTX.UserControls
                 {
                     if (bUS_Phong.Delete(txtMaPhong.Text))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công phòng " + txtMaPhong.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Phòng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -202,7 +212,18 @@ namespace QuanLyKTX.UserControls
                         if (rdoNu.Checked)
                             phong.ThuocGioiTinh = false;
                         if (bUS_Phong.Insert(phong))
+                        {
+                            //------------Ghi log
+                            NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                            nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                            nhatKy.NoiDung = "Thềm thành công phòng " + txtMaPhong.Text + " vào hệ thống";
+                            nhatKy.ThaoTac = "Tạo";
+                            nhatKy.ThoiGian = DateTime.Now;
+                            nhatKy.ChucNang = "Phòng";
+                            Const.NhatKyHoatDong.Insert(nhatKy);
+                            //-------------------
                             MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                        }
                         else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
                         reset();
                     }
@@ -221,7 +242,18 @@ namespace QuanLyKTX.UserControls
                     if (rdoNu.Checked)
                         phong.ThuocGioiTinh = false;
                     if (bUS_Phong.Update(phong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công phòng " + txtMaPhong.Text + " trong hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Phòng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    } 
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                     reset();
                 }

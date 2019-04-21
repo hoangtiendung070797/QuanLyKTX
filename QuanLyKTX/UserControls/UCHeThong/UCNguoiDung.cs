@@ -115,6 +115,15 @@ namespace QuanLyKTX
                     if (BUS_NguoiDung.Delete(int.Parse(txtNguoidungID.Text)))
                     {
                         MessageBox.Show("Xóa thành công!");
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công user: " + txtTenDangNhap.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Người dùng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         reset();
                     }
                     else MessageBox.Show("Xóa thất bại!");
@@ -130,7 +139,7 @@ namespace QuanLyKTX
             if (txtTenDangNhap.Text == "" || txtMatKhau.Text == "" || txtDiaChi.Text == "" || txtHoTen.Text == "" || txtSDT.Text == "")
             {
                 
-                    MessageBox.Show("Dữ liệu nhập chưa đủ.");
+                MessageBox.Show("Dữ liệu nhập chưa đủ.");
                 if (txtTenDangNhap.Text == "") errorProvider1.SetError(txtTenDangNhap, "Chưa điền tên đăng nhập.");
                 if (txtMatKhau.Text == "") errorProvider1.SetError(txtMatKhau, "Chưa điền mật khẩu.");
                 if (txtDiaChi.Text == "") errorProvider1.SetError(txtDiaChi, "Chưa điền địa chỉ.");
@@ -151,7 +160,19 @@ namespace QuanLyKTX
                     nguoidung.DiaChi = txtDiaChi.Text;
 
                     if (BUS_NguoiDung.Insert(nguoidung))
+                    {
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công user: " + nguoidung.TenDangNhap + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Người dùng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+                    }
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -165,7 +186,18 @@ namespace QuanLyKTX
                     nguoidung.Sdt = txtSDT.Text;
                     nguoidung.DiaChi = txtDiaChi.Text;
                     if (BUS_NguoiDung.Update(nguoidung))
+                    {
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công user: " + nguoidung.TenDangNhap + " vào hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Người dùng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

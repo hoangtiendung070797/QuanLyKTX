@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -50,8 +51,18 @@ namespace QuanLyKTX.UserControls.UCHeThong
         private void btnThucHien_Click(object sender, EventArgs e)
         {
             BUS_PhanQuyen.UpdateDetail((DataTable)gridControl1.DataSource);
+
+            //------------Ghi log
+            NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+            nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+            nhatKy.NoiDung = Const.CurrentUser.TenDangNhap + " cập nhập quyền cho " + Const.NguoiDungId;
+            nhatKy.ThaoTac = "Cập nhập";
+            nhatKy.ThoiGian = DateTime.Now;
+            nhatKy.ChucNang = "Nhật ký hoạt động";
+            Const.NhatKyHoatDong.Insert(nhatKy);
+            //-------------------
         }
 
-      
+
     }
 }

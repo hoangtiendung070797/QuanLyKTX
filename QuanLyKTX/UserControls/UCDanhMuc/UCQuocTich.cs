@@ -91,6 +91,15 @@ namespace QuanLyKTX
                 {
                     if (bUS_QuocTich.Delete(int.Parse(txtMaQuocTich.Text)))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công quốc tịch " + txtTenQuocTich.Text + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Quốc tịch";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -115,7 +124,18 @@ namespace QuanLyKTX
                 {
                     quoctich.TenQuocTich = txtTenQuocTich.Text;
                     if (bUS_QuocTich.Insert(quoctich))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công quốc tịch " + txtTenQuocTich.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Quốc tịch";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -125,7 +145,18 @@ namespace QuanLyKTX
                     quoctich.QuocTichId = int.Parse(txtMaQuocTich.Text);
                     quoctich.TenQuocTich = txtTenQuocTich.Text;
                     if (bUS_QuocTich.Update(quoctich))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công quốc tịch " + txtTenQuocTich.Text + " vào hệ thống";
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Quốc tịch";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();
