@@ -11,21 +11,25 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         public UCXepPhong()
         {
             InitializeComponent();
+         
         }
         BUS_Phong bUS_Phong = new BUS_Phong();
         private void UCXepPhong_Load(object sender, EventArgs e)
         {
-            grcPhong.DataSource = bUS_Phong.GetData();
+
+            grcPhong.DataSource = bUS_Phong.PrintInfor();
+
             cbbPhong.Text = "Tất cả phòng";
-            //grcPhong.DataSource = bUS_Phong.GetEmptyRoom(true);
+  
             
         }
         BUS_LuuTruPhong bUS_luutruphong = new BUS_LuuTruPhong();
+
         private void cardView1_Click(object sender, EventArgs e)
         {
             try
             {
-                if(cardView1.DataRowCount != 0)
+                if(cardView1.RowCount != 0)
                 {
                     DataRow row = cardView1.GetFocusedDataRow();
 
@@ -46,7 +50,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbbPhong.SelectedIndex == 0)
-                grcPhong.DataSource = bUS_Phong.GetData();
+                grcPhong.DataSource = bUS_Phong.PrintInfor();
             if (cbbPhong.SelectedIndex == 1)
                 grcPhong.DataSource = bUS_Phong.GetEmptyRoom(true);
             if (cbbPhong.SelectedIndex == 2)
