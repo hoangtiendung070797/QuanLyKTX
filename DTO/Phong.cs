@@ -9,6 +9,7 @@
         private string tenPhong;
         private int tang;
         private decimal giaPhong;
+        private bool thuocGioiTinh;
 
         public string PhongId { get => phongId; set => phongId = value; }
         public int DayNhaId { get => dayNhaId; set => dayNhaId = value; }
@@ -16,7 +17,7 @@
         public string TenPhong { get => tenPhong; set => tenPhong = value; }
         public int Tang { get => tang; set => tang = value; }
         public decimal GiaPhong { get => giaPhong; set => giaPhong = value; }
-
+        public bool ThuocGioiTinh { get => thuocGioiTinh; set => thuocGioiTinh = value; }
 
         public Phong(string id,int dayNhaId,int loaiPhongId,string tenPhong, int tang, decimal giaPhong)
         {

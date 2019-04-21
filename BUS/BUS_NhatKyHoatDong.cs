@@ -1,5 +1,6 @@
 ﻿using DAL;
 using DTO;
+using System;
 using System.Data;
 
 namespace BUS
@@ -27,6 +28,31 @@ namespace BUS
         public DataTable GetData()
         {
             return this.NhatKyHoatDong.GetData();
+        }
+        public DataTable GetDataByUser(string userName)
+        {
+            return this.NhatKyHoatDong.GetDataByUser(userName);
+        }
+        public DataTable GetDataByDate(DateTime date)
+        {
+            return this.NhatKyHoatDong.GetDataByDate(date);
+        }
+        public DataTable GetDataByAction(string action)
+        {
+            return this.NhatKyHoatDong.GetDataByAction(action);
+        }
+
+        public DataTable PrintfAllInfor()
+        {
+            return this.NhatKyHoatDong.PrintfAllInfor();
+        }
+        public DataTable GetDataByFunction(string fun)
+        {
+            return this.NhatKyHoatDong.GetDataByFunction(fun);
+        }
+        public DataTable GetDataByAllCondition(string userName, DateTime date, string action, string fun)
+        {
+            return this.NhatKyHoatDong.GetDataByAllCondition(userName,date,action,fun);
         }
     }
 }

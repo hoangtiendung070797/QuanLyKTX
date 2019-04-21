@@ -1,4 +1,5 @@
 ﻿using DTO;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -37,7 +38,22 @@ namespace DAL
                 return null;
             }
         }
-
+        public DataTable PrintfAllInfor()
+        {
+            try
+            {
+                string query = "SELECT NhatKyHoatDongId, tenDangNhap, chucNang, thaoTac, noiDung, thoiGian FROM dbo.NhatKyHoatDong INNER JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = NhatKyHoatDong.NguoiDungId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        
 
         public bool Insert(NhatKyHoatDong nhatKyHoatDong)
         {
@@ -114,6 +130,91 @@ namespace DAL
             {
 
                 return false;
+            }
+        }
+
+
+        public DataTable GetDataByUser(string userName)
+        {
+            try
+            {
+                string query = "SELECT NhatKyHoatDongId,tenDangNhap, chucNang, thaoTac, noiDung,thoiGian FROM dbo.NhatKyHoatDong INNER JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = NhatKyHoatDong.NguoiDungId WHERE tenDangNhap = '" + userName + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public DataTable GetDataByDate(DateTime date)
+        {
+            try
+            {
+                string query = "SELECT NhatKyHoatDongId,tenDangNhap, chucNang, thaoTac, noiDung,thoiGian FROM dbo.NhatKyHoatDong INNER JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = NhatKyHoatDong.NguoiDungId WHERE convert(DATE,thoiGian) = '" + date.ToString("yyyy-MM-dd") +  "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public DataTable GetDataByAction(string action)
+        {
+            try
+            {
+                string query = "SELECT NhatKyHoatDongId,tenDangNhap, chucNang, thaoTac, noiDung,thoiGian FROM dbo.NhatKyHoatDong INNER JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = NhatKyHoatDong.NguoiDungId WHERE thaoTac = N'"+action +"'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        public DataTable GetDataByFunction(string fun)
+        {
+            try
+            {
+                string query = "SELECT NhatKyHoatDongId,tenDangNhap, chucNang, thaoTac, noiDung,thoiGian FROM dbo.NhatKyHoatDong INNER JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = NhatKyHoatDong.NguoiDungId WHERE chucNang = N'" + fun + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataByAllCondition(string userName,DateTime date,string action,string fun)
+        {
+            try
+            {
+                string query = "SELECT NhatKyHoatDongId,tenDangNhap, chucNang, thaoTac, noiDung,thoiGian FROM dbo.NhatKyHoatDong INNER JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = NhatKyHoatDong.NguoiDungId WHERE convert(DATE,thoiGian) = '" + date.ToString("yyyy-MM-dd") + "'" +
+                    " AND tenDangNhap = '" + userName + "'";
+                if (action != "Tất cả")
+                    query += " AND thaoTac = N'" + action + "'";
+                if (fun != "Tất cả")
+                    query += " AND chucNang = N'" + fun + "'";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
             }
         }
         #endregion

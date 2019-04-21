@@ -135,10 +135,14 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 cardView1.HideFindPanel();
             else cardView1.ShowFindPanel();
 
-            DataRow row = cardView1.GetFocusedDataRow();
+            if(cardView1.RowCount !=0)
+            {
+                DataRow row = cardView1.GetFocusedDataRow();
 
-            DoiTuongId = (int)row["DoiTuongId"];
-            groupControl2.Text = "Đối tượng - đang chọn " + row["hoDem"].ToString() + " " + row["ten"].ToString() + " MSV: " + row["maSinhVien"].ToString();
+                DoiTuongId = (int)row["DoiTuongId"];
+                groupControl2.Text = "Đối tượng - đang chọn " + row["hoDem"].ToString() + " " + row["ten"].ToString() + " MSV: " + row["maSinhVien"].ToString();
+            }
+          
         }
     }
 }

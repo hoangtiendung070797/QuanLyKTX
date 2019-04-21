@@ -41,7 +41,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT Phong.PhongId,tenPhong,DayNha.tenDayNha,LoaiPhong.tenLoaiPhong,Phong.tang,giaPhong FROM LoaiPhong join Phong join DayNha on DayNha.DayNhaId=Phong.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId";
+                string query = "SELECT Phong.PhongId,tenPhong,DayNha.tenDayNha,LoaiPhong.tenLoaiPhong,Phong.tang,giaPhong,case thuocGioiTinh when 1 then N'Nam' when 0 then N'Nữ' end as 'Giới tính' FROM LoaiPhong join Phong join DayNha on DayNha.DayNhaId=Phong.DayNhaId on Phong.LoaiPhongId = LoaiPhong.LoaiPhongId";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -53,11 +53,11 @@ namespace DAL
             }
         }
 
-        public DataTable GetDataNew()
+        public DataTable GetDataNew()/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         {
             try
             {
-                string query = "SELECT PhongId AS 'Mã phòng',tenPhong AS 'Tên Phòng',tenDayNha AS 'Dãy nhà',tenLoaiPhong AS 'Loại Phòng',tang AS 'Tầng',giaPhong AS 'Giá phòng' " +
+                string query = "SELECT PhongId AS 'Mã phòng',tenPhong AS 'Tên Phòng',tenDayNha AS 'Dãy nhà',tenLoaiPhong AS 'Loại Phòng',tang AS 'Tầng',giaPhong AS 'Giá phòng',case thuocGioiTinh when 1 then N'Nam' when 0 then N'Nữ' end as 'Giới tính' " +
                     "FROM  dbo.DayNha join dbo.Phong join dbo.LoaiPhong  ON LoaiPhong.LoaiPhongId = Phong.LoaiPhongId ON LoaiPhong.LoaiPhongId = Phong.LoaiPhongId";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
@@ -83,6 +83,7 @@ namespace DAL
                 row["tenPhong"] = phong.TenPhong;
                 row["tang"] = phong.Tang;
                 row["giaPhong"] = phong.GiaPhong;
+                row["thuocGioiTinh"] = phong.ThuocGioiTinh;
 
                 table.Rows.Add(row);
 
@@ -137,6 +138,7 @@ namespace DAL
                     row["tenPhong"] = phong.TenPhong;
                     row["tang"] = phong.Tang;
                     row["giaPhong"] = phong.GiaPhong;
+                    row["thuocGioiTinh"] = phong.ThuocGioiTinh;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -162,7 +164,7 @@ namespace DAL
             result.Columns.Add("tenPhong", typeof(string));
             result.Columns.Add("tang", typeof(int));
             result.Columns.Add("giaPhong", typeof(decimal));
-
+            result.Columns.Add("thuocGioiTinh", typeof(bool));
 
             foreach (DataRow row in table.Rows)
             {
@@ -178,7 +180,7 @@ namespace DAL
                         temp["tenPhong"] = row["tenPhong"];
                         temp["tang"] = row["tang"];
                         temp["giaPhong"] = row["giaPhong"];
-
+                        temp["thuocGioiTinh"] = row["thuocGioiTinh"];
                         result.Rows.Add(temp);
                     }
                 }
@@ -194,7 +196,7 @@ namespace DAL
                         temp["tenPhong"] = row["tenPhong"];
                         temp["tang"] = row["tang"];
                         temp["giaPhong"] = row["giaPhong"];
-
+                        temp["thuocGioiTinh"] = row["thuocGioiTinh"];
                         result.Rows.Add(temp);
                     }
                 }

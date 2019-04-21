@@ -13,6 +13,7 @@ namespace QuanLyKTX
         BUS_NguoiDung bUS_NguoiDung = new BUS_NguoiDung();
         public void AddComboboxChucNang()
         {
+            cbbChucNang.Items.Add("Tất cả");
             cbbChucNang.Items.Add("Đổi mật khẩu");
             cbbChucNang.Items.Add("Nhật kí hoạt động");
             cbbChucNang.Items.Add("Thông tin người dùng");
@@ -67,17 +68,80 @@ namespace QuanLyKTX
             cbbTenNguoiDung.DisplayMember = "tenDangNhap";
             cbbTenNguoiDung.ValueMember = "NguoiDungId";
 
+            cbbThaoTac.Items.Add("Tất cả");
             cbbThaoTac.Items.Add("Tạo");
             cbbThaoTac.Items.Add("Cập nhập");
             cbbThaoTac.Items.Add("Xóa");
+          
 
             AddComboboxChucNang();
 
             //load table on gridview
-            gridControl1.DataSource = Const.NhatKyHoatDong.GetData();
+            gridControl1.DataSource = Const.NhatKyHoatDong.PrintfAllInfor();
         }
 
         private void btnXemLog_Click(object sender, EventArgs e)
+        {
+            gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByAllCondition(cbbTenNguoiDung.Text, dateEditNgay.DateTime,cbbThaoTac.Text,cbbChucNang.Text);
+        }
+
+        private void cbbTenNguoiDung_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(!toggleSwitch.IsOn)
+            {
+                gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByUser(cbbTenNguoiDung.Text);
+            }
+           
+        }
+
+        private void dateEditNgay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!toggleSwitch.IsOn)
+            {
+                gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByDate(dateEditNgay.DateTime);
+                
+              
+            }
+        }
+
+        private void cbbThaoTac_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!toggleSwitch.IsOn)
+            {
+                if(cbbThaoTac.Text != "Tất cả")
+                {
+                    gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByAction(cbbThaoTac.Text);
+
+                }
+                else
+                {
+                    gridControl1.DataSource = Const.NhatKyHoatDong.PrintfAllInfor();
+                }
+                   
+               
+            }
+        }
+
+        private void cbbChucNang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!toggleSwitch.IsOn)
+            {
+                if (cbbThaoTac.Text != "Tất cả")
+                {
+                    gridControl1.DataSource = Const.NhatKyHoatDong.GetDataByFunction(cbbChucNang.Text);
+
+                }
+                else
+                {
+                    gridControl1.DataSource = Const.NhatKyHoatDong.PrintfAllInfor();
+                }
+
+                
+            }
+        }
+
+
+        public void FixColumnName()
         {
 
         }

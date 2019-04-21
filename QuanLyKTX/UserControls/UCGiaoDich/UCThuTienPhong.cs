@@ -118,6 +118,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             xtraReportHoaDonThuTienPhong.SetAllProperty(dataTable);           
             xtraReportHoaDonThuTienPhong.PaperKind = System.Drawing.Printing.PaperKind.Statement;
             xtraReportHoaDonThuTienPhong.Landscape = true;
+            
 
             ReportPrintTool printTool = new ReportPrintTool(xtraReportHoaDonThuTienPhong);         
             printTool.ShowPreviewDialog();

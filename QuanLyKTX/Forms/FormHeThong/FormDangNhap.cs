@@ -48,6 +48,7 @@ namespace QuanLyKTX
                                 Const.NhatKyHoatDong.Insert(nhatKy);
                                 return;
                             }
+
                             BUS_PhanQuyen bUS_PhanQuyen = new BUS_PhanQuyen();
                             data = bUS_PhanQuyen.GetDetailPhanQuyen(Const.CurrentUser.NguoiDungId);
                             for (int i = 0; i < data.Rows.Count; i++)
@@ -73,9 +74,6 @@ namespace QuanLyKTX
                             nhatKyHoatDong.ThaoTac = "";
                             nhatKyHoatDong.ThoiGian = DateTime.Now;
                             nhatKyHoatDong.ChucNang = "Đăng nhập";
-
-
-
                             Const.NhatKyHoatDong.Insert(nhatKyHoatDong);
                         }
                         else

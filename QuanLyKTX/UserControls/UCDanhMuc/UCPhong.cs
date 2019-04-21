@@ -64,7 +64,10 @@ namespace QuanLyKTX.UserControls
             txtGiaPhong.Enabled = false;
             cbbLoaiPhong.Enabled = false;
             cbbDayNha.Enabled = false;
-
+            rdoNam.Checked = true;
+            rdoNu.Checked = false;
+            rdoNam.Enabled = false;
+            rdoNu.Enabled = false;
             txtMaPhong.Text = "";
             txtTenPhong.Text = "";
             txtTang.Text = "";
@@ -93,6 +96,8 @@ namespace QuanLyKTX.UserControls
             txtGiaPhong.Enabled = true;
             cbbLoaiPhong.Enabled = true;
             cbbDayNha.Enabled = true;
+            rdoNam.Enabled = true;
+            rdoNu.Enabled = true;
         }
 
 
@@ -113,6 +118,8 @@ namespace QuanLyKTX.UserControls
             txtGiaPhong.Enabled = true;
             cbbLoaiPhong.Enabled = true;
             cbbDayNha.Enabled = true;
+            rdoNam.Enabled = true;
+            rdoNu.Enabled = true;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -140,6 +147,10 @@ namespace QuanLyKTX.UserControls
             txtTenPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenPhong").ToString();
             cbbDayNha.Text= gridView1.GetRowCellValue(e.RowHandle, "tenDayNha").ToString();
             cbbLoaiPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLoaiPhong").ToString();
+            if (gridView1.GetRowCellValue(e.RowHandle, "Giới tính").ToString() == "Nam")
+                rdoNam.Checked = true;
+            if (gridView1.GetRowCellValue(e.RowHandle, "Giới tính").ToString() == "Nữ")
+                rdoNu.Checked = true;
         }
 
         public bool checkma()
@@ -186,7 +197,10 @@ namespace QuanLyKTX.UserControls
                         phong.Tang = int.Parse(txtTang.Text);
                         phong.DayNhaId = int.Parse(cbbDayNha.SelectedValue.ToString());
                         phong.LoaiPhongId = int.Parse(cbbLoaiPhong.SelectedValue.ToString());
-
+                        if (rdoNam.Checked)
+                            phong.ThuocGioiTinh = true;
+                        if (rdoNu.Checked)
+                            phong.ThuocGioiTinh = false;
                         if (bUS_Phong.Insert(phong))
                             MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
                         else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
@@ -202,6 +216,10 @@ namespace QuanLyKTX.UserControls
                     phong.Tang = int.Parse(txtTang.Text);
                     phong.DayNhaId = int.Parse(cbbDayNha.SelectedValue.ToString());
                     phong.LoaiPhongId = int.Parse(cbbLoaiPhong.SelectedValue.ToString());
+                    if (rdoNam.Checked)
+                        phong.ThuocGioiTinh = true;
+                    if (rdoNu.Checked)
+                        phong.ThuocGioiTinh = false;
                     if (bUS_Phong.Update(phong))
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
