@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
+﻿using BUS;
 using DTO;
-using DAL;
 using QuanLyKTX.Forms.FormGiaoDich;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls.UCGiaoDich
 {
@@ -235,10 +229,29 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                             if (BUS_ChiTietPhieuCapPhatVatTu.CheckVatTu(ChiTietPhieuCapPhatVatTu.PhieuCapPhatVatTuId, ChiTietPhieuCapPhatVatTu.VatTuId) == true)
                             {
                                 BUS_ChiTietPhieuCapPhatVatTu.Update(ChiTietPhieuCapPhatVatTu);
+
+                                //------------Ghi log
+                                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                                nhatKy.NoiDung = "Cấp phát thành công vật tư: "  + listViewCapPhat.Items[i].SubItems[1].Text +" - số lượng: " + ChiTietPhieuCapPhatVatTu.SoLuong+ " cho phòng " + ChiTietPhieuCapPhatVatTu.PhongId1;
+                                nhatKy.ThaoTac = "Tạo";
+                                nhatKy.ThoiGian = DateTime.Now;
+                                nhatKy.ChucNang = "Cấp phát thiết bị vật tư";
+                                Const.NhatKyHoatDong.Insert(nhatKy);
+                                //-------------------
                             }
                             else
                             {
                                 BUS_ChiTietPhieuCapPhatVatTu.Insert(ChiTietPhieuCapPhatVatTu);
+                                //------------Ghi log
+                                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                                nhatKy.NoiDung = "Cập nhập thành công vật tư: " + listViewCapPhat.Items[i].SubItems[1].Text + " - số lượng: " + ChiTietPhieuCapPhatVatTu.SoLuong + " cho phòng " + ChiTietPhieuCapPhatVatTu.PhongId1;
+                                nhatKy.ThaoTac = "Cập nhập";
+                                nhatKy.ThoiGian = DateTime.Now;
+                                nhatKy.ChucNang = "Cấp phát thiết bị vật tư";
+                                Const.NhatKyHoatDong.Insert(nhatKy);
+                                //-------------------
                             }
                         }
                         LoadVatTu(listViewVatTu);

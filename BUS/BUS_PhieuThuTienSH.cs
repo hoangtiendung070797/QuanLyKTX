@@ -63,5 +63,9 @@ namespace BUS
         {
             return this.PhieuThuTienSH.GetDataTheoThangNew(month);
         }
+        public DataTable PrinftPhieu(int phieuThuPhiSHId)
+        {
+            return this.PhieuThuTienSH.PrinftPhieu(phieuThuPhiSHId);
+        }
     }
 }

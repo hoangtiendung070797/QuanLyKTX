@@ -1,6 +1,8 @@
 ﻿using BUS;
+using DevExpress.XtraReports.UI;
 using DTO;
 using QuanLyKTX.Forms.FormGiaoDich;
+using QuanLyKTX.UserControls.UCInHoaDon.HoaDonThuTienSH;
 using System;
 using System.Data;
 using System.Drawing;
@@ -264,6 +266,19 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
                 simpleButton2.PerformClick();
             }
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+            DataTable dataTable = BUS_PhieuThuTienSH.PrinftPhieu(PhieuThuTienSHId);
+            XtraReportHoaDonThuTienSH xtraReportHoaDonThuTienSH = new XtraReportHoaDonThuTienSH();
+            xtraReportHoaDonThuTienSH.SetAllProperty(dataTable);
+            xtraReportHoaDonThuTienSH.PaperKind = System.Drawing.Printing.PaperKind.Statement;
+            xtraReportHoaDonThuTienSH.Landscape = true;
+
+            ReportPrintTool printTool = new ReportPrintTool(xtraReportHoaDonThuTienSH);
+            printTool.ShowPreviewDialog();
+
         }
     }
 }

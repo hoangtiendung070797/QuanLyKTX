@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
+﻿using BUS;
 using DTO;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls.UCGiaoDich
 {
@@ -69,7 +63,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             txtMSV.Text = "";
             txtHoTen.Text = "";
             txtTenHopDong.Text = "";
-            txtNoiDung.Text = "";          
+            txtNoiDung.Text = "";
             txtThoiHanTheoNam.Text = "";
             txtThoiHanTheoThang.Text = "";
 
@@ -90,7 +84,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             btnSave.Enabled = true;
             btnCancel.Enabled = true;
 
-            txtMSV.Enabled = true;         
+            txtMSV.Enabled = true;
             txtTenHopDong.Enabled = true;
             dpkTuNgay.Enabled = true;
             dpkTuNgay.Enabled = true;
@@ -126,6 +120,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     if (bUS_HopDong.Delete(HopDongid))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công hợp đồng của sinh viên/đối tượng có mã: " + txtMSV.Text + " - " + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Hợp đồng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -135,13 +138,13 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             else MessageBox.Show("Thao tác bị lỗi, vui lòng chọn đối tượng.", "Thông báo");
         }
 
-      
+
 
         int HopDongid = 0;
         int doituongID;
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtMSV.Text == "" || txtHoTen.Text == "" || txtNoiDung.Text == "" || txtTenHopDong.Text == ""||txtThoiHanTheoNam.Text==""||txtThoiHanTheoThang.Text=="")
+            if (txtMSV.Text == "" || txtHoTen.Text == "" || txtNoiDung.Text == "" || txtTenHopDong.Text == "" || txtThoiHanTheoNam.Text == "" || txtThoiHanTheoThang.Text == "")
             {
                 if (txtHoTen.Text == "")
                 {
@@ -160,19 +163,30 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
                 if (chucnang == 1)
                 {
-                    
-                        hopdong.DoiTuongId = TempDoiTuongID;
-                        hopdong.TenHopDong = txtTenHopDong.Text;
-                        hopdong.NoiDung = txtNoiDung.Text;
-                        hopdong.TuNgay = (DateTime)dpkTuNgay.Value;
-                        hopdong.DenNgay = (DateTime)dpkDenNgay.Value;
-                        hopdong.ThoiHanTheoNam = int.Parse(txtThoiHanTheoNam.Text);
-                        hopdong.ThoiHanTheoThang = int.Parse(txtThoiHanTheoThang.Text);
 
-                        if (bUS_HopDong.Insert(hopdong))
-                            MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    hopdong.DoiTuongId = TempDoiTuongID;
+                    hopdong.TenHopDong = txtTenHopDong.Text;
+                    hopdong.NoiDung = txtNoiDung.Text;
+                    hopdong.TuNgay = (DateTime)dpkTuNgay.Value;
+                    hopdong.DenNgay = (DateTime)dpkDenNgay.Value;
+                    hopdong.ThoiHanTheoNam = int.Parse(txtThoiHanTheoNam.Text);
+                    hopdong.ThoiHanTheoThang = int.Parse(txtThoiHanTheoThang.Text);
+
+                    if (bUS_HopDong.Insert(hopdong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công hợp đồng của sinh viên/đối tượng có mã: " + txtMSV.Text + " - " + txtHoTen.Text + " thời hạn từ " + hopdong.TuNgay + " đến " + hopdong.DenNgay;
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Hợp đồng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+                        MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
                         else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
-                    
+
                 }
 
                 if (chucnang == 2)
@@ -186,7 +200,18 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     hopdong.ThoiHanTheoNam = int.Parse(txtThoiHanTheoNam.Text);
                     hopdong.ThoiHanTheoThang = int.Parse(txtThoiHanTheoThang.Text);
                     if (bUS_HopDong.Update(hopdong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhập thành công hợp đồng của sinh viên/đối tượng có mã: " + txtMSV.Text + " - " + txtHoTen.Text + " thời hạn từ " + hopdong.TuNgay + " đến " + hopdong.DenNgay;
+                        nhatKy.ThaoTac = "Cập nhập";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Hợp đồng";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();
@@ -206,7 +231,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             txtTenHopDong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenHopDong").ToString();
             dpkTuNgay.Text = gridView1.GetRowCellValue(e.RowHandle, "tuNgay").ToString();
             dpkDenNgay.Text = gridView1.GetRowCellValue(e.RowHandle, "denNgay").ToString();
-            txtThoiHanTheoNam.Text= gridView1.GetRowCellValue(e.RowHandle, "thoiHanTheoNam").ToString();
+            txtThoiHanTheoNam.Text = gridView1.GetRowCellValue(e.RowHandle, "thoiHanTheoNam").ToString();
             txtThoiHanTheoThang.Text = gridView1.GetRowCellValue(e.RowHandle, "thoiHanTheoThang").ToString();
             txtHoTen.Text = gridView1.GetRowCellValue(e.RowHandle, "hoDem").ToString() + " " + gridView1.GetRowCellValue(e.RowHandle, "ten").ToString();
             txtMSV.Text = gridView1.GetRowCellValue(e.RowHandle, "maSinhVien").ToString();
@@ -219,7 +244,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
                 txtHoTen.Text = doituong.Rows[0][8].ToString() + doituong.Rows[0][9].ToString();
                 TempDoiTuongID = int.Parse(doituong.Rows[0][0].ToString());
-              //  MessageBox.Show(TempDoiTuongID.ToString());
+                //  MessageBox.Show(TempDoiTuongID.ToString());
             }
             else
                 txtHoTen.Text = "";

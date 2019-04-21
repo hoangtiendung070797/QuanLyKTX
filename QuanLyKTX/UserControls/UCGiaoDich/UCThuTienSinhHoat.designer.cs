@@ -141,16 +141,17 @@
             // btnInPhieu
             // 
             this.btnInPhieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInPhieu.Location = new System.Drawing.Point(2, 209);
+            this.btnInPhieu.Location = new System.Drawing.Point(2, 210);
             this.btnInPhieu.Name = "btnInPhieu";
             this.btnInPhieu.Size = new System.Drawing.Size(91, 63);
             this.btnInPhieu.TabIndex = 4;
             this.btnInPhieu.Text = "In phiếu";
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // btnXoaPhieu
             // 
             this.btnXoaPhieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnXoaPhieu.Location = new System.Drawing.Point(2, 146);
+            this.btnXoaPhieu.Location = new System.Drawing.Point(2, 147);
             this.btnXoaPhieu.Name = "btnXoaPhieu";
             this.btnXoaPhieu.Size = new System.Drawing.Size(91, 63);
             this.btnXoaPhieu.TabIndex = 3;
@@ -160,7 +161,7 @@
             // simpleButton2
             // 
             this.simpleButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.simpleButton2.Location = new System.Drawing.Point(2, 83);
+            this.simpleButton2.Location = new System.Drawing.Point(2, 84);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(91, 63);
             this.simpleButton2.TabIndex = 1;
@@ -170,7 +171,7 @@
             // btnTaoPhieu
             // 
             this.btnTaoPhieu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaoPhieu.Location = new System.Drawing.Point(2, 20);
+            this.btnTaoPhieu.Location = new System.Drawing.Point(2, 21);
             this.btnTaoPhieu.Name = "btnTaoPhieu";
             this.btnTaoPhieu.Size = new System.Drawing.Size(91, 63);
             this.btnTaoPhieu.TabIndex = 0;

@@ -313,6 +313,21 @@ namespace DAL
             }
             return false;
         }
+        public DataTable PrinftPhieu(int phieuId)
+        {
+            try
+            {
+                string query = "select NhanVien.tenNhanVien , NhanVien.sdt, phong.tenPhong + N'-' + DayNha.tenDayNha as N'Tên Phòng', PhieuThuTienSH.soNuocDau, PhieuThuTienSH.soDienDau, PhieuThuTienSH.soNuocCuoi, PhieuThuTienSH.soDienCuoi, PhieuThuTienSH.soNuocThuc, PhieuThuTienSH.soDienThuc, PhieuThuTienSH.donGiaNuoc, PhieuThuTienSH.donGiaDien, PhieuThuTienSH.tong from NhanVien inner join PhieuThuTienSH inner join phong inner join DayNha on DayNha.DayNhaId = Phong.DayNhaId on Phong.PhongId = PhieuThuTienSH.PhongId on PhieuThuTienSH.NhanVienId = NhanVien.NhanVienID WHERE dbo.PhieuThuTienSH.PhieuThuTienSHId = " + phieuId; ;
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         #endregion
     }
 }

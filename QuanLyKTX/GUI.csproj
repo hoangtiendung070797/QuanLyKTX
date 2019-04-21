@@ -360,6 +360,12 @@
     <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\XtraReportVatTuTheoPhong.designer.cs">
       <DependentUpon>XtraReportVatTuTheoPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\UCPhieuThongBao\XtraReportPhieuBaoSH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\UCPhieuThongBao\XtraReportPhieuBaoSH.designer.cs">
+      <DependentUpon>XtraReportPhieuBaoSH.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCDanhMuc\UCDanToc.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -645,6 +651,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeVatTuTheoPhong\XtraReportVatTuTheoPhong.resx">
       <DependentUpon>XtraReportVatTuTheoPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\UCPhieuThongBao\XtraReportPhieuBaoSH.resx">
+      <DependentUpon>XtraReportPhieuBaoSH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCDanhMuc\UCDanToc.resx">
       <DependentUpon>UCDanToc.cs</DependentUpon>

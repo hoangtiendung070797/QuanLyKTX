@@ -90,6 +90,16 @@ namespace QuanLyKTX
                 doiTuong.GhiChu = txtGhiChu.Text;
                 BUS_DoiTuong.Insert(doiTuong);
 
+                //------------Ghi log
+                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                nhatKy.NoiDung = "Thêm thành công hồ sơ của sinh viên/đối tượng " + doiTuong.HoDem + " " + doiTuong.Ten + " - " + doiTuong.MaSinhVien;
+                nhatKy.ThaoTac = "Tạo";
+                nhatKy.ThoiGian = DateTime.Now;
+                nhatKy.ChucNang = "Hồ sơ";
+                Const.NhatKyHoatDong.Insert(nhatKy);
+                //-------------------
+
                 MessageBox.Show("Thêm Thành Công!");
                 
                 this.Close();

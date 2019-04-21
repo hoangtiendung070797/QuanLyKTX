@@ -203,6 +203,16 @@ namespace QuanLyKTX.Forms.FormGiaoDich
 
             BUS_DoiTuong.Update(doiTuong);
 
+            //------------Ghi log
+            NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+            nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+            nhatKy.NoiDung = "Cập nhập thành công hồ sơ của sinh viên/đối tượng " + doiTuong.HoDem + " " + doiTuong.Ten + " - " + doiTuong.MaSinhVien;
+            nhatKy.ThaoTac = "Cập nhập";
+            nhatKy.ThoiGian = DateTime.Now;
+            nhatKy.ChucNang = "Hồ sơ";
+            Const.NhatKyHoatDong.Insert(nhatKy);
+            //-------------------
+
             MessageBox.Show("Cập nhập Thành Công!");
             this.Close();
 
