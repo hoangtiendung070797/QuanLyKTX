@@ -157,9 +157,9 @@ namespace QuanLyKTX.UserControls
             txtTenPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenPhong").ToString();
             cbbDayNha.Text= gridView1.GetRowCellValue(e.RowHandle, "tenDayNha").ToString();
             cbbLoaiPhong.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLoaiPhong").ToString();
-            if (gridView1.GetRowCellValue(e.RowHandle, "Giới tính").ToString() == "Nam")
+            if (gridView1.GetRowCellValue(e.RowHandle, "thuocGioiTinh").ToString() == "Nam")
                 rdoNam.Checked = true;
-            if (gridView1.GetRowCellValue(e.RowHandle, "Giới tính").ToString() == "Nữ")
+            if (gridView1.GetRowCellValue(e.RowHandle, "thuocGioiTinh").ToString() == "Nữ")
                 rdoNu.Checked = true;
         }
 

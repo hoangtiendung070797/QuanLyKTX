@@ -57,7 +57,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(292, 376);
+            this.btnCancel.Location = new System.Drawing.Point(294, 356);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(96, 46);
             this.btnCancel.TabIndex = 6;
@@ -236,7 +236,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(114, 376);
+            this.simpleButton1.Location = new System.Drawing.Point(114, 356);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(96, 46);
             this.simpleButton1.TabIndex = 5;
@@ -263,9 +263,9 @@
             this.groupControl1.Controls.Add(this.cbNguoiDung);
             this.groupControl1.Controls.Add(this.cbNhanVien);
             this.groupControl1.Controls.Add(this.cbPhong);
-            this.groupControl1.Location = new System.Drawing.Point(26, 17);
+            this.groupControl1.Location = new System.Drawing.Point(12, 12);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(476, 338);
+            this.groupControl1.Size = new System.Drawing.Size(447, 338);
             this.groupControl1.TabIndex = 4;
             this.groupControl1.Text = "Thông tin phiếu cấp phát";
             // 
@@ -273,7 +273,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(529, 439);
+            this.ClientSize = new System.Drawing.Size(476, 420);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.groupControl1);

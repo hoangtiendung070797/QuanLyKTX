@@ -68,6 +68,7 @@ namespace DAL
                 row["TinhThanhId"] = doiTuong.TinhThanhId;
                 row["LopId"] = doiTuong.LopId;
                 row["DanTocId"] = doiTuong.DanTocId;
+                row["TonGiaoId"] = doiTuong.TonGiaoId;
                 row["maSinhVien"] = doiTuong.MaSinhVien;
                 row["hoDem"] = doiTuong.HoDem;
                 row["ten"] = doiTuong.Ten;
@@ -132,6 +133,7 @@ namespace DAL
                     row["TinhThanhId"] = doiTuong.TinhThanhId;
                     row["LopId"] = doiTuong.LopId;
                     row["DanTocId"] = doiTuong.DanTocId;
+                    row["TonGiaoId"] = doiTuong.TonGiaoId;
                     row["maSinhVien"] = doiTuong.MaSinhVien;
                     row["hoDem"] = doiTuong.HoDem;
                     row["ten"] = doiTuong.Ten;
@@ -206,7 +208,7 @@ namespace DAL
             return table.Rows.Find(id);
         }
 
-
+       
 
         #endregion
     }

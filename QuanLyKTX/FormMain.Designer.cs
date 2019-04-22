@@ -102,6 +102,7 @@
             this.anhNguoiDung = new DevExpress.XtraBars.BarStaticItem();
             this.statusUser = new DevExpress.XtraBars.BarStaticItem();
             this.btnQLNhanVien = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPhieuChi = new DevExpress.XtraBars.BarButtonItem();
             this.PageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PageGroupBaoMat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupQLNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -126,7 +127,6 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
-            this.btnPhieuChi = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -800,6 +800,14 @@
             this.btnQLNhanVien.Name = "btnQLNhanVien";
             this.btnQLNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLNhanVien_ItemClick);
             // 
+            // btnPhieuChi
+            // 
+            this.btnPhieuChi.Caption = "Phiếu chi";
+            this.btnPhieuChi.Id = 149;
+            this.btnPhieuChi.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.icons8_refund_64;
+            this.btnPhieuChi.Name = "btnPhieuChi";
+            this.btnPhieuChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuChi_ItemClick);
+            // 
             // PageHeThong
             // 
             this.PageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -980,6 +988,7 @@
             this.xtraTabControlMain.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left;
             this.xtraTabControlMain.Location = new System.Drawing.Point(0, 143);
             this.xtraTabControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.xtraTabControlMain.MultiLine = DevExpress.Utils.DefaultBoolean.False;
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageStart;
             this.xtraTabControlMain.Size = new System.Drawing.Size(894, 397);
@@ -996,14 +1005,6 @@
             this.xtraTabPageStart.Name = "xtraTabPageStart";
             this.xtraTabPageStart.Size = new System.Drawing.Size(847, 391);
             this.xtraTabPageStart.Text = "Start Page";
-            // 
-            // btnPhieuChi
-            // 
-            this.btnPhieuChi.Caption = "Phiếu chi";
-            this.btnPhieuChi.Id = 149;
-            this.btnPhieuChi.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.icons8_refund_64;
-            this.btnPhieuChi.Name = "btnPhieuChi";
-            this.btnPhieuChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuChi_ItemClick);
             // 
             // FormMain
             // 

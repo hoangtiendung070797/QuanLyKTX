@@ -153,6 +153,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             try
             {
                 string str = Convert.ToBase64String((byte[])row["anh"]);
+                tempPic = (byte[])row["anh"];
                 pictureHoSo.Image = support.ByteToImg(str);
                 pictureHoSo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             }
@@ -166,6 +167,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
 
         }
 
+        byte[] tempPic;
         #endregion
 
         private void btnCapNhap_Click(object sender, EventArgs e)
@@ -198,7 +200,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
             doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
 
-            doiTuong.Image = (!string.IsNullOrEmpty(path)) ? support.converImgToByte(path) : doiTuong.Image;
+            doiTuong.Image = (!string.IsNullOrEmpty(path)) ? support.converImgToByte(path) : tempPic;
             doiTuong.GhiChu = txtGhiChu.Text;
 
             BUS_DoiTuong.Update(doiTuong);
@@ -229,6 +231,11 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 path = openFileDialog1.FileName;
             }
             pictureHoSo.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+        }
+
+        private void btnHuyBo_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

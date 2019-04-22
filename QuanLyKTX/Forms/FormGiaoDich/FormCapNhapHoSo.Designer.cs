@@ -205,6 +205,7 @@
             this.btnHuyBo.Size = new System.Drawing.Size(134, 31);
             this.btnHuyBo.TabIndex = 19;
             this.btnHuyBo.Text = "Thoát";
+            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
             // btnNhapLai
             // 
