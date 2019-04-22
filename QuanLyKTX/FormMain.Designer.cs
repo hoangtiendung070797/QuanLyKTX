@@ -127,6 +127,8 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnEmailTBthuSH = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
@@ -214,10 +216,11 @@
             this.anhNguoiDung,
             this.statusUser,
             this.btnQLNhanVien,
-            this.btnPhieuChi});
+            this.btnPhieuChi,
+            this.btnEmailTBthuSH});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 150;
+            this.ribbonControlMain.MaxItemId = 151;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -329,10 +332,6 @@
             // skinRibbonGalleryBarItem1
             // 
             this.skinRibbonGalleryBarItem1.Caption = "Giao diện";
-            // 
-            // 
-            // 
-            this.skinRibbonGalleryBarItem1.Gallery.ShowItemText = true;
             this.skinRibbonGalleryBarItem1.Id = 16;
             this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
             // 
@@ -924,7 +923,8 @@
             this.ribbonPageGroup11,
             this.ribbonPageGroup3,
             this.ribbonPageGroup7,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup10});
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Báo cáo, Thống kê";
             // 
@@ -1005,6 +1005,18 @@
             this.xtraTabPageStart.Name = "xtraTabPageStart";
             this.xtraTabPageStart.Size = new System.Drawing.Size(847, 391);
             this.xtraTabPageStart.Text = "Start Page";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnEmailTBthuSH);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Tính năng thêm";
+            // 
+            // btnEmailTBthuSH
+            // 
+            this.btnEmailTBthuSH.Caption = "Gửi email thu phí sinh hoạt";
+            this.btnEmailTBthuSH.Id = 150;
+            this.btnEmailTBthuSH.Name = "btnEmailTBthuSH";
             // 
             // FormMain
             // 
@@ -1135,6 +1147,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarButtonItem btnQLNhanVien;
         private DevExpress.XtraBars.BarButtonItem btnPhieuChi;
+        private DevExpress.XtraBars.BarButtonItem btnEmailTBthuSH;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }
 

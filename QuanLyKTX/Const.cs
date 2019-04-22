@@ -29,6 +29,7 @@ namespace QuanLyKTX
         public static decimal PhiPhong6 = 0;
         public static decimal PhiPhong8 = 0;
 
+      
         public void Dispose()
         {
             
