@@ -8,24 +8,10 @@ namespace QuanLyKTX.Support
 {
     public class SupportSendEmail
     {
-        public void email_send()
-        {
-            SmtpClient mailServer = new SmtpClient("smtp.gmail.com", 587);
-            mailServer.EnableSsl = true;
-
-            mailServer.Credentials = new System.Net.NetworkCredential("hethongqlktxdhhh@gmail.com", "hethongZ1");
-
-            string from = "hethongqlktxdhhh@gmail.com";
-            string to = "xuanhoang.ks6@gmail.com";
-            MailMessage msg = new MailMessage(from, to);
-            msg.Subject = "Enter the subject here";
-            msg.Body = "The message goes here.";
-            msg.Attachments.Add(new Attachment("D:\\Trang bìa báo cáo nghiên cứu.pdf"));
-            mailServer.Send(msg);
-        }
+      
 
 
-        public void Send(string from, string password, string to, string Message, string subject, string host, int port, string file)
+        public void Send(string from, string password, string to, string Message, string subject, string host, int port, string[] file)
         {
 
             MailMessage email = new MailMessage();
@@ -42,12 +28,14 @@ namespace QuanLyKTX.Support
             email.Priority = MailPriority.Normal;
             email.BodyEncoding = Encoding.UTF8;
 
-            if (file.Length > 0)
+            foreach (string item in file)
             {
                 Attachment attachment;
-                attachment = new Attachment(file);
+                attachment = new Attachment(item);
                 email.Attachments.Add(attachment);
             }
+                
+           
 
    
             smtp.SendCompleted += new SendCompletedEventHandler(SendCompletedCallBack);
@@ -73,11 +61,14 @@ namespace QuanLyKTX.Support
 
         }
 
-
+        /// <summary>
+        ///  https://myaccount.google.com/lesssecureapps để chấp nhận bảo mật mức thấp.
+        /// </summary>
         public void SendAll()
         {
             using (OpenFileDialog attachement = new OpenFileDialog()
             {
+                Multiselect = true,
                 Filter = "All files (*.*)|*.*|Image Files(*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|Word 97-2003 Documents (*.doc)|*.doc|Word 2007 Documents (*.docx)|*.docx",
                 ValidateNames = true
             })
@@ -86,8 +77,7 @@ namespace QuanLyKTX.Support
                 {
                     Send("hethongqlktxdhhh@gmail.com", "hethongZ1",
                          "xuanhoang.ks6@gmail.com", "Test hệ thống", "Test thử gửi tệp(Sub)",
-                         "smtp.gmail.com", 587, attachement.FileName);
-
+                         "smtp.gmail.com", 587, attachement.FileNames);
                 }
             }
         }

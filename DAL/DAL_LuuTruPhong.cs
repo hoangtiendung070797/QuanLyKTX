@@ -41,7 +41,7 @@ namespace DAL
         {
             try
             {
-                string query = "SELECT   DoiTuong.DoiTuongId,anh,maSinhVien,hoDem,ten,LuuTruPhong.LuuTruPhongId,NhanVienId,NguoiDungId,PhongId,ngayXep,ngayRoi,trangThai from LuuTruPhong join DoiTuong on DoiTuong.DoiTuongId = LuuTruPhong.DoiTuongId  where LuuTruPhong.PhongId = '" + phongId + "' and LuuTruPhong.trangThai = 1";
+                string query = "SELECT DoiTuong.anh,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,ngaySinh,noiSinh,gioiTinh,hoKhau,queQuan,sdt,email,ghiChu,LuuTruPhong.ngayXep,ngayRoi,trangThai,LuuTruPhong.LuuTruPhongId,NguoiDungId,NhanVienId,PhongId from LuuTruPhong join DoiTuong on DoiTuong.DoiTuongId = LuuTruPhong.DoiTuongId  where LuuTruPhong.PhongId = '" + phongId + "' and LuuTruPhong.trangThai = 1";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -53,26 +53,12 @@ namespace DAL
             }
         }
 
-        public DataTable DoiTuong_ChuaCoPhong()
-        {
-            try
-            {
-                string query = "select * from DoiTuong where DoiTuong.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or DoiTuong.DoiTuongId  in (select LuuTruPhong.DoiTuongId from LuuTruPhong where LuuTruPhong.trangThai = 0)";
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataTable table = new DataTable();
-                dataAdapter.Fill(table);
-                return table;
-            }
-            catch
-            {
-                return null;
-            }
-        }
+
         public DataTable DoiTuong_ChuaCoPhong_GioiTinh(string gioitinh)     //thay đổi => BUS
         {
             try
             {
-                string query = "select DoiTuong.anh,DoiTuong.DoiTuongId,maSinhVien,hoDem,ten,ngaySinh,noiSinh,gioiTinh,hoKhau,queQuan,sdt,email,ghiChu from DoiTuong  where  DoiTuong.gioiTinh = '" + gioitinh + "' and DoiTuong.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or DoiTuong.DoiTuongId  in (select LuuTruPhong.DoiTuongId from LuuTruPhong where LuuTruPhong.trangThai = 0)";
+                string query = "select t.anh,t.DoiTuongId,t.maSinhVien,t.hoDem,t.ten,t.ngaySinh,t.noiSinh,t.gioiTinh,t.hoKhau,t.queQuan,t.sdt,t.email,t.ghiChu from DoiTuong  as t where  t.gioiTinh = 'true' and (t.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or  (select COUNT(*) from LuuTruPhong where LuuTruPhong.trangThai = 1 and  LuuTruPhong.DoiTuongId = t.DoiTuongId) = 0)";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);

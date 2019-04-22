@@ -103,6 +103,8 @@
             this.statusUser = new DevExpress.XtraBars.BarStaticItem();
             this.btnQLNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhieuChi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnEmailTBthuSH = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.PageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PageGroupBaoMat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupQLNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -127,11 +129,14 @@
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTokenEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnEmailTBthuSH = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTBThuSH = new DevExpress.XtraBars.BarDockingMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -217,10 +222,13 @@
             this.statusUser,
             this.btnQLNhanVien,
             this.btnPhieuChi,
-            this.btnEmailTBthuSH});
+            this.btnEmailTBthuSH,
+            this.barButtonItem8,
+            this.barEditItem1,
+            this.btnTBThuSH});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 151;
+            this.ribbonControlMain.MaxItemId = 154;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -228,6 +236,8 @@
             this.PageDanhMuc,
             this.ribbonPage5,
             this.ribbonPage1});
+            this.ribbonControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTokenEdit1});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControlMain.Size = new System.Drawing.Size(894, 143);
             this.ribbonControlMain.StatusBar = this.ribbonStatusBar1;
@@ -807,6 +817,18 @@
             this.btnPhieuChi.Name = "btnPhieuChi";
             this.btnPhieuChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuChi_ItemClick);
             // 
+            // btnEmailTBthuSH
+            // 
+            this.btnEmailTBthuSH.Caption = "Gửi email thu phí sinh hoạt";
+            this.btnEmailTBthuSH.Id = 150;
+            this.btnEmailTBthuSH.Name = "btnEmailTBthuSH";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "barButtonItem8";
+            this.barButtonItem8.Id = 151;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
             // PageHeThong
             // 
             this.PageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1006,17 +1028,29 @@
             this.xtraTabPageStart.Size = new System.Drawing.Size(847, 391);
             this.xtraTabPageStart.Text = "Start Page";
             // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemTokenEdit1;
+            this.barEditItem1.Id = 152;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemTokenEdit1
+            // 
+            this.repositoryItemTokenEdit1.Name = "repositoryItemTokenEdit1";
+            // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnEmailTBthuSH);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnTBThuSH);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Tính năng thêm";
             // 
-            // btnEmailTBthuSH
+            // btnTBThuSH
             // 
-            this.btnEmailTBthuSH.Caption = "Gửi email thu phí sinh hoạt";
-            this.btnEmailTBthuSH.Id = 150;
-            this.btnEmailTBthuSH.Name = "btnEmailTBthuSH";
+            this.btnTBThuSH.Caption = "Gửi email thông báo sinh hoạt phí";
+            this.btnTBThuSH.Id = 153;
+            this.btnTBThuSH.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.send_mass_email_30px;
+            this.btnTBThuSH.Name = "btnTBThuSH";
             // 
             // FormMain
             // 
@@ -1043,6 +1077,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1148,6 +1183,10 @@
         private DevExpress.XtraBars.BarButtonItem btnQLNhanVien;
         private DevExpress.XtraBars.BarButtonItem btnPhieuChi;
         private DevExpress.XtraBars.BarButtonItem btnEmailTBthuSH;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarEditItem barEditItem1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit repositoryItemTokenEdit1;
+        private DevExpress.XtraBars.BarDockingMenuItem btnTBThuSH;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
     }
 }

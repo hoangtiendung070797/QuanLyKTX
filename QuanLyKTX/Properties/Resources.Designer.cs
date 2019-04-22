@@ -483,6 +483,16 @@ namespace QuanLyKTX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap send_mass_email_30px {
+            get {
+                object obj = ResourceManager.GetObject("send_mass_email_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Shutdown_48px {
             get {
                 object obj = ResourceManager.GetObject("Shutdown_48px", resourceCulture);

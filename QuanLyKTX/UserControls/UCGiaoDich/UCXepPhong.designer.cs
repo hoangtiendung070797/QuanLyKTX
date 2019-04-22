@@ -120,10 +120,10 @@
             // 
             // grcDoiTuong
             // 
-            this.grcDoiTuong.Location = new System.Drawing.Point(552, 87);
+            this.grcDoiTuong.Location = new System.Drawing.Point(552, 89);
             this.grcDoiTuong.MainView = this.layoutView1;
             this.grcDoiTuong.Name = "grcDoiTuong";
-            this.grcDoiTuong.Size = new System.Drawing.Size(429, 339);
+            this.grcDoiTuong.Size = new System.Drawing.Size(429, 337);
             this.grcDoiTuong.TabIndex = 5;
             this.grcDoiTuong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
@@ -145,10 +145,10 @@
             // 
             // grcPhong
             // 
-            this.grcPhong.Location = new System.Drawing.Point(12, 87);
+            this.grcPhong.Location = new System.Drawing.Point(12, 89);
             this.grcPhong.MainView = this.cardView1;
             this.grcPhong.Name = "grcPhong";
-            this.grcPhong.Size = new System.Drawing.Size(536, 339);
+            this.grcPhong.Size = new System.Drawing.Size(536, 337);
             this.grcPhong.TabIndex = 4;
             this.grcPhong.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cardView1});
@@ -174,7 +174,7 @@
             this.btnVaoPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVaoPhong.ImageOptions.Image")));
             this.btnVaoPhong.Location = new System.Drawing.Point(12, 47);
             this.btnVaoPhong.Name = "btnVaoPhong";
-            this.btnVaoPhong.Size = new System.Drawing.Size(112, 36);
+            this.btnVaoPhong.Size = new System.Drawing.Size(112, 38);
             this.btnVaoPhong.StyleController = this.layoutControl1;
             this.btnVaoPhong.TabIndex = 6;
             this.btnVaoPhong.Text = "Vào Phòng";
@@ -185,7 +185,7 @@
             this.btnRoiPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRoiPhong.ImageOptions.Image")));
             this.btnRoiPhong.Location = new System.Drawing.Point(128, 47);
             this.btnRoiPhong.Name = "btnRoiPhong";
-            this.btnRoiPhong.Size = new System.Drawing.Size(111, 36);
+            this.btnRoiPhong.Size = new System.Drawing.Size(111, 38);
             this.btnRoiPhong.StyleController = this.layoutControl1;
             this.btnRoiPhong.TabIndex = 7;
             this.btnRoiPhong.Text = "Rời Phòng";
@@ -220,18 +220,18 @@
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.grcPhong;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 75);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 77);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(540, 343);
+            this.layoutControlItem1.Size = new System.Drawing.Size(540, 341);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.grcDoiTuong;
-            this.layoutControlItem2.Location = new System.Drawing.Point(540, 75);
+            this.layoutControlItem2.Location = new System.Drawing.Point(540, 77);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(433, 343);
+            this.layoutControlItem2.Size = new System.Drawing.Size(433, 341);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -240,7 +240,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(231, 35);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(742, 40);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(742, 42);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem3
@@ -248,7 +248,7 @@
             this.layoutControlItem3.Control = this.btnVaoPhong;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 35);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(116, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(116, 42);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
@@ -257,7 +257,7 @@
             this.layoutControlItem4.Control = this.btnRoiPhong;
             this.layoutControlItem4.Location = new System.Drawing.Point(116, 35);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(115, 40);
+            this.layoutControlItem4.Size = new System.Drawing.Size(115, 42);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 

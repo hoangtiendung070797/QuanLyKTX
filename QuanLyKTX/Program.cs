@@ -26,7 +26,7 @@ namespace QuanLyKTX
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new FormMain());
+            Application.Run(new Test());
         }
     }
 }
