@@ -28,5 +28,10 @@ namespace BUS
         {
             return this.PhieuChi.GetData();
         }
+
+        public DataTable GetDataNew()
+        {
+            return this.PhieuChi.GetDataNew();
+        }
     }
 }

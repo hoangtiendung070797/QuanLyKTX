@@ -37,6 +37,23 @@ namespace DAL
             }
         }
 
+        public DataTable GetDataNew()
+        {
+            try
+            {
+                string query = "SELECT PhieuChiId,PhieuChi.NhanVienId,PhieuChi.NguoiDungId,tenNhanVien,tenDangNhap,ngayChi,soTien,noiDung,ghiChu " +
+                    "FROM dbo.PhieuChi JOIN dbo.NhanVien ON NhanVien.NhanVienID = PhieuChi.NhanVienId " +
+                    "JOIN	dbo.NguoiDung ON NguoiDung.NguoiDungId = PhieuChi.NguoiDungId";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public bool Insert(PhieuChi phieuChi)
         {
@@ -46,12 +63,12 @@ namespace DAL
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 table = GetData();
                 DataRow row = table.NewRow();
-                row["NhanVienId "] = phieuChi.NhanVienId;
-                row["NguoiDungId "] = phieuChi.NguoiDungId;
-                row["ngayChi "] = phieuChi.NgayChi;
-                row["noiDung "] = phieuChi.NoiDung;
-                row["ghiChu  "] = phieuChi.GhiChu;
-                row["soTien  "] = phieuChi.SoTien;
+                row["NhanVienId"] = phieuChi.NhanVienId;
+                row["NguoiDungId"] = phieuChi.NguoiDungId;
+                row["ngayChi"] = phieuChi.NgayChi;
+                row["noiDung"] = phieuChi.NoiDung;
+                row["ghiChu"] = phieuChi.GhiChu;
+                row["soTien"] = phieuChi.SoTien;
 
                 table.Rows.Add(row);
 
@@ -72,6 +89,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM PhieuChi";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(phieuChiId);
 
                 if (row != null)
@@ -96,6 +115,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM PhieuChi";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(phieuChi.PhieuChiId);
 
                 if (row != null)

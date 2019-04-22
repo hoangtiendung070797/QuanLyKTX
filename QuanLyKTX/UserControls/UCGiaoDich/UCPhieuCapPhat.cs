@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DTO;
 using QuanLyKTX.Forms.FormGiaoDich;
 using System;
 using System.Windows.Forms;
@@ -37,9 +38,19 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
             if (MessageBox.Show("Bạn có muốn xóa phiếu này hay không ? ","Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-               // MessageBox.Show(temp);
+             
                 if(BUS_PhieuCapPhatVatTu.Delete(int.Parse(temp)))
                 {
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Xóa thành công bản phiếu cấp phát vật tư số " + temp;
+                    nhatKy.ThaoTac = "Xóa";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Phiếu yêu cầu cấp phát vật tư";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
+
                     MessageBox.Show("Phiếu đã được xóa !");
                 }
                 MessageBox.Show("Không thể xóa phiếu này !");

@@ -1,8 +1,6 @@
 ﻿using BUS;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraSplashScreen;
 using DevExpress.XtraTab;
 using DevExpress.XtraTab.ViewInfo;
 using DTO;
@@ -22,7 +20,6 @@ using QuanLyKTX.UserControls.UCHeThong;
 using System;
 using System.Data;
 using System.Linq;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -37,7 +34,7 @@ namespace QuanLyKTX
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
             UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
             UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat,
-            UCNhanVien
+            UCNhanVien, UCPhieuChi_HoanTra
 
         }
         #endregion
@@ -456,6 +453,14 @@ namespace QuanLyKTX
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
 
                     break;
+                case (int)EnumUCDanhMuc.UCPhieuChi_HoanTra:
+
+                    UCPhieuChi_HoanTra uCPhieuChi_HoanTra = new UCPhieuChi_HoanTra();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCPhieuChi_HoanTra);
+                    uCPhieuChi_HoanTra.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+
+                    break;
                 default:
                     break;
             }
@@ -854,6 +859,11 @@ namespace QuanLyKTX
         private void btnQLNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
             AddTabPages("Nhân viên", (int)EnumUCDanhMuc.UCNhanVien);
+        }
+
+        private void btnPhieuChi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Phiếu chi", (int)EnumUCDanhMuc.UCPhieuChi_HoanTra);
         }
     }
 }

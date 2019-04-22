@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BUS;
+﻿using BUS;
 using DTO;
+using System;
+using System.Data;
+using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls.UCGiaoDich
 {
@@ -117,6 +111,17 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     if (bus_KyLuat.Delete(KyLuatID))
                     {
+
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công bản kỷ luật " + txtTenKyLuat.Text + " - MSV: " + txtMSV.Text + "/" + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
+
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -152,7 +157,18 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
 
                     if (bus_KyLuat.Insert(Kyluat))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công bản kỷ luật " + txtTenKyLuat.Text + " - MSV: " + txtMSV.Text + "/" + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -166,7 +182,18 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     Kyluat.Ngay = dpkNgayThem.Value;
                     Kyluat.GhiChu = txtGhiChu.Text;
                     if (bus_KyLuat.Update(Kyluat))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhật thành công bản kỷ luật " + txtTenKyLuat.Text + " - MSV: " + txtMSV.Text + "/" + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Cập nhật";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();

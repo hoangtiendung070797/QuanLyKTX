@@ -124,6 +124,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     if(bus_KhenThuong.Delete(khenthuongID))
                     {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công khen thưởng " + txtTenKhenthuong.Text + " - MSV: " + txtMSV.Text +  "/"  + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Xóa thành công!");
                         reset();
                     }
@@ -171,7 +180,18 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     
         
                     if (bus_KhenThuong.Insert(khenthuong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Thêm thành công khen thưởng " + txtTenKhenthuong.Text + " - MSV: " + txtMSV.Text + "/" + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Tạo";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("Thêm dữ liệu lỗi.", "Thông báo.");
 
                 }
@@ -185,7 +205,18 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     khenthuong.Ngay = dpkNgayThem.Value;
                     khenthuong.GhiChu = txtGhiChu.Text;
                     if (bus_KhenThuong.Update(khenthuong))
+                    {
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Cập nhật thành công khen thưởng " + txtTenKhenthuong.Text + " - MSV: " + txtMSV.Text + "/" + txtHoTen.Text;
+                        nhatKy.ThaoTac = "Cập nhật";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                         MessageBox.Show("Cập nhật dữ liệu thành công.", "Thông báo.");
+                    }
                     else MessageBox.Show("cập nhật dữ liệu lỗi.", "Thông báo.");
                 }
                 reset();
