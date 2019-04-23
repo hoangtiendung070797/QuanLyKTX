@@ -15,7 +15,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             InitializeComponent();
             for (int i = 1; i <= 12; i++)
             {
-                cbThang.Items.Add("Tháng " + i.ToString());
+                cbThang.Items.Add(i.ToString());
             }
             cbThang.Items.Add("All");
         }
@@ -79,51 +79,51 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             switch (DateTime.Now.Month)
             {
                 case 1:
-                    cbThang.Text = "Tháng 1";
+                    cbThang.Text = "1";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(1);
                     break;
                 case 2:
-                    cbThang.Text = "Tháng 2";
+                    cbThang.Text = "2";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(2);
                     break;
                 case 3:
-                    cbThang.Text = "Tháng 3";
+                    cbThang.Text = "3";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(3);
                     break;
                 case 4:
-                    cbThang.Text = "Tháng 4";
+                    cbThang.Text = "4";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(4);
                     break;
                 case 5:
-                    cbThang.Text = "Tháng 5";
+                    cbThang.Text = "5";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(5);
                     break;
                 case 6:
-                    cbThang.Text = "Tháng 6";
+                    cbThang.Text = "6";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(6);
                     break;
                 case 7:
-                    cbThang.Text = "Tháng 7";
+                    cbThang.Text = "7";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(7);
                     break;
                 case 8:
-                    cbThang.Text = "Tháng 8";
+                    cbThang.Text = "8";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(8);
                     break;
                 case 9:
-                    cbThang.Text = "Tháng 9";
+                    cbThang.Text = "9";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(9);
                     break;
                 case 10:
-                    cbThang.Text = "Tháng 10";
+                    cbThang.Text = "10";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(10);
                     break;
                 case 11:
-                    cbThang.Text = "Tháng 11";
+                    cbThang.Text = "11";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(11);
                     break;
                 case 12:
-                    cbThang.Text = "Tháng 12";
+                    cbThang.Text = "12";
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(12);
                     break;
                 default:
@@ -140,11 +140,22 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
         private void btnTaoPhieu_Click(object sender, EventArgs e)
         {
-            FrmTaoPhieuThuTienSH frmTaoPhieuThuTienSH = new FrmTaoPhieuThuTienSH();
-            frmTaoPhieuThuTienSH.ShowDialog();
-            LoadDataTheoThang();
-           // gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataNew();
-
+            try
+            {
+                FrmTaoPhieuThuTienSH frmTaoPhieuThuTienSH = new FrmTaoPhieuThuTienSH();
+                frmTaoPhieuThuTienSH.ShowDialog();                
+                if (cbThang.Text == "All")
+                {
+                    gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataNew();
+                }
+                else
+                {
+                    gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(int.Parse(cbThang.Text));
+                }
+            }
+            catch
+            {
+            }
         }
 
 
@@ -156,14 +167,9 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             }
             else
             {
-                string[] temp = cbThang.SelectedItem.ToString().Split(' ');
-                gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(int.Parse(temp[1]));
+                gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(int.Parse(cbThang.Text));
             }
-
-
         }
-
-
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             try
@@ -175,13 +181,24 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
             }
         }
-
+        FrmSuaPhieuThuTienSH frmSuaPhieuThuTienSH = new FrmSuaPhieuThuTienSH();
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             try
             {
-                BUS_PhieuThuTienSH.UpdateDetail((DataTable)gridThuTien.DataSource);
                
+                frmSuaPhieuThuTienSH.ShowDialog();
+                if (cbThang.Text == "All")
+                {
+                    gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataNew();
+                }
+                else
+                {
+                    gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(int.Parse(cbThang.Text));
+                }
+                
+                
+
             }
             catch
             {
@@ -192,9 +209,16 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
             try
             {
-                MessageBox.Show(PhieuThuTienSHId.ToString());
+              //  MessageBox.Show(PhieuThuTienSHId.ToString());
                 BUS_PhieuThuTienSH.Delete(PhieuThuTienSHId);
-                LoadDataTheoThang();
+                if (cbThang.Text == "All")
+                {
+                    gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataNew();
+                }
+                else
+                {
+                    gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(int.Parse(cbThang.Text));
+                }
             }
             catch
             {
@@ -205,6 +229,30 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
 
             try
             {
+                //Sửa trên form
+                frmSuaPhieuThuTienSH.GetPhietId =(int)gridView1.GetRowCellValue(e.RowHandle, "PhieuThuTienSHId");
+                frmSuaPhieuThuTienSH.cbPhong.SelectedValue = gridView1.GetRowCellValue(e.RowHandle, "PhongId").ToString();
+                frmSuaPhieuThuTienSH.cbNhanVien.SelectedValue = gridView1.GetRowCellValue(e.RowHandle, "NhanVienId").ToString();
+                frmSuaPhieuThuTienSH.cbNguoiDung.SelectedValue = gridView1.GetRowCellValue(e.RowHandle, "NguoiDungId").ToString();
+                frmSuaPhieuThuTienSH.dateEdit1.DateTime = (DateTime)gridView1.GetRowCellValue(e.RowHandle, "ngayThu");
+                frmSuaPhieuThuTienSH.txtNguoiThu.Text = gridView1.GetRowCellValue(e.RowHandle, "tenNguoiThu").ToString();
+                frmSuaPhieuThuTienSH.txtSoDienDau.Text = gridView1.GetRowCellValue(e.RowHandle, "soDienDau").ToString();
+                frmSuaPhieuThuTienSH.txtSoDienCuoi.Text = gridView1.GetRowCellValue(e.RowHandle, "soDienCuoi").ToString();
+                frmSuaPhieuThuTienSH.txtSoNuocDau.Text = gridView1.GetRowCellValue(e.RowHandle, "soNuocDau").ToString();
+                frmSuaPhieuThuTienSH.txtSoNuocCuoi.Text = gridView1.GetRowCellValue(e.RowHandle, "soNuocCuoi").ToString();
+                frmSuaPhieuThuTienSH.txtSoDienThuc.Text = gridView1.GetRowCellValue(e.RowHandle, "soDienThuc").ToString();
+                frmSuaPhieuThuTienSH.txtSoNuocThuc.Text = gridView1.GetRowCellValue(e.RowHandle, "soNuocThuc").ToString();
+                frmSuaPhieuThuTienSH.txtDonGiaDien.Text = gridView1.GetRowCellValue(e.RowHandle, "donGiaDien").ToString();
+                frmSuaPhieuThuTienSH.txtDonGiaNuoc.Text = gridView1.GetRowCellValue(e.RowHandle, "donGiaNuoc").ToString();
+                frmSuaPhieuThuTienSH.txtTienDien.Text = gridView1.GetRowCellValue(e.RowHandle, "tienThuDien").ToString();
+                frmSuaPhieuThuTienSH.txtTienNuoc.Text = gridView1.GetRowCellValue(e.RowHandle, "tienThuNuoc").ToString();
+                frmSuaPhieuThuTienSH.txtPhiDichVu.Text = gridView1.GetRowCellValue(e.RowHandle, "phiDichVu").ToString();
+                frmSuaPhieuThuTienSH.txtTongTien.Text = gridView1.GetRowCellValue(e.RowHandle, "tong").ToString();
+                frmSuaPhieuThuTienSH.checkBoxTinhTrang.Checked =(bool)gridView1.GetRowCellValue(e.RowHandle, "tinhTrang");
+                frmSuaPhieuThuTienSH.txtGhiChu.Text = gridView1.GetRowCellValue(e.RowHandle, "ghiChu").ToString();
+
+
+                // sửa trên gridview
                 if (string.IsNullOrEmpty(gridView1.GetRowCellValue(e.RowHandle, "donGiaDien").ToString()))
                 {
                     gridView1.SetRowCellValue(e.RowHandle, "donGiaDien", "0");
@@ -244,13 +292,14 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
             try
             {
+                
                 if (gridView1.GetRowCellValue(e.RowHandle, "tinhTrang").ToString() == "True")
                 {
-                    e.Appearance.BackColor = Color.RoyalBlue;
+                    e.Appearance.BackColor = Color.Green;
                 }
                 else
                 {
-                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.BackColor = Color.IndianRed;
                 }
             }
             catch
@@ -262,7 +311,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
         {
             if (e.KeyCode == Keys.Enter)
             {
-                simpleButton2.PerformClick();
+                BUS_PhieuThuTienSH.UpdateDetail((DataTable)gridThuTien.DataSource);
             }
         }
     }

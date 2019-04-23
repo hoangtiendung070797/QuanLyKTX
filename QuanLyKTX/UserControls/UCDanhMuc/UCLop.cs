@@ -184,7 +184,7 @@ namespace QuanLyKTX.UserControls
             reset();
         }
 
-        int tempDonVi=0;
+        //int tempDonVi=0;
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaLop.Text = gridView1.GetRowCellValue(e.RowHandle, "LopId").ToString();

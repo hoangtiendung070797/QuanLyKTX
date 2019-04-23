@@ -102,6 +102,7 @@
             this.anhNguoiDung = new DevExpress.XtraBars.BarStaticItem();
             this.statusUser = new DevExpress.XtraBars.BarStaticItem();
             this.btnQLNhanVien = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHoanTra = new DevExpress.XtraBars.BarButtonItem();
             this.PageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PageGroupBaoMat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupQLNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -212,10 +213,11 @@
             this.statusNguoiDung,
             this.anhNguoiDung,
             this.statusUser,
-            this.btnQLNhanVien});
+            this.btnQLNhanVien,
+            this.btnHoanTra});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 149;
+            this.ribbonControlMain.MaxItemId = 150;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -224,7 +226,7 @@
             this.ribbonPage5,
             this.ribbonPage1});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControlMain.Size = new System.Drawing.Size(894, 147);
+            this.ribbonControlMain.Size = new System.Drawing.Size(894, 143);
             this.ribbonControlMain.StatusBar = this.ribbonStatusBar1;
             this.ribbonControlMain.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
             this.ribbonControlMain.Click += new System.EventHandler(this.ribbonControl1_Click);
@@ -636,6 +638,7 @@
             this.btnYeuCauSuaChua.Name = "btnYeuCauSuaChua";
             this.btnYeuCauSuaChua.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnYeuCauSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeuCauSuaChua_ItemClick);
             // 
             // btnNguoiDung
             // 
@@ -798,6 +801,16 @@
             this.btnQLNhanVien.Name = "btnQLNhanVien";
             this.btnQLNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnQLNhanVien_ItemClick);
             // 
+            // btnHoanTra
+            // 
+            this.btnHoanTra.Caption = "Hoàn trả";
+            this.btnHoanTra.Id = 149;
+            this.btnHoanTra.ImageOptions.Image = global::QuanLyKTX.Properties.Resources.icons8_refund_64;
+            this.btnHoanTra.Name = "btnHoanTra";
+            this.btnHoanTra.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnHoanTra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTra_ItemClick);
+            // 
             // PageHeThong
             // 
             this.PageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -873,6 +886,7 @@
             // 
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThuTienPhong);
             this.ribbonPageGroup5.ItemLinks.Add(this.btnThuTienSinhHoat);
+            this.ribbonPageGroup5.ItemLinks.Add(this.btnHoanTra);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Phiếu thu";
             // 
@@ -960,10 +974,10 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.statusUser);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 548);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 540);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControlMain;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(894, 23);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(894, 31);
             // 
             // barButtonItem15
             // 
@@ -975,11 +989,11 @@
             this.xtraTabControlMain.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControlMain.HeaderLocation = DevExpress.XtraTab.TabHeaderLocation.Left;
-            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 147);
+            this.xtraTabControlMain.Location = new System.Drawing.Point(0, 143);
             this.xtraTabControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.xtraTabControlMain.Name = "xtraTabControlMain";
             this.xtraTabControlMain.SelectedTabPage = this.xtraTabPageStart;
-            this.xtraTabControlMain.Size = new System.Drawing.Size(894, 401);
+            this.xtraTabControlMain.Size = new System.Drawing.Size(894, 397);
             this.xtraTabControlMain.TabIndex = 7;
             this.xtraTabControlMain.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageStart});
@@ -991,7 +1005,7 @@
             this.xtraTabPageStart.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPageStart.Image")));
             this.xtraTabPageStart.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.xtraTabPageStart.Name = "xtraTabPageStart";
-            this.xtraTabPageStart.Size = new System.Drawing.Size(850, 399);
+            this.xtraTabPageStart.Size = new System.Drawing.Size(847, 391);
             this.xtraTabPageStart.Text = "Start Page";
             // 
             // FormMain
@@ -1122,6 +1136,7 @@
         private DevExpress.XtraBars.BarStaticItem statusUser;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.BarButtonItem btnQLNhanVien;
+        private DevExpress.XtraBars.BarButtonItem btnHoanTra;
     }
 }
 

@@ -12,6 +12,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         public FrmTaoPhieuThuTienSH()
         {
             InitializeComponent();
+            LoadComBoBox();
         }
 
         #region Properties
@@ -27,8 +28,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbPhong.DataSource = BUS_Phong.GetData();
             cbPhong.DisplayMember = "tenPhong";
             cbPhong.ValueMember = "PhongId";
-            //cbPhong.Text = "";
-          
+              
 
             cbNhanVien.DataSource = BUS_NhanVien.GetData();
             cbNhanVien.DisplayMember = "tenNhanVien";
@@ -41,50 +41,53 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbNguoiDung.SelectedValue = 0;
 
             dateEdit1.DateTime = DateTime.Now;
-        }     
+        }
+        public void Reset()
+        {
+            txtSoNuocCuoi.ResetText();
+            txtSoDienCuoi.ResetText();
+            txtSoDienThuc.Text = "0";
+            txtSoNuocThuc.Text = "0";
+            txtDonGiaDien.ResetText();
+            txtDonGiaNuoc.ResetText();
+            txtTienDien.Text = "0";
+            txtTienNuoc.Text = "0";
+            txtPhiDichVu.ResetText();
+            txtTongTien.Text = "0";
+            txtGhiChu.ResetText();
+            checkBoxTinhTrang.Checked = false;
+        }
         private void FrmTaoPhieuThuTienSH_Load(object sender, EventArgs e)
         {
-            
-            LoadComBoBox();
-            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-      
+
         private void cbPhong_SelectedValueChanged(object sender, EventArgs e)
         {
             try
             {
-               
-               
-                    if (BUS_PhieuThuTienSH.DienNuocDau(cbPhong.SelectedValue.ToString()).Rows.Count == 0)
+                Reset();
+                if (BUS_PhieuThuTienSH.DienNuocDau(cbPhong.SelectedValue.ToString()).Rows.Count == 0)
+                {
+                    txtSoDienDau.Text = "0";
+                    txtSoNuocDau.Text = "0";
+                }
+                else
+                {
+                    foreach (DataRow row in BUS_PhieuThuTienSH.DienNuocDau(cbPhong.SelectedValue.ToString()).Rows)
                     {
-                        txtSoDienDau.Text = "0";
-                        txtSoNuocDau.Text = "0";
+                        txtSoDienDau.Text = row["soDienCuoi"].ToString();
+                        txtSoNuocDau.Text = row["soNuocCuoi"].ToString();
                     }
-                    else
-                    {
-                        foreach (DataRow row in BUS_PhieuThuTienSH.DienNuocDau(cbPhong.SelectedValue.ToString()).Rows)
-                        {
-                            txtSoDienDau.Text = row["soDienCuoi"].ToString();
-                            txtSoNuocDau.Text = row["soNuocCuoi"].ToString();
-                        }
-                    }
-                   
-                
-               
+                }
             }
             catch
             {
-
-                
             }
-            
-            
-
         }
         #region Xử lý các textbox tính tiền
         private void txtSoDienCuoi_TextChanged(object sender, EventArgs e)
@@ -92,14 +95,14 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             if (txtSoDienCuoi.Text == "")
             {
                 txtSoDienThuc.Text = "0";
-             
+
             }
             else
             {
                 txtSoDienThuc.Text = (decimal.Parse(txtSoDienCuoi.Text) - decimal.Parse(txtSoDienDau.Text)).ToString();
-                
+
             }
-            
+
         }
 
         private void txtSoNuocCuoi_TextChanged(object sender, EventArgs e)
@@ -107,12 +110,12 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             if (txtSoNuocCuoi.Text == "")
             {
                 txtSoNuocThuc.Text = "0";
-              
+
             }
             else
             {
                 txtSoNuocThuc.Text = (decimal.Parse(txtSoNuocCuoi.Text) - decimal.Parse(txtSoNuocDau.Text)).ToString();
-               
+
             }
         }
 
@@ -125,7 +128,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             else
             {
                 txtTienDien.Text = (decimal.Parse(txtSoDienThuc.Text) * decimal.Parse(txtDonGiaDien.Text)).ToString();
-               
+
             }
         }
 
@@ -138,13 +141,13 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             else
             {
                 txtTienNuoc.Text = (decimal.Parse(txtSoNuocThuc.Text) * decimal.Parse(txtDonGiaNuoc.Text)).ToString();
-                
+
             }
         }
 
         private void txtPhiDichVu_TextChanged(object sender, EventArgs e)
         {
-            if (txtPhiDichVu.Text !="")
+            if (txtPhiDichVu.Text != "")
             {
                 txtTongTien.Text = (decimal.Parse(txtTienDien.Text) + decimal.Parse(txtTienNuoc.Text) + decimal.Parse(txtPhiDichVu.Text)).ToString();
             }
@@ -153,7 +156,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 txtTongTien.Text = (decimal.Parse(txtTienDien.Text) + decimal.Parse(txtTienNuoc.Text)).ToString();
             }
         }
-           
+
 
         private void txtTienDien_TextChanged(object sender, EventArgs e)
         {
@@ -183,7 +186,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         {
             if (txtSoDienThuc.Text != "0")
             {
-                if (decimal.Parse(txtSoDienThuc.Text) <0)
+                if (decimal.Parse(txtSoDienThuc.Text) < 0)
                 {
                     return;
                 }
@@ -194,9 +197,9 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                         txtTienDien.Text = (decimal.Parse(txtSoDienThuc.Text) * 0).ToString();
                     }
                     else
-                     txtTienDien.Text = (decimal.Parse(txtSoDienThuc.Text) * decimal.Parse(txtDonGiaDien.Text)).ToString();
+                        txtTienDien.Text = (decimal.Parse(txtSoDienThuc.Text) * decimal.Parse(txtDonGiaDien.Text)).ToString();
                 }
-                   
+
             }
             else
             {
@@ -208,7 +211,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 {
                     txtTienDien.Text = (0 * decimal.Parse(txtDonGiaDien.Text)).ToString();
                 }
-                
+
             }
         }
 
@@ -222,14 +225,14 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 }
                 else
                 {
-                    if (txtDonGiaNuoc.Text=="")
+                    if (txtDonGiaNuoc.Text == "")
                     {
                         txtTienNuoc.Text = (decimal.Parse(txtSoNuocThuc.Text) * 0).ToString();
                     }
                     else
                         txtTienNuoc.Text = (decimal.Parse(txtSoNuocThuc.Text) * decimal.Parse(txtDonGiaNuoc.Text)).ToString();
                 }
-                
+
             }
             else
             {
@@ -252,7 +255,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             PhieuThuTienSH.NgayThu = DateTime.Now;
             PhieuThuTienSH.TenNguoiThu = txtNguoiThu.Text;
             PhieuThuTienSH.SoDienDau = int.Parse(txtSoDienDau.Text);
-            PhieuThuTienSH.SoDienCuoi= int.Parse(txtSoDienCuoi.Text);
+            PhieuThuTienSH.SoDienCuoi = int.Parse(txtSoDienCuoi.Text);
             PhieuThuTienSH.SoNuocDau = int.Parse(txtSoNuocDau.Text);
             PhieuThuTienSH.SoNuocCuoi = int.Parse(txtSoNuocCuoi.Text);
             PhieuThuTienSH.SoDienThuc = int.Parse(txtSoDienThuc.Text);
@@ -268,7 +271,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             else
             {
                 PhieuThuTienSH.PhiDichVu = decimal.Parse(txtPhiDichVu.Text);
-            }           
+            }
             PhieuThuTienSH.Tong = decimal.Parse(txtTongTien.Text);
             PhieuThuTienSH.GhiChu = txtGhiChu.Text;
 
@@ -276,26 +279,44 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         }
         private void btnTaoPhieu_Click(object sender, EventArgs e)
         {
-            if (txtSoDienCuoi.Text == "" || txtSoNuocCuoi.Text=="" || txtDonGiaDien.Text=="" || txtDonGiaNuoc .Text=="")
+            try
             {
-                MessageBox.Show("Vui lòng điền đủ thông tin điện nước");
-                return;
+                if (MessageBox.Show("Bạn có muốn tạo phiếu không?","Thông báo",MessageBoxButtons.OKCancel)== DialogResult.OK)
+                {
+                    if (txtSoDienCuoi.Text == "" || txtSoNuocCuoi.Text == "" || txtDonGiaDien.Text == "" || txtDonGiaNuoc.Text == "")
+                    {
+                        MessageBox.Show("Vui lòng điền đủ thông tin điện nước");
+                        return;
+                    }
+
+                    if (BUS_PhieuThuTienSH.CheckInPhieuThu(cbPhong.SelectedValue.ToString(), dateEdit1.Text))
+                    {
+                        MessageBox.Show("Phòng này đã có phiếu mời kiểm tra lại !", "Thông báo");
+                        return;
+                    }
+                    GetThuoctinh();
+                    BUS_PhieuThuTienSH.Insert(PhieuThuTienSH);
+                    MessageBox.Show("Thêm thành công");
+                    this.Close();
+                }                
             }
-           
-            if (BUS_PhieuThuTienSH.CheckInPhieuThu(cbPhong.SelectedValue.ToString(), dateEdit1.Text))
+            catch
             {
-                MessageBox.Show("Phòng này đã có phiếu mời kiểm tra lại !", "Thông báo");
-                return;
+
+                MessageBox.Show("Lỗi! không thể tạo được phiếu mời kiểm tra và thử lại","Thông báo");
             }
-            GetThuoctinh();
-            BUS_PhieuThuTienSH.Insert(PhieuThuTienSH);
-            MessageBox.Show("Thêm thành công");
-            this.Close();
+
         }
 
         private void txtTongTien_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSoDienCuoi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

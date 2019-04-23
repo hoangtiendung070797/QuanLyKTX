@@ -426,6 +426,18 @@
     <Compile Include="UserControls\UCGiaoDich\UCKyLuat.designer.cs">
       <DependentUpon>UCKyLuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuBaoHongSuaCHua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuBaoHongSuaCHua.Designer.cs">
+      <DependentUpon>UCPhieuBaoHongSuaCHua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.Designer.cs">
+      <DependentUpon>UCPhieuChi_HoanTra.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -678,6 +690,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCKyLuat.resx">
       <DependentUpon>UCKyLuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuBaoHongSuaCHua.resx">
+      <DependentUpon>UCPhieuBaoHongSuaCHua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.resx">
+      <DependentUpon>UCPhieuChi_HoanTra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
       <DependentUpon>UCXepPhong.cs</DependentUpon>
@@ -935,6 +953,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\technology-images-png-3-transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refund-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

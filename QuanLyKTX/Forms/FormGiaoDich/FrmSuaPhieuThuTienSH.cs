@@ -11,6 +11,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         public FrmSuaPhieuThuTienSH()
         {
             InitializeComponent();
+            LoadComBoBox();
         }
 
         #region Properties
@@ -19,6 +20,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         BUS_NhanVien BUS_NhanVien = new BUS_NhanVien();
         BUS_NguoiDung BUS_NguoiDung = new BUS_NguoiDung();
         PhieuThuTienSH PhieuThuTienSH = new PhieuThuTienSH();
+        public int GetPhietId = 0;
         #endregion
 
         public void LoadComBoBox()
@@ -26,8 +28,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbPhong.DataSource = BUS_Phong.GetData();
             cbPhong.DisplayMember = "tenPhong";
             cbPhong.ValueMember = "PhongId";
-            //cbPhong.Text = "";
-          
+            cbPhong.SelectedValue = "";
 
             cbNhanVien.DataSource = BUS_NhanVien.GetData();
             cbNhanVien.DisplayMember = "tenNhanVien";
@@ -38,28 +39,20 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbNguoiDung.DisplayMember = "tenDangNhap";
             cbNguoiDung.ValueMember = "NguoiDungId";
             cbNguoiDung.SelectedValue = 0;
-
-            //dateEdit1.DateTime = DateTime.Now;
         }     
         private void FrmTaoPhieuThuTienSH_Load(object sender, EventArgs e)
-        {
-            
-            LoadComBoBox();
-            
+        {            
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
       
-        private void cbPhong_SelectedValueChanged(object sender, EventArgs e)
+        private void cbPhong_SelectedValueChanged(object sender, EventArgs e) // ở form sửa này thì cái này không cần thiết
         {
             try
-            {
-               
-               
-                    if (BUS_PhieuThuTienSH.DienNuocDau(cbPhong.SelectedValue.ToString()).Rows.Count == 0)
+            {              
+                 if (BUS_PhieuThuTienSH.DienNuocDau(cbPhong.SelectedValue.ToString()).Rows.Count == 0)
                     {
                         txtSoDienDau.Text = "0";
                         txtSoNuocDau.Text = "0";
@@ -71,19 +64,11 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                             txtSoDienDau.Text = row["soDienCuoi"].ToString();
                             txtSoNuocDau.Text = row["soNuocCuoi"].ToString();
                         }
-                    }
-                   
-                
-               
+                    }       
             }
             catch
-            {
-
-                
-            }
-            
-            
-
+            {           
+            }                       
         }
         #region Xử lý các textbox tính tiền
         private void txtSoDienCuoi_TextChanged(object sender, EventArgs e)
@@ -275,21 +260,34 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         }
         private void btnTaoPhieu_Click(object sender, EventArgs e)
         {
-            if (txtSoDienCuoi.Text == "" || txtSoNuocCuoi.Text=="" || txtDonGiaDien.Text=="" || txtDonGiaNuoc .Text=="")
+            try
             {
-                MessageBox.Show("Vui lòng điền đủ thông tin điện nước");
-                return;
+                if (MessageBox.Show("Bạn có muốn cập nhật không?","Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    if (txtSoDienCuoi.Text == "" || txtSoNuocCuoi.Text == "" || txtDonGiaDien.Text == "" || txtDonGiaNuoc.Text == "")
+                    {
+                        MessageBox.Show("Vui lòng điền đủ thông tin điện nước");
+                        return;
+                    }
+                    PhieuThuTienSH.PhieuThuTienSHId = GetPhietId;
+                    GetThuoctinh();
+                    BUS_PhieuThuTienSH.Update(PhieuThuTienSH);
+                    MessageBox.Show("Cập nhật thành công");
+                    this.Close();
+                }
+                
             }
-           
-            if (BUS_PhieuThuTienSH.CheckInPhieuThu(cbPhong.SelectedValue.ToString(), dateEdit1.Text))
+            catch
             {
-                MessageBox.Show("Phòng này đã có phiếu mời kiểm tra lại !", "Thông báo");
-                return;
+                MessageBox.Show("Lỗi! không cập nhật được xin mời kiểm tra và thử lại");
             }
-            GetThuoctinh();
-            BUS_PhieuThuTienSH.Insert(PhieuThuTienSH);
-            MessageBox.Show("Thêm thành công");
-            this.Close();
+            
+        }
+
+        private void txtChiNhapSo(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

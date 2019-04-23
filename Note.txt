@@ -1,0 +1,6 @@
+UC_PhieuCHi_HoanTra
+DAL PhieuChi
+Bus PhieuChi
+FormMain them nut button HoanTra
+
+In phieu ke cmm

@@ -37,7 +37,7 @@ namespace QuanLyKTX
             UCDanToc, UCDayNha, UCDonVi, UCLoaiDoiTuong, UCLoaiPhong, UCLoiViPham, UCLop, UCNguoiDung, UCPhong, UCQuocTich, UCTinhThanh, UCTonGiao, UCVatTu,
             UCNhatKyHoatDong, UCHoSo, UCPhanQuyen, UCThuTienPhong, UCPhieuCapPhat, UCCapPhat, UCXepPhong, UCKhenThuong, UCKyLuat, UCKhenThuong_KyLuat, UCHopDong, UCTKDonVi,
             UCTKKhenThuongKyLuat, UCTKThuTienPhong, UCTKSinhVienTheoDSPhong, UCTKLop, UCTKThuTienSH, UCTKVatTuHongTheoPhong, UCTKVatTuTheoPhong, UCThuTienSinhHoat,
-            UCNhanVien
+            UCNhanVien,UCPhieuChi_HoanTra,UCPhieuBaoHong
 
         }
         #endregion
@@ -454,7 +454,18 @@ namespace QuanLyKTX
                     tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCNhanVien);
                     uCNhanVien.Dock = DockStyle.Fill;
                     tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
-
+                    break;
+                case (int)EnumUCDanhMuc.UCPhieuChi_HoanTra:
+                    UCPhieuChi_HoanTra uCPhieuChi_HoanTra = new UCPhieuChi_HoanTra();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCPhieuChi_HoanTra);
+                    uCPhieuChi_HoanTra.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
+                    break;
+                case (int)EnumUCDanhMuc.UCPhieuBaoHong:
+                    UCPhieuBaoHongSuaCHua uCPhieuBaoHongSuaCHua = new UCPhieuBaoHongSuaCHua();
+                    tabstatic.TabPages[IndexOfTabPage(tabPage.Text)].Controls.Add(uCPhieuBaoHongSuaCHua);
+                    uCPhieuBaoHongSuaCHua.Dock = DockStyle.Fill;
+                    tabstatic.SelectedTabPage = tabstatic.TabPages[IndexOfTabPage(tabPage.Text)];
                     break;
                 default:
                     break;
@@ -626,7 +637,15 @@ namespace QuanLyKTX
         {
             AddTabPages("Hợp đồng", (int)EnumUCDanhMuc.UCHopDong);
         }
+        private void btnHoanTra_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Hoàn trả", (int)EnumUCDanhMuc.UCPhieuChi_HoanTra);
+        }
 
+        private void btnYeuCauSuaChua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            AddTabPages("Yêu cầu sữa chữa", (int)EnumUCDanhMuc.UCPhieuBaoHong);
+        }
         #endregion
 
 
@@ -855,5 +874,7 @@ namespace QuanLyKTX
         {
             AddTabPages("Nhân viên", (int)EnumUCDanhMuc.UCNhanVien);
         }
+
+        
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTaoPhieuThuTienSH));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
@@ -155,6 +156,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(405, 16);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 45);
@@ -164,6 +166,7 @@
             // 
             // btnTaoPhieu
             // 
+            this.btnTaoPhieu.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTaoPhieu.ImageOptions.Image")));
             this.btnTaoPhieu.Location = new System.Drawing.Point(153, 16);
             this.btnTaoPhieu.Name = "btnTaoPhieu";
             this.btnTaoPhieu.Size = new System.Drawing.Size(106, 45);
@@ -238,6 +241,7 @@
             this.txtPhiDichVu.Size = new System.Drawing.Size(278, 20);
             this.txtPhiDichVu.TabIndex = 16;
             this.txtPhiDichVu.TextChanged += new System.EventHandler(this.txtPhiDichVu_TextChanged);
+            this.txtPhiDichVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienCuoi_KeyPress);
             // 
             // txtTienNuoc
             // 
@@ -266,6 +270,7 @@
             this.txtDonGiaNuoc.Size = new System.Drawing.Size(278, 20);
             this.txtDonGiaNuoc.TabIndex = 13;
             this.txtDonGiaNuoc.TextChanged += new System.EventHandler(this.txtDonGiaNuoc_TextChanged);
+            this.txtDonGiaNuoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienCuoi_KeyPress);
             // 
             // txtDonGiaDien
             // 
@@ -274,6 +279,7 @@
             this.txtDonGiaDien.Size = new System.Drawing.Size(278, 20);
             this.txtDonGiaDien.TabIndex = 12;
             this.txtDonGiaDien.TextChanged += new System.EventHandler(this.txtDonGiaDien_TextChanged);
+            this.txtDonGiaDien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienCuoi_KeyPress);
             // 
             // txtSoNuocThuc
             // 
@@ -302,6 +308,7 @@
             this.txtSoNuocCuoi.Size = new System.Drawing.Size(257, 20);
             this.txtSoNuocCuoi.TabIndex = 9;
             this.txtSoNuocCuoi.TextChanged += new System.EventHandler(this.txtSoNuocCuoi_TextChanged);
+            this.txtSoNuocCuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienCuoi_KeyPress);
             // 
             // txtSoNuocDau
             // 
@@ -318,6 +325,7 @@
             this.txtSoDienCuoi.Size = new System.Drawing.Size(257, 20);
             this.txtSoDienCuoi.TabIndex = 7;
             this.txtSoDienCuoi.TextChanged += new System.EventHandler(this.txtSoDienCuoi_TextChanged);
+            this.txtSoDienCuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienCuoi_KeyPress);
             // 
             // txtSoDienDau
             // 

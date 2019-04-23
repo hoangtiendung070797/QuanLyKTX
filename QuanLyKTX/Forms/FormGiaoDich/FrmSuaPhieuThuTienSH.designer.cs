@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSuaPhieuThuTienSH));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.btnTaoPhieu = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCapNhat = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -147,7 +148,7 @@
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.btnCancel);
-            this.panelControl2.Controls.Add(this.btnTaoPhieu);
+            this.panelControl2.Controls.Add(this.btnCapNhat);
             this.panelControl2.Location = new System.Drawing.Point(12, 309);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(679, 78);
@@ -155,6 +156,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.ImageOptions.Image")));
             this.btnCancel.Location = new System.Drawing.Point(405, 16);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(106, 45);
@@ -162,14 +164,15 @@
             this.btnCancel.Text = "Hủy bỏ";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnTaoPhieu
+            // btnCapNhat
             // 
-            this.btnTaoPhieu.Location = new System.Drawing.Point(153, 16);
-            this.btnTaoPhieu.Name = "btnTaoPhieu";
-            this.btnTaoPhieu.Size = new System.Drawing.Size(106, 45);
-            this.btnTaoPhieu.TabIndex = 0;
-            this.btnTaoPhieu.Text = "Tạo phiếu";
-            this.btnTaoPhieu.Click += new System.EventHandler(this.btnTaoPhieu_Click);
+            this.btnCapNhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCapNhat.ImageOptions.Image")));
+            this.btnCapNhat.Location = new System.Drawing.Point(153, 16);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(106, 45);
+            this.btnCapNhat.TabIndex = 0;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.Click += new System.EventHandler(this.btnTaoPhieu_Click);
             // 
             // panelControl1
             // 
@@ -237,6 +240,7 @@
             this.txtPhiDichVu.Size = new System.Drawing.Size(278, 20);
             this.txtPhiDichVu.TabIndex = 19;
             this.txtPhiDichVu.TextChanged += new System.EventHandler(this.txtPhiDichVu_TextChanged);
+            this.txtPhiDichVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiNhapSo);
             // 
             // txtTienNuoc
             // 
@@ -265,6 +269,7 @@
             this.txtDonGiaNuoc.Size = new System.Drawing.Size(278, 20);
             this.txtDonGiaNuoc.TabIndex = 16;
             this.txtDonGiaNuoc.TextChanged += new System.EventHandler(this.txtDonGiaNuoc_TextChanged);
+            this.txtDonGiaNuoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiNhapSo);
             // 
             // txtDonGiaDien
             // 
@@ -273,6 +278,7 @@
             this.txtDonGiaDien.Size = new System.Drawing.Size(278, 20);
             this.txtDonGiaDien.TabIndex = 15;
             this.txtDonGiaDien.TextChanged += new System.EventHandler(this.txtDonGiaDien_TextChanged);
+            this.txtDonGiaDien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiNhapSo);
             // 
             // txtSoNuocThuc
             // 
@@ -301,6 +307,7 @@
             this.txtSoNuocCuoi.Size = new System.Drawing.Size(257, 20);
             this.txtSoNuocCuoi.TabIndex = 12;
             this.txtSoNuocCuoi.TextChanged += new System.EventHandler(this.txtSoNuocCuoi_TextChanged);
+            this.txtSoNuocCuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiNhapSo);
             // 
             // txtSoNuocDau
             // 
@@ -317,6 +324,7 @@
             this.txtSoDienCuoi.Size = new System.Drawing.Size(257, 20);
             this.txtSoDienCuoi.TabIndex = 10;
             this.txtSoDienCuoi.TextChanged += new System.EventHandler(this.txtSoDienCuoi_TextChanged);
+            this.txtSoDienCuoi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtChiNhapSo);
             // 
             // txtSoDienDau
             // 
@@ -380,6 +388,7 @@
             // 
             this.cbPhong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbPhong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbPhong.Enabled = false;
             this.cbPhong.FormattingEnabled = true;
             this.cbPhong.Location = new System.Drawing.Point(82, 42);
             this.cbPhong.Name = "cbPhong";
@@ -627,7 +636,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmSuaPhieuThuTienSH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phiếu thu tiền";
+            this.Text = "Thông tin phiếu thu";
             this.Load += new System.EventHandler(this.FrmTaoPhieuThuTienSH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
@@ -667,55 +676,55 @@
 
         #endregion
 
-        private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private System.Windows.Forms.ComboBox cbNguoiDung;
-        private System.Windows.Forms.ComboBox cbNhanVien;
-        private System.Windows.Forms.ComboBox cbPhong;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private System.Windows.Forms.Label label1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private System.Windows.Forms.TextBox txtTongTien;
-        private System.Windows.Forms.TextBox txtNguoiThu;
-        private System.Windows.Forms.TextBox txtPhiDichVu;
-        private System.Windows.Forms.TextBox txtTienNuoc;
-        private System.Windows.Forms.TextBox txtTienDien;
-        private System.Windows.Forms.TextBox txtDonGiaNuoc;
-        private System.Windows.Forms.TextBox txtDonGiaDien;
-        private System.Windows.Forms.TextBox txtSoNuocThuc;
-        private System.Windows.Forms.TextBox txtSoDienThuc;
-        private System.Windows.Forms.TextBox txtSoNuocCuoi;
-        private System.Windows.Forms.TextBox txtSoNuocDau;
-        private System.Windows.Forms.TextBox txtSoDienCuoi;
-        private System.Windows.Forms.TextBox txtSoDienDau;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.TextBox txtGhiChu;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox checkBoxTinhTrang;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.SimpleButton btnCancel;
-        private DevExpress.XtraEditors.SimpleButton btnTaoPhieu;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
+        public DevExpress.XtraLayout.LayoutControl layoutControl1;
+        public DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        public System.Windows.Forms.ComboBox cbNguoiDung;
+        public System.Windows.Forms.ComboBox cbNhanVien;
+        public System.Windows.Forms.ComboBox cbPhong;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        public System.Windows.Forms.Label label1;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        public System.Windows.Forms.TextBox txtTongTien;
+        public System.Windows.Forms.TextBox txtNguoiThu;
+        public System.Windows.Forms.TextBox txtPhiDichVu;
+        public System.Windows.Forms.TextBox txtTienNuoc;
+        public System.Windows.Forms.TextBox txtTienDien;
+        public System.Windows.Forms.TextBox txtDonGiaNuoc;
+        public System.Windows.Forms.TextBox txtDonGiaDien;
+        public System.Windows.Forms.TextBox txtSoNuocThuc;
+        public System.Windows.Forms.TextBox txtSoDienThuc;
+        public System.Windows.Forms.TextBox txtSoNuocCuoi;
+        public System.Windows.Forms.TextBox txtSoNuocDau;
+        public System.Windows.Forms.TextBox txtSoDienCuoi;
+        public System.Windows.Forms.TextBox txtSoDienDau;
+        public DevExpress.XtraEditors.DateEdit dateEdit1;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem19;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
+        public DevExpress.XtraEditors.PanelControl panelControl1;
+        public System.Windows.Forms.TextBox txtGhiChu;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.CheckBox checkBoxTinhTrang;
+        public System.Windows.Forms.Label label2;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem20;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem21;
+        public DevExpress.XtraEditors.PanelControl panelControl2;
+        public DevExpress.XtraEditors.SimpleButton btnCancel;
+        public DevExpress.XtraEditors.SimpleButton btnCapNhat;
+        public DevExpress.XtraLayout.LayoutControlItem layoutControlItem22;
     }
 }
