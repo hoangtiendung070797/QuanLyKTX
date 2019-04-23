@@ -445,6 +445,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.designer.cs">
       <DependentUpon>UCPhieuChi_HoanTra.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.designer.cs">
+      <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCXepPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -510,12 +516,6 @@
     </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCThuTienPhong.Designer.cs">
       <DependentUpon>UCThuTienPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.designer.cs">
-      <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UCHeThong\UCNhanVien.cs">
       <SubType>UserControl</SubType>
@@ -707,6 +707,9 @@
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.resx">
       <DependentUpon>UCPhieuChi_HoanTra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.resx">
+      <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCXepPhong.resx">
       <DependentUpon>UCXepPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -739,9 +742,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienPhong.resx">
       <DependentUpon>UCThuTienPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UCGiaoDich\UCThuTienSinhHoat.resx">
-      <DependentUpon>UCThuTienSinhHoat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCHeThong\UCNhanVien.resx">
       <DependentUpon>UCNhanVien.cs</DependentUpon>

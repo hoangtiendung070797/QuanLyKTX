@@ -105,6 +105,12 @@
             this.btnPhieuChi = new DevExpress.XtraBars.BarButtonItem();
             this.btnEmailTBthuSH = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTokenEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit();
+            this.btnTBThuSH = new DevExpress.XtraBars.BarDockingMenuItem();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemHyperLinkEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit();
+            this.btnGuiEmail = new DevExpress.XtraBars.BarButtonItem();
             this.PageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.PageGroupBaoMat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.PageGroupQLNguoiDung = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -123,20 +129,18 @@
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
             this.xtraTabControlMain = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageStart = new DevExpress.XtraTab.XtraTabPage();
-            this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTokenEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit();
-            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnTBThuSH = new DevExpress.XtraBars.BarDockingMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).BeginInit();
             this.xtraTabControlMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -225,10 +229,12 @@
             this.btnEmailTBthuSH,
             this.barButtonItem8,
             this.barEditItem1,
-            this.btnTBThuSH});
+            this.btnTBThuSH,
+            this.barEditItem2,
+            this.btnGuiEmail});
             this.ribbonControlMain.Location = new System.Drawing.Point(0, 0);
             this.ribbonControlMain.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.ribbonControlMain.MaxItemId = 154;
+            this.ribbonControlMain.MaxItemId = 156;
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.PageHeThong,
@@ -237,7 +243,8 @@
             this.ribbonPage5,
             this.ribbonPage1});
             this.ribbonControlMain.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTokenEdit1});
+            this.repositoryItemTokenEdit1,
+            this.repositoryItemHyperLinkEdit1});
             this.ribbonControlMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControlMain.Size = new System.Drawing.Size(894, 143);
             this.ribbonControlMain.StatusBar = this.ribbonStatusBar1;
@@ -829,6 +836,43 @@
             this.barButtonItem8.Id = 151;
             this.barButtonItem8.Name = "barButtonItem8";
             // 
+            // barEditItem1
+            // 
+            this.barEditItem1.Caption = "barEditItem1";
+            this.barEditItem1.Edit = this.repositoryItemTokenEdit1;
+            this.barEditItem1.Id = 152;
+            this.barEditItem1.Name = "barEditItem1";
+            // 
+            // repositoryItemTokenEdit1
+            // 
+            this.repositoryItemTokenEdit1.Name = "repositoryItemTokenEdit1";
+            // 
+            // btnTBThuSH
+            // 
+            this.btnTBThuSH.Caption = "Gửi email thông báo sinh hoạt phí";
+            this.btnTBThuSH.Id = 153;
+            this.btnTBThuSH.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.send_mass_email_30px;
+            this.btnTBThuSH.Name = "btnTBThuSH";
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "barEditItem2";
+            this.barEditItem2.Edit = this.repositoryItemHyperLinkEdit1;
+            this.barEditItem2.Id = 154;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemHyperLinkEdit1
+            // 
+            this.repositoryItemHyperLinkEdit1.AutoHeight = false;
+            this.repositoryItemHyperLinkEdit1.Name = "repositoryItemHyperLinkEdit1";
+            // 
+            // btnGuiEmail
+            // 
+            this.btnGuiEmail.Caption = "Gửi email thông báo";
+            this.btnGuiEmail.Id = 155;
+            this.btnGuiEmail.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.send_mass_email_30px;
+            this.btnGuiEmail.Name = "btnGuiEmail";
+            // 
             // PageHeThong
             // 
             this.PageHeThong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -978,6 +1022,13 @@
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Thu Chi";
             // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.AllowTextClipping = false;
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnGuiEmail);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Tính năng phụ trợ";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1028,30 +1079,6 @@
             this.xtraTabPageStart.Size = new System.Drawing.Size(847, 391);
             this.xtraTabPageStart.Text = "Start Page";
             // 
-            // barEditItem1
-            // 
-            this.barEditItem1.Caption = "barEditItem1";
-            this.barEditItem1.Edit = this.repositoryItemTokenEdit1;
-            this.barEditItem1.Id = 152;
-            this.barEditItem1.Name = "barEditItem1";
-            // 
-            // repositoryItemTokenEdit1
-            // 
-            this.repositoryItemTokenEdit1.Name = "repositoryItemTokenEdit1";
-            // 
-            // ribbonPageGroup10
-            // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.btnTBThuSH);
-            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
-            this.ribbonPageGroup10.Text = "Tính năng thêm";
-            // 
-            // btnTBThuSH
-            // 
-            this.btnTBThuSH.Caption = "Gửi email thông báo sinh hoạt phí";
-            this.btnTBThuSH.Id = 153;
-            this.btnTBThuSH.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.send_mass_email_30px;
-            this.btnTBThuSH.Name = "btnTBThuSH";
-            // 
             // FormMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -1075,9 +1102,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.fmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHyperLinkEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlMain)).EndInit();
             this.xtraTabControlMain.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTokenEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1187,7 +1215,10 @@
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTokenEdit repositoryItemTokenEdit1;
         private DevExpress.XtraBars.BarDockingMenuItem btnTBThuSH;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit repositoryItemHyperLinkEdit1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.BarButtonItem btnGuiEmail;
     }
 }
 
