@@ -37,5 +37,15 @@ namespace BUS
         {
             return this.ChiTietPhieuBaoHongVatTu.GetDataVatTuHongTheoPhong();
         }
+
+        public DataTable GetDataTheoPhieuBaoHong(int PhieuBaoHongId)
+        {
+            return this.ChiTietPhieuBaoHongVatTu.GetDataTheoPhieuBaoHong(PhieuBaoHongId);
+        }
+        public bool DeleteTheoPhieuBaoHongId(int PhieuBaoHongId)
+        {
+            return this.ChiTietPhieuBaoHongVatTu.DeleteTheoPhieuBaoHongId(PhieuBaoHongId);
+        }
+
     }
 }

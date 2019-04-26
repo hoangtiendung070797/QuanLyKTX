@@ -38,6 +38,23 @@ namespace DAL
             }
         }
 
+        public DataTable GetDataTheoPhieuBaoHong(int PhieuBaoHongId)
+        {
+            try
+            {
+                string query = "SELECT ChiTietPhieuBaoHongVatTu,PhieuBaoHongVatTuId,ChiTietPhieuBaoHongVatTu.VatTuId,tenVatTu," +
+                    " ChiTietPhieuBaoHongVatTu.soLuong,donViTinh,lyDo,yeuCau,ChiTietPhieuBaoHongVatTu.ghiChu " +
+                    "FROM dbo.ChiTietPhieuBaoHongVatTu JOIN dbo.VatTu ON VatTu.VatTuId = ChiTietPhieuBaoHongVatTu.VatTuId WHERE PhieuBaoHongVatTuId =" + PhieuBaoHongId + "";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public bool Insert(ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu)
         {
@@ -49,13 +66,12 @@ namespace DAL
                 DataRow row = table.NewRow();
                 row["PhieuBaoHongVatTuId"] = chiTietPhieuBaoHongVatTu.PhieuBaoHongVatTuId;
                 row["VatTuId"] = chiTietPhieuBaoHongVatTu.VatTuId;
-                row["PhongId"] = chiTietPhieuBaoHongVatTu.PhongId;
                 row["soLuong"] = chiTietPhieuBaoHongVatTu.SoLuong;
                 row["donViTinh"] = chiTietPhieuBaoHongVatTu.DonViTinh;
                 row["lyDo"] = chiTietPhieuBaoHongVatTu.LyDo;
                 row["yeuCau"] = chiTietPhieuBaoHongVatTu.YeuCau;
                 row["ghiChu"] = chiTietPhieuBaoHongVatTu.GhiChu;
- 
+
                 table.Rows.Add(row);
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -75,6 +91,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(ChiTietPhieuBaoHongVatTuId);
 
                 if (row != null)
@@ -92,6 +110,34 @@ namespace DAL
                 return false;
             }
         }
+        public bool DeleteTheoPhieuBaoHongId(int PhieuBaoHongId)
+        {
+            try
+            {
+                string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
+                foreach (DataRow row in table.Rows)
+                {
+                    if ((int)row["PhieuBaoHongVatTuId"] == PhieuBaoHongId)
+                    {
+                        if (row != null)
+                        {
+                            row.Delete();
+                        }
+                    }
+                }
+                SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Update(table);
+                return true;
+            }
+            catch
+            {
+
+                return false;
+            }
+        }
 
         public bool Update(ChiTietPhieuBaoHongVatTu chiTietPhieuBaoHongVatTu)
         {
@@ -99,13 +145,14 @@ namespace DAL
             {
                 string query = "SELECT * FROM ChiTietPhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(chiTietPhieuBaoHongVatTu.ChiTietPhieuBaoHongVatTuId);
 
                 if (row != null)
                 {
                     row["PhieuBaoHongVatTuId"] = chiTietPhieuBaoHongVatTu.PhieuBaoHongVatTuId;
                     row["VatTuId"] = chiTietPhieuBaoHongVatTu.VatTuId;
-                    row["PhongId"] = chiTietPhieuBaoHongVatTu.PhongId;
                     row["soLuong"] = chiTietPhieuBaoHongVatTu.SoLuong;
                     row["donViTinh"] = chiTietPhieuBaoHongVatTu.DonViTinh;
                     row["lyDo"] = chiTietPhieuBaoHongVatTu.LyDo;

@@ -22,6 +22,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
+
 namespace QuanLyKTX
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm

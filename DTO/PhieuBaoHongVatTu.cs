@@ -11,7 +11,7 @@ namespace DTO
         private DateTime ngayBao;
         private string GhiChu;
 
-
+        private string phongId;
         private int nhanVienId;
         private int nguoiDungId;
 
@@ -22,6 +22,8 @@ namespace DTO
         public string GhiChu1 { get => GhiChu; set => GhiChu = value; }
         public int NhanVienId { get => nhanVienId; set => nhanVienId = value; }
         public int NguoiDungId { get => nguoiDungId; set => nguoiDungId = value; }
+        public string PhongId { get => phongId; set => phongId = value; }
+
 
         #endregion
 

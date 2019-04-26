@@ -28,7 +28,20 @@ namespace DTO
         private int danTocId;
 
         private byte[] image;
+        private string cmnd;
+        private string hoTenBo;
+        private DateTime ngaySinhBo;
+        private string ngheNghiepBo;
+        private string noiCongTacBo;
+        private string sdtBoCoDinh;
+        private string sdtDDBo;
 
+        private string hoTenMe;
+        private DateTime ngaySinhMe;
+        private string ngheNghiepMe;
+        private string noiCongTacMe;
+        private string sdtMeCoDinh;
+        private string sdtDDMe;
 
         public int DoiTuongId { get => doiTuongId; set => doiTuongId = value; }
         public int LoaiDoiTuongId { get => loaiDoiTuongId; set => loaiDoiTuongId = value; }
@@ -49,6 +62,19 @@ namespace DTO
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
         public int DanTocId { get => danTocId; set => danTocId = value; }
         public byte[] Image { get => image; set => image = value; }
+        public string Cmnd { get => cmnd; set => cmnd = value; }
+        public string HoTenBo { get => hoTenBo; set => hoTenBo = value; }
+        public DateTime NgaySinhBo { get => ngaySinhBo; set => ngaySinhBo = value; }
+        public string NgheNghiepBo { get => ngheNghiepBo; set => ngheNghiepBo = value; }
+        public string NoiCongTacBo { get => noiCongTacBo; set => noiCongTacBo = value; }
+        public string SdtBoCoDinh { get => sdtBoCoDinh; set => sdtBoCoDinh = value; }
+        public string SdtDDBo { get => sdtDDBo; set => sdtDDBo = value; }
+        public string HoTenMe { get => hoTenMe; set => hoTenMe = value; }
+        public DateTime NgaySinhMe { get => ngaySinhMe; set => ngaySinhMe = value; }
+        public string NgheNghiepMe { get => ngheNghiepMe; set => ngheNghiepMe = value; }
+        public string NoiCongTacMe { get => noiCongTacMe; set => noiCongTacMe = value; }
+        public string SdtMeCoDinh { get => sdtMeCoDinh; set => sdtMeCoDinh = value; }
+        public string SdtDDMe { get => sdtDDMe; set => sdtDDMe = value; }
         #endregion
 
 

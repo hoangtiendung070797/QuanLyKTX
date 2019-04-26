@@ -31,10 +31,10 @@ namespace QuanLyKTX
             cbbChucNang.Items.Add("Xếp phòng");
             cbbChucNang.Items.Add("Cấp phát thiết bị vật tư");
             cbbChucNang.Items.Add("Khen thưởng, kỷ luật");
-            cbbChucNang.Items.Add("Phiếu thu tiền phòng");
-            cbbChucNang.Items.Add("Phiếu thu tiền sinh hoạt");
-            cbbChucNang.Items.Add("Phiếu yêu cầu cấp phát vật tư");
-            cbbChucNang.Items.Add("Phiếu yêu cầu sữa chữa thiết bị vật tư");
+            cbbChucNang.Items.Add("Thu tiền phòng");
+            cbbChucNang.Items.Add("Thu tiền sinh hoạt");
+            cbbChucNang.Items.Add("Yêu cầu cấp phát vật tư");
+            cbbChucNang.Items.Add("Yêu cầu sữa chữa thiết bị vật tư");
             cbbChucNang.Items.Add("Nhà");
             cbbChucNang.Items.Add("Phòng");
             cbbChucNang.Items.Add("Loại phòng");

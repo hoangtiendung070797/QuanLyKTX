@@ -3,6 +3,8 @@ using DTO;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -16,6 +18,20 @@ namespace QuanLyKTX
         BUS_NguoiDung bUS_NguoiDung = new BUS_NguoiDung();
         DataTable data;
 
+        public string HashPassword(string pass)
+        {
+
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(pass);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasPass = "";
+
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }
+            return hasPass;
+        }
 
         public void Login()
         {
@@ -26,7 +42,7 @@ namespace QuanLyKTX
                 {
                     if (CheckUsername(txtUserName.Text))
                     {
-                        if (CheckPass(txtPassWord.Text))
+                        if (CheckPass(HashPassword(txtPassWord.Text)))
                         {
 
                             //mở chức năng tương ứng với user

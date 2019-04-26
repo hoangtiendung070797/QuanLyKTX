@@ -38,6 +38,39 @@ namespace DAL
             }
         }
 
+        public DataTable SetPhieuBaoHongID() // lấy phiếu id vừa tạo xong
+        {
+            try
+            {
+                string query = "SELECT TOP(1) * FROM dbo.PhieuBaoHongVatTu  ORDER BY PhieuBaoHongVatTuId DESC ";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public DataTable GetDataNew()
+        {
+            try
+            {
+                string query = "SELECT PhieuBaoHongVatTuId,PhieuBaoHongVatTu.PhongId,PhieuBaoHongVatTu.NhanVienId,PhieuBaoHongVatTu.NguoiDungId, tenPhieuBaoHong,tenPhong,tenNguoiLap,ngayBao,tenNhanVien,tenDangNhap ,GhiChu" +
+                    " FROM dbo.PhieuBaoHongVatTu JOIN dbo.NhanVien ON NhanVien.NhanVienID = PhieuBaoHongVatTu.NhanVienId " +
+                    "JOIN dbo.NguoiDung ON NguoiDung.NguoiDungId = PhieuBaoHongVatTu.NguoiDungId " +
+                    "JOIN dbo.Phong ON dbo.PhieuBaoHongVatTu.PhongId = dbo.Phong.PhongId ";
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                DataTable table = new DataTable();
+                dataAdapter.Fill(table);
+                return table;
+            }
+            catch
+            {
+                return null;
+            }
+        }
 
         public bool Insert(PhieuBaoHongVatTu phieuBaoHongVatTu)
         {
@@ -51,6 +84,7 @@ namespace DAL
                 row["tenNguoiLap"] = phieuBaoHongVatTu.TenNguoiLap;
                 row["ngayBao"] = phieuBaoHongVatTu.NgayBao;
                 row["ghiChu"] = phieuBaoHongVatTu.GhiChu1;
+                row["PhongId"] = phieuBaoHongVatTu.PhongId;
                 row["NhanVienId"] = phieuBaoHongVatTu.NhanVienId;
                 row["NguoiDungId"] = phieuBaoHongVatTu.NguoiDungId;
 
@@ -73,6 +107,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM PhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(phieuBaoHongVatTuId);
 
                 if (row != null)
@@ -97,6 +133,8 @@ namespace DAL
             {
                 string query = "SELECT * FROM PhieuBaoHongVatTu";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+                table = GetData();
+                table.PrimaryKey = new DataColumn[] { table.Columns[0] };
                 DataRow row = table.Rows.Find(phieuBaoHongVatTu.PhieuBaoHongVatTuId);
 
                 if (row != null)
@@ -105,6 +143,7 @@ namespace DAL
                     row["tenNguoiLap"] = phieuBaoHongVatTu.TenNguoiLap;
                     row["ngayBao"] = phieuBaoHongVatTu.NgayBao;
                     row["ghiChu"] = phieuBaoHongVatTu.GhiChu1;
+                    row["PhongId"] = phieuBaoHongVatTu.PhongId;
                     row["NhanVienId"] = phieuBaoHongVatTu.NhanVienId;
                     row["NguoiDungId"] = phieuBaoHongVatTu.NguoiDungId;
                 }

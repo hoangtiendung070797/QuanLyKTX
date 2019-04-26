@@ -81,6 +81,23 @@ namespace DAL
                 row["email"] = doiTuong.Email;
                 row["ghiChu"] = doiTuong.GhiChu;
                 row["anh"] = doiTuong.Image;
+
+                row["cmnd"] = doiTuong.Cmnd;
+
+                row["hoTenBo"] = doiTuong.HoTenBo;
+                row["ngaySinhBo"] = doiTuong.NgaySinhBo;
+                row["ngheNghiepBo"] = doiTuong.NgheNghiepBo;
+                row["noiCongTacBo"] = doiTuong.NoiCongTacBo;
+                row["sdtBoCoDinh"] = doiTuong.SdtBoCoDinh;
+                row["sdtDDBo"] = doiTuong.SdtDDBo;
+
+                row["hoTenMe"] = doiTuong.HoTenBo;
+                row["ngaySinhMe"] = doiTuong.NgaySinhBo;
+                row["ngheNghiepMe"] = doiTuong.NgheNghiepBo;
+                row["noiCongTacMe"] = doiTuong.NoiCongTacBo;
+                row["sdtMeCoDinh"] = doiTuong.SdtBoCoDinh;
+                row["sdtDDMe"] = doiTuong.SdtDDBo;
+            
                 table.Rows.Add(row);
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -146,6 +163,22 @@ namespace DAL
                     row["email"] = doiTuong.Email;
                     row["ghiChu"] = doiTuong.GhiChu;
                     row["anh"] = doiTuong.Image;
+
+                    row["cmnd"] = doiTuong.Cmnd;
+
+                    row["hoTenBo"] = doiTuong.HoTenBo;
+                    row["ngaySinhBo"] = doiTuong.NgaySinhBo;
+                    row["ngheNghiepBo"] = doiTuong.NgheNghiepBo;
+                    row["noiCongTacBo"] = doiTuong.NoiCongTacBo;
+                    row["sdtBoCoDinh"] = doiTuong.SdtBoCoDinh;
+                    row["sdtDDBo"] = doiTuong.SdtDDBo;
+
+                    row["hoTenMe"] = doiTuong.HoTenBo;
+                    row["ngaySinhMe"] = doiTuong.NgaySinhBo;
+                    row["ngheNghiepMe"] = doiTuong.NgheNghiepBo;
+                    row["noiCongTacMe"] = doiTuong.NoiCongTacBo;
+                    row["sdtMeCoDinh"] = doiTuong.SdtBoCoDinh;
+                    row["sdtDDMe"] = doiTuong.SdtDDBo;
                 }
 
                 SqlCommandBuilder sqlCommandBuilder = new SqlCommandBuilder(dataAdapter);
@@ -163,19 +196,7 @@ namespace DAL
 
 
 
-        //public DataRow GetDataById(int temp)
-        //{
-        //    try
-        //    {
-        //        DataTable data = new DataTable();
-        //        data = GetFullInfo();
 
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //}
 
 
         /// <summary>

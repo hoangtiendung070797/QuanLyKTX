@@ -602,7 +602,7 @@
             // 
             // btnThuTienPhong
             // 
-            this.btnThuTienPhong.Caption = "Phiếu thu tiền phòng";
+            this.btnThuTienPhong.Caption = "Thu tiền phòng";
             this.btnThuTienPhong.Id = 46;
             this.btnThuTienPhong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThuTienPhong.ImageOptions.Image")));
             this.btnThuTienPhong.Name = "btnThuTienPhong";
@@ -612,7 +612,7 @@
             // 
             // btnThuTienSinhHoat
             // 
-            this.btnThuTienSinhHoat.Caption = "Phiếu thu tiền sinh hoạt";
+            this.btnThuTienSinhHoat.Caption = "Thu tiền sinh hoạt";
             this.btnThuTienSinhHoat.Id = 47;
             this.btnThuTienSinhHoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThuTienSinhHoat.ImageOptions.Image")));
             this.btnThuTienSinhHoat.Name = "btnThuTienSinhHoat";
@@ -638,7 +638,7 @@
             // 
             // btnPhieuYeuCauCapPhat
             // 
-            this.btnPhieuYeuCauCapPhat.Caption = "Phiếu yêu cầu cấp phát vật tư";
+            this.btnPhieuYeuCauCapPhat.Caption = "Yêu cầu cấp phát vật tư";
             this.btnPhieuYeuCauCapPhat.Id = 50;
             this.btnPhieuYeuCauCapPhat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhieuYeuCauCapPhat.ImageOptions.Image")));
             this.btnPhieuYeuCauCapPhat.Name = "btnPhieuYeuCauCapPhat";
@@ -648,7 +648,7 @@
             // 
             // btnYeuCauSuaChua
             // 
-            this.btnYeuCauSuaChua.Caption = "Phiếu yêu cầu sữa chữa thiết bị vật tư";
+            this.btnYeuCauSuaChua.Caption = "Yêu cầu sữa chữa thiết bị vật tư";
             this.btnYeuCauSuaChua.Id = 51;
             this.btnYeuCauSuaChua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeuCauSuaChua.ImageOptions.Image")));
             this.btnYeuCauSuaChua.Name = "btnYeuCauSuaChua";

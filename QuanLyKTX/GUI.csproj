@@ -12,6 +12,7 @@
     <AssemblyName>QuanLyKTX</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -72,6 +72,8 @@
     <Reference Include="DevExpress.Snap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Snap.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Snap.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.TreeMap.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v17.1" />
     <Reference Include="DevExpress.Utils.v17.1.UI, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -98,6 +100,11 @@
     <Reference Include="DevExpress.XtraReports.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.1.Extensions, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeMap.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraVerticalGrid.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -184,6 +191,12 @@
     <Compile Include="Forms\FormGiaoDich\FormXepPhong.designer.cs">
       <DependentUpon>FormXepPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmAddThietBiHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmAddThietBiHong.designer.cs">
+      <DependentUpon>FrmAddThietBiHong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmCapPhatVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +209,12 @@
     <Compile Include="Forms\FormGiaoDich\FrmHoSo.designer.cs">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuBaoHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuBaoHong.designer.cs">
+      <DependentUpon>FrmSuaPhieuBaoHong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +226,12 @@
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmSuaPhieuThuTienSH.designer.cs">
       <DependentUpon>FrmSuaPhieuThuTienSH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuBaoHong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuBaoHong.designer.cs">
+      <DependentUpon>FrmTaoPhieuBaoHong.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.cs">
       <SubType>Form</SubType>
@@ -255,6 +280,12 @@
     </Compile>
     <Compile Include="Forms\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Test2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Test2.Designer.cs">
+      <DependentUpon>Test2.cs</DependentUpon>
     </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
@@ -439,6 +470,12 @@
     <Compile Include="UserControls\UCGiaoDich\UCKyLuat.designer.cs">
       <DependentUpon>UCKyLuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuBaoHongSuaChua.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCGiaoDich\UCPhieuBaoHongSuaChua.designer.cs">
+      <DependentUpon>UCPhieuBaoHongSuaChua.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -578,17 +615,26 @@
     <EmbeddedResource Include="Forms\FormGiaoDich\FormXepPhong.resx">
       <DependentUpon>FormXepPhong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmAddThietBiHong.resx">
+      <DependentUpon>FrmAddThietBiHong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmCapPhatVatTu.resx">
       <DependentUpon>FrmCapPhatVatTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmHoSo.resx">
       <DependentUpon>FrmHoSo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuBaoHong.resx">
+      <DependentUpon>FrmSuaPhieuBaoHong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuCapPhat.resx">
       <DependentUpon>FrmSuaPhieuCapPhat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmSuaPhieuThuTienSH.resx">
       <DependentUpon>FrmSuaPhieuThuTienSH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGiaoDich\FrmTaoPhieuBaoHong.resx">
+      <DependentUpon>FrmTaoPhieuBaoHong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormGiaoDich\FrmTaoPhieuCapPhat.resx">
       <DependentUpon>FrmTaoPhieuCapPhat.cs</DependentUpon>
@@ -613,6 +659,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Test2.resx">
+      <DependentUpon>Test2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
@@ -703,6 +752,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCKyLuat.resx">
       <DependentUpon>UCKyLuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuBaoHongSuaChua.resx">
+      <DependentUpon>UCPhieuBaoHongSuaChua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCGiaoDich\UCPhieuChi_HoanTra.resx">
       <DependentUpon>UCPhieuChi_HoanTra.cs</DependentUpon>
