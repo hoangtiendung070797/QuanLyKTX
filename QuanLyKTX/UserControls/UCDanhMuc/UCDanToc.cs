@@ -2,6 +2,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -39,9 +40,11 @@ namespace QuanLyKTX
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isFixController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btncancel.Enabled = false;
 
@@ -171,21 +174,15 @@ namespace QuanLyKTX
             reset();
         }
 
-        public void ControlManagement()
+        public void LoadControlManagement()
         {
-            List<PhanQuyen> query = Const.PhanQuyens.FindAll(x => x.TenChucNang == this.Tag);
-            foreach (var item in query)
-            {
-               
-            }
+            var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
             if(Const.CurrentUser.TenDangNhap != "admin")
             {
-                foreach (PhanQuyen item in Const.PhanQuyens)
-                {
-                   
-                }
+                isAddController = query.ChucNangThem;
+                isFixController = query.ChucNangSua ;
+                isDeleteController = query.ChucNangXoa;
             }
-            
         }
         
     }

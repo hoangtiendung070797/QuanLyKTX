@@ -910,7 +910,7 @@ namespace QuanLyKTX
 
         private void btnYeuCauSuaChua_ItemClick(object sender, ItemClickEventArgs e)
         {
-            AddTabPages("Yêu cầu sửa chữa", (int)EnumUCDanhMuc.UCPhieuChi_HoanTra);
+            AddTabPages("Yêu cầu sửa chữa", (int)EnumUCDanhMuc.UCPhieuBaoHongSuaChua);
         }
     }
 }
