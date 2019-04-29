@@ -1,6 +1,8 @@
 ﻿using BUS;
 using DTO;
 using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -18,7 +20,20 @@ namespace QuanLyKTX
         {
             this.Close() ;
         }
+        public string HashPassword(string pass)
+        {
 
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(pass);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasPass = "";
+
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }
+            return hasPass;
+        }
         public bool IsEmptyInfor()
         {
             if (string.IsNullOrEmpty(txtMatKhauOdd.Text) || string.IsNullOrEmpty(txtMatKhauNew.Text) || string.IsNullOrEmpty(txtXacNhan.Text))
@@ -39,7 +54,7 @@ namespace QuanLyKTX
 
         public bool IsCoincident()
         {
-            if(Const.CurrentUser.MatKhau == txtMatKhauNew.Text)
+            if(Const.CurrentUser.MatKhau == HashPassword(txtMatKhauNew.Text))
             {
                 simpleLabelItem1.Text = "Mật khẩu trùng với mật khẩu cũ!";
                 txtMatKhauNew.Text = "";
@@ -69,7 +84,7 @@ namespace QuanLyKTX
                 try
                 {
                     BUS_NguoiDung bUS_NguoiDung = new BUS_NguoiDung();
-                    Const.CurrentUser.MatKhau = txtMatKhauNew.Text;
+                    Const.CurrentUser.MatKhau = HashPassword(txtMatKhauNew.Text);
                     bUS_NguoiDung.Update(Const.CurrentUser);
                     MessageBox.Show("Đổi mật khâu thành công!");
 

@@ -654,6 +654,7 @@
             this.btnYeuCauSuaChua.Name = "btnYeuCauSuaChua";
             this.btnYeuCauSuaChua.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnYeuCauSuaChua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnYeuCauSuaChua_ItemClick);
             // 
             // btnNguoiDung
             // 
@@ -818,7 +819,7 @@
             // 
             // btnPhieuChi
             // 
-            this.btnPhieuChi.Caption = "Phiếu chi";
+            this.btnPhieuChi.Caption = "Chi - Hoàn trả";
             this.btnPhieuChi.Id = 149;
             this.btnPhieuChi.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.icons8_refund_64;
             this.btnPhieuChi.Name = "btnPhieuChi";

@@ -1,19 +1,27 @@
 ﻿using BUS;
 using DTO;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
     public partial class UCDanToc : UserControl
     {
+        #region Properties
+        bool isAddController = true;
+        bool isFixController = true;
+        bool isDeleteController = true;
+        #endregion
         public UCDanToc()
         {
             InitializeComponent();
+
         }
         BUS_DanToc bus_DanToc = new BUS_DanToc();
         int chucnang = 0;
 
+      
         private void UCDanToc_Load(object sender, EventArgs e)
         {
             reset();
@@ -163,6 +171,22 @@ namespace QuanLyKTX
             reset();
         }
 
+        public void ControlManagement()
+        {
+            List<PhanQuyen> query = Const.PhanQuyens.FindAll(x => x.TenChucNang == this.Tag);
+            foreach (var item in query)
+            {
+               
+            }
+            if(Const.CurrentUser.TenDangNhap != "admin")
+            {
+                foreach (PhanQuyen item in Const.PhanQuyens)
+                {
+                   
+                }
+            }
+            
+        }
         
     }
 }
