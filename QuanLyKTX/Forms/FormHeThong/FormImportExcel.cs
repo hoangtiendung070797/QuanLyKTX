@@ -429,5 +429,10 @@ namespace QuanLyKTX.Forms.FormHeThong
             dgvImport.DataSource = bUS_DanToc.GetData();
             dgvImport.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void FormImportExcel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

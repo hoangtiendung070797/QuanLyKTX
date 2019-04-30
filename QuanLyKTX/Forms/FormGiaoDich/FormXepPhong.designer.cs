@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormXepPhong));
             this.btnHuyBo = new DevExpress.XtraEditors.SimpleButton();
             this.btnCapNhap = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -266,6 +267,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 649);
             this.Controls.Add(this.panelControl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormXepPhong";
             this.Text = "FormXepPhong";
             this.Load += new System.EventHandler(this.FormXepPhong_Load);

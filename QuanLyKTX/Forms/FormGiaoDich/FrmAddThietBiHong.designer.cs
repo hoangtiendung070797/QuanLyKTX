@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddThietBiHong));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenVatTu = new System.Windows.Forms.TextBox();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.ckCancel = new DevExpress.XtraEditors.CheckButton();
@@ -47,9 +48,8 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -62,8 +62,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -84,6 +84,13 @@
             this.layoutControl1.Size = new System.Drawing.Size(421, 361);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // txtDonViTinh
+            // 
+            this.txtDonViTinh.Location = new System.Drawing.Point(97, 114);
+            this.txtDonViTinh.Name = "txtDonViTinh";
+            this.txtDonViTinh.Size = new System.Drawing.Size(300, 20);
+            this.txtDonViTinh.TabIndex = 2;
             // 
             // txtTenVatTu
             // 
@@ -245,22 +252,6 @@
             this.layoutControlItem7.Text = "Tên vật tư (*)";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(70, 13);
             // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.panelControl1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 290);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(401, 51);
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem6.TextVisible = false;
-            // 
-            // txtDonViTinh
-            // 
-            this.txtDonViTinh.Location = new System.Drawing.Point(97, 114);
-            this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(300, 20);
-            this.txtDonViTinh.TabIndex = 2;
-            // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.txtDonViTinh;
@@ -270,6 +261,15 @@
             this.layoutControlItem8.Text = "Đơn vị tính (*)";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(70, 13);
             // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.panelControl1;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 290);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(401, 51);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem6.TextVisible = false;
+            // 
             // FrmAddThietBiHong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,6 +277,7 @@
             this.ClientSize = new System.Drawing.Size(421, 361);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmAddThietBiHong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -294,8 +295,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             this.ResumeLayout(false);
 
         }

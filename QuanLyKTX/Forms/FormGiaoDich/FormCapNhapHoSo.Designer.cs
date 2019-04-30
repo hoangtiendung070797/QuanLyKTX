@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCapNhapHoSo));
             this.pnlImage = new DevExpress.XtraEditors.PanelControl();
             this.btnLoadAnh = new DevExpress.XtraEditors.SimpleButton();
             this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
@@ -560,6 +561,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 621);
             this.Controls.Add(this.panelControl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhapHoSo";
             this.Text = "FormCapNhapHoSo";
             this.Load += new System.EventHandler(this.FormCapNhapHoSo_Load);

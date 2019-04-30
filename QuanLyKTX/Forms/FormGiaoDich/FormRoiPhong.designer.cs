@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRoiPhong));
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panelControlTitle = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,16 +36,16 @@
             this.cardView1 = new DevExpress.XtraGrid.Views.Card.CardView();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnRoiPhong = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureHoSo = new DevExpress.XtraEditors.PictureEdit();
             this.txtMaSinhVien = new System.Windows.Forms.TextBox();
+            this.btnThoat = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnRoiPhong = new DevExpress.XtraEditors.SimpleButton();
             this.txtTen = new System.Windows.Forms.TextBox();
+            this.txtHoDem = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtHoDem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -116,24 +117,6 @@
             this.panelControl2.Size = new System.Drawing.Size(1284, 649);
             this.panelControl2.TabIndex = 4;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(180, 318);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(89, 36);
-            this.btnThoat.TabIndex = 1;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnRoiPhong
-            // 
-            this.btnRoiPhong.Location = new System.Drawing.Point(85, 318);
-            this.btnRoiPhong.Name = "btnRoiPhong";
-            this.btnRoiPhong.Size = new System.Drawing.Size(89, 36);
-            this.btnRoiPhong.TabIndex = 1;
-            this.btnRoiPhong.Text = "Rời Phòng";
-            this.btnRoiPhong.Click += new System.EventHandler(this.btnRoiPhong_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.pictureHoSo);
@@ -169,6 +152,15 @@
             this.txtMaSinhVien.Size = new System.Drawing.Size(192, 14);
             this.txtMaSinhVien.TabIndex = 102;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(180, 318);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(89, 36);
+            this.btnThoat.TabIndex = 1;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -179,6 +171,15 @@
             this.label4.TabIndex = 105;
             this.label4.Text = "Mã sinh viên   :";
             // 
+            // btnRoiPhong
+            // 
+            this.btnRoiPhong.Location = new System.Drawing.Point(85, 318);
+            this.btnRoiPhong.Name = "btnRoiPhong";
+            this.btnRoiPhong.Size = new System.Drawing.Size(89, 36);
+            this.btnRoiPhong.TabIndex = 1;
+            this.btnRoiPhong.Text = "Rời Phòng";
+            this.btnRoiPhong.Click += new System.EventHandler(this.btnRoiPhong_Click);
+            // 
             // txtTen
             // 
             this.txtTen.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -186,6 +187,14 @@
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(192, 14);
             this.txtTen.TabIndex = 101;
+            // 
+            // txtHoDem
+            // 
+            this.txtHoDem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHoDem.Location = new System.Drawing.Point(118, 204);
+            this.txtHoDem.Name = "txtHoDem";
+            this.txtHoDem.Size = new System.Drawing.Size(192, 14);
+            this.txtHoDem.TabIndex = 100;
             // 
             // label3
             // 
@@ -207,20 +216,13 @@
             this.label2.TabIndex = 103;
             this.label2.Text = "Họ đệm        :";
             // 
-            // txtHoDem
-            // 
-            this.txtHoDem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoDem.Location = new System.Drawing.Point(118, 204);
-            this.txtHoDem.Name = "txtHoDem";
-            this.txtHoDem.Size = new System.Drawing.Size(192, 14);
-            this.txtHoDem.TabIndex = 100;
-            // 
             // FormRoiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 649);
             this.Controls.Add(this.panelControl2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRoiPhong";
             this.Text = "FormRoiPhong";
             this.Load += new System.EventHandler(this.FormRoiPhong_Load);

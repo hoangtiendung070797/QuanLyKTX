@@ -175,6 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 249);
             this.Controls.Add(this.groupControlBackUp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRestore";
             this.Text = "Khôi phục dữ liệu";
             ((System.ComponentModel.ISupportInitialize)(this.btnPath.Properties)).EndInit();

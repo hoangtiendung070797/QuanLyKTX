@@ -87,39 +87,39 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(816, 238, 450, 400);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(1056, 570);
+            this.layoutControl1.Size = new System.Drawing.Size(742, 547);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // lblDuongDan
             // 
-            this.lblDuongDan.Location = new System.Drawing.Point(425, 12);
+            this.lblDuongDan.Location = new System.Drawing.Point(266, 12);
             this.lblDuongDan.Name = "lblDuongDan";
-            this.lblDuongDan.Size = new System.Drawing.Size(408, 22);
+            this.lblDuongDan.Size = new System.Drawing.Size(267, 38);
             this.lblDuongDan.TabIndex = 10;
             this.lblDuongDan.Text = "C:\\\\";
             // 
             // lbllTitle
             // 
-            this.lbllTitle.Location = new System.Drawing.Point(197, 12);
+            this.lbllTitle.Location = new System.Drawing.Point(107, 12);
             this.lbllTitle.Name = "lbllTitle";
-            this.lbllTitle.Size = new System.Drawing.Size(224, 22);
+            this.lbllTitle.Size = new System.Drawing.Size(155, 38);
             this.lbllTitle.TabIndex = 8;
             this.lbllTitle.Text = "label2";
             // 
             // progress
             // 
-            this.progress.Location = new System.Drawing.Point(12, 536);
+            this.progress.Location = new System.Drawing.Point(12, 514);
             this.progress.Name = "progress";
-            this.progress.Size = new System.Drawing.Size(1032, 22);
+            this.progress.Size = new System.Drawing.Size(718, 21);
             this.progress.TabIndex = 6;
             // 
             // dgvImport
             // 
             this.dgvImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImport.Location = new System.Drawing.Point(197, 38);
+            this.dgvImport.Location = new System.Drawing.Point(107, 54);
             this.dgvImport.Name = "dgvImport";
-            this.dgvImport.Size = new System.Drawing.Size(847, 494);
+            this.dgvImport.Size = new System.Drawing.Size(623, 456);
             this.dgvImport.TabIndex = 5;
             // 
             // navBarControlImport
@@ -143,9 +143,9 @@
             this.btnDanToc});
             this.navBarControlImport.Location = new System.Drawing.Point(12, 12);
             this.navBarControlImport.Name = "navBarControlImport";
-            this.navBarControlImport.OptionsNavPane.ExpandedWidth = 181;
+            this.navBarControlImport.OptionsNavPane.ExpandedWidth = 91;
             this.navBarControlImport.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.SideBar;
-            this.navBarControlImport.Size = new System.Drawing.Size(181, 520);
+            this.navBarControlImport.Size = new System.Drawing.Size(91, 498);
             this.navBarControlImport.TabIndex = 4;
             this.navBarControlImport.Text = "navBarControl1";
             // 
@@ -170,6 +170,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.btnDanToc)});
             this.navBarGroup1.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup1.LargeImage")));
             this.navBarGroup1.Name = "navBarGroup1";
+            this.navBarGroup1.TopVisibleLinkIndex = 5;
             // 
             // btnQuocTich
             // 
@@ -188,74 +189,97 @@
             // btnVatTu
             // 
             this.btnVatTu.Caption = "Vật Tư";
+            this.btnVatTu.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVatTu.LargeImage")));
             this.btnVatTu.Name = "btnVatTu";
+            this.btnVatTu.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVatTu.SmallImage")));
             this.btnVatTu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnVatTu_LinkClicked);
             // 
             // btnTinhThanh
             // 
             this.btnTinhThanh.Caption = "Tỉnh Thành";
+            this.btnTinhThanh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTinhThanh.LargeImage")));
             this.btnTinhThanh.Name = "btnTinhThanh";
+            this.btnTinhThanh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnTinhThanh.SmallImage")));
             this.btnTinhThanh.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnTinhThanh_LinkClicked);
             // 
             // btnPhong
             // 
             this.btnPhong.Caption = "Phòng";
+            this.btnPhong.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhong.LargeImage")));
             this.btnPhong.Name = "btnPhong";
+            this.btnPhong.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPhong.SmallImage")));
             this.btnPhong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnPhong_LinkClicked);
             // 
             // btnLop
             // 
             this.btnLop.Caption = "Lớp";
+            this.btnLop.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLop.LargeImage")));
             this.btnLop.Name = "btnLop";
+            this.btnLop.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLop.SmallImage")));
             this.btnLop.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLop_LinkClicked);
             // 
             // btnNguoiDung
             // 
             this.btnNguoiDung.Caption = "Người dùng";
+            this.btnNguoiDung.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.LargeImage")));
             this.btnNguoiDung.Name = "btnNguoiDung";
+            this.btnNguoiDung.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnNguoiDung.SmallImage")));
             this.btnNguoiDung.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnNguoiDung_LinkClicked);
             // 
             // btnDonVi
             // 
             this.btnDonVi.Caption = "Đơn Vị";
+            this.btnDonVi.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDonVi.LargeImage")));
             this.btnDonVi.Name = "btnDonVi";
+            this.btnDonVi.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDonVi.SmallImage")));
             this.btnDonVi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnDonVi_LinkClicked);
             // 
             // btnDayNha
             // 
             this.btnDayNha.Caption = "Dãy Nhà";
+            this.btnDayNha.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDayNha.LargeImage")));
             this.btnDayNha.Name = "btnDayNha";
+            this.btnDayNha.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDayNha.SmallImage")));
             this.btnDayNha.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnDayNha_LinkClicked);
             // 
             // btnLoiViPham
             // 
             this.btnLoiViPham.Caption = "Lỗi Vi Phạm";
+            this.btnLoiViPham.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoiViPham.LargeImage")));
             this.btnLoiViPham.Name = "btnLoiViPham";
+            this.btnLoiViPham.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLoiViPham.SmallImage")));
             this.btnLoiViPham.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLoiViPham_LinkClicked);
             // 
             // btnLoaiDoiTuong
             // 
             this.btnLoaiDoiTuong.Caption = "Loại Đối Tượng";
+            this.btnLoaiDoiTuong.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiDoiTuong.LargeImage")));
             this.btnLoaiDoiTuong.Name = "btnLoaiDoiTuong";
+            this.btnLoaiDoiTuong.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiDoiTuong.SmallImage")));
             this.btnLoaiDoiTuong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLoaiDoiTuong_LinkClicked);
             // 
             // btnLoaiPhong
             // 
             this.btnLoaiPhong.Caption = "Loại Phòng";
+            this.btnLoaiPhong.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiPhong.LargeImage")));
             this.btnLoaiPhong.Name = "btnLoaiPhong";
+            this.btnLoaiPhong.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiPhong.SmallImage")));
             this.btnLoaiPhong.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnLoaiPhong_LinkClicked);
             // 
             // btnDanToc
             // 
             this.btnDanToc.Caption = "Dân Tộc";
+            this.btnDanToc.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDanToc.LargeImage")));
             this.btnDanToc.Name = "btnDanToc";
+            this.btnDanToc.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDanToc.SmallImage")));
             this.btnDanToc.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnDanToc_LinkClicked);
             // 
             // btnDuongDanFile
             // 
-            this.btnDuongDanFile.Location = new System.Drawing.Point(837, 12);
+            this.btnDuongDanFile.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDuongDanFile.ImageOptions.Image")));
+            this.btnDuongDanFile.Location = new System.Drawing.Point(537, 12);
             this.btnDuongDanFile.Name = "btnDuongDanFile";
-            this.btnDuongDanFile.Size = new System.Drawing.Size(108, 22);
+            this.btnDuongDanFile.Size = new System.Drawing.Size(98, 38);
             this.btnDuongDanFile.StyleController = this.layoutControl1;
             this.btnDuongDanFile.TabIndex = 11;
             this.btnDuongDanFile.Text = "Đường dẫn";
@@ -263,9 +287,10 @@
             // 
             // btnThucHien
             // 
-            this.btnThucHien.Location = new System.Drawing.Point(949, 12);
+            this.btnThucHien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThucHien.ImageOptions.Image")));
+            this.btnThucHien.Location = new System.Drawing.Point(639, 12);
             this.btnThucHien.Name = "btnThucHien";
-            this.btnThucHien.Size = new System.Drawing.Size(95, 22);
+            this.btnThucHien.Size = new System.Drawing.Size(91, 38);
             this.btnThucHien.StyleController = this.layoutControl1;
             this.btnThucHien.TabIndex = 12;
             this.btnThucHien.Text = "Thực hiện";
@@ -285,7 +310,7 @@
             this.layoutControlItem8});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1056, 570);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(742, 547);
             this.layoutControlGroup1.TextVisible = false;
             // 
             // layoutControlItem1
@@ -293,61 +318,61 @@
             this.layoutControlItem1.Control = this.navBarControlImport;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(185, 524);
+            this.layoutControlItem1.Size = new System.Drawing.Size(95, 502);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.dgvImport;
-            this.layoutControlItem2.Location = new System.Drawing.Point(185, 26);
+            this.layoutControlItem2.Location = new System.Drawing.Point(95, 42);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(851, 498);
+            this.layoutControlItem2.Size = new System.Drawing.Size(627, 460);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.progress;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 524);
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 502);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(1036, 26);
+            this.layoutControlItem3.Size = new System.Drawing.Size(722, 25);
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.lbllTitle;
-            this.layoutControlItem5.Location = new System.Drawing.Point(185, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(95, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(228, 26);
+            this.layoutControlItem5.Size = new System.Drawing.Size(159, 42);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.lblDuongDan;
-            this.layoutControlItem4.Location = new System.Drawing.Point(413, 0);
+            this.layoutControlItem4.Location = new System.Drawing.Point(254, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(412, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(271, 42);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.btnDuongDanFile;
-            this.layoutControlItem7.Location = new System.Drawing.Point(825, 0);
+            this.layoutControlItem7.Location = new System.Drawing.Point(525, 0);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(112, 26);
+            this.layoutControlItem7.Size = new System.Drawing.Size(102, 42);
             this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem7.TextVisible = false;
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.btnThucHien;
-            this.layoutControlItem8.Location = new System.Drawing.Point(937, 0);
+            this.layoutControlItem8.Location = new System.Drawing.Point(627, 0);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(99, 26);
+            this.layoutControlItem8.Size = new System.Drawing.Size(95, 42);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -355,12 +380,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 570);
+            this.ClientSize = new System.Drawing.Size(742, 547);
             this.Controls.Add(this.layoutControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormImportExcel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập dữ liệu từ Excel";
+            this.Load += new System.EventHandler(this.FormImportExcel_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).EndInit();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCapPhatVatTu));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.groupControl1.Size = new System.Drawing.Size(425, 402);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông tin vật tư cấp phát";
-         
             // 
             // label16
             // 
@@ -171,7 +171,6 @@
             this.label9.Size = new System.Drawing.Size(11, 13);
             this.label9.TabIndex = 15;
             this.label9.Text = ":";
-  
             // 
             // label8
             // 
@@ -252,7 +251,6 @@
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(213, 21);
             this.txtThanhTien.TabIndex = 6;
- 
             // 
             // txtDonGia
             // 
@@ -269,7 +267,6 @@
             this.txtTinhTrang.Name = "txtTinhTrang";
             this.txtTinhTrang.Size = new System.Drawing.Size(213, 21);
             this.txtTinhTrang.TabIndex = 4;
-            
             // 
             // txtDonViTinh
             // 
@@ -336,6 +333,7 @@
             this.Controls.Add(this.ckCancel);
             this.Controls.Add(this.ckOk);
             this.Controls.Add(this.groupControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCapPhatVatTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCapPhatVatTu";
