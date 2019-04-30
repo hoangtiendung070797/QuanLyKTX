@@ -2,6 +2,7 @@
 using DAL;
 using DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls
@@ -15,7 +16,12 @@ namespace QuanLyKTX.UserControls
         BUS_Lop bUS_Lop = new BUS_Lop();
         int chucnang = 0;
         BUS_DonVi bus_DonVi = new BUS_DonVi();
-
+       
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
         private void UCLop_Load(object sender, EventArgs e)
         {
             reset();
@@ -41,9 +47,11 @@ namespace QuanLyKTX.UserControls
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -184,13 +192,29 @@ namespace QuanLyKTX.UserControls
             reset();
         }
 
-        int tempDonVi=0;
         private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
         {
             txtMaLop.Text = gridView1.GetRowCellValue(e.RowHandle, "LopId").ToString();
             txtTenLop.Text = gridView1.GetRowCellValue(e.RowHandle, "tenLop").ToString();          
             cbbDonvi.Text = gridView1.GetRowCellValue(e.RowHandle, "tenDonVi").ToString();
             MessageBox.Show(cbbDonvi.SelectedValue.ToString());
+        }
+        public void LoadControlManagement()
+        {
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
+            }
         }
     }
 }

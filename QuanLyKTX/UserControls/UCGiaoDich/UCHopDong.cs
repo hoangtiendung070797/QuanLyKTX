@@ -48,6 +48,9 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             btnAdd.Enabled = true;
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
+
+
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 

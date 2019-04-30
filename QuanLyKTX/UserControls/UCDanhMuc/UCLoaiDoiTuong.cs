@@ -2,6 +2,7 @@
 using DAL;
 using DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls
@@ -12,6 +13,12 @@ namespace QuanLyKTX.UserControls
         {
             InitializeComponent();
         }
+
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
 
         BUS_LoaiDoiTuong bUS_LoaiDoiTuong = new BUS_LoaiDoiTuong();
         int chucnang = 0;
@@ -29,9 +36,11 @@ namespace QuanLyKTX.UserControls
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -80,7 +89,7 @@ namespace QuanLyKTX.UserControls
                 if (MessageBox.Show("Bạn chắc chắn muốn xóa bản ghi này ?", "Đồng ý Ok-Cancel", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (bUS_LoaiDoiTuong.Delete(int.Parse(txtMaLoaiDoiTuong.Text)))
-                      {
+                    {
                         //------------Ghi log
                         NhatKyHoatDong nhatKy = new NhatKyHoatDong();
                         nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
@@ -168,6 +177,23 @@ namespace QuanLyKTX.UserControls
         private void UCLoaiDoiTuong_Load(object sender, EventArgs e)
         {
             reset();
+        }
+        public void LoadControlManagement()
+        {
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
+            }
         }
     }
 }

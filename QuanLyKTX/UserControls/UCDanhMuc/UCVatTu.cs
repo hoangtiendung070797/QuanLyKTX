@@ -4,6 +4,7 @@ using DTO;
 using System;
 using System.Windows.Forms;
 using System.Data;
+using System.Linq;
 
 namespace QuanLyKTX.UserControls
 {
@@ -13,6 +14,12 @@ namespace QuanLyKTX.UserControls
         {
             InitializeComponent();
         }
+
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
 
         BUS_VatTu bUS_vattu = new BUS_VatTu();
         int chucnang = 0;
@@ -38,9 +45,11 @@ namespace QuanLyKTX.UserControls
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -225,7 +234,23 @@ namespace QuanLyKTX.UserControls
         {
             reset();
         }
+        public void LoadControlManagement()
+        {
 
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
+            }
+        }
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))

@@ -2,6 +2,7 @@
 using DAL;
 using DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -12,6 +13,11 @@ namespace QuanLyKTX
         {
             InitializeComponent();
         }
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
         BUS_LoaiPhong bUS_LoaiPhong = new BUS_LoaiPhong();
         int chucnang = 0;
 
@@ -24,9 +30,11 @@ namespace QuanLyKTX
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -208,6 +216,23 @@ namespace QuanLyKTX
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+        public void LoadControlManagement()
+        {
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
             }
         }
     }

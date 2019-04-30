@@ -458,7 +458,7 @@
             // 
             // btnHome
             // 
-            this.btnHome.Caption = "Nhà";
+            this.btnHome.Caption = "Dãy nhà";
             this.btnHome.Id = 31;
             this.btnHome.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.ImageOptions.Image")));
             this.btnHome.Name = "btnHome";

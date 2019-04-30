@@ -2,6 +2,7 @@
 using DAL;
 using DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX.UserControls
@@ -15,6 +16,12 @@ namespace QuanLyKTX.UserControls
         BUS_TonGiao bUS_TonGiao = new BUS_TonGiao();
         int chucnang = 0;
 
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
+
         private void UCTonGiao_Load(object sender, EventArgs e)
         {
             reset();
@@ -27,9 +34,11 @@ namespace QuanLyKTX.UserControls
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -166,6 +175,23 @@ namespace QuanLyKTX.UserControls
         {
             txtMaTonGiao.Text = gridView1.GetRowCellValue(e.RowHandle, "TonGiaoId").ToString();
             txtTenTonGiao.Text = gridView1.GetRowCellValue(e.RowHandle, "tenTonGiao").ToString();
+        }
+        public void LoadControlManagement()
+        {
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
+            }
         }
     }
 }

@@ -11,9 +11,10 @@ namespace QuanLyKTX
     {
         #region Properties
         bool isAddController = true;
-        bool isFixController = true;
+        bool isEditController = true;
         bool isDeleteController = true;
         #endregion
+
         public UCDanToc()
         {
             InitializeComponent();
@@ -38,11 +39,13 @@ namespace QuanLyKTX
             gridControl1.DataSource = bus_DanToc.GetData();
             FixNColumnNames();
         }
+
         void reset()
         {
             LoadControlManagement();
+
             btnAdd.Enabled = isAddController;
-            btnEdit.Enabled = isFixController;
+            btnEdit.Enabled = isEditController;
             btnDelete.Enabled = isDeleteController;
 
             btnSave.Enabled = false;
@@ -56,6 +59,7 @@ namespace QuanLyKTX
 
             display();
         }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             reset();
@@ -176,13 +180,21 @@ namespace QuanLyKTX
 
         public void LoadControlManagement()
         {
-            var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+           
             if(Const.CurrentUser.TenDangNhap != "admin")
             {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
                 isAddController = query.ChucNangThem;
-                isFixController = query.ChucNangSua ;
+                isEditController = query.ChucNangSua ;
                 isDeleteController = query.ChucNangXoa;
             }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
+            }
+           
         }
         
     }

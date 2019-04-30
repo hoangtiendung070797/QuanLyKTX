@@ -1,12 +1,19 @@
 ﻿using BUS;
 using DTO;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
 {
     public partial class UCDayNha : UserControl
     {
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
+
         public UCDayNha()
         {
             InitializeComponent();
@@ -28,9 +35,14 @@ namespace QuanLyKTX
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
+
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -174,5 +186,24 @@ namespace QuanLyKTX
         {
             reset();
         }
+        public void LoadControlManagement()
+        {
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
+            }
+
+        }
+
     }
 }

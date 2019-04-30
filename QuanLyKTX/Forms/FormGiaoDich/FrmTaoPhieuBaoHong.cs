@@ -160,6 +160,16 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                         ChiTietPhieuBaoHongVatTu.YeuCau = listViewThietBi.Items[i].SubItems[6].Text;
                         ChiTietPhieuBaoHongVatTu.GhiChu = listViewThietBi.Items[i].SubItems[7].Text;
                         BUS_ChiTietPhieuBaoHongVatTu.Insert(ChiTietPhieuBaoHongVatTu);
+
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "thêm thành công báo hỏng  vật tư-id: " + ChiTietPhieuBaoHongVatTu.VatTuId;/////////////
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                     }
                 }
                 MessageBox.Show("Đã tạo phiếu thành công", "Thông báo");

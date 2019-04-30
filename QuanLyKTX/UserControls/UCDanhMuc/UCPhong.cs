@@ -4,7 +4,7 @@ using DTO;
 using System;
 using System.Windows.Forms;
 using System.Data;
-
+using System.Linq;
 
 namespace QuanLyKTX.UserControls
 {
@@ -18,6 +18,12 @@ namespace QuanLyKTX.UserControls
         BUS_LoaiPhong bus_loaiphong = new BUS_LoaiPhong();
         BUS_DayNha bus_daynha = new BUS_DayNha();
         int chucnang = 0;
+
+        #region Properties
+        bool isAddController = true;
+        bool isEditController = true;
+        bool isDeleteController = true;
+        #endregion
 
         private void UCPhong_Load(object sender, EventArgs e)
         {
@@ -52,9 +58,11 @@ namespace QuanLyKTX.UserControls
         }
         void reset()
         {
-            btnAdd.Enabled = true;
-            btnEdit.Enabled = true;
-            btnDelete.Enabled = true;
+            LoadControlManagement();
+            btnAdd.Enabled = isAddController;
+            btnEdit.Enabled = isEditController;
+            btnDelete.Enabled = isDeleteController;
+
             btnSave.Enabled = false;
             btnCancel.Enabled = false;
 
@@ -284,6 +292,23 @@ namespace QuanLyKTX.UserControls
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+        public void LoadControlManagement()
+        {
+
+            if (Const.CurrentUser.TenDangNhap != "admin")
+            {
+                var query = Const.PhanQuyens.Where(x => x.TenChucNang == this.Tag.ToString()).Single();
+                isAddController = query.ChucNangThem;
+                isEditController = query.ChucNangSua;
+                isDeleteController = query.ChucNangXoa;
+            }
+            else
+            {
+                isAddController = true;
+                isEditController = true;
+                isDeleteController = true;
             }
         }
     }
