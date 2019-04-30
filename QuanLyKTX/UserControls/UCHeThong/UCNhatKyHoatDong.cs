@@ -35,6 +35,7 @@ namespace QuanLyKTX
             cbbChucNang.Items.Add("Thu tiền sinh hoạt");
             cbbChucNang.Items.Add("Yêu cầu cấp phát vật tư");
             cbbChucNang.Items.Add("Yêu cầu sữa chữa thiết bị vật tư");
+            cbbChucNang.Items.Add("Chi - Hoàn trả");
             cbbChucNang.Items.Add("Nhà");
             cbbChucNang.Items.Add("Phòng");
             cbbChucNang.Items.Add("Loại phòng");

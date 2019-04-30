@@ -47,7 +47,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 //------------Ghi log
                 NhatKyHoatDong nhatKy = new NhatKyHoatDong();
                 nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
-                nhatKy.NoiDung = "Cập nhập thành công bản phiếu cấp phát vật tư cho phòng" + phieuCapPhatVatTu.PhongId1;
+                nhatKy.NoiDung = "Cập nhập thành công bản phiếu cấp phát vật tư cho phòng" + phieuCapPhatVatTu.PhongId1 + " vào hệ thống";
                 nhatKy.ThaoTac = "Cập nhập";
                 nhatKy.ThoiGian = DateTime.Now;
                 nhatKy.ChucNang = "Phiếu yêu cầu cấp phát vật tư";

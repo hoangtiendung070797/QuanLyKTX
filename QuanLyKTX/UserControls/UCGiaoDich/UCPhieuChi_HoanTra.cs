@@ -101,6 +101,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     SetDataPhieuChi();
                     BUS_PhieuChi.Insert(PhieuChi);
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Tạo thành công phiếu chi id: " + PhieuID + " vào hệ thống";
+                    nhatKy.ThaoTac = "Tạo";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Chi - Hoàn trả";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
                     gridControl1.DataSource = BUS_PhieuChi.GetDataNew();
                     resetPhieuChi();
                     MessageBox.Show("Đã tạo phiếu", "Thông báo");
@@ -137,6 +146,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     SetDataPhieuChi();
                     BUS_PhieuChi.Update(PhieuChi);
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Cập nhật thành công phiếu chi id: " + PhieuID + " trong hệ thống";
+                    nhatKy.ThaoTac = "Cập nhật";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Chi - Hoàn trả";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
                     gridControl1.DataSource = BUS_PhieuChi.GetDataNew();
                     resetPhieuChi();
                     MessageBox.Show("Đã cập nhật", "Thông báo");
@@ -164,6 +182,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                         int rowHandle = gridView1.GetRowHandle(gridView1.GetRowHandle(i));
                         PhieuID = (int)gridView1.GetRowCellValue(rowHandle, "PhieuChiId");
                         BUS_PhieuChi.Delete(PhieuID);
+                        //------------Ghi log
+                        NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                        nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                        nhatKy.NoiDung = "Xóa thành công phiếu chi id: " + PhieuID + " ra khỏi hệ thống";
+                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.ThoiGian = DateTime.Now;
+                        nhatKy.ChucNang = "Chi - Hoàn trả";
+                        Const.NhatKyHoatDong.Insert(nhatKy);
+                        //-------------------
                     }
                     gridControl1.DataSource = BUS_PhieuChi.GetDataNew();
                     resetPhieuChi();

@@ -296,6 +296,15 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                     }
                     GetThuoctinh();
                     BUS_PhieuThuTienSH.Insert(PhieuThuTienSH);
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Tạo thành công phiếu thu tiền sinh hoạt: " + PhieuThuTienSH.PhieuThuTienSHId + " vào hệ thống";
+                    nhatKy.ThaoTac = "Tạo";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Thu tiền sinh hoạt";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
                     MessageBox.Show("Thêm thành công");
                     this.Close();
                 }                

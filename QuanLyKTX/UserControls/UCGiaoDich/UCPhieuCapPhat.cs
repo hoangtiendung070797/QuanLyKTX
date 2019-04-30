@@ -44,7 +44,7 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     //------------Ghi log
                     NhatKyHoatDong nhatKy = new NhatKyHoatDong();
                     nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
-                    nhatKy.NoiDung = "Xóa thành công bản phiếu cấp phát vật tư số " + temp;
+                    nhatKy.NoiDung = "Xóa thành công bản phiếu cấp phát vật tư số " + temp + " vào hệ thống";
                     nhatKy.ThaoTac = "Xóa";
                     nhatKy.ThoiGian = DateTime.Now;
                     nhatKy.ChucNang = "Phiếu yêu cầu cấp phát vật tư";

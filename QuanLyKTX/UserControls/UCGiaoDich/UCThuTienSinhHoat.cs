@@ -211,6 +211,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
               //  MessageBox.Show(PhieuThuTienSHId.ToString());
                 BUS_PhieuThuTienSH.Delete(PhieuThuTienSHId);
+                //------------Ghi log
+                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                nhatKy.NoiDung = "Xóa thành công phiếu thu tiền sinh hoạt id: " + PhieuThuTienSHId+ " ra khỏi hệ thống";
+                nhatKy.ThaoTac = "Xóa";
+                nhatKy.ThoiGian = DateTime.Now;
+                nhatKy.ChucNang = "Thu tiền sinh hoạt";
+                Const.NhatKyHoatDong.Insert(nhatKy);
+                //-------------------
                 if (cbThang.Text == "All")
                 {
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataNew();

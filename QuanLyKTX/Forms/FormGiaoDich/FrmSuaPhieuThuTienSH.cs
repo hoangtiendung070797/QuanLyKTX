@@ -272,6 +272,15 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                     PhieuThuTienSH.PhieuThuTienSHId = GetPhietId;
                     GetThuoctinh();
                     BUS_PhieuThuTienSH.Update(PhieuThuTienSH);
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Cập nhật thành công phiếu thu tiền sinh hoạt: " + PhieuThuTienSH.PhieuThuTienSHId + " trong hệ thống";
+                    nhatKy.ThaoTac = "Cập nhật";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Thu tiền sinh hoạt";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
                     MessageBox.Show("Cập nhật thành công");
                     this.Close();
                 }

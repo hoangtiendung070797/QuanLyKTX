@@ -149,8 +149,8 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                     }
                     else
                     {
-                        if (BUS_ChiTietPhieuBaoHongVatTu.DeleteTheoPhieuBaoHongId(GetPhieuBaoHongId))
-                            MessageBox.Show("Cặc");
+                        BUS_ChiTietPhieuBaoHongVatTu.DeleteTheoPhieuBaoHongId(GetPhieuBaoHongId);
+           
                         for (int i = 0; i < listViewThietBi.Items.Count; i++)
                         {
                             ChiTietPhieuBaoHongVatTu.PhieuBaoHongVatTuId = GetPhieuBaoHongId;
@@ -161,6 +161,16 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                             ChiTietPhieuBaoHongVatTu.YeuCau = listViewThietBi.Items[i].SubItems[6].Text;
                             ChiTietPhieuBaoHongVatTu.GhiChu = listViewThietBi.Items[i].SubItems[7].Text;
                             BUS_ChiTietPhieuBaoHongVatTu.Insert(ChiTietPhieuBaoHongVatTu);
+
+                            //------------Ghi log
+                            NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                            nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                            nhatKy.NoiDung = "Cập nhập thành công báo hỏng  vật tư-id: " + ChiTietPhieuBaoHongVatTu.VatTuId + " số lượng: " + ChiTietPhieuBaoHongVatTu.SoLuong + " trong hệ thống";
+                            nhatKy.ThaoTac = "Cập nhập";
+                            nhatKy.ThoiGian = DateTime.Now;
+                            nhatKy.ChucNang = "Yêu cầu sữa chữa thiết bị vật tư";
+                            Const.NhatKyHoatDong.Insert(nhatKy);
+                            //-------------------
                         }
                     }                   
                 }

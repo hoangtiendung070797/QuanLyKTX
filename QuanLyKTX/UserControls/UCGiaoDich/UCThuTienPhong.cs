@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DevExpress.XtraReports.UI;
+using DTO;
 using QuanLyKTX.Forms;
 using QuanLyKTX.Forms.FormGiaoDich;
 using QuanLyKTX.UserControls.UCInHoaDon.HoaDonThuTienPhong;
@@ -107,6 +108,15 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             if(MessageBox.Show("Chắc chắn muốn xóa?","Xóa phiếu",MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 BUS_PhieuThuTienPhong.Delete(PhieuThuPhiPhongId);
+                //------------Ghi log
+                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                nhatKy.NoiDung = "Xóa thành công phiếu thu tiền phòng cho đối tượng id: " + PhieuThuPhiPhongId + " ra khỏi hệ thống";
+                nhatKy.ThaoTac = "Xóa";
+                nhatKy.ThoiGian = DateTime.Now;
+                nhatKy.ChucNang = "Thu tiền phòng";
+                Const.NhatKyHoatDong.Insert(nhatKy);
+                //-------------------
                 LoadAgainPhieuThu();
             }
         }

@@ -164,10 +164,10 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                         //------------Ghi log
                         NhatKyHoatDong nhatKy = new NhatKyHoatDong();
                         nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
-                        nhatKy.NoiDung = "thêm thành công báo hỏng  vật tư-id: " + ChiTietPhieuBaoHongVatTu.VatTuId;/////////////
-                        nhatKy.ThaoTac = "Xóa";
+                        nhatKy.NoiDung = "Tạo thành công báo hỏng  vật tư-id: " + ChiTietPhieuBaoHongVatTu.VatTuId + " số lượng: " + ChiTietPhieuBaoHongVatTu.SoLuong + " vào hệ thống";
+                        nhatKy.ThaoTac = "Tạo";
                         nhatKy.ThoiGian = DateTime.Now;
-                        nhatKy.ChucNang = "Khen thưởng, kỷ luật";
+                        nhatKy.ChucNang = "Yêu cầu sữa chữa thiết bị vật tư";
                         Const.NhatKyHoatDong.Insert(nhatKy);
                         //-------------------
                     }

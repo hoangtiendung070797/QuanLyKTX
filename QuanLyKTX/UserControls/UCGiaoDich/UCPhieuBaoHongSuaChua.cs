@@ -107,6 +107,17 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                     }
                 }
                 BUS_PhieuBaoHongVatTu.Delete(phieubaohongId);
+
+                //------------Ghi log
+                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                nhatKy.NoiDung = "Xóa thành công yêu cầu báo hỏng id: " + phieubaohongId + " ra khỏi hệ thống";
+                nhatKy.ThaoTac = "Xóa";
+                nhatKy.ThoiGian = DateTime.Now;
+                nhatKy.ChucNang = "Yêu cầu sữa chữa thiết bị vật tư";
+                Const.NhatKyHoatDong.Insert(nhatKy);
+                //-------------------
+
                 gridControlChiTiet.DataSource = BUS_ChiTietPhieuBaoHongVatTu.GetDataTheoPhieuBaoHong(0);
                 gridControlPhieuSuaChua.DataSource = BUS_PhieuBaoHongVatTu.GetDataNew();
                 MessageBox.Show("Đã xóa phiếu", "Thông báo");

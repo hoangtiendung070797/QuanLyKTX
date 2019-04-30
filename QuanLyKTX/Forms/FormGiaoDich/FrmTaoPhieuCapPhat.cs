@@ -65,7 +65,18 @@ namespace QuanLyKTX.Forms.FormGiaoDich
              try
              {           
                  BUS_PhieuCapPhatVatTu.Insert(phieuCapPhatVatTu);
-                 MessageBox.Show("Tạo thành công !");
+
+                //------------Ghi log
+                NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                nhatKy.NoiDung = "Tạo thành công bản phiếu cấp phát vật tư ID : " + phieuCapPhatVatTu.PhieuCapPhatVatTuId + " vào hệ thống";
+                nhatKy.ThaoTac = "Tạo";
+                nhatKy.ThoiGian = DateTime.Now;
+                nhatKy.ChucNang = "Phiếu yêu cầu cấp phát vật tư";
+                Const.NhatKyHoatDong.Insert(nhatKy);
+                //-------------------
+
+                MessageBox.Show("Tạo thành công !");
                  this.Close();
              }
              catch

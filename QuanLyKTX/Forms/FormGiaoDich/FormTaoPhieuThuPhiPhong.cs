@@ -40,11 +40,20 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 phieuThuTienPhong.GhiChu = txtGhiChu.Text;
                 phieuThuTienPhong.TienThu = int.Parse(txtTienThu.Text);
                 phieuThuTienPhong.TinhTrang = (cbTinhTrang.Checked) ? true : false;
-
-    
-
                 if (BUS_PhieuThuTienPhong.Insert(phieuThuTienPhong))
+                {
+                    //------------Ghi log
+                    NhatKyHoatDong nhatKy = new NhatKyHoatDong();
+                    nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;
+                    nhatKy.NoiDung = "Tạo thành công phiếu thu tiền phòng cho đối tượng id: " + DoiTuongId + " vào hệ thống";
+                    nhatKy.ThaoTac = "Tạo";
+                    nhatKy.ThoiGian = DateTime.Now;
+                    nhatKy.ChucNang = "Thu tiền phòng";
+                    Const.NhatKyHoatDong.Insert(nhatKy);
+                    //-------------------
                     MessageBox.Show("Thêm thành công!");
+                }
+                
                 else
                     MessageBox.Show("Thất bại!");
                 DoiTuongId = 0;
