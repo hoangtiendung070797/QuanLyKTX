@@ -873,6 +873,7 @@
             this.btnGuiEmail.Id = 155;
             this.btnGuiEmail.ImageOptions.LargeImage = global::QuanLyKTX.Properties.Resources.send_mass_email_30px;
             this.btnGuiEmail.Name = "btnGuiEmail";
+            this.btnGuiEmail.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuiEmail_ItemClick);
             // 
             // PageHeThong
             // 

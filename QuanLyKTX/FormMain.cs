@@ -912,5 +912,10 @@ namespace QuanLyKTX
         {
             AddTabPages("Yêu cầu sửa chữa", (int)EnumUCDanhMuc.UCPhieuBaoHongSuaChua);
         }
+
+        private void btnGuiEmail_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

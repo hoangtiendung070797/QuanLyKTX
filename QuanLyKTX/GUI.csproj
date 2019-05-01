@@ -296,6 +296,12 @@
     <Compile Include="Support\ReadNumber.cs" />
     <Compile Include="Support\SupportCatchError.cs" />
     <Compile Include="Support\SupportSendEmail.cs" />
+    <Compile Include="UserControls\UCBaoCaoThongKe\frmGuiMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCBaoCaoThongKe\frmGuiMail.Designer.cs">
+      <DependentUpon>frmGuiMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -665,6 +671,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\frmGuiMail.resx">
+      <DependentUpon>frmGuiMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCBaoCaoThongKe\ThongKeDonVi\UCTKDonVi.resx">
       <DependentUpon>UCTKDonVi.cs</DependentUpon>
