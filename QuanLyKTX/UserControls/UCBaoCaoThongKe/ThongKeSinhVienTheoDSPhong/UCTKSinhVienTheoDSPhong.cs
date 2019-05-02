@@ -37,7 +37,7 @@ namespace QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeSinhVienTheoDSPhong
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = BUS_Phong.GetSinhVienTheoPhong(cmbPhong.SelectedValue.ToString(),(int)cmbDayNha.SelectedValue);
+            gridControl1.DataSource = BUS_Phong.GetSinhVienTheoPhong(cmbPhong.SelectedValue==null?"": cmbPhong.SelectedValue.ToString(), cmbDayNha.SelectedValue==null?0: (int)cmbDayNha.SelectedValue);
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

@@ -50,7 +50,14 @@ namespace QuanLyKTX.Forms.FormGiaoDich
                 && !string.IsNullOrEmpty(dateNgaySinh.Text) && !string.IsNullOrEmpty(cbLoaiDoiTuong.Text)
                 && !string.IsNullOrEmpty(cbLop.Text) && !string.IsNullOrEmpty(cbTinhThanh.Text)
                 && !string.IsNullOrEmpty(cbQuocTich.Text) && !string.IsNullOrEmpty(cbTonGiao.Text)
-                 && !string.IsNullOrEmpty(txtSdt.Text) && !string.IsNullOrEmpty(txtEmail.Text)
+                && !string.IsNullOrEmpty(txtSdt.Text) && !string.IsNullOrEmpty(txtEmail.Text)
+                && !string.IsNullOrEmpty(txtCMND.Text) && !string.IsNullOrEmpty(txtHoTenBo.Text)
+                && !string.IsNullOrEmpty(dateEditNgaySinhBo.Text) && !string.IsNullOrEmpty(txtNgheNghiepBo.Text)
+                && !string.IsNullOrEmpty(txtNoiCongTacBo.Text) && !string.IsNullOrEmpty(txtFaxBo.Text)
+                && !string.IsNullOrEmpty(txtTelBo.Text) && !string.IsNullOrEmpty(txtHoTenMe.Text)
+                && !string.IsNullOrEmpty(dateEditNgaySinhMe.Text) && !string.IsNullOrEmpty(txtNgheNghiepMe.Text)
+                && !string.IsNullOrEmpty(txtNoiCongTacMe.Text) && !string.IsNullOrEmpty(txtFaxMe.Text)
+                && !string.IsNullOrEmpty(txtTelMe.Text)
                 )
             {
                 return true;
@@ -146,6 +153,19 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbTonGiao.SelectedValue = row["TonGiaoId"];
             cbQuocTich.SelectedValue = row["QuocTichId"];
             cbDanToc.SelectedValue = row["DanTocId"];
+            txtCMND.Text = row["cmnd"].ToString();
+            txtHoTenBo.Text = row["hoTenBo"].ToString();
+            dateEditNgaySinhBo.Text = row["ngaySinhBo"].ToString();
+            txtNgheNghiepBo.Text = row["ngheNghiepBo"].ToString();
+            txtNoiCongTacBo.Text = row["noiCongTacBo"].ToString();
+            txtFaxBo.Text = row["sdtBoCoDinh"].ToString();
+            txtTelBo.Text = row["sdtDDBo"].ToString();
+            txtHoTenMe.Text = row["hoTenMe"].ToString();
+            dateEditNgaySinhMe.Text = row["ngaySinhMe"].ToString();
+            txtNgheNghiepMe.Text = row["ngheNghiepMe"].ToString();
+            txtNoiCongTacMe.Text = row["noiCongTacMe"].ToString();
+            txtFaxMe.Text = row["sdtMeCoDinh"].ToString();
+            txtTelMe.Text = row["sdtDDMe"].ToString();
             txtGhiChu.Text = row["ghiChu"].ToString();
 
             //Load Ảnh
@@ -199,6 +219,19 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             doiTuong.DanTocId = (int)cbDanToc.SelectedValue;
             doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
             doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
+            doiTuong.Cmnd = txtCMND.Text;
+            doiTuong.HoTenBo = txtHoTenBo.Text;
+            doiTuong.NgaySinhBo = (DateTime)dateEditNgaySinhBo.EditValue;
+            doiTuong.NgheNghiepBo = txtNgheNghiepBo.Text;
+            doiTuong.NoiCongTacBo = txtNoiCongTacBo.Text;
+            doiTuong.SdtBoCoDinh = txtFaxBo.Text;
+            doiTuong.SdtDDBo = txtTelBo.Text;
+            doiTuong.HoTenMe = txtHoTenMe.Text;
+            doiTuong.NgaySinhMe = (DateTime)dateEditNgaySinhMe.EditValue;
+            doiTuong.NgheNghiepMe = txtNgheNghiepMe.Text;
+            doiTuong.NoiCongTacMe = txtNoiCongTacMe.Text;
+            doiTuong.SdtMeCoDinh = txtFaxMe.Text;
+            doiTuong.SdtDDMe = txtTelMe.Text;
 
             doiTuong.Image = (!string.IsNullOrEmpty(path)) ? support.converImgToByte(path) : tempPic;
             doiTuong.GhiChu = txtGhiChu.Text;

@@ -88,6 +88,20 @@ namespace QuanLyKTX
                 doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
                 doiTuong.Image = support.converImgToByte(path);
                 doiTuong.GhiChu = txtGhiChu.Text;
+                doiTuong.Cmnd = txtCMND.Text;
+                doiTuong.HoTenBo = txtHoTenBo.Text;
+                doiTuong.NgaySinhBo = (DateTime)dateEditNgaySinhBo.EditValue;
+                doiTuong.NgheNghiepBo = txtNgheNghiepBo.Text;
+                doiTuong.NoiCongTacBo = txtNoiCongTacBo.Text;
+                doiTuong.SdtBoCoDinh = txtFaxBo.Text;
+                doiTuong.SdtDDBo = txtTelBo.Text;
+                doiTuong.HoTenMe = txtHoTenMe.Text;
+                doiTuong.NgaySinhMe = (DateTime)dateEditNgaySinhMe.EditValue;
+                doiTuong.NgheNghiepMe = txtNgheNghiepMe.Text;
+                doiTuong.NoiCongTacMe = txtNoiCongTacMe.Text;
+                doiTuong.SdtMeCoDinh = txtFaxMe.Text;
+                doiTuong.SdtDDMe = txtTelMe.Text;
+
                 BUS_DoiTuong.Insert(doiTuong);
 
                 //------------Ghi log
@@ -111,12 +125,25 @@ namespace QuanLyKTX
                 if (txtTen.Text == "") errorProvider1.SetError(txtTen, "Chưa điền tên");
                 if (txtMaSinhVien.Text == "") errorProvider1.SetError(txtMaSinhVien, "Chưa điền msv");
                 if (dateNgaySinh.Text == "") errorProvider1.SetError(txtHoDem, "Chưa chọn ngày sinh");
-                if (txtNoiSinh.Text == "") errorProvider1.SetError(txtNoiSinh, "Chưa điền dữ liệu");
-                if (txtSdt.Text == "") errorProvider1.SetError(txtSdt, "Chưa điền dữ liệu");
-                if (txtEmail.Text == "") errorProvider1.SetError(txtEmail, "Chưa điền dữ liệu");
-                if (txtHoKhau.Text == "") errorProvider1.SetError(txtHoKhau, "Chưa điền dữ liệu");
-                if (txtQueQuan.Text == "") errorProvider1.SetError(txtQueQuan, "Chưa điền dữ liệu");
+                if (txtNoiSinh.Text == "") errorProvider1.SetError(txtNoiSinh, "Chưa điền nơi sinh");
+                if (txtSdt.Text == "") errorProvider1.SetError(txtSdt, "Chưa điền số điện thoại");
+                if (txtEmail.Text == "") errorProvider1.SetError(txtEmail, "Chưa điền email");
+                if (txtHoKhau.Text == "") errorProvider1.SetError(txtHoKhau, "Chưa điền hộ khẩu");
+                if (txtQueQuan.Text == "") errorProvider1.SetError(txtQueQuan, "Chưa điền quê quán");
+                if (txtCMND.Text == "") errorProvider1.SetError(txtCMND, "Chưa điền căn cước công dân");
+                if (txtHoTenBo.Text == "") errorProvider1.SetError(txtHoTenBo, "Chưa điền họ tên bố");
+                if (dateEditNgaySinhBo.Text == "") errorProvider1.SetError(dateEditNgaySinhBo, "Chưa chọn ngày sinh bố");
+                if (txtNgheNghiepBo.Text == "") errorProvider1.SetError(txtNgheNghiepBo, "Chưa điền nghề nghiệp bố");
+                if (txtNoiCongTacBo.Text == "") errorProvider1.SetError(txtNoiCongTacBo, "Chưa điền nơi công tác bố");
+                if (txtFaxBo.Text == "") errorProvider1.SetError(txtFaxBo, "Chưa điền Fax bố");
+                if (txtTelBo.Text == "") errorProvider1.SetError(txtTelBo, "Chưa điền số điện thoại bố");
 
+                if (txtHoTenMe.Text == "") errorProvider1.SetError(txtHoTenMe, "Chưa điền họ tên bố");
+                if (dateEditNgaySinhMe.Text == "") errorProvider1.SetError(dateEditNgaySinhMe, "Chưa chọn ngày sinh bố");
+                if (txtNgheNghiepMe.Text == "") errorProvider1.SetError(txtNgheNghiepMe, "Chưa điền nghề nghiệp bố");
+                if (txtNoiCongTacMe.Text == "") errorProvider1.SetError(txtNoiCongTacMe, "Chưa điền nơi công tác bố");
+                if (txtFaxMe.Text == "") errorProvider1.SetError(txtFaxMe, "Chưa điền Fax bố");
+                if (txtTelMe.Text == "") errorProvider1.SetError(txtTelMe, "Chưa điền số điện thoại bố");
             }
         }
 
@@ -129,7 +156,14 @@ namespace QuanLyKTX
                 && !string.IsNullOrEmpty(dateNgaySinh.Text) && !string.IsNullOrEmpty(cbLoaiDoiTuong.Text)
                 && !string.IsNullOrEmpty(cbLop.Text) && !string.IsNullOrEmpty(cbTinhThanh.Text)
                 && !string.IsNullOrEmpty(cbQuocTich.Text) && !string.IsNullOrEmpty(cbTonGiao.Text)
-                 && !string.IsNullOrEmpty(txtSdt.Text) && !string.IsNullOrEmpty(txtEmail.Text)
+                && !string.IsNullOrEmpty(txtSdt.Text) && !string.IsNullOrEmpty(txtEmail.Text)
+                && !string.IsNullOrEmpty(txtCMND.Text) && !string.IsNullOrEmpty(txtHoTenBo.Text)
+                && !string.IsNullOrEmpty(dateEditNgaySinhBo.Text) && !string.IsNullOrEmpty(txtNgheNghiepBo.Text)
+                && !string.IsNullOrEmpty(txtNoiCongTacBo.Text) && !string.IsNullOrEmpty(txtFaxBo.Text)
+                && !string.IsNullOrEmpty(txtTelBo.Text) && !string.IsNullOrEmpty(txtHoTenMe.Text)
+                && !string.IsNullOrEmpty(dateEditNgaySinhMe.Text) && !string.IsNullOrEmpty(txtNgheNghiepMe.Text)
+                && !string.IsNullOrEmpty(txtNoiCongTacMe.Text) && !string.IsNullOrEmpty(txtFaxMe.Text)
+                && !string.IsNullOrEmpty(txtTelMe.Text)
                 )
             {
                 return true;
@@ -210,8 +244,8 @@ namespace QuanLyKTX
         {
             this.Close();
         }
-        #endregion
 
+        #endregion
 
     }
 }

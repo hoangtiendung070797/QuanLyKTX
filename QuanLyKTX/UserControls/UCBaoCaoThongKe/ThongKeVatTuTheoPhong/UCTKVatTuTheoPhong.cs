@@ -56,7 +56,7 @@ namespace QuanLyKTX.UserControls.UCBaoCaoThongKe
         private void SimpleButtonLoc_Click(object sender, EventArgs e)
         {
 
-            gridControl1.DataSource = BUS_ChiTietPhieuCapPhatVatTu.GetVatTuTheoPhong(cmbPhong.SelectedValue.ToString(), (int)cmbDayNha.SelectedValue);
+            gridControl1.DataSource = BUS_ChiTietPhieuCapPhatVatTu.GetVatTuTheoPhong(cmbPhong.SelectedValue==null?"": cmbPhong.SelectedValue.ToString(), cmbDayNha.SelectedValue==null?0: (int)cmbDayNha.SelectedValue);
         }
 
     }

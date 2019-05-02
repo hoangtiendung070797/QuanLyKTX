@@ -45,7 +45,7 @@ namespace QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeDonVi
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = BUS_Donvi.GetSinhVienTheoDonVi((int)cmbDonVi.SelectedValue);
+            gridControl1.DataSource = BUS_Donvi.GetSinhVienTheoDonVi(cmbDonVi.SelectedValue==null?0: (int)cmbDonVi.SelectedValue);
         }
 
         private void simpleButtonHuyLoc_Click(object sender, EventArgs e)

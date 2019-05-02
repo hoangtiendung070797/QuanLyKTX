@@ -39,7 +39,8 @@ namespace QuanLyKTX.UserControls.UCBaoCaoThongKe.ThongKeTheoDanhSachPhong
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            gridControl1.DataSource = BUS_Lop.GetSinhVienTheoLop((int)cmbLop.SelectedValue);
+       
+            gridControl1.DataSource = BUS_Lop.GetSinhVienTheoLop(cmbLop.SelectedValue == null ? 0 : (int)cmbLop.SelectedValue);
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

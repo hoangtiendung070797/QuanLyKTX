@@ -75,6 +75,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHoDem = new System.Windows.Forms.TextBox();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtCMND = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtTelMe = new System.Windows.Forms.TextBox();
+            this.txtNoiCongTacMe = new System.Windows.Forms.TextBox();
+            this.txtTelBo = new System.Windows.Forms.TextBox();
+            this.txtFaxMe = new System.Windows.Forms.TextBox();
+            this.txtNoiCongTacBo = new System.Windows.Forms.TextBox();
+            this.txtNgheNghiepMe = new System.Windows.Forms.TextBox();
+            this.txtFaxBo = new System.Windows.Forms.TextBox();
+            this.txtHoTenMe = new System.Windows.Forms.TextBox();
+            this.txtNgheNghiepBo = new System.Windows.Forms.TextBox();
+            this.txtHoTenBo = new System.Windows.Forms.TextBox();
+            this.dateEditNgaySinhMe = new DevExpress.XtraEditors.DateEdit();
+            this.label27 = new System.Windows.Forms.Label();
+            this.dateEditNgaySinhBo = new DevExpress.XtraEditors.DateEdit();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
             this.pnlImage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureHoSo.Properties)).BeginInit();
@@ -86,6 +112,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlImage
@@ -95,7 +125,7 @@
             this.pnlImage.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlImage.Location = new System.Drawing.Point(2, 36);
             this.pnlImage.Name = "pnlImage";
-            this.pnlImage.Size = new System.Drawing.Size(176, 583);
+            this.pnlImage.Size = new System.Drawing.Size(176, 646);
             this.pnlImage.TabIndex = 1;
             // 
             // btnLoadAnh
@@ -120,16 +150,16 @@
             // cbDanToc
             // 
             this.cbDanToc.FormattingEnabled = true;
-            this.cbDanToc.Location = new System.Drawing.Point(118, 320);
+            this.cbDanToc.Location = new System.Drawing.Point(118, 258);
             this.cbDanToc.Name = "cbDanToc";
-            this.cbDanToc.Size = new System.Drawing.Size(101, 21);
+            this.cbDanToc.Size = new System.Drawing.Size(121, 21);
             this.cbDanToc.TabIndex = 39;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(13, 323);
+            this.label18.Location = new System.Drawing.Point(13, 261);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 14);
             this.label18.TabIndex = 38;
@@ -138,7 +168,7 @@
             // cbLoaiDoiTuong
             // 
             this.cbLoaiDoiTuong.FormattingEnabled = true;
-            this.cbLoaiDoiTuong.Location = new System.Drawing.Point(117, 203);
+            this.cbLoaiDoiTuong.Location = new System.Drawing.Point(117, 148);
             this.cbLoaiDoiTuong.Name = "cbLoaiDoiTuong";
             this.cbLoaiDoiTuong.Size = new System.Drawing.Size(216, 21);
             this.cbLoaiDoiTuong.TabIndex = 37;
@@ -146,7 +176,7 @@
             // cbLop
             // 
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(445, 203);
+            this.cbLop.Location = new System.Drawing.Point(445, 148);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(216, 21);
             this.cbLop.TabIndex = 36;
@@ -154,32 +184,32 @@
             // cbQuocTich
             // 
             this.cbQuocTich.FormattingEnabled = true;
-            this.cbQuocTich.Location = new System.Drawing.Point(543, 282);
+            this.cbQuocTich.Location = new System.Drawing.Point(543, 220);
             this.cbQuocTich.Name = "cbQuocTich";
-            this.cbQuocTich.Size = new System.Drawing.Size(101, 21);
+            this.cbQuocTich.Size = new System.Drawing.Size(118, 21);
             this.cbQuocTich.TabIndex = 36;
             // 
             // cbTonGiao
             // 
             this.cbTonGiao.FormattingEnabled = true;
-            this.cbTonGiao.Location = new System.Drawing.Point(322, 282);
+            this.cbTonGiao.Location = new System.Drawing.Point(322, 220);
             this.cbTonGiao.Name = "cbTonGiao";
-            this.cbTonGiao.Size = new System.Drawing.Size(101, 21);
+            this.cbTonGiao.Size = new System.Drawing.Size(119, 21);
             this.cbTonGiao.TabIndex = 36;
             // 
             // cbTinhThanh
             // 
             this.cbTinhThanh.FormattingEnabled = true;
-            this.cbTinhThanh.Location = new System.Drawing.Point(117, 282);
+            this.cbTinhThanh.Location = new System.Drawing.Point(117, 220);
             this.cbTinhThanh.Name = "cbTinhThanh";
-            this.cbTinhThanh.Size = new System.Drawing.Size(101, 21);
+            this.cbTinhThanh.Size = new System.Drawing.Size(122, 21);
             this.cbTinhThanh.TabIndex = 36;
             // 
             // rdbNu
             // 
             this.rdbNu.AutoSize = true;
             this.rdbNu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbNu.Location = new System.Drawing.Point(180, 122);
+            this.rdbNu.Location = new System.Drawing.Point(180, 90);
             this.rdbNu.Name = "rdbNu";
             this.rdbNu.Size = new System.Drawing.Size(38, 17);
             this.rdbNu.TabIndex = 35;
@@ -191,7 +221,7 @@
             this.rdbNam.AutoSize = true;
             this.rdbNam.Checked = true;
             this.rdbNam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rdbNam.Location = new System.Drawing.Point(117, 122);
+            this.rdbNam.Location = new System.Drawing.Point(117, 90);
             this.rdbNam.Name = "rdbNam";
             this.rdbNam.Size = new System.Drawing.Size(45, 17);
             this.rdbNam.TabIndex = 35;
@@ -201,7 +231,7 @@
             // 
             // btnHuyBo
             // 
-            this.btnHuyBo.Location = new System.Drawing.Point(510, 522);
+            this.btnHuyBo.Location = new System.Drawing.Point(510, 599);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(134, 31);
             this.btnHuyBo.TabIndex = 19;
@@ -210,7 +240,7 @@
             // 
             // btnNhapLai
             // 
-            this.btnNhapLai.Location = new System.Drawing.Point(322, 522);
+            this.btnNhapLai.Location = new System.Drawing.Point(322, 599);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(134, 31);
             this.btnNhapLai.TabIndex = 18;
@@ -218,7 +248,7 @@
             // 
             // btnCapNhap
             // 
-            this.btnCapNhap.Location = new System.Drawing.Point(135, 522);
+            this.btnCapNhap.Location = new System.Drawing.Point(134, 599);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(134, 31);
             this.btnCapNhap.TabIndex = 17;
@@ -229,7 +259,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(14, 363);
+            this.label17.Location = new System.Drawing.Point(14, 468);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(92, 14);
             this.label17.TabIndex = 34;
@@ -238,7 +268,7 @@
             // txtGhiChu
             // 
             this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtGhiChu.Location = new System.Drawing.Point(117, 363);
+            this.txtGhiChu.Location = new System.Drawing.Point(118, 469);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(544, 114);
@@ -248,7 +278,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(461, 284);
+            this.label16.Location = new System.Drawing.Point(461, 222);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(76, 14);
             this.label16.TabIndex = 31;
@@ -258,7 +288,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(245, 285);
+            this.label15.Location = new System.Drawing.Point(245, 223);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(71, 14);
             this.label15.TabIndex = 29;
@@ -268,7 +298,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(12, 285);
+            this.label14.Location = new System.Drawing.Point(12, 223);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(91, 14);
             this.label14.TabIndex = 27;
@@ -278,7 +308,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(349, 203);
+            this.label13.Location = new System.Drawing.Point(349, 148);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 14);
             this.label13.TabIndex = 24;
@@ -288,7 +318,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 202);
+            this.label12.Location = new System.Drawing.Point(14, 148);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 14);
             this.label12.TabIndex = 22;
@@ -297,7 +327,7 @@
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.Location = new System.Drawing.Point(445, 154);
+            this.txtEmail.Location = new System.Drawing.Point(445, 119);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(216, 14);
             this.txtEmail.TabIndex = 8;
@@ -330,7 +360,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(349, 156);
+            this.label11.Location = new System.Drawing.Point(349, 121);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 14);
             this.label11.TabIndex = 20;
@@ -338,6 +368,32 @@
             // 
             // pnllThongTin
             // 
+            this.pnllThongTin.Controls.Add(this.label31);
+            this.pnllThongTin.Controls.Add(this.label25);
+            this.pnllThongTin.Controls.Add(this.label30);
+            this.pnllThongTin.Controls.Add(this.label24);
+            this.pnllThongTin.Controls.Add(this.label29);
+            this.pnllThongTin.Controls.Add(this.label22);
+            this.pnllThongTin.Controls.Add(this.label28);
+            this.pnllThongTin.Controls.Add(this.label20);
+            this.pnllThongTin.Controls.Add(this.txtTelMe);
+            this.pnllThongTin.Controls.Add(this.txtNoiCongTacMe);
+            this.pnllThongTin.Controls.Add(this.txtTelBo);
+            this.pnllThongTin.Controls.Add(this.txtFaxMe);
+            this.pnllThongTin.Controls.Add(this.txtNoiCongTacBo);
+            this.pnllThongTin.Controls.Add(this.txtNgheNghiepMe);
+            this.pnllThongTin.Controls.Add(this.txtFaxBo);
+            this.pnllThongTin.Controls.Add(this.txtHoTenMe);
+            this.pnllThongTin.Controls.Add(this.txtNgheNghiepBo);
+            this.pnllThongTin.Controls.Add(this.txtHoTenBo);
+            this.pnllThongTin.Controls.Add(this.dateEditNgaySinhMe);
+            this.pnllThongTin.Controls.Add(this.label27);
+            this.pnllThongTin.Controls.Add(this.dateEditNgaySinhBo);
+            this.pnllThongTin.Controls.Add(this.label21);
+            this.pnllThongTin.Controls.Add(this.label23);
+            this.pnllThongTin.Controls.Add(this.label26);
+            this.pnllThongTin.Controls.Add(this.txtCMND);
+            this.pnllThongTin.Controls.Add(this.label19);
             this.pnllThongTin.Controls.Add(this.cbDanToc);
             this.pnllThongTin.Controls.Add(this.label18);
             this.pnllThongTin.Controls.Add(this.cbLoaiDoiTuong);
@@ -379,13 +435,13 @@
             this.pnllThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnllThongTin.Location = new System.Drawing.Point(178, 36);
             this.pnllThongTin.Name = "pnllThongTin";
-            this.pnllThongTin.Size = new System.Drawing.Size(676, 583);
+            this.pnllThongTin.Size = new System.Drawing.Size(676, 646);
             this.pnllThongTin.TabIndex = 2;
             // 
             // txtSdt
             // 
             this.txtSdt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSdt.Location = new System.Drawing.Point(117, 154);
+            this.txtSdt.Location = new System.Drawing.Point(117, 119);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(216, 14);
             this.txtSdt.TabIndex = 7;
@@ -394,7 +450,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 156);
+            this.label10.Location = new System.Drawing.Point(13, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(88, 14);
             this.label10.TabIndex = 18;
@@ -403,7 +459,7 @@
             // txtQueQuan
             // 
             this.txtQueQuan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtQueQuan.Location = new System.Drawing.Point(445, 239);
+            this.txtQueQuan.Location = new System.Drawing.Point(445, 184);
             this.txtQueQuan.Name = "txtQueQuan";
             this.txtQueQuan.Size = new System.Drawing.Size(216, 14);
             this.txtQueQuan.TabIndex = 12;
@@ -412,7 +468,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(349, 241);
+            this.label9.Location = new System.Drawing.Point(349, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 14);
             this.label9.TabIndex = 16;
@@ -421,7 +477,7 @@
             // txtHoKhau
             // 
             this.txtHoKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtHoKhau.Location = new System.Drawing.Point(117, 239);
+            this.txtHoKhau.Location = new System.Drawing.Point(117, 184);
             this.txtHoKhau.Name = "txtHoKhau";
             this.txtHoKhau.Size = new System.Drawing.Size(216, 14);
             this.txtHoKhau.TabIndex = 11;
@@ -430,7 +486,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 241);
+            this.label8.Location = new System.Drawing.Point(13, 186);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(88, 14);
             this.label8.TabIndex = 14;
@@ -439,7 +495,7 @@
             // txtNoiSinh
             // 
             this.txtNoiSinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNoiSinh.Location = new System.Drawing.Point(445, 114);
+            this.txtNoiSinh.Location = new System.Drawing.Point(445, 90);
             this.txtNoiSinh.Name = "txtNoiSinh";
             this.txtNoiSinh.Size = new System.Drawing.Size(216, 14);
             this.txtNoiSinh.TabIndex = 6;
@@ -448,7 +504,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(349, 116);
+            this.label7.Location = new System.Drawing.Point(349, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 14);
             this.label7.TabIndex = 12;
@@ -458,7 +514,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 122);
+            this.label6.Location = new System.Drawing.Point(13, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 14);
             this.label6.TabIndex = 9;
@@ -467,7 +523,7 @@
             // dateNgaySinh
             // 
             this.dateNgaySinh.EditValue = null;
-            this.dateNgaySinh.Location = new System.Drawing.Point(445, 73);
+            this.dateNgaySinh.Location = new System.Drawing.Point(445, 54);
             this.dateNgaySinh.Name = "dateNgaySinh";
             this.dateNgaySinh.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
             this.dateNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -484,7 +540,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(349, 79);
+            this.label5.Location = new System.Drawing.Point(349, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 14);
             this.label5.TabIndex = 7;
@@ -493,7 +549,7 @@
             // txtMaSinhVien
             // 
             this.txtMaSinhVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaSinhVien.Location = new System.Drawing.Point(117, 77);
+            this.txtMaSinhVien.Location = new System.Drawing.Point(118, 60);
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.Size = new System.Drawing.Size(216, 14);
             this.txtMaSinhVien.TabIndex = 2;
@@ -502,7 +558,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 79);
+            this.label4.Location = new System.Drawing.Point(13, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 14);
             this.label4.TabIndex = 5;
@@ -552,14 +608,253 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(856, 621);
+            this.panelControl2.Size = new System.Drawing.Size(856, 684);
             this.panelControl2.TabIndex = 2;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.label19.Location = new System.Drawing.Point(245, 261);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(167, 14);
+            this.label19.TabIndex = 40;
+            this.label19.Text = "Căn cước công dân (CMND) :";
+            // 
+            // txtCMND
+            // 
+            this.txtCMND.Location = new System.Drawing.Point(419, 258);
+            this.txtCMND.Name = "txtCMND";
+            this.txtCMND.Size = new System.Drawing.Size(161, 21);
+            this.txtCMND.TabIndex = 41;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(349, 440);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(92, 14);
+            this.label31.TabIndex = 65;
+            this.label31.Text = "Tel                :";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(349, 352);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(92, 14);
+            this.label25.TabIndex = 64;
+            this.label25.Text = "Tel                :";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(14, 440);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(93, 14);
+            this.label30.TabIndex = 63;
+            this.label30.Text = "Fax               : ";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(14, 352);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(89, 14);
+            this.label24.TabIndex = 62;
+            this.label24.Text = "Fax               :";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(14, 410);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(89, 14);
+            this.label29.TabIndex = 61;
+            this.label29.Text = "Nghề nghiệp  :";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(14, 322);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(89, 14);
+            this.label22.TabIndex = 60;
+            this.label22.Text = "Nghề nghiệp  :";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(14, 381);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(90, 14);
+            this.label28.TabIndex = 59;
+            this.label28.Text = "Họ tên mẹ     :";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(14, 292);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(91, 14);
+            this.label20.TabIndex = 58;
+            this.label20.Text = "Họ tên bố      :";
+            // 
+            // txtTelMe
+            // 
+            this.txtTelMe.Location = new System.Drawing.Point(445, 440);
+            this.txtTelMe.Name = "txtTelMe";
+            this.txtTelMe.Size = new System.Drawing.Size(216, 21);
+            this.txtTelMe.TabIndex = 56;
+            // 
+            // txtNoiCongTacMe
+            // 
+            this.txtNoiCongTacMe.Location = new System.Drawing.Point(445, 410);
+            this.txtNoiCongTacMe.Name = "txtNoiCongTacMe";
+            this.txtNoiCongTacMe.Size = new System.Drawing.Size(216, 21);
+            this.txtNoiCongTacMe.TabIndex = 55;
+            // 
+            // txtTelBo
+            // 
+            this.txtTelBo.Location = new System.Drawing.Point(445, 352);
+            this.txtTelBo.Name = "txtTelBo";
+            this.txtTelBo.Size = new System.Drawing.Size(216, 21);
+            this.txtTelBo.TabIndex = 57;
+            // 
+            // txtFaxMe
+            // 
+            this.txtFaxMe.Location = new System.Drawing.Point(117, 438);
+            this.txtFaxMe.Name = "txtFaxMe";
+            this.txtFaxMe.Size = new System.Drawing.Size(217, 21);
+            this.txtFaxMe.TabIndex = 54;
+            // 
+            // txtNoiCongTacBo
+            // 
+            this.txtNoiCongTacBo.Location = new System.Drawing.Point(445, 320);
+            this.txtNoiCongTacBo.Name = "txtNoiCongTacBo";
+            this.txtNoiCongTacBo.Size = new System.Drawing.Size(216, 21);
+            this.txtNoiCongTacBo.TabIndex = 53;
+            // 
+            // txtNgheNghiepMe
+            // 
+            this.txtNgheNghiepMe.Location = new System.Drawing.Point(118, 408);
+            this.txtNgheNghiepMe.Name = "txtNgheNghiepMe";
+            this.txtNgheNghiepMe.Size = new System.Drawing.Size(216, 21);
+            this.txtNgheNghiepMe.TabIndex = 52;
+            // 
+            // txtFaxBo
+            // 
+            this.txtFaxBo.Location = new System.Drawing.Point(118, 347);
+            this.txtFaxBo.Name = "txtFaxBo";
+            this.txtFaxBo.Size = new System.Drawing.Size(215, 21);
+            this.txtFaxBo.TabIndex = 51;
+            // 
+            // txtHoTenMe
+            // 
+            this.txtHoTenMe.Location = new System.Drawing.Point(118, 379);
+            this.txtHoTenMe.Name = "txtHoTenMe";
+            this.txtHoTenMe.Size = new System.Drawing.Size(216, 21);
+            this.txtHoTenMe.TabIndex = 50;
+            // 
+            // txtNgheNghiepBo
+            // 
+            this.txtNgheNghiepBo.Location = new System.Drawing.Point(118, 318);
+            this.txtNgheNghiepBo.Name = "txtNgheNghiepBo";
+            this.txtNgheNghiepBo.Size = new System.Drawing.Size(215, 21);
+            this.txtNgheNghiepBo.TabIndex = 49;
+            // 
+            // txtHoTenBo
+            // 
+            this.txtHoTenBo.Location = new System.Drawing.Point(118, 291);
+            this.txtHoTenBo.Name = "txtHoTenBo";
+            this.txtHoTenBo.Size = new System.Drawing.Size(215, 21);
+            this.txtHoTenBo.TabIndex = 48;
+            // 
+            // dateEditNgaySinhMe
+            // 
+            this.dateEditNgaySinhMe.EditValue = null;
+            this.dateEditNgaySinhMe.Location = new System.Drawing.Point(445, 380);
+            this.dateEditNgaySinhMe.Name = "dateEditNgaySinhMe";
+            this.dateEditNgaySinhMe.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.dateEditNgaySinhMe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinhMe.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinhMe.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateEditNgaySinhMe.Properties.Mask.EditMask = "D";
+            this.dateEditNgaySinhMe.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditNgaySinhMe.Size = new System.Drawing.Size(216, 20);
+            this.dateEditNgaySinhMe.TabIndex = 43;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(349, 410);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(92, 14);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Nơi công tác   :";
+            // 
+            // dateEditNgaySinhBo
+            // 
+            this.dateEditNgaySinhBo.EditValue = null;
+            this.dateEditNgaySinhBo.Location = new System.Drawing.Point(445, 291);
+            this.dateEditNgaySinhBo.Name = "dateEditNgaySinhBo";
+            this.dateEditNgaySinhBo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.dateEditNgaySinhBo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinhBo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinhBo.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateEditNgaySinhBo.Properties.Mask.EditMask = "D";
+            this.dateEditNgaySinhBo.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditNgaySinhBo.Size = new System.Drawing.Size(216, 20);
+            this.dateEditNgaySinhBo.TabIndex = 42;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(349, 381);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(92, 14);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "Ngày sinh mẹ  :";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(349, 322);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(92, 14);
+            this.label23.TabIndex = 47;
+            this.label23.Text = "Nơi công tác   :";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(349, 292);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(93, 14);
+            this.label26.TabIndex = 44;
+            this.label26.Text = "Ngày sinh bố   :";
             // 
             // FormCapNhapHoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 621);
+            this.ClientSize = new System.Drawing.Size(856, 684);
             this.Controls.Add(this.panelControl2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCapNhapHoSo";
@@ -578,6 +873,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -630,5 +929,31 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHoDem;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private System.Windows.Forms.TextBox txtCMND;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox txtTelMe;
+        private System.Windows.Forms.TextBox txtNoiCongTacMe;
+        private System.Windows.Forms.TextBox txtTelBo;
+        private System.Windows.Forms.TextBox txtFaxMe;
+        private System.Windows.Forms.TextBox txtNoiCongTacBo;
+        private System.Windows.Forms.TextBox txtNgheNghiepMe;
+        private System.Windows.Forms.TextBox txtFaxBo;
+        private System.Windows.Forms.TextBox txtHoTenMe;
+        private System.Windows.Forms.TextBox txtNgheNghiepBo;
+        private System.Windows.Forms.TextBox txtHoTenBo;
+        private DevExpress.XtraEditors.DateEdit dateEditNgaySinhMe;
+        private System.Windows.Forms.Label label27;
+        private DevExpress.XtraEditors.DateEdit dateEditNgaySinhBo;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label26;
     }
 }
