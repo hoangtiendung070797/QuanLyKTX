@@ -617,6 +617,8 @@ namespace QuanLyKTX
         }
         private void btnThongTinNguoiDung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            FrmThongTinNguoiDung frmThongTinNguoiDung = new FrmThongTinNguoiDung();
+            frmThongTinNguoiDung.Show();
 
         }
         private void btnDoiMatKhau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

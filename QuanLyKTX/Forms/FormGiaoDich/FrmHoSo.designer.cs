@@ -68,21 +68,33 @@
             this.txtQueQuan = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.txtTelMe = new System.Windows.Forms.TextBox();
+            this.txtNoiCongTacMe = new System.Windows.Forms.TextBox();
             this.txtTelBo = new System.Windows.Forms.TextBox();
+            this.txtFaxMe = new System.Windows.Forms.TextBox();
             this.txtNoiCongTacBo = new System.Windows.Forms.TextBox();
+            this.txtNgheNghiepMe = new System.Windows.Forms.TextBox();
             this.txtFaxBo = new System.Windows.Forms.TextBox();
+            this.txtHoTenMe = new System.Windows.Forms.TextBox();
             this.txtNgheNghiepBo = new System.Windows.Forms.TextBox();
             this.txtHoTenBo = new System.Windows.Forms.TextBox();
             this.btnHuyBo = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapLai = new DevExpress.XtraEditors.SimpleButton();
             this.btnTaoHoSo = new DevExpress.XtraEditors.SimpleButton();
             this.label17 = new System.Windows.Forms.Label();
+            this.dateEditNgaySinhMe = new DevExpress.XtraEditors.DateEdit();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.dateEditNgaySinhBo = new DevExpress.XtraEditors.DateEdit();
+            this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.pnlImage = new DevExpress.XtraEditors.PanelControl();
@@ -92,18 +104,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label19 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.dateEditNgaySinhMe = new DevExpress.XtraEditors.DateEdit();
-            this.txtHoTenMe = new System.Windows.Forms.TextBox();
-            this.txtNgheNghiepMe = new System.Windows.Forms.TextBox();
-            this.txtFaxMe = new System.Windows.Forms.TextBox();
-            this.txtNoiCongTacMe = new System.Windows.Forms.TextBox();
-            this.txtTelMe = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnllThongTin)).BeginInit();
@@ -112,6 +112,8 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).BeginInit();
@@ -120,8 +122,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTitle)).BeginInit();
             this.panelControlTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl2
@@ -543,6 +543,16 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Quê quán:";
             // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(620, 332);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(32, 14);
+            this.label31.TabIndex = 41;
+            this.label31.Text = "Tel :";
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -552,6 +562,16 @@
             this.label25.Size = new System.Drawing.Size(32, 14);
             this.label25.TabIndex = 41;
             this.label25.Text = "Tel :";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(346, 332);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(33, 14);
+            this.label30.TabIndex = 41;
+            this.label30.Text = "Fax :";
             // 
             // label24
             // 
@@ -563,6 +583,16 @@
             this.label24.TabIndex = 41;
             this.label24.Text = "Fax :";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(575, 298);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(85, 14);
+            this.label29.TabIndex = 41;
+            this.label29.Text = "Nghề nghiệp :";
+            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -572,6 +602,16 @@
             this.label22.Size = new System.Drawing.Size(85, 14);
             this.label22.TabIndex = 41;
             this.label22.Text = "Nghề nghiệp :";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(13, 298);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(74, 14);
+            this.label28.TabIndex = 41;
+            this.label28.Text = "Họ tên mẹ :";
             // 
             // label20
             // 
@@ -583,12 +623,33 @@
             this.label20.TabIndex = 41;
             this.label20.Text = "Họ tên bố :";
             // 
+            // txtTelMe
+            // 
+            this.txtTelMe.Location = new System.Drawing.Point(658, 330);
+            this.txtTelMe.Name = "txtTelMe";
+            this.txtTelMe.Size = new System.Drawing.Size(197, 21);
+            this.txtTelMe.TabIndex = 40;
+            // 
+            // txtNoiCongTacMe
+            // 
+            this.txtNoiCongTacMe.Location = new System.Drawing.Point(103, 330);
+            this.txtNoiCongTacMe.Name = "txtNoiCongTacMe";
+            this.txtNoiCongTacMe.Size = new System.Drawing.Size(215, 21);
+            this.txtNoiCongTacMe.TabIndex = 40;
+            // 
             // txtTelBo
             // 
             this.txtTelBo.Location = new System.Drawing.Point(658, 260);
             this.txtTelBo.Name = "txtTelBo";
             this.txtTelBo.Size = new System.Drawing.Size(197, 21);
             this.txtTelBo.TabIndex = 40;
+            // 
+            // txtFaxMe
+            // 
+            this.txtFaxMe.Location = new System.Drawing.Point(385, 330);
+            this.txtFaxMe.Name = "txtFaxMe";
+            this.txtFaxMe.Size = new System.Drawing.Size(215, 21);
+            this.txtFaxMe.TabIndex = 40;
             // 
             // txtNoiCongTacBo
             // 
@@ -597,12 +658,26 @@
             this.txtNoiCongTacBo.Size = new System.Drawing.Size(215, 21);
             this.txtNoiCongTacBo.TabIndex = 40;
             // 
+            // txtNgheNghiepMe
+            // 
+            this.txtNgheNghiepMe.Location = new System.Drawing.Point(666, 296);
+            this.txtNgheNghiepMe.Name = "txtNgheNghiepMe";
+            this.txtNgheNghiepMe.Size = new System.Drawing.Size(215, 21);
+            this.txtNgheNghiepMe.TabIndex = 40;
+            // 
             // txtFaxBo
             // 
             this.txtFaxBo.Location = new System.Drawing.Point(385, 260);
             this.txtFaxBo.Name = "txtFaxBo";
             this.txtFaxBo.Size = new System.Drawing.Size(215, 21);
             this.txtFaxBo.TabIndex = 40;
+            // 
+            // txtHoTenMe
+            // 
+            this.txtHoTenMe.Location = new System.Drawing.Point(90, 296);
+            this.txtHoTenMe.Name = "txtHoTenMe";
+            this.txtHoTenMe.Size = new System.Drawing.Size(163, 21);
+            this.txtHoTenMe.TabIndex = 40;
             // 
             // txtNgheNghiepBo
             // 
@@ -655,6 +730,22 @@
             this.label17.TabIndex = 34;
             this.label17.Text = "Ghi chú          :";
             // 
+            // dateEditNgaySinhMe
+            // 
+            this.dateEditNgaySinhMe.EditValue = null;
+            this.dateEditNgaySinhMe.Location = new System.Drawing.Point(360, 296);
+            this.dateEditNgaySinhMe.Name = "dateEditNgaySinhMe";
+            this.dateEditNgaySinhMe.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.dateEditNgaySinhMe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinhMe.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinhMe.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.dateEditNgaySinhMe.Properties.Mask.EditMask = "D";
+            this.dateEditNgaySinhMe.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditNgaySinhMe.Size = new System.Drawing.Size(186, 20);
+            this.dateEditNgaySinhMe.TabIndex = 3;
+            // 
             // txtGhiChu
             // 
             this.txtGhiChu.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -663,6 +754,16 @@
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(786, 109);
             this.txtGhiChu.TabIndex = 16;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(13, 332);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 14);
+            this.label27.TabIndex = 7;
+            this.label27.Text = "Nơi công tác :";
             // 
             // dateEditNgaySinhBo
             // 
@@ -679,6 +780,16 @@
             this.dateEditNgaySinhBo.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEditNgaySinhBo.Size = new System.Drawing.Size(186, 20);
             this.dateEditNgaySinhBo.TabIndex = 3;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(269, 298);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(88, 14);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "Ngày sinh mẹ :";
             // 
             // label23
             // 
@@ -758,117 +869,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(269, 298);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(88, 14);
-            this.label19.TabIndex = 7;
-            this.label19.Text = "Ngày sinh mẹ :";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(13, 332);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(84, 14);
-            this.label27.TabIndex = 7;
-            this.label27.Text = "Nơi công tác :";
-            // 
-            // dateEditNgaySinhMe
-            // 
-            this.dateEditNgaySinhMe.EditValue = null;
-            this.dateEditNgaySinhMe.Location = new System.Drawing.Point(360, 296);
-            this.dateEditNgaySinhMe.Name = "dateEditNgaySinhMe";
-            this.dateEditNgaySinhMe.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.dateEditNgaySinhMe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNgaySinhMe.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEditNgaySinhMe.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
-            this.dateEditNgaySinhMe.Properties.Mask.EditMask = "D";
-            this.dateEditNgaySinhMe.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.dateEditNgaySinhMe.Size = new System.Drawing.Size(186, 20);
-            this.dateEditNgaySinhMe.TabIndex = 3;
-            // 
-            // txtHoTenMe
-            // 
-            this.txtHoTenMe.Location = new System.Drawing.Point(90, 296);
-            this.txtHoTenMe.Name = "txtHoTenMe";
-            this.txtHoTenMe.Size = new System.Drawing.Size(163, 21);
-            this.txtHoTenMe.TabIndex = 40;
-            // 
-            // txtNgheNghiepMe
-            // 
-            this.txtNgheNghiepMe.Location = new System.Drawing.Point(666, 296);
-            this.txtNgheNghiepMe.Name = "txtNgheNghiepMe";
-            this.txtNgheNghiepMe.Size = new System.Drawing.Size(215, 21);
-            this.txtNgheNghiepMe.TabIndex = 40;
-            // 
-            // txtFaxMe
-            // 
-            this.txtFaxMe.Location = new System.Drawing.Point(385, 330);
-            this.txtFaxMe.Name = "txtFaxMe";
-            this.txtFaxMe.Size = new System.Drawing.Size(215, 21);
-            this.txtFaxMe.TabIndex = 40;
-            // 
-            // txtNoiCongTacMe
-            // 
-            this.txtNoiCongTacMe.Location = new System.Drawing.Point(103, 330);
-            this.txtNoiCongTacMe.Name = "txtNoiCongTacMe";
-            this.txtNoiCongTacMe.Size = new System.Drawing.Size(215, 21);
-            this.txtNoiCongTacMe.TabIndex = 40;
-            // 
-            // txtTelMe
-            // 
-            this.txtTelMe.Location = new System.Drawing.Point(658, 330);
-            this.txtTelMe.Name = "txtTelMe";
-            this.txtTelMe.Size = new System.Drawing.Size(197, 21);
-            this.txtTelMe.TabIndex = 40;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(13, 298);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(74, 14);
-            this.label28.TabIndex = 41;
-            this.label28.Text = "Họ tên mẹ :";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(575, 298);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(85, 14);
-            this.label29.TabIndex = 41;
-            this.label29.Text = "Nghề nghiệp :";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(346, 332);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(33, 14);
-            this.label30.TabIndex = 41;
-            this.label30.Text = "Fax :";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(620, 332);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(32, 14);
-            this.label31.TabIndex = 41;
-            this.label31.Text = "Tel :";
-            // 
             // FrmHoSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -893,6 +893,8 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgaySinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhBo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlImage)).EndInit();
@@ -902,8 +904,6 @@
             this.panelControlTitle.ResumeLayout(false);
             this.panelControlTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinhMe.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

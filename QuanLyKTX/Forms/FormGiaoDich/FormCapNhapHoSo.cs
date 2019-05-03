@@ -153,19 +153,21 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             cbTonGiao.SelectedValue = row["TonGiaoId"];
             cbQuocTich.SelectedValue = row["QuocTichId"];
             cbDanToc.SelectedValue = row["DanTocId"];
+
             txtCMND.Text = row["cmnd"].ToString();
             txtHoTenBo.Text = row["hoTenBo"].ToString();
-            dateEditNgaySinhBo.Text = row["ngaySinhBo"].ToString();
+            dateEditNgaySinhBo.EditValue = (DateTime)row["ngaySinhBo"];
             txtNgheNghiepBo.Text = row["ngheNghiepBo"].ToString();
             txtNoiCongTacBo.Text = row["noiCongTacBo"].ToString();
             txtFaxBo.Text = row["sdtBoCoDinh"].ToString();
             txtTelBo.Text = row["sdtDDBo"].ToString();
             txtHoTenMe.Text = row["hoTenMe"].ToString();
-            dateEditNgaySinhMe.Text = row["ngaySinhMe"].ToString();
+            dateEditNgaySinhMe.EditValue = (DateTime)row["ngaySinhMe"];
             txtNgheNghiepMe.Text = row["ngheNghiepMe"].ToString();
             txtNoiCongTacMe.Text = row["noiCongTacMe"].ToString();
             txtFaxMe.Text = row["sdtMeCoDinh"].ToString();
             txtTelMe.Text = row["sdtDDMe"].ToString();
+
             txtGhiChu.Text = row["ghiChu"].ToString();
 
             //Load Ảnh
@@ -219,6 +221,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
             doiTuong.DanTocId = (int)cbDanToc.SelectedValue;
             doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
             doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
+
             doiTuong.Cmnd = txtCMND.Text;
             doiTuong.HoTenBo = txtHoTenBo.Text;
             doiTuong.NgaySinhBo = (DateTime)dateEditNgaySinhBo.EditValue;
