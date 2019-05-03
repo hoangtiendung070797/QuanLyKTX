@@ -606,12 +606,6 @@
     <Compile Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.designer.cs">
       <DependentUpon>XtraReportHoaDonThuTienSH.cs</DependentUpon>
     </Compile>
-    <Compile Include="WaitForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WaitForm.Designer.cs">
-      <DependentUpon>WaitForm.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Forms\FormGiaoDich\FormChonTaoPhieuThuTienPhong.resx">
       <DependentUpon>FormChonTaoPhieuThuTienPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -841,9 +835,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UCInHoaDon\XtraReportHoaDonThuTienSH.resx">
       <DependentUpon>XtraReportHoaDonThuTienSH.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WaitForm.resx">
-      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

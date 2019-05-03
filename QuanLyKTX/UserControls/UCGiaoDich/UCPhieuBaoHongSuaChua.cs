@@ -143,7 +143,17 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 }
                 foreach (DataRow row in BUS_ChiTietPhieuBaoHongVatTu.GetDataTheoPhieuBaoHong(phieubaohongId).Rows)
                 {
-                    ListViewItem item = new ListViewItem(frmSuaPhieuBaoHong.i.ToString());
+                    int index = 0;
+                    try
+                    {
+                        index = frmSuaPhieuBaoHong.i==null?0: frmSuaPhieuBaoHong.i;
+                    }
+                    catch (Exception)
+                    {
+                        index = 0;
+                    }
+                 
+                    ListViewItem item = new ListViewItem(index.ToString());
                     item.SubItems.Add(row["VatTuId"].ToString());
                     item.SubItems.Add(row["tenVatTu"].ToString());
                     item.SubItems.Add(row["soLuong"].ToString());

@@ -196,12 +196,10 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
                 {
                     gridThuTien.DataSource = BUS_PhieuThuTienSH.GetDataTheoThangNew(int.Parse(cbThang.Text));
                 }
-                
-                
-
             }
             catch
             {
+
             }
         }
 
@@ -322,6 +320,11 @@ namespace QuanLyKTX.UserControls.UCGiaoDich
             {
                 BUS_PhieuThuTienSH.UpdateDetail((DataTable)gridThuTien.DataSource);
             }
+        }
+
+        private void btnInPhieu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

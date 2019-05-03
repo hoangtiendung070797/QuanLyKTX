@@ -917,7 +917,8 @@ namespace QuanLyKTX
 
         private void btnGuiEmail_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            frmGuiMail frmGuiMail = new frmGuiMail();
+            frmGuiMail.Show();
         }
     }
 }

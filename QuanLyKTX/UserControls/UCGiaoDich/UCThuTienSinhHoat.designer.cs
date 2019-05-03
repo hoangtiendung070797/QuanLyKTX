@@ -177,6 +177,7 @@
             this.btnInPhieu.Size = new System.Drawing.Size(112, 63);
             this.btnInPhieu.TabIndex = 4;
             this.btnInPhieu.Text = "In phiếu";
+            this.btnInPhieu.Click += new System.EventHandler(this.btnInPhieu_Click);
             // 
             // btnXoaPhieu
             // 

@@ -260,7 +260,7 @@ namespace QuanLyKTX.Forms.FormGiaoDich
         private void btnLoadAnh_Click(object sender, EventArgs e)
         {
             openFileDialog1.Title = "Select Picture";
-            openFileDialog1.Filter = "Windows Bitmap|*.bmp|JPEG Image|*.jpg|All Files|*.*";
+            openFileDialog1.Filter = "JPEG Image|*.jpg|Windows Bitmap|*.bmp|All Files|*.*";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pictureHoSo.Image = Image.FromFile(openFileDialog1.FileName);
