@@ -37,7 +37,6 @@ namespace QuanLyKTX.Support
                 
            
 
-   
             smtp.SendCompleted += new SendCompletedEventHandler(SendCompletedCallBack);
             string userstate = "sending ...";
             smtp.SendAsync(email, userstate);

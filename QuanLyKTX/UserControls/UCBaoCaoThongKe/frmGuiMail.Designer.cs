@@ -43,6 +43,7 @@
             this.SbtnGui = new DevExpress.XtraEditors.SimpleButton();
             this.SbtnDinhKemTep = new DevExpress.XtraEditors.SimpleButton();
             this.SbtnChenAnh = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTuyChinh = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -50,6 +51,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnTuyChinh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -166,7 +168,7 @@
             // 
             this.SbtnDinhKemTep.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.SbtnDinhKemTep.Appearance.Options.UseFont = true;
-            this.SbtnDinhKemTep.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.SbtnDinhKemTep.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SbtnDinhKemTep.ImageOptions.Image")));
             this.SbtnDinhKemTep.Location = new System.Drawing.Point(392, 400);
             this.SbtnDinhKemTep.Name = "SbtnDinhKemTep";
             this.SbtnDinhKemTep.Size = new System.Drawing.Size(147, 49);
@@ -177,12 +179,22 @@
             // 
             this.SbtnChenAnh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.SbtnChenAnh.Appearance.Options.UseFont = true;
-            this.SbtnChenAnh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.ImageOptions.Image")));
+            this.SbtnChenAnh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("SbtnChenAnh.ImageOptions.Image")));
             this.SbtnChenAnh.Location = new System.Drawing.Point(545, 400);
             this.SbtnChenAnh.Name = "SbtnChenAnh";
             this.SbtnChenAnh.Size = new System.Drawing.Size(121, 49);
             this.SbtnChenAnh.TabIndex = 6;
             this.SbtnChenAnh.Text = "Chèn ảnh";
+            // 
+            // btnTuyChinh
+            // 
+            this.btnTuyChinh.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnTuyChinh.Appearance.Options.UseFont = true;
+            this.btnTuyChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTuyChinh.ImageOptions.Image")));
+            this.btnTuyChinh.Location = new System.Drawing.Point(637, 6);
+            this.btnTuyChinh.Name = "btnTuyChinh";
+            this.btnTuyChinh.Size = new System.Drawing.Size(38, 30);
+            this.btnTuyChinh.TabIndex = 7;
             // 
             // frmGuiMail
             // 
@@ -223,5 +235,6 @@
         private System.Windows.Forms.TextBox txtNguoiNhan;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private DevExpress.XtraEditors.SimpleButton btnTuyChinh;
     }
 }
