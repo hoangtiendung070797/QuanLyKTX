@@ -58,7 +58,7 @@ namespace DAL
         {
             try
             {
-                string query = "select t.anh,t.DoiTuongId,t.maSinhVien,t.hoDem,t.ten,t.ngaySinh,t.noiSinh,t.gioiTinh,t.hoKhau,t.queQuan,t.sdt,t.email,t.ghiChu from DoiTuong  as t where  t.gioiTinh = 'true' and (t.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or  (select COUNT(*) from LuuTruPhong where LuuTruPhong.trangThai = 1 and  LuuTruPhong.DoiTuongId = t.DoiTuongId) = 0)";
+                string query = "select t.anh,t.DoiTuongId,t.maSinhVien,t.hoDem,t.ten,t.ngaySinh,t.noiSinh,t.gioiTinh,t.hoKhau,t.queQuan,t.sdt,t.email,t.ghiChu from DoiTuong  as t where  t.gioiTinh = '" + gioitinh.ToString() + "' and (t.DoiTuongId not in (select LuuTruPhong.DoiTuongId from LuuTruPhong) or  (select COUNT(*) from LuuTruPhong where LuuTruPhong.trangThai = 1 and  LuuTruPhong.DoiTuongId = t.DoiTuongId) = 0)";
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);

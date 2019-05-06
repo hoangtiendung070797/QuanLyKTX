@@ -301,12 +301,13 @@
             this.txtTelMe.Name = "txtTelMe";
             this.txtTelMe.Size = new System.Drawing.Size(163, 21);
             this.txtTelMe.TabIndex = 58;
+            this.txtTelMe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelBo_KeyPress);
             // 
             // txtNoiCongTacMe
             // 
             this.txtNoiCongTacMe.Location = new System.Drawing.Point(108, 319);
             this.txtNoiCongTacMe.Name = "txtNoiCongTacMe";
-            this.txtNoiCongTacMe.Size = new System.Drawing.Size(166, 21);
+            this.txtNoiCongTacMe.Size = new System.Drawing.Size(163, 21);
             this.txtNoiCongTacMe.TabIndex = 57;
             // 
             // txtTelBo
@@ -315,6 +316,7 @@
             this.txtTelBo.Name = "txtTelBo";
             this.txtTelBo.Size = new System.Drawing.Size(163, 21);
             this.txtTelBo.TabIndex = 56;
+            this.txtTelBo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelBo_KeyPress);
             // 
             // txtFaxMe
             // 
@@ -322,6 +324,7 @@
             this.txtFaxMe.Name = "txtFaxMe";
             this.txtFaxMe.Size = new System.Drawing.Size(184, 21);
             this.txtFaxMe.TabIndex = 59;
+            this.txtFaxMe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelBo_KeyPress);
             // 
             // txtNoiCongTacBo
             // 
@@ -343,6 +346,7 @@
             this.txtFaxBo.Name = "txtFaxBo";
             this.txtFaxBo.Size = new System.Drawing.Size(183, 21);
             this.txtFaxBo.TabIndex = 53;
+            this.txtFaxBo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelBo_KeyPress);
             // 
             // txtHoTenMe
             // 
@@ -458,9 +462,9 @@
             // 
             // txtCMND
             // 
-            this.txtCMND.Location = new System.Drawing.Point(158, 180);
+            this.txtCMND.Location = new System.Drawing.Point(105, 183);
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(191, 21);
+            this.txtCMND.Size = new System.Drawing.Size(167, 21);
             this.txtCMND.TabIndex = 41;
             // 
             // label26
@@ -468,9 +472,9 @@
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(6, 183);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(146, 13);
+            this.label26.Size = new System.Drawing.Size(99, 13);
             this.label26.TabIndex = 40;
-            this.label26.Text = "Căn cước công dân (CMND) :";
+            this.label26.Text = "Căn cước (CMND) :";
             // 
             // label2
             // 
@@ -515,6 +519,7 @@
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.Size = new System.Drawing.Size(163, 21);
             this.txtMaSinhVien.TabIndex = 2;
+            this.txtMaSinhVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelBo_KeyPress);
             // 
             // label4
             // 
@@ -687,6 +692,7 @@
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(163, 21);
             this.txtSdt.TabIndex = 7;
+            this.txtSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelBo_KeyPress);
             // 
             // label10
             // 

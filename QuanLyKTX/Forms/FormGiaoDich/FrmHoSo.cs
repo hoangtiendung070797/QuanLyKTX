@@ -86,7 +86,11 @@ namespace QuanLyKTX
                 doiTuong.DanTocId = (int)cbDanToc.SelectedValue;
                 doiTuong.TinhThanhId = (int)cbTinhThanh.SelectedValue;
                 doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
-                doiTuong.Image = support.converImgToByte(path);
+                if(!string.IsNullOrEmpty(path))
+                {
+                    doiTuong.Image = support.converImgToByte(path);
+                }
+               
                 doiTuong.GhiChu = txtGhiChu.Text;
                 doiTuong.Cmnd = txtCMND.Text;
                 doiTuong.HoTenBo = txtHoTenBo.Text;
@@ -247,5 +251,10 @@ namespace QuanLyKTX
 
         #endregion
 
+        private void txtTelBo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }
