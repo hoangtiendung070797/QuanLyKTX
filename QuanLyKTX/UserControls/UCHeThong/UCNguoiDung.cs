@@ -2,6 +2,8 @@
 using DAL;
 using DTO;
 using System;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -11,6 +13,20 @@ namespace QuanLyKTX
         public UCNguoiDung()
         {
             InitializeComponent();
+        }
+        public string HashPassword(string pass)
+        {
+
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(pass);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasPass = "";
+
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }
+            return hasPass;
         }
 
         BUS_NguoiDung BUS_NguoiDung = new BUS_NguoiDung();
@@ -154,11 +170,11 @@ namespace QuanLyKTX
                 if (chucnang == 1)
                 {
                     nguoidung.TenDangNhap = txtTenDangNhap.Text;
-                    nguoidung.MatKhau = txtMatKhau.Text;
+                    nguoidung.MatKhau = HashPassword(txtMatKhau.Text);
                     nguoidung.TenDayDu = txtHoTen.Text;
                     nguoidung.Sdt = txtSDT.Text;
                     nguoidung.DiaChi = txtDiaChi.Text;
-
+   
                     if (BUS_NguoiDung.Insert(nguoidung))
                     {
                         MessageBox.Show("Thêm dữ liệu thành công.", "Thông báo.");
@@ -181,7 +197,7 @@ namespace QuanLyKTX
                 {
                     nguoidung.NguoiDungId = int.Parse(txtNguoidungID.Text);
                     nguoidung.TenDangNhap = txtTenDangNhap.Text;
-                    nguoidung.MatKhau = txtMatKhau.Text;
+                    nguoidung.MatKhau = HashPassword(txtMatKhau.Text);
                     nguoidung.TenDayDu = txtHoTen.Text;
                     nguoidung.Sdt = txtSDT.Text;
                     nguoidung.DiaChi = txtDiaChi.Text;

@@ -50,8 +50,8 @@ namespace QuanLyKTX.UserControls.UCHeThong
 
         private void btnThucHien_Click(object sender, EventArgs e)
         {
-            BUS_PhanQuyen.UpdateDetail((DataTable)gridControl1.DataSource);
-
+            if (BUS_PhanQuyen.UpdateDetail((DataTable)gridControl1.DataSource))
+                MessageBox.Show("Cập nhập thành công!");
             //------------Ghi log
             NhatKyHoatDong nhatKy = new NhatKyHoatDong();
             nhatKy.NguoiDungId = Const.CurrentUser.NguoiDungId;

@@ -179,7 +179,11 @@
             this.ClientSize = new System.Drawing.Size(394, 264);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmThongTinNguoiDung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmThongTinNguoiDung";
             this.Load += new System.EventHandler(this.FrmThongTinNguoiDung_Load);
             this.panel1.ResumeLayout(false);

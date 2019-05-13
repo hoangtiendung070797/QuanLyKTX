@@ -1,8 +1,10 @@
 ﻿using BUS;
 using DTO;
 using QuanLyKTX.Forms.FormGiaoDich;
+using QuanLyKTX.Support;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace QuanLyKTX
@@ -13,6 +15,8 @@ namespace QuanLyKTX
         {
             InitializeComponent();
         }
+        SupportImageToDb SupportImageToDb = new SupportImageToDb();
+
         BUS_DoiTuong BUS_DoiTuong = new BUS_DoiTuong();
         string ten_mvs = "";
 
@@ -21,7 +25,7 @@ namespace QuanLyKTX
             gridControl1.DataSource = BUS_DoiTuong.GetFullInfo();
         }
 
-        
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -32,7 +36,7 @@ namespace QuanLyKTX
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(Const.DoiTuongId!=0)
+            if (Const.DoiTuongId != 0)
             {
                 FormCapNhapHoSo formCapNhapHoSo = new FormCapNhapHoSo();
                 formCapNhapHoSo.ShowDialog();
@@ -43,28 +47,28 @@ namespace QuanLyKTX
 
                 MessageBox.Show("Bạn cần chọn hồ sơ cần sửa!");
             }
-            
+
         }
 
-    
 
-    
+
+
         private void layoutViewHoSo_CardClick(object sender, DevExpress.XtraGrid.Views.Layout.Events.CardClickEventArgs e)
         {
-            if(layoutViewHoSo.RowCount !=0)
+            if (layoutViewHoSo.RowCount != 0)
             {
                 DataRow row = layoutViewHoSo.GetFocusedDataRow();
                 Const.DoiTuongId = (int)row["Mã Hồ Sơ"];
                 ten_mvs = row["Họ"].ToString() + " " + row["Tên"].ToString() + " - " + row["Mã sinh viên"].ToString();
             }
-          
+
         }
 
 
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Bạn muốn xóa hồ sơ?","",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn muốn xóa hồ sơ?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 try
                 {
@@ -87,9 +91,9 @@ namespace QuanLyKTX
 
                     MessageBox.Show("Hồ sơ này liên quan đến tác vụ khác đang hiện hữu, bạn cần xóa các dữ liệu liên quan trước.");
                 }
-               
+
             }
-                
+
         }
     }
 }

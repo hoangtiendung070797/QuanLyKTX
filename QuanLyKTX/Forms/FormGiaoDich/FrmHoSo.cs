@@ -1,4 +1,5 @@
 ﻿using BUS;
+using DevExpress.XtraEditors;
 using DTO;
 using QuanLyKTX.Support;
 using System;
@@ -88,6 +89,7 @@ namespace QuanLyKTX
                 doiTuong.QuocTichId = (int)cbQuocTich.SelectedValue;
                 if(!string.IsNullOrEmpty(path))
                 {
+                    
                     doiTuong.Image = support.converImgToByte(path);
                 }
                
@@ -236,12 +238,17 @@ namespace QuanLyKTX
         }
         public void Reset()
         {
-            foreach (Control item in pnllThongTin.Controls)
+            foreach (Control item in groupControl1.Controls)
             {
 
                 if (item is TextBox)
-                    item.ResetText();
+                    item.Text = "";
+                if (item is DateEdit)
+                    item.Text = "";
+                if (item is System.Windows.Forms.ComboBox)
+                    item.Text = "";
             }
+            txtHoDem.Focus();
         }
 
         private void btnHuyBo_Click(object sender, EventArgs e)

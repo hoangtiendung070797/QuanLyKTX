@@ -156,7 +156,7 @@
             this.cbDanToc.Location = new System.Drawing.Point(119, 254);
             this.cbDanToc.Name = "cbDanToc";
             this.cbDanToc.Size = new System.Drawing.Size(121, 21);
-            this.cbDanToc.TabIndex = 39;
+            this.cbDanToc.TabIndex = 16;
             // 
             // label18
             // 
@@ -174,7 +174,7 @@
             this.cbLoaiDoiTuong.Location = new System.Drawing.Point(118, 144);
             this.cbLoaiDoiTuong.Name = "cbLoaiDoiTuong";
             this.cbLoaiDoiTuong.Size = new System.Drawing.Size(216, 21);
-            this.cbLoaiDoiTuong.TabIndex = 37;
+            this.cbLoaiDoiTuong.TabIndex = 9;
             // 
             // cbLop
             // 
@@ -182,7 +182,7 @@
             this.cbLop.Location = new System.Drawing.Point(446, 144);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(216, 21);
-            this.cbLop.TabIndex = 36;
+            this.cbLop.TabIndex = 10;
             // 
             // cbQuocTich
             // 
@@ -190,7 +190,7 @@
             this.cbQuocTich.Location = new System.Drawing.Point(544, 216);
             this.cbQuocTich.Name = "cbQuocTich";
             this.cbQuocTich.Size = new System.Drawing.Size(118, 21);
-            this.cbQuocTich.TabIndex = 36;
+            this.cbQuocTich.TabIndex = 15;
             // 
             // cbTonGiao
             // 
@@ -198,7 +198,7 @@
             this.cbTonGiao.Location = new System.Drawing.Point(323, 216);
             this.cbTonGiao.Name = "cbTonGiao";
             this.cbTonGiao.Size = new System.Drawing.Size(119, 21);
-            this.cbTonGiao.TabIndex = 36;
+            this.cbTonGiao.TabIndex = 14;
             // 
             // cbTinhThanh
             // 
@@ -206,7 +206,7 @@
             this.cbTinhThanh.Location = new System.Drawing.Point(118, 216);
             this.cbTinhThanh.Name = "cbTinhThanh";
             this.cbTinhThanh.Size = new System.Drawing.Size(122, 21);
-            this.cbTinhThanh.TabIndex = 36;
+            this.cbTinhThanh.TabIndex = 13;
             // 
             // rdbNu
             // 
@@ -237,7 +237,7 @@
             this.btnHuyBo.Location = new System.Drawing.Point(511, 595);
             this.btnHuyBo.Name = "btnHuyBo";
             this.btnHuyBo.Size = new System.Drawing.Size(134, 31);
-            this.btnHuyBo.TabIndex = 19;
+            this.btnHuyBo.TabIndex = 33;
             this.btnHuyBo.Text = "Thoát";
             this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
@@ -246,15 +246,16 @@
             this.btnNhapLai.Location = new System.Drawing.Point(323, 595);
             this.btnNhapLai.Name = "btnNhapLai";
             this.btnNhapLai.Size = new System.Drawing.Size(134, 31);
-            this.btnNhapLai.TabIndex = 18;
+            this.btnNhapLai.TabIndex = 32;
             this.btnNhapLai.Text = "Nhập lại";
+            this.btnNhapLai.Click += new System.EventHandler(this.btnNhapLai_Click);
             // 
             // btnCapNhap
             // 
             this.btnCapNhap.Location = new System.Drawing.Point(135, 595);
             this.btnCapNhap.Name = "btnCapNhap";
             this.btnCapNhap.Size = new System.Drawing.Size(134, 31);
-            this.btnCapNhap.TabIndex = 17;
+            this.btnCapNhap.TabIndex = 31;
             this.btnCapNhap.Text = "Cập nhập";
             this.btnCapNhap.Click += new System.EventHandler(this.btnCapNhap_Click);
             // 
@@ -275,7 +276,7 @@
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(544, 114);
-            this.txtGhiChu.TabIndex = 16;
+            this.txtGhiChu.TabIndex = 30;
             // 
             // label16
             // 
@@ -572,7 +573,7 @@
             this.txtMaSinhVien.Location = new System.Drawing.Point(119, 56);
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.Size = new System.Drawing.Size(216, 21);
-            this.txtMaSinhVien.TabIndex = 2;
+            this.txtMaSinhVien.TabIndex = 4;
             // 
             // label28
             // 
@@ -618,14 +619,14 @@
             this.dateNgaySinh.Properties.Mask.EditMask = "D";
             this.dateNgaySinh.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateNgaySinh.Size = new System.Drawing.Size(216, 20);
-            this.dateNgaySinh.TabIndex = 3;
+            this.dateNgaySinh.TabIndex = 5;
             // 
             // txtTelMe
             // 
             this.txtTelMe.Location = new System.Drawing.Point(446, 436);
             this.txtTelMe.Name = "txtTelMe";
             this.txtTelMe.Size = new System.Drawing.Size(216, 21);
-            this.txtTelMe.TabIndex = 56;
+            this.txtTelMe.TabIndex = 29;
             // 
             // label6
             // 
@@ -642,7 +643,7 @@
             this.txtNoiCongTacMe.Location = new System.Drawing.Point(446, 406);
             this.txtNoiCongTacMe.Name = "txtNoiCongTacMe";
             this.txtNoiCongTacMe.Size = new System.Drawing.Size(216, 21);
-            this.txtNoiCongTacMe.TabIndex = 55;
+            this.txtNoiCongTacMe.TabIndex = 27;
             // 
             // txtNoiSinh
             // 
@@ -657,7 +658,7 @@
             this.txtTelBo.Location = new System.Drawing.Point(446, 348);
             this.txtTelBo.Name = "txtTelBo";
             this.txtTelBo.Size = new System.Drawing.Size(216, 21);
-            this.txtTelBo.TabIndex = 57;
+            this.txtTelBo.TabIndex = 23;
             // 
             // label8
             // 
@@ -674,7 +675,7 @@
             this.txtFaxMe.Location = new System.Drawing.Point(118, 434);
             this.txtFaxMe.Name = "txtFaxMe";
             this.txtFaxMe.Size = new System.Drawing.Size(217, 21);
-            this.txtFaxMe.TabIndex = 54;
+            this.txtFaxMe.TabIndex = 28;
             // 
             // txtHoKhau
             // 
@@ -689,7 +690,7 @@
             this.txtNoiCongTacBo.Location = new System.Drawing.Point(446, 316);
             this.txtNoiCongTacBo.Name = "txtNoiCongTacBo";
             this.txtNoiCongTacBo.Size = new System.Drawing.Size(216, 21);
-            this.txtNoiCongTacBo.TabIndex = 53;
+            this.txtNoiCongTacBo.TabIndex = 21;
             // 
             // label9
             // 
@@ -706,7 +707,7 @@
             this.txtNgheNghiepMe.Location = new System.Drawing.Point(119, 404);
             this.txtNgheNghiepMe.Name = "txtNgheNghiepMe";
             this.txtNgheNghiepMe.Size = new System.Drawing.Size(216, 21);
-            this.txtNgheNghiepMe.TabIndex = 52;
+            this.txtNgheNghiepMe.TabIndex = 26;
             // 
             // txtQueQuan
             // 
@@ -721,7 +722,7 @@
             this.txtFaxBo.Location = new System.Drawing.Point(119, 343);
             this.txtFaxBo.Name = "txtFaxBo";
             this.txtFaxBo.Size = new System.Drawing.Size(215, 21);
-            this.txtFaxBo.TabIndex = 51;
+            this.txtFaxBo.TabIndex = 22;
             // 
             // label10
             // 
@@ -738,7 +739,7 @@
             this.txtHoTenMe.Location = new System.Drawing.Point(119, 375);
             this.txtHoTenMe.Name = "txtHoTenMe";
             this.txtHoTenMe.Size = new System.Drawing.Size(216, 21);
-            this.txtHoTenMe.TabIndex = 50;
+            this.txtHoTenMe.TabIndex = 24;
             // 
             // txtSdt
             // 
@@ -753,21 +754,21 @@
             this.txtNgheNghiepBo.Location = new System.Drawing.Point(119, 314);
             this.txtNgheNghiepBo.Name = "txtNgheNghiepBo";
             this.txtNgheNghiepBo.Size = new System.Drawing.Size(215, 21);
-            this.txtNgheNghiepBo.TabIndex = 49;
+            this.txtNgheNghiepBo.TabIndex = 20;
             // 
             // txtHoTenBo
             // 
             this.txtHoTenBo.Location = new System.Drawing.Point(119, 287);
             this.txtHoTenBo.Name = "txtHoTenBo";
             this.txtHoTenBo.Size = new System.Drawing.Size(215, 21);
-            this.txtHoTenBo.TabIndex = 48;
+            this.txtHoTenBo.TabIndex = 18;
             // 
             // dateEditNgaySinhMe
             // 
             this.dateEditNgaySinhMe.EditValue = null;
             this.dateEditNgaySinhMe.Location = new System.Drawing.Point(446, 376);
             this.dateEditNgaySinhMe.Name = "dateEditNgaySinhMe";
-            this.dateEditNgaySinhMe.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.dateEditNgaySinhMe.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.dateEditNgaySinhMe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditNgaySinhMe.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -776,7 +777,7 @@
             this.dateEditNgaySinhMe.Properties.Mask.EditMask = "D";
             this.dateEditNgaySinhMe.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEditNgaySinhMe.Size = new System.Drawing.Size(216, 20);
-            this.dateEditNgaySinhMe.TabIndex = 43;
+            this.dateEditNgaySinhMe.TabIndex = 25;
             // 
             // label27
             // 
@@ -793,7 +794,7 @@
             this.dateEditNgaySinhBo.EditValue = null;
             this.dateEditNgaySinhBo.Location = new System.Drawing.Point(446, 287);
             this.dateEditNgaySinhBo.Name = "dateEditNgaySinhBo";
-            this.dateEditNgaySinhBo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.dateEditNgaySinhBo.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.dateEditNgaySinhBo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditNgaySinhBo.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -802,7 +803,7 @@
             this.dateEditNgaySinhBo.Properties.Mask.EditMask = "D";
             this.dateEditNgaySinhBo.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateEditNgaySinhBo.Size = new System.Drawing.Size(216, 20);
-            this.dateEditNgaySinhBo.TabIndex = 42;
+            this.dateEditNgaySinhBo.TabIndex = 19;
             // 
             // label21
             // 
@@ -839,7 +840,7 @@
             this.txtCMND.Location = new System.Drawing.Point(420, 254);
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(161, 21);
-            this.txtCMND.TabIndex = 41;
+            this.txtCMND.TabIndex = 17;
             // 
             // label19
             // 
