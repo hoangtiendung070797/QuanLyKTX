@@ -52,7 +52,7 @@ namespace DAL
                 return null;
             }
         }
-
+         
 
         public DataTable DoiTuong_ChuaCoPhong_GioiTinh(string gioitinh)     //thay đổi => BUS
         {
